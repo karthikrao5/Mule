@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <HBox layoutX="100.0" layoutY="233.0" prefHeight="100.0" prefWidth="600.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="233.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="200.0" text="DIFFICULTY" textAlignment="CENTER">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="Beg" mnemonicParsing="false" onAction="#setDiff1" prefHeight="40.0" prefWidth="200.0" text="Beginner" />
+                  <Button fx:id="Int" layoutX="10.0" layoutY="44.0" mnemonicParsing="false" onAction="#setDiff2" prefHeight="40.0" prefWidth="200.0" text="Intermediate" />
+                  <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#setDiff3" prefHeight="40.0" prefWidth="200.0" text="Advanced" />
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="200.0" text="MAP TYPE" textAlignment="CENTER">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="Map1" mnemonicParsing="false" onAction="#setMap1" prefHeight="40.0" prefWidth="200.0" text="Map 1" />
+                  <Button fx:id="Map2" layoutX="10.0" layoutY="44.0" mnemonicParsing="false" onAction="#setMap2" prefHeight="40.0" prefWidth="200.0" text="Map 2" />
+                  <Button fx:id="Map3" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#setMap3" prefHeight="40.0" prefWidth="200.0" text="Map 3" />
+               </children>
+            </VBox>
+            <VBox layoutX="210.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="200.0" text="# PLAYERS" textAlignment="CENTER">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="onePlayer" mnemonicParsing="false" onAction="#setPlayers1" prefHeight="30.0" prefWidth="200.0" text="1" />
+                  <Button fx:id="twoPlayer" layoutX="10.0" layoutY="44.0" mnemonicParsing="false" onAction="#setPlayers2" prefWidth="200.0" text="2" />
+                  <Button fx:id="threePlayer" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#setPlayers3" prefWidth="200.0" text="3" />
+                  <Button fx:id="fourPlayer" layoutX="10.0" layoutY="96.0" mnemonicParsing="false" onAction="#setPlayers4" prefHeight="30.0" prefWidth="200.0" text="4" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="100.0" layoutY="371.0" prefHeight="40.0" prefWidth="600.0">
+         <children>
+            <Label fx:id="diffLabel" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Beginner" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="mapLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0" text="Map 1" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerLabel" alignment="CENTER" layoutX="210.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0" text="1 Player" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Text layoutX="195.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M.U.L.E" textAlignment="JUSTIFY">
+         <font>
+            <Font name="AppleMyungjo Regular" size="96.0" />
+         </font>
+      </Text>
+      <Button layoutX="325.0" layoutY="426.0" mnemonicParsing="false" onAction="#StartButton" prefHeight="50.0" prefWidth="150.0" text="START" />
+      <Text layoutX="322.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM JANKK" textAlignment="JUSTIFY">
+         <font>
+            <Font name="AppleMyungjo Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="121.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="John Hudgins | Albert Abedi | Nikhil Howlett | Kevin Rose | Karthik Rao" textAlignment="JUSTIFY">
+         <font>
+            <Font name="AppleMyungjo Regular" size="16.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

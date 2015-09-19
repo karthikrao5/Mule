@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" minHeight="122.0" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Screen1Controller">
+  <children>
+    <VBox alignment="CENTER" prefHeight="500.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <children>
+            <Button fx:id="increase" mnemonicParsing="false" onAction="#increaseit" text="Increase" />
+            <Label fx:id="titleLabel" text="1" />
+        <Label text="Welcome to MULE by JANKK">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+        <HBox alignment="CENTER" prefHeight="57.0" prefWidth="281.0" spacing="20.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#nextPane" text="Create Player" />
+          </children>
+        </HBox>
+      </children>
+      <padding>
+        <Insets />
+      </padding>
+    </VBox>
+  </children>
+</AnchorPane>
