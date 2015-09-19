@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane>
+         <children>
+            <Pane id="Grass">
+               <children>
+                  <Pane layoutX="384.0">
+                     <children>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="422.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="272.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="64.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="20.0" fitWidth="64.0" layoutX="64.0" layoutY="480.0" AnchorPane.bottomAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="108.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="230.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="22.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="128.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="64.0" layoutX="128.0" layoutY="454.0" AnchorPane.bottomAnchor="-0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="208.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="144.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="378.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="86.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="314.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="436.0" AnchorPane.bottomAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="294.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="400.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="44.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="166.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="358.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="27.0" fitWidth="64.0" layoutX="128.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="186.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="250.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="336.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="64.0" layoutX="64.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane id="Grass_Tile">
+                     <children>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="422.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="272.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="64.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="20.0" fitWidth="64.0" layoutX="64.0" layoutY="480.0" AnchorPane.bottomAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="108.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="230.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="22.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="128.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="64.0" layoutX="128.0" layoutY="454.0" AnchorPane.bottomAnchor="-0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="208.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="144.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="378.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="86.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="314.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="436.0" AnchorPane.bottomAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="294.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="400.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="44.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="166.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="358.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="27.0" fitWidth="64.0" layoutX="128.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="186.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="250.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="336.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="64.0" layoutX="64.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane id="Grass_Tile" layoutX="768.0">
+                     <children>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" layoutY="414.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" layoutY="276.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" layoutY="454.0" AnchorPane.bottomAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" layoutY="46.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" layoutY="230.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" layoutY="368.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" layoutY="138.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" layoutY="322.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" layoutY="92.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" layoutY="184.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="32.0" AnchorPane.rightAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane id="Grass_Tile" layoutX="192.0">
+                     <children>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="422.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="272.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="64.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="20.0" fitWidth="64.0" layoutX="64.0" layoutY="480.0" AnchorPane.bottomAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="108.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="230.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="22.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="128.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="64.0" layoutX="128.0" layoutY="454.0" AnchorPane.bottomAnchor="-0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="208.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="144.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="378.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="86.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="314.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="436.0" AnchorPane.bottomAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="294.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="400.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="44.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="166.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="358.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="27.0" fitWidth="64.0" layoutX="128.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="186.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="250.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="336.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="64.0" layoutX="64.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane id="Grass_Tile" layoutX="576.0">
+                     <children>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="422.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="272.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="64.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="20.0" fitWidth="64.0" layoutX="64.0" layoutY="480.0" AnchorPane.bottomAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="108.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="230.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="22.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="128.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="64.0" layoutX="128.0" layoutY="454.0" AnchorPane.bottomAnchor="-0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="208.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="144.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="378.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="86.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="314.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="436.0" AnchorPane.bottomAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="294.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="400.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="44.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="166.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="64.0" layoutY="358.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="27.0" fitWidth="64.0" layoutX="128.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="186.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutY="250.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" layoutX="128.0" layoutY="336.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="Grass_Tile" fitHeight="46.0" fitWidth="64.0" layoutX="64.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@_Images/Forest/forest_floor.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <ImageView id="GRID" fx:id="GRID" fitHeight="500.0" fitWidth="806.0" layoutX="-6.0">
+         <image>
+            <Image url="@_Images/grid.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
