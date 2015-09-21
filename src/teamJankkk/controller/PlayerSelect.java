@@ -33,14 +33,15 @@ public class PlayerSelect extends teamJankkk.Main {
     @FXML private Label playerNameLabel1;
     @FXML private Label playerNameLabel11;
     @FXML private TextField enterName;
-    int howManyPlayers = 0;
-    int playerCount = 4;
+    private int howManyPlayers = 0;
+    private int playerCount = 4;
+    private int difficulty = 0;
 
 
     @FXML
     void setRaceM(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
+//        diffLabel.setText("Beginner");
+//        difficulty = 1;
     }
 
     @FXML

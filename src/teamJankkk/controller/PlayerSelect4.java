@@ -110,9 +110,9 @@ public class PlayerSelect4 extends teamJankkk.Main {
     }
 
     @FXML
-    public void nextPlayer(ActionEvent event) throws IOException {
-//        Parent screen4 = FXMLLoader.load(getClass().getResource("../views/PlayerSelect4.fxml"));
-//        stage.setScene(new Scene(screen4));
-//        stage.show();
+    public void goToMap(ActionEvent event) throws IOException {
+        Parent mapScreen = FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
+        stage.setScene(new Scene(mapScreen));
+        stage.show();
     }
 }
