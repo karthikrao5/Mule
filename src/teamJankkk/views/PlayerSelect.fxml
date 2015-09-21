@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -12,38 +13,11 @@
    <children>
       <Pane layoutX="91.0" layoutY="310.0" prefHeight="200.0" prefWidth="300.0">
          <children>
-            <Group>
-               <children>
-                  <Group layoutX="161.0" layoutY="-2.0">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7f7f7f" height="75.0" layoutX="59.0" layoutY="100.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7f7f7f" height="20.0" layoutX="70.0" layoutY="155.0" rotate="5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="15.0" />
-                     </children>
-                  </Group>
-                  <Group layoutX="-7.0" layoutY="-2.0" rotate="5.0">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7f7f7f" height="75.0" layoutX="59.0" layoutY="100.0" rotate="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7f7f7f" height="20.0" layoutX="70.0" layoutY="155.0" rotate="5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-                     </children>
-                  </Group>
-                  <Group layoutX="33.0" layoutY="-1.0" rotate="-5.0">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7f7f7f" height="75.0" layoutX="59.0" layoutY="100.0" rotate="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7f7f7f" height="20.0" layoutX="70.0" layoutY="155.0" rotate="5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-                     </children>
-                  </Group>
-                  <Arc fill="#7f7f7f" layoutX="261.0" layoutY="28.0" length="270.0" radiusX="25.0" radiusY="20.0" startAngle="45.0" stroke="TRANSPARENT" strokeType="INSIDE" type="ROUND" />
-                  <Group layoutX="127.0" layoutY="-2.0">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7f7f7f" height="75.0" layoutX="59.0" layoutY="100.0" rotate="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7f7f7f" height="20.0" layoutX="70.0" layoutY="155.0" rotate="5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="15.0" />
-                     </children>
-                  </Group>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7f7f7f" height="20.0" layoutX="220.0" layoutY="85.0" rotate="90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="15.0" />
-                  <Ellipse fill="#7c7c7c" layoutX="150.0" layoutY="80.0" radiusX="100.0" radiusY="50.0" rotate="-10.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7f7f7f" height="25.0" layoutX="230.0" layoutY="30.0" rotate="45.0" stroke="TRANSPARENT" strokeType="INSIDE" width="15.0" />
-               </children>
-            </Group>
+            <ImageView fitHeight="200.0" fitWidth="283.0" layoutX="-27.0" layoutY="-14.0">
+               <image>
+                  <Image url="@_Images/Mule_Sprites/MULE_gray.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Label fx:id="playerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="38.0" text="PLAYER 1">

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
@@ -9,48 +10,8 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="teamJankkk.controller.PlayerSelect4">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.PlayerSelect4">
   <children>
-    <Pane layoutX="91.0" layoutY="310.0" prefHeight="200.0" prefWidth="300.0">
-      <children>
-        <Group>
-          <children>
-            <Group layoutX="161.0" layoutY="-2.0">
-              <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" height="75.0" layoutX="59.0" layoutY="100.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0">
-                  <fill>
-                    <Color blue="0.498" green="0.498" red="0.498" fx:id="x1" />
-                  </fill>
-                </Rectangle>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="20.0" layoutX="70.0" layoutY="155.0" rotate="5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="15.0" />
-              </children>
-            </Group>
-            <Group layoutX="-7.0" layoutY="-2.0" rotate="5.0">
-              <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="75.0" layoutX="59.0" layoutY="100.0" rotate="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="20.0" layoutX="70.0" layoutY="155.0" rotate="5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-              </children>
-            </Group>
-            <Group layoutX="33.0" layoutY="-1.0" rotate="-5.0">
-              <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="75.0" layoutX="59.0" layoutY="100.0" rotate="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="20.0" layoutX="70.0" layoutY="155.0" rotate="5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-              </children>
-            </Group>
-            <Arc fill="$x1" layoutX="261.0" layoutY="28.0" length="270.0" radiusX="25.0" radiusY="20.0" startAngle="45.0" stroke="TRANSPARENT" strokeType="INSIDE" type="ROUND" />
-            <Group layoutX="127.0" layoutY="-2.0">
-              <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="75.0" layoutX="59.0" layoutY="100.0" rotate="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="20.0" />
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="20.0" layoutX="70.0" layoutY="155.0" rotate="5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="15.0" />
-              </children>
-            </Group>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="20.0" layoutX="220.0" layoutY="85.0" rotate="90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="15.0" />
-            <Ellipse fill="#7c7c7c" layoutX="150.0" layoutY="80.0" radiusX="100.0" radiusY="50.0" rotate="-10.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="25.0" layoutX="230.0" layoutY="30.0" rotate="45.0" stroke="TRANSPARENT" strokeType="INSIDE" width="15.0" />
-          </children>
-        </Group>
-      </children>
-    </Pane>
     <Label fx:id="playerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="38.0" text="PLAYER 4">
       <font>
         <Font name="AppleMyungjo Regular" size="41.0" />
@@ -110,6 +71,11 @@
         <Font name="AppleMyungjo Regular" size="19.0" />
       </font>
     </Label>
+      <ImageView fitHeight="176.0" fitWidth="255.0" layoutX="87.0" layoutY="303.0">
+         <image>
+            <Image url="@_Images/Mule_Sprites/MULE_gray.png" />
+         </image>
+      </ImageView>
     <!--<Button fx:id="nameSave1" alignment="CENTER" contentDisplay="CENTER" layoutX="542.0" layoutY="410.0" mnemonicParsing="false" onAction="#NextPlayer" prefHeight="50.0" prefWidth="150.0" text="Next Player &#45;&#45;&gt;" textAlignment="CENTER" />-->
   </children>
 </AnchorPane>
