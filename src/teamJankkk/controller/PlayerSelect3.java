@@ -3,117 +3,70 @@ package teamJankkk.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import teamJankkk.Main;
+import teamJankkk.model.Player;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class PlayerSelect3 extends teamJankkk.Main {
+public class PlayerSelect3 extends Main implements Initializable {
 
-    @FXML private Button nameSave;
-    @FXML private Button mechtron;
-    @FXML private Button bonzoid;
-    @FXML private Button flapper;
-    @FXML private Button gollumer;
-    @FXML private Button jankktron;
-    @FXML private Button leggite;
-    @FXML private Button packer;
-    @FXML private Button spheroid;
-    @FXML private Button humanoid;
-    @FXML private Button red;
-    @FXML private Button green;
-    @FXML private Button blue;
-    @FXML private Button yellow;
-    @FXML private Button nameSave1;
-    @FXML private Label playerLabel;
-    @FXML private Label playerNameLabel;
-    @FXML private Label playerNameLabel1;
-    @FXML private Label playerNameLabel11;
-    @FXML private TextField enterName;
-    int howManyPlayers = 0;
-    int playerCount = 4;
+    @FXML private TextField nameTextField3;
+    @FXML private Label configLabel3;
+    @FXML private Button next3Button;
+    @FXML private Button save3Button;
+    @FXML private ChoiceBox<String> raceChoiceBox3;
+    @FXML private ChoiceBox<String> colorChoiceBox3;
+//    @FXML private ObservableList<String> raceCBData =
+//            FXCollections.observableArrayList();
+
+    public static teamJankkk.model.Player p3;
 
 
-    @FXML
-    void setRaceM(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        p3 = new Player(null, null, null);
+        save3Button.setOnAction(this::saveName);
+        next3Button.setOnAction(this::nextScreen);
     }
 
     @FXML
-    void setRaceG(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
+    void saveName(ActionEvent event) {
+        System.out.print("Hello");
+        String name = nameTextField3.getText();
+        String race = raceChoiceBox3.getSelectionModel().getSelectedItem();
+        String color = colorChoiceBox3.getSelectionModel().getSelectedItem();
+        configLabel3.setText("What up boss, your name is "
+                + name
+                + " , your race is: " + race
+                + " and you'll be playing for the " + color);
+
+        p3.setName(name);
+        p3.setRace(race);
+        p3.setColor(color);
+
+        configLabel3.setText(p3.getName() + p3.getRace() + p3.getColor());
+
     }
 
     @FXML
-    void setRaceP(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-    @FXML
-    void setRaceJ(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-    @FXML
-    void setRaceL(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-    @FXML
-    void setRaceS(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-    @FXML
-    void setRaceH(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-    @FXML
-    void setRaceB(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-    @FXML
-    void setRaceF(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-    @FXML
-    void setColorR(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-    @FXML
-    void setColorB(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-    @FXML
-    void setColorG(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-    @FXML
-    void setColorY(ActionEvent event) {
-        //diffLabel.setText("Beginner");
-        //howhard = 1;
-    }
-
-    @FXML
-    public void nextPlayer(ActionEvent event) throws IOException {
+    public void nextScreen(ActionEvent event) {
         try {
-            Parent screen4 = FXMLLoader.load(getClass().getResource("../views/PlayerSelect4.fxml"));
+            Pane screen4 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player4Select.fxml"));
             stage.setScene(new Scene(screen4));
             stage.show();
-        } catch(IOException e) {
-            System.out.println("Player select 3 " + e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

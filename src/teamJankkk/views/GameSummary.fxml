@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <Pane layoutX="14.0" layoutY="21.0" prefHeight="465.0" prefWidth="772.0000999999975">
+      <children>
+        <Label id="playerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="238.0" layoutY="11.0" text="Game Summary">
+          <font>
+            <Font name="AppleMyungjo Regular" size="41.0" />
+          </font>
+        </Label>
+        <ListView fx:id="summaryListView" layoutX="14.0" layoutY="60.0" prefHeight="288.0000999999975" prefWidth="745.0000999999975" />
+        <Button fx:id="gameStartButton" layoutX="528.0" layoutY="378.0" mnemonicParsing="false" onAction="#startGame" prefHeight="73.0" prefWidth="231.0" text="Button" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>

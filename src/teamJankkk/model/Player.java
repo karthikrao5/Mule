@@ -34,4 +34,12 @@ public final class Player {
     public String getName() {
         return name;
     }
+
+    public String getRace() {
+        return race;
+    }
+
+    public String getColor() {
+        return color;
+    }
 }

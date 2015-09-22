@@ -17,103 +17,59 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class PlayerSelect extends Main implements Initializable{
 
     @FXML private TextField nameTextField;
     @FXML private Label configLabel;
-    @FXML private Button nextButton;
-    @FXML private Button saveButton;
+    @FXML private Button nextButton1;
+    @FXML private Button saveButton1;
     @FXML private ChoiceBox<String> raceChoiceBox;
-    @FXML private ObservableList<String> raceCBData =
-            FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> colorChoiceBox;
+//    @FXML private ObservableList<String> raceCBData =
+//            FXCollections.observableArrayList();
 
-    public teamJankkk.model.Player p1;
+    public static teamJankkk.model.Player p1;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        configLabel.setText("This is my new Text");
-        saveButton.setOnAction(this::saveName);
-        nextButton.setOnAction(this::nextScreen);
-
+        p1 = new Player(null, null, null);
+        saveButton1.setOnAction(this::saveName);
+        nextButton1.setOnAction(this::nextScreen);
     }
 
     @FXML
     void saveName(ActionEvent event) {
-//        System.out.print("Hello");
-        configLabel.setText(nameTextField.getText());
+        System.out.print("Hello");
+        String name = nameTextField.getText();
+        String race = raceChoiceBox.getSelectionModel().getSelectedItem();
+        String color = colorChoiceBox.getSelectionModel().getSelectedItem();
+        configLabel.setText("What up boss, your name is "
+                + name
+                + " , your race is: " + race
+                + " and you'll be playing for the " + color);
+
+        p1.setName(name);
+        p1.setRace(race);
+        p1.setColor(color);
+
+        configLabel.setText(p1.getName() + p1.getColor() + p1.getRace());
+
     }
-
-    @FXML
-    void raceChoiceBox(ActionEvent event) {
-
-    }
-
-
-
-//    @FXML
-//    void setRaceM(ActionEvent event) {
-//        p1.setRace("Mechatron");
-//        configLabel.setText("Selected Mechatron");
-//    }
-//    @FXML
-//    void setRaceG(ActionEvent event) {
-//        p1.setRace("Gollumer");
-//    }
-//    @FXML
-//    void setRaceP(ActionEvent event) {
-//        p1.setRace("Packer");
-//    }
-//    @FXML
-//    void setRaceJ(ActionEvent event) {
-//        p1.setRace("Jankktron");
-//    }
-//    @FXML
-//    void setRaceL(ActionEvent event) {
-//        p1.setRace("Leggite");
-//    }
-//    @FXML
-//    void setRaceS(ActionEvent event) {
-//        p1.setRace("Spheroid");
-//    }
-//    @FXML
-//    void setRaceH(ActionEvent event) {
-//        p1.setRace("Humanoid");
-//    }
-//    @FXML
-//    void setRaceB(ActionEvent event) {
-//        p1.setRace("Bonzoid");
-//    }
-//    @FXML
-//    void setRaceF(ActionEvent event) {
-//        p1.setRace("Flapper");
-//    }
-//    @FXML
-//    void setColorR(ActionEvent event) {
-//        p1.setColor("Red");
-//    }
-//    @FXML
-//    void setColorB(ActionEvent event) {
-//        p1.setColor("Blue");
-//    }
-//    @FXML
-//    void setColorG(ActionEvent event) {
-//        p1.setColor("Green");
-//    }
-//    @FXML
-//    void setColorY(ActionEvent event) {
-//        p1.setColor("Yellow");
-//    }
 
     @FXML
     public void nextScreen(ActionEvent event) {
         try {
-            Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/PlayerSelect2.fxml"));
-            stage.setScene(new Scene(screen1));
+            Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));
+            stage.setScene(new Scene(screen2));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
