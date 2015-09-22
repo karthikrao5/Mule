@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="teamJankkk.controller.ConfigController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="teamJankkk.controller.ConfigController">
   <children>
     <HBox prefHeight="100.0" prefWidth="600.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="233.0">
       <children>
@@ -19,7 +19,6 @@
             </Label>
             <Button fx:id="Beg" mnemonicParsing="false" onAction="#setDiff1" prefHeight="40.0" prefWidth="200.0" text="Beginner" />
             <Button fx:id="Int" mnemonicParsing="false" onAction="#setDiff2" prefHeight="40.0" prefWidth="200.0" text="Intermediate" />
-            <Button mnemonicParsing="false" onAction="#setDiff3" prefHeight="40.0" prefWidth="200.0" text="Advanced" />
           </children>
         </VBox>
         <VBox prefHeight="200.0" prefWidth="200.0">
@@ -57,7 +56,7 @@
         <Font name="AppleMyungjo Regular" size="96.0" />
       </font>
     </Text>
-    <Button layoutX="325.0" layoutY="426.0" mnemonicParsing="false" onAction="#startButton" prefHeight="50.0" prefWidth="150.0" text="START" />
+    <Button fx:id="startButton" layoutX="325.0" layoutY="426.0" mnemonicParsing="false" onAction="#goToPlayerSelection" prefHeight="50.0" prefWidth="150.0" text="START" />
     <Text layoutX="322.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM JANKK" textAlignment="JUSTIFY">
       <font>
         <Font name="AppleMyungjo Regular" size="22.0" />

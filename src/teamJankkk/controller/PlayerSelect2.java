@@ -3,16 +3,20 @@ package teamJankkk.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import teamJankkk.Main;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class PlayerSelect2 extends teamJankkk.Main {
+public class PlayerSelect2 extends Main implements Initializable{
 
     @FXML
     private Button nameSave;
@@ -38,6 +42,22 @@ public class PlayerSelect2 extends teamJankkk.Main {
     int howManyPlayers = 0;
     int playerCount = 4;
 
+    @FXML private Button saveButton;
+    @FXML private Button nextScreen;
+
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        saveButton.setOnAction(this::saveName);
+        nextScreen.setOnAction(this::nextScreen);
+
+    }
+
+    @FXML
+    void saveName(ActionEvent event) {
+
+    }
 
     @FXML
     void setRaceM(ActionEvent event) {
@@ -108,7 +128,7 @@ public class PlayerSelect2 extends teamJankkk.Main {
     }
 
     @FXML
-    public void nextPlayer(ActionEvent event) throws IOException {
+    public void nextScreen(ActionEvent event) {
         try {
             Parent screen3 = FXMLLoader.load(getClass().getResource("../views/PlayerSelect3.fxml"));
             stage.setScene(new Scene(screen3));

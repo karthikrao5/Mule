@@ -3,15 +3,21 @@ package teamJankkk.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import teamJankkk.Main;
 
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ConfigController extends teamJankkk.Main{
+public class ConfigController extends Main implements Initializable {
+
 
     @FXML private Button onePlayer;
     @FXML private Button twoPlayer;
@@ -26,16 +32,14 @@ public class ConfigController extends teamJankkk.Main{
     @FXML private Label playerLabel;
     @FXML private Label mapLabel;
     @FXML private Label diffLabel;
-    int mapChoice = 1;
-    int players = 1;
-    int howhard = 1;
+    private int players = 0, howhard = 0, mapChoice = 0;
 
-    /*
-    <Button fx:id="onePlayer" mnemonicParsing="false" onAction="#setPlayers1" prefHeight="30.0" prefWidth="200.0" text="1" />
-    <Button fx:id="twoPlayer" layoutX="10.0" layoutY="44.0" mnemonicParsing="false" onAction="#setPlayers2" prefWidth="200.0" text="2" />
-    <Button fx:id="threePlayer" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#setPlayers3" prefWidth="200.0" text="3" />
-    <Button fx:id="fourPlayer" layoutX="10.0" layoutY="96.0" mnemonicParsing="false" onAction="#setPlayers4" prefHeight="30.0" prefWidth="200.0" text="4" />*/
-    //<Label fx:id="playerLabel" alignment="CENTER" layoutX="210.0" layoutY="10.0" prefHeight="40.0" prefWidth="200.0" text="1 Player" textAlignment="CENTER">
+    @FXML private Button startButton;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        startButton.setOnAction(this::goToPlayerSelection);
+    }
 
 
     @FXML
@@ -97,10 +101,17 @@ public class ConfigController extends teamJankkk.Main{
         mapChoice = 3;
     }
 
+
     @FXML
-    public void startButton(ActionEvent event) throws IOException {
-        Parent screen1 = FXMLLoader.load(getClass().getResource("../views/PlayerSelect.fxml"));
-        stage.setScene(new Scene(screen1));
-        stage.show();
+    public void goToPlayerSelection(ActionEvent event) {
+
+        try {
+            Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml"));
+            stage.setScene(new Scene(screen1));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 }

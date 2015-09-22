@@ -5,30 +5,38 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
 public class Main extends Application {
+
     public static Stage stage;
 
-    public static String configView = "views/ConfigScreen.fxml";
-
-    public static String configController = "controller/ConfigController";
-
-
     @Override
-    public final void start(Stage primaryStage) {
+    public void start(Stage primaryStage) {
         try {
+
+            FXMLLoader loader = new FXMLLoader();
             primaryStage.setTitle("JANKKK MULLLLLL");
-            Parent root = FXMLLoader.load(teamJankkk.Main.class.getResource("views/ConfigScreen.fxml"));
             stage = primaryStage;
+            Pane root = (Pane) loader.load(getClass().getResource("views/ConfigScreen.fxml"));
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Main IO:" + e.getMessage());
         }
+    }
+
+    public static void setStage(Stage newStage) {
+        stage = newStage;
+        stage.show();
     }
 
     public static void main(String args[]) {
