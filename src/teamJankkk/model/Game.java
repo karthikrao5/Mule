@@ -12,6 +12,4 @@ public class Game {
         this.map = map;
         this.humanPlayers = humanPlayers;
     }
-
-
 }
