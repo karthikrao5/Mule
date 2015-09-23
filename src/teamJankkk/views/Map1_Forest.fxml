@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="teamJankkk.controller.Map1Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.Map1Controller">
   <children>
     <StackPane />
-    <GridPane gridLinesVisible="true" layoutX="0.0" layoutY="0.0" prefHeight="508.0" prefWidth="800.0">
+    <GridPane gridLinesVisible="true" layoutX="0.0" prefHeight="508.0" prefWidth="800.0">
       <children>
         <ImageView fx:id="image01" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map01Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wRocks1.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image02" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map02Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="2">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wTrees2.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image03" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map03Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="3">
@@ -36,12 +37,12 @@
         </ImageView>
         <ImageView fx:id="image11" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map11Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wTrees1.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image12" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map12Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wRocks4.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image13" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map13Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -51,42 +52,42 @@
         </ImageView>
         <ImageView fx:id="image14" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map14Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wRocks2.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image20" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map20Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="0">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wWater1.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image21" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map21Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wWater2.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image22" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map22Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Misc/Store_Tile.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image23" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map23Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wWater2.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image24" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map24Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="4">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wWater1.png" />
           </image>
         </ImageView>
         <ImageView id="image03" fx:id="image30" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map30Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="0">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wRocks3.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image31" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map31Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wTrees3.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image32" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map32Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
@@ -106,7 +107,7 @@
         </ImageView>
         <ImageView fx:id="image34" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map34Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wTrees2.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image40" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map40Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="0">
@@ -126,7 +127,7 @@
         </ImageView>
         <ImageView fx:id="image43" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map43Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="3">
           <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
+            <Image url="@_Images/Forest/forest_floor_wTrees1.png" />
           </image>
         </ImageView>
         <ImageView fx:id="image44" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map44Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="4">
