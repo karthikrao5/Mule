@@ -59,13 +59,6 @@ public class PlayerDB {
         return stringPlayerList;
     }
 
-//    public static String getPlayerListString() {
-//        StringBuilder sb = new StringBuilder();
-//        for(int i = 0; i < 4; i++) {
-//            sb.append("Player: " + playerList.get(i).getName());
-//        }
-//        return sb.toString();
-//    }
 
     private static Map.Entry<Player, Integer> getPlayer(int index) {
 
