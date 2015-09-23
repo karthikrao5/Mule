@@ -8,12 +8,16 @@ import java.util.Map;
  */
 public class Player {
     private String name, race, color;
-    private int difficulty;
+    private int money, score;
 
     public Player(String name, String race, String color) {
         this.name = name;
         this.race = race;
         this.color = color;
+    }
+
+    public int getScore() {
+        return score;
     }
 
     public void setName(String input) {
@@ -28,8 +32,8 @@ public class Player {
         color = input;
     }
 
-    public void setDifficulty(int input) {
-        difficulty = input;
+    public void setMoney(int input) {
+        money = input;
     }
 
     public String getName() {
