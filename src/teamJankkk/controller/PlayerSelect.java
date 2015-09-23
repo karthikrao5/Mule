@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import teamJankkk.model.Player;
 import teamJankkk.Main;
 
@@ -17,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import teamJankkk.model.PlayerDB;
 
 import java.awt.*;
 import java.io.IOException;
@@ -31,6 +33,7 @@ public class PlayerSelect extends Main implements Initializable{
     @FXML private Label configLabel;
     @FXML private Button nextButton1;
     @FXML private Button saveButton1;
+    @FXML private Button exitButton1;
     @FXML private ChoiceBox<String> raceChoiceBox;
     @FXML private ChoiceBox<String> colorChoiceBox;
 //    @FXML private ObservableList<String> raceCBData =
@@ -44,11 +47,11 @@ public class PlayerSelect extends Main implements Initializable{
         p1 = new Player(null, null, null);
         saveButton1.setOnAction(this::saveName);
         nextButton1.setOnAction(this::nextScreen);
+        exitButton1.setOnAction(this::exitApp);
     }
 
     @FXML
     void saveName(ActionEvent event) {
-        System.out.print("Hello");
         String name = nameTextField.getText();
         String race = raceChoiceBox.getSelectionModel().getSelectedItem();
         String color = colorChoiceBox.getSelectionModel().getSelectedItem();
@@ -74,5 +77,11 @@ public class PlayerSelect extends Main implements Initializable{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void exitApp(ActionEvent event) {
+        Stage stage = (Stage) exitButton1.getScene().getWindow();
+        stage.close();
     }
 }

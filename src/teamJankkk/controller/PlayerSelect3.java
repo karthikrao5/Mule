@@ -11,6 +11,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import teamJankkk.Main;
 import teamJankkk.model.Player;
 
@@ -25,6 +26,7 @@ public class PlayerSelect3 extends Main implements Initializable {
     @FXML private Label configLabel3;
     @FXML private Button next3Button;
     @FXML private Button save3Button;
+    @FXML private Button exitButton3;
     @FXML private ChoiceBox<String> raceChoiceBox3;
     @FXML private ChoiceBox<String> colorChoiceBox3;
 //    @FXML private ObservableList<String> raceCBData =
@@ -42,7 +44,6 @@ public class PlayerSelect3 extends Main implements Initializable {
 
     @FXML
     void saveName(ActionEvent event) {
-        System.out.print("Hello");
         String name = nameTextField3.getText();
         String race = raceChoiceBox3.getSelectionModel().getSelectedItem();
         String color = colorChoiceBox3.getSelectionModel().getSelectedItem();
@@ -68,5 +69,11 @@ public class PlayerSelect3 extends Main implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void exitApp(ActionEvent event) {
+        Stage stage = (Stage) exitButton3.getScene().getWindow();
+        stage.close();
     }
 }

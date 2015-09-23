@@ -52,6 +52,7 @@
     <Pane layoutX="14.0" layoutY="279.0" prefHeight="207.0" prefWidth="772.0">
       <children>
         <Label id="configLabel" fx:id="configLabel4" alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="207.0" prefWidth="772.0" text="Label" />
+        <Button id="nextButton1" fx:id="exitButton4" layoutX="23.0" layoutY="161.0" mnemonicParsing="false" onAction="#exitApp" text="Exit" />
         <!--<Button id="nextButton" fx:id="next4Button" layoutX="611.0" layoutY="159.0" mnemonicParsing="false" onAction="#nextScreen" text="Player 2 selection" />-->
       </children>
     </Pane>

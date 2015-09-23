@@ -11,6 +11,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import sun.font.BidiUtils;
 import teamJankkk.Main;
 import teamJankkk.model.Player;
 
@@ -27,11 +29,11 @@ public class PlayerSelect4 extends Main implements Initializable {
     @FXML private Label configLabel4;
 //    @FXML private Button next4Button;
     @FXML private Button save4Button;
+    @FXML private Button exitButton4;
     @FXML private ChoiceBox<String> raceChoiceBox4;
     @FXML private ChoiceBox<String> colorChoiceBox4;
 //    @FXML private ObservableList<String> raceCBData =
-//            FXCollections.observableArrayList();
-
+//      FXCollections.observableArrayList();
     public static teamJankkk.model.Player p4;
 
 
@@ -44,7 +46,6 @@ public class PlayerSelect4 extends Main implements Initializable {
 
     @FXML
     void saveName(ActionEvent event) {
-        System.out.print("Hello");
         String name = nameTextField4.getText();
         String race = raceChoiceBox4.getSelectionModel().getSelectedItem();
         String color = colorChoiceBox4.getSelectionModel().getSelectedItem();
@@ -71,4 +72,9 @@ public class PlayerSelect4 extends Main implements Initializable {
 //            e.printStackTrace();
 //        }
 //    }
+@FXML
+public void exitApp(ActionEvent event) {
+    Stage stage = (Stage) exitButton4.getScene().getWindow();
+    stage.close();
+}
 }
