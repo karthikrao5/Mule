@@ -36,15 +36,9 @@ public class PlayerSelect extends Main implements Initializable{
     @FXML private Button exitButton1;
     @FXML private ChoiceBox<String> raceChoiceBox;
     @FXML private ChoiceBox<String> colorChoiceBox;
-//    @FXML private ObservableList<String> raceCBData =
-//            FXCollections.observableArrayList();
-
-//    public static teamJankkk.model.Player p1;
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        p1 = new Player(null, null, null);
         saveButton1.setOnAction(this::saveName);
         nextButton1.setOnAction(this::nextScreen);
         exitButton1.setOnAction(this::exitApp);
