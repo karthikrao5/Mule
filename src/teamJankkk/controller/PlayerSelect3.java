@@ -14,6 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import teamJankkk.Main;
 import teamJankkk.model.Player;
+import teamJankkk.model.PlayerDB;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,12 +33,12 @@ public class PlayerSelect3 extends Main implements Initializable {
 //    @FXML private ObservableList<String> raceCBData =
 //            FXCollections.observableArrayList();
 
-    public static teamJankkk.model.Player p3;
+//    public static teamJankkk.model.Player p3;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        p3 = new Player(null, null, null);
+//        p3 = new Player(null, null, null);
         save3Button.setOnAction(this::saveName);
         next3Button.setOnAction(this::nextScreen);
     }
@@ -52,12 +53,10 @@ public class PlayerSelect3 extends Main implements Initializable {
                 + " , your race is: " + race
                 + " and you'll be playing for the " + color);
 
-        p3.setName(name);
-        p3.setRace(race);
-        p3.setColor(color);
-
-        configLabel3.setText(p3.getName() + p3.getRace() + p3.getColor());
-
+        PlayerDB.createPlayer(name, 2);
+        PlayerDB.setRace(race, 2);
+        PlayerDB.setColor(color, 2);
+        configLabel3.setText(PlayerDB.toString(2));
     }
 
     @FXML

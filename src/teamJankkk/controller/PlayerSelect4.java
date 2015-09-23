@@ -15,7 +15,9 @@ import javafx.stage.Stage;
 import sun.font.BidiUtils;
 import teamJankkk.Main;
 import teamJankkk.model.Player;
+import teamJankkk.model.PlayerDB;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,21 +29,20 @@ public class PlayerSelect4 extends Main implements Initializable {
 
     @FXML private TextField nameTextField4;
     @FXML private Label configLabel4;
-//    @FXML private Button next4Button;
+    @FXML private Button goToSummaryButton;
     @FXML private Button save4Button;
     @FXML private Button exitButton4;
     @FXML private ChoiceBox<String> raceChoiceBox4;
     @FXML private ChoiceBox<String> colorChoiceBox4;
-//    @FXML private ObservableList<String> raceCBData =
-//      FXCollections.observableArrayList();
+
     public static teamJankkk.model.Player p4;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        p4 = new Player(null, null, null);
+//        p4 = new Player(null, null, null);
         save4Button.setOnAction(this::saveName);
-//        next4Button.setOnAction(this::nextScreen);
+        goToSummaryButton.setOnAction(this::goToSummary);
     }
 
     @FXML
@@ -54,27 +55,27 @@ public class PlayerSelect4 extends Main implements Initializable {
                 + " , your race is: " + race
                 + " and you'll be playing for the " + color);
 
-        p4.setName(name);
-        p4.setRace(race);
-        p4.setColor(color);
-
-        configLabel4.setText(p4.getName() + p4.getRace() + p4.getColor());
+        PlayerDB.createPlayer(name, 3);
+        PlayerDB.setRace(race, 3);
+        PlayerDB.setColor(color, 3);
+        configLabel4.setText(PlayerDB.toString(3));
 
     }
 
-//    @FXML
-//    public void nextScreen(ActionEvent event) {
-//        try {
-//            Pane screen5 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player4Screen.fxml"));
-//            stage.setScene(new Scene(screen5));
-//            stage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-@FXML
-public void exitApp(ActionEvent event) {
-    Stage stage = (Stage) exitButton4.getScene().getWindow();
-    stage.close();
-}
+    @FXML
+    public void goToSummary(ActionEvent event) {
+        try {
+            Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
+            stage.setScene(new Scene(gameSumPane));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void exitApp(ActionEvent event) {
+        Stage stage = (Stage) exitButton4.getScene().getWindow();
+        stage.close();
+    }
 }

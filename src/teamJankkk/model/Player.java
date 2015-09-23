@@ -1,11 +1,12 @@
 package teamJankkk.model;
 
 import java.io.Serializable;
+import java.util.Map;
 
 /**
  * Created by karthik on 9/21/15.
  */
-public final class Player {
+public class Player {
     private String name, race, color;
     private int difficulty;
 

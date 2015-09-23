@@ -39,12 +39,12 @@ public class PlayerSelect extends Main implements Initializable{
 //    @FXML private ObservableList<String> raceCBData =
 //            FXCollections.observableArrayList();
 
-    public static teamJankkk.model.Player p1;
+//    public static teamJankkk.model.Player p1;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        p1 = new Player(null, null, null);
+//        p1 = new Player(null, null, null);
         saveButton1.setOnAction(this::saveName);
         nextButton1.setOnAction(this::nextScreen);
         exitButton1.setOnAction(this::exitApp);
@@ -57,15 +57,12 @@ public class PlayerSelect extends Main implements Initializable{
         String color = colorChoiceBox.getSelectionModel().getSelectedItem();
         configLabel.setText("What up boss, your name is "
                 + name
-                + " , your race is: " + race
-                + " and you'll be playing for the " + color);
-
-        p1.setName(name);
-        p1.setRace(race);
-        p1.setColor(color);
-
-        configLabel.setText(p1.getName() + p1.getColor() + p1.getRace());
-
+                + ", your race is " + race
+                + " and you'll be playing for the " + color + " team!");
+        PlayerDB.createPlayer(name, 0);
+        PlayerDB.setRace(race, 0);
+        PlayerDB.setColor(color, 0);
+        configLabel.setText(PlayerDB.toString(0));
     }
 
     @FXML

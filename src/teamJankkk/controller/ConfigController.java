@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
+import teamJankkk.model.PlayerDB;
 
 
 import java.io.IOException;
@@ -39,6 +40,7 @@ public class ConfigController extends Main implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         startButton.setOnAction(this::goToPlayerSelection);
+        PlayerDB.createDB();
     }
 
 
