@@ -38,7 +38,6 @@ public class PlayerSelect3 extends Main implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        p3 = new Player(null, null, null);
         save3Button.setOnAction(this::saveName);
         next3Button.setOnAction(this::nextScreen);
     }

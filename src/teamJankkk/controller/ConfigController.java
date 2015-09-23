@@ -33,7 +33,9 @@ public class ConfigController extends Main implements Initializable {
     @FXML private Label playerLabel;
     @FXML private Label mapLabel;
     @FXML private Label diffLabel;
-    private int players = 0, howhard = 0, mapChoice = 0;
+    private static int players = 0;
+    private int howhard = 0;
+    private int mapChoice = 0;
 
     @FXML private Button startButton;
 
@@ -53,10 +55,8 @@ public class ConfigController extends Main implements Initializable {
     }
     @FXML
     void setPlayers2(ActionEvent event) {
-        Integer one = 2;
-        String jaboo = one.toString();
-        playerLabel.setText(jaboo + " Players");
-        players = 2;
+        playerLabel.setText("2 players");
+        ConfigController.players = 2;
     }
     @FXML
     void setPlayers3(ActionEvent event) {
@@ -114,6 +114,10 @@ public class ConfigController extends Main implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static int getPlayerCount() {
+        return players;
     }
 
 }
