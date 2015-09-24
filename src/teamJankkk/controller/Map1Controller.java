@@ -39,6 +39,7 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML private Label playerTurnLabel;
 
+
     @FXML private Button endTurnButton;
 
     @Override
@@ -68,6 +69,7 @@ public class Map1Controller extends Main implements Initializable {
         image42.setOnMouseClicked(this::map42Clicked);
         image43.setOnMouseClicked(this::map43Clicked);
         image44.setOnMouseClicked(this::map44Clicked);
+
     }
 
     @FXML
@@ -150,6 +152,8 @@ public class Map1Controller extends Main implements Initializable {
         System.out.println("Clicked");
     }
 
+
+    //store tile
     @FXML
     public void map22Clicked(MouseEvent event) {
         System.out.println("Enter Store");
@@ -166,6 +170,7 @@ public class Map1Controller extends Main implements Initializable {
     public void map23Clicked(MouseEvent event) {
         System.out.println("Clicked");
     }
+
     @FXML
     public void map24Clicked(MouseEvent event) {
         System.out.println("Clicked");
