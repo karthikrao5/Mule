@@ -108,6 +108,8 @@ public class ConfigController extends Main implements Initializable {
     public void goToPlayerSelection(ActionEvent event) {
 
         try {
+            // at button, check if playerdb.player # = 3 for example, then skip to game Summary window
+            // also, take out save button func and put it in next - also throw error when player does not fill out all fields
             Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml"));
             stage.setScene(new Scene(screen1));
             stage.show();
