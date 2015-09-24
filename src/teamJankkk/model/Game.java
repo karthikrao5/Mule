@@ -5,11 +5,13 @@ package teamJankkk.model;
  */
 public class Game {
 
-    private static int difficulty = 0, map = 0, humanPlayers = 0, playersTurn = 0, numberOfTurns = 0;
+    private static int difficulty = 0,
+            mapNumber = 0, humanPlayers = 0,
+            playersTurn = 0, numberOfTurns = 0;
 
     public Game(int difficulty, int map, int humanPlayers) {
         this.difficulty = difficulty;
-        this.map = map;
+        this.mapNumber = map;
         this.humanPlayers = humanPlayers;
     }
 
@@ -26,10 +28,10 @@ public class Game {
     }
 
     public void runGame() {
-        if (numberOfTurns == 0 || numberOfTurns == 1) {
-            landGrant();
-            numberOfTurns++;
-        }
+        boolean isOver = false;
+//        while(!isOver) {
+//
+//        }
     }
 
     public int getTurnNumber() { return numberOfTurns; }
