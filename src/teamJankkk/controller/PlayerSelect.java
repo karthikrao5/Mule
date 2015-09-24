@@ -62,9 +62,16 @@ public class PlayerSelect extends Main implements Initializable{
     @FXML
     public void nextScreen(ActionEvent event) {
         try {
-            Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));
-            stage.setScene(new Scene(screen2));
-            stage.show();
+            // at button, check num players, then skip to game Summary window if at that number
+            if (ConfigController.getPlayerCount() > 1) {
+                Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));
+                stage.setScene(new Scene(screen2));
+                stage.show();
+            } else {
+                Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
+                stage.setScene(new Scene(gameSumPane));
+                stage.show();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

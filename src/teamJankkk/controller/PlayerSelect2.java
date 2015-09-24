@@ -60,9 +60,15 @@ public class PlayerSelect2 extends Main implements Initializable{
     @FXML
     public void nextScreen(ActionEvent event) {
         try {
-            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player3Screen.fxml"));
-            stage.setScene(new Scene(screen3));
-            stage.show();
+            if (ConfigController.getPlayerCount() > 2) {
+                Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player3Screen.fxml"));
+                stage.setScene(new Scene(screen3));
+                stage.show();
+            } else {
+                Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
+                stage.setScene(new Scene(gameSumPane));
+                stage.show();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
