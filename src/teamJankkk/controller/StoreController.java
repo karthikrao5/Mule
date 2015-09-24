@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 public class StoreController extends Main implements Initializable {
 
     @FXML
-    private ImageView thePub, muleStore;
+    private ImageView thePub, muleStore, smithoreTile, energyTile, foodTile;
 
     @FXML
     private Label moneyLabel;

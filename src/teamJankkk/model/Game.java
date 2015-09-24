@@ -9,6 +9,8 @@ public class Game {
             mapNumber = 0, humanPlayers = 0,
             playersTurn = 0, numberOfTurns = 0;
 
+    public boolean endGame = false;
+
     public Game(int difficulty, int map, int humanPlayers) {
         this.difficulty = difficulty;
         this.mapNumber = map;
@@ -24,14 +26,23 @@ public class Game {
     }
 
     public void landGrant() {
+        if playersTurn == 0 {
 
+        } else if playersTurn == 1 {
+
+        } else if playersTurn == 2 {
+
+        } else if playersTurn == 3 {
+
+        }
     }
 
     public void runGame() {
-        boolean isOver = false;
-//        while(!isOver) {
-//
-//        }
+
+        if (numberOfTurns == 0 || numberOfTurns == 1) {
+            landGrant();
+            numberOfTurns++;
+        }
     }
 
     public int getTurnNumber() { return numberOfTurns; }
