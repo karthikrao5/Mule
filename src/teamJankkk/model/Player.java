@@ -14,6 +14,7 @@ public class Player {
         this.name = name;
         this.race = race;
         this.color = color;
+        this.money = 1500;
     }
 
     public int getScore() {
@@ -35,6 +36,8 @@ public class Player {
     public void setMoney(int input) {
         money = input;
     }
+
+    public int getMoney() { return money; }
 
     public String getName() {
         return name;
