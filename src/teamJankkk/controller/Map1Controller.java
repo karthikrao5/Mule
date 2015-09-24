@@ -6,9 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
@@ -36,6 +36,8 @@ public class Map1Controller extends Main implements Initializable {
              image51, image52, image53, image54;
 
     @FXML private Label playerTurnLabel;
+
+    @FXML private Button endTurnButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
