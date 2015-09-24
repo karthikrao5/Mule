@@ -62,7 +62,6 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map00Clicked(MouseEvent event) {
         System.out.println("Clicked");
-        if Game.
     }
 
     @FXML
