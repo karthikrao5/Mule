@@ -29,11 +29,11 @@ public class PlayerDB {
     }
 
     public static void setRace(String race, int index) {
-        getPlayer(index).getKey().setRace(race);
+        getPlayer(index).setRace(race);
     }
 
     public static void setColor(String color, int index) {
-        getPlayer(index).getKey().setColor(color);
+        getPlayer(index).setColor(color);
     }
 
     public static List<Player> getPlayerList() {
@@ -60,14 +60,14 @@ public class PlayerDB {
     }
 
 
-    private static Map.Entry<Player, Integer> getPlayer(int index) {
+    private static Player getPlayer(int index) {
 
         if(index > 4) {
             System.out.println("Sorry player not inbounds");
         } else {
             for(Map.Entry<Player, Integer> p : db.entrySet()) {
                 if(p.getValue().compareTo(index) == 0) {
-                    return p;
+                    return p.getKey();
                 }
             }
         }
@@ -75,9 +75,9 @@ public class PlayerDB {
     }
 
     public static String toString(int index) {
-        String name = getPlayer(index).getKey().getName();
-        String color = getPlayer(index).getKey().getColor();
-        String race = getPlayer(index).getKey().getRace();
+        String name = getPlayer(index).getName();
+        String color = getPlayer(index).getColor();
+        String race = getPlayer(index).getRace();
 
         return "Player " + name + " of the " + race
                 + " race and on the " + color + " team.";

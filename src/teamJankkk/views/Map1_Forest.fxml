@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.image.*?>
@@ -135,6 +139,14 @@
             <Image url="@_Images/Forest/forest_floor.png" />
           </image>
         </ImageView>
+            <Button fx:id="endTurnButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: GRAY;" text="End Turn" textFill="WHITE" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets left="80.0" top="-60.0" />
+               </GridPane.margin>
+               <effect>
+                  <InnerShadow radius="6.965" width="8.86" />
+               </effect>
+            </Button>
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -151,5 +163,21 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
+      <Label text="Player " textFill="#e1ff00">
+         <font>
+            <Font name="American Typewriter" size="14.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="playerTurnLabel" text="1" textFill="#e1ff00">
+         <font>
+            <Font name="American Typewriter" size="14.0" />
+         </font>
+         <padding>
+            <Insets left="60.0" />
+         </padding>
+      </Label>
   </children>
 </AnchorPane>
