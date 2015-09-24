@@ -29,10 +29,15 @@ public class Game {
 
         } else if playersTurn == 1 {
         } else if (playersTurn == 1 ){
+        if (playersTurn == 0) {
+
+        } else if (playersTurn == 1) {
 
         } else if playersTurn == 2 {
+        } else if (playersTurn == 2) {
 
         } else if playersTurn == 3 {
+        } else if (playersTurn == 3) {
 
         }
     }

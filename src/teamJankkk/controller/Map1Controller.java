@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
+import teamJankkk.model.PlayerDB;
 
 import java.io.IOException;
 import java.net.URL;
@@ -70,23 +71,41 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map00Clicked(MouseEvent event) {
-        updateLabel();
+        //updateLabel();
+        //Image image2 = new Image(Main.class.getResourceAsStream("../views/_Images/forest_floor_PURPLE.png"));
+        //Image image = new Image("forest_floor_PURPLE.png");
+        //Image image = new Image(getClass().getClassLoader().getResourceAsStream("views/_Images/forest_floor_PURPLE.png"));
+        Image image = new Image("/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png");
+        String colorCodedImageFilePathString = getColorCode();
+        Image image2 = new Image(colorCodedImageFilePathString);
+        //"\imgs\pic1.jpg"
+        image00.setImage(image);
         System.out.println("Clicked");
+        game.nextTurn();
     }
 
     @FXML
     public void map01Clicked(MouseEvent event) {
+        Image image = new Image("/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png");
+        image01.setImage(image);
         System.out.println("Clicked");
+        game.nextTurn();
     }
 
     @FXML
     public void map02Clicked(MouseEvent event) {
         System.out.println("Clicked");
+        Image image = new Image("/teamJankkk/views/_Images/Forest/forest_floor_RED.png");
+        image02.setImage(image);
+        game.nextTurn();
     }
 
     @FXML
     public void map03Clicked(MouseEvent event) {
         System.out.println("Clicked");
+        Image image = new Image("/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png");
+        image03.setImage(image);
+        game.nextTurn();
     }
 
     @FXML
@@ -107,6 +126,8 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map12Clicked(MouseEvent event) {
         System.out.println("Clicked");
+
+
     }
 
     @FXML
@@ -200,6 +221,11 @@ public class Map1Controller extends Main implements Initializable {
 
     public void updateLabel() {
         playerTurnLabel.setText(new Integer(game.getPlayerTurn()).toString());
+    }
+
+    public void updateColor() {
+        PlayerDB.getPlayer();
+        game.getPlayerTurn()
     }
 
 }

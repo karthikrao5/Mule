@@ -40,8 +40,7 @@
         <Label alignment="CENTER" layoutX="352.0" layoutY="70.0" text="Pick a race" />
         <Label alignment="CENTER" layoutX="565.0" layoutY="70.0" text="Pick a color" />
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="84.0" layoutY="67.0" text="Choose a name" />
-        <TextField id="nameTextField" fx:id="nameTextField2" layoutX="33.0" layoutY="90.0" prefHeight="26.0" prefWidth="201.0" />
-        <Button id="save4Button" fx:id="save2Button" layoutX="328.0" layoutY="173.0" mnemonicParsing="false" onAction="#saveName" text="Save Character" />
+        <TextField id="nameTextField" fx:id="nameTextField2" layoutX="33.0" layoutY="90.0" prefHeight="48.67999267578125" prefWidth="201.0" />
         <Label id="playerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="279.0" layoutY="11.0" text="PLAYER 2">
           <font>
             <Font name="AppleMyungjo Regular" size="41.0" />
