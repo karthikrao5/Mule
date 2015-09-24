@@ -225,7 +225,7 @@ public class Map1Controller extends Main implements Initializable {
 
     public void updateColor() {
         PlayerDB.getPlayer();
-        game.getPlayerTurn()
+        game.getPlayerTurn();
     }
 
 }

@@ -163,7 +163,7 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-      <Label text="Player " textFill="#e1ff00">
+      <Label text="Player " textFill="WHITE">
          <font>
             <Font name="American Typewriter" size="14.0" />
          </font>
@@ -171,7 +171,7 @@
             <Insets left="10.0" />
          </padding>
       </Label>
-      <Label fx:id="playerTurnLabel" text="1" textFill="#e1ff00">
+      <Label fx:id="playerTurnLabel" text="1" textFill="WHITE">
          <font>
             <Font name="American Typewriter" size="14.0" />
          </font>
