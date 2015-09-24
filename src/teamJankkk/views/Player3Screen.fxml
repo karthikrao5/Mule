@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="teamJankkk.controller.PlayerSelect3">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.PlayerSelect3">
   <children>
     <Pane layoutX="14.0" layoutY="14.0" prefHeight="207.0" prefWidth="772.0">
       <children>
@@ -41,7 +41,6 @@
         <Label alignment="CENTER" layoutX="565.0" layoutY="70.0" text="Pick a color" />
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="84.0" layoutY="67.0" text="Choose a name" />
         <TextField id="nameTextField" fx:id="nameTextField3" layoutX="33.0" layoutY="90.0" prefHeight="48.67999267578125" prefWidth="201.0" />
-        <Button fx:id="save3Button" layoutX="328.0" layoutY="173.0" mnemonicParsing="false" onAction="#saveName" text="Save Character" />
         <Label id="playerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="279.0" layoutY="11.0" text="PLAYER 3">
           <font>
             <Font name="AppleMyungjo Regular" size="41.0" />

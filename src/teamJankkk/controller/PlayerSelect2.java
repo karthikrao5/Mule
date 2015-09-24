@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import teamJankkk.Main;
@@ -37,10 +34,11 @@ public class PlayerSelect2 extends Main implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        p2 = new Player(null, null, null);
-        save2Button.setOnAction(this::saveName);
+        //save2Button.setOnAction(this::saveName);
         next2Button.setOnAction(this::nextScreen);
     }
 
+    /*
     @FXML
     void saveName(ActionEvent event) {
         String name = nameTextField2.getText();
@@ -56,19 +54,43 @@ public class PlayerSelect2 extends Main implements Initializable{
         PlayerDB.setColor(color, 1);
         configLabel2.setText(PlayerDB.toString(1));
     }
+    */
 
     @FXML
     public void nextScreen(ActionEvent event) {
         try {
-            if (ConfigController.getPlayerCount() > 2) {
-                Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player3Screen.fxml"));
-                stage.setScene(new Scene(screen3));
-                stage.show();
+            String name = nameTextField2.getText();
+            String race = raceChoiceBox2.getSelectionModel().getSelectedItem();
+            String color = colorChoiceBox2.getSelectionModel().getSelectedItem();
+            if (name == null || race == null || color == null) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                //alert.initOwner(ConfigController.);
+                alert.setTitle("Empty Field");
+                alert.setHeaderText("One of the Fields has not been filled in.");
+                alert.setContentText("Please fill in all text fields.");
+                alert.showAndWait();
             } else {
-                Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
-                stage.setScene(new Scene(gameSumPane));
-                stage.show();
+                configLabel2.setText("What up boss, your name is "
+                        + name
+                        + " , your race is: " + race
+                        + " and you'll be playing for the " + color);
+
+                PlayerDB.createPlayer(name, 1);
+                PlayerDB.setRace(race, 1);
+                PlayerDB.setColor(color, 1);
+                configLabel2.setText(PlayerDB.toString(1));
+
+                if (ConfigController.getPlayerCount() > 2) {
+                    Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player3Screen.fxml"));
+                    stage.setScene(new Scene(screen3));
+                    stage.show();
+                } else {
+                    Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
+                    stage.setScene(new Scene(gameSumPane));
+                    stage.show();
+                }
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
