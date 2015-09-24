@@ -26,15 +26,7 @@ public class Game {
     }
 
     public void landGrant() {
-        if (playersTurn == 0){
 
-        } else if (playersTurn == 1) {
-
-        } else if (playersTurn == 2) {
-
-        } else if (playersTurn == 3) {
-
-        }
     }
 
     public void runGame() {
