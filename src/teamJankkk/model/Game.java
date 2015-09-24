@@ -33,7 +33,7 @@ public class Game {
         }
     }
 
-    public void playerTurn
+    //public void playerTurn
 
     public int getTurnNumber() { return numberOfTurns; }
     public int getPlayerTurn() { return playersTurn; }

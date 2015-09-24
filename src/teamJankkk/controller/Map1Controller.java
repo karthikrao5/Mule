@@ -236,9 +236,12 @@ public class Map1Controller extends Main implements Initializable {
             color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
         }
         return color;
+    }
+    /*
     public void updateColor() {
         PlayerDB.getPlayer();
         game.getPlayerTurn();
     }
+    */
 
 }
