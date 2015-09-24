@@ -119,7 +119,7 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map22Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        System.out.println("Enter Store");
     }
 
     @FXML
