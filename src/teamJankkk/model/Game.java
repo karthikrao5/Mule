@@ -5,7 +5,7 @@ package teamJankkk.model;
  */
 public class Game {
 
-    private static int difficulty = 0, map = 0, humanPlayers = 0, playersTurn = 0;
+    private static int difficulty = 0, map = 0, humanPlayers = 0, playersTurn = 0, howManyTurns = 0;
 
     public Game(int difficulty, int map, int humanPlayers) {
         this.difficulty = difficulty;
@@ -21,7 +21,14 @@ public class Game {
         }
     }
 
-    public void runGame() {
+    public void landGrant() {
 
+    }
+
+    public void runGame() {
+        if (howManyTurns == 0 || howManyTurns == 1) {
+            landGrant();
+            howManyTurns++;
+        }
     }
 }
