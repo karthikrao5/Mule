@@ -60,7 +60,7 @@ public class PlayerDB {
     }
 
 
-    private static Player getPlayer(int index) {
+    public static Player getPlayer(int index) {
 
         if(index > 4) {
             System.out.println("Sorry player not inbounds");
