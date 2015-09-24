@@ -18,10 +18,14 @@ public class StoreController extends Main implements Initializable {
     private ImageView thePub, muleStore, smithoreTile, energyTile, foodTile;
 
     @FXML
-    private Label moneyLabel;
+    private Label moneyLabel, goBackLabel, playerLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+    public void goBackToMap() {
 
     }
 }
