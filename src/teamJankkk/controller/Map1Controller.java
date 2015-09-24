@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
+import teamJankkk.model.Game;
 
 import java.io.IOException;
 import java.net.URL;
@@ -61,6 +62,7 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map00Clicked(MouseEvent event) {
         System.out.println("Clicked");
+        if Game.
     }
 
     @FXML
