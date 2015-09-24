@@ -18,11 +18,7 @@ public class Game {
     }
 
     public void nextTurn() {
-        if (playersTurn < 4) {
-            playersTurn++;
-        } else if (playersTurn == 4) {
-            playersTurn = 0;
-        }
+
     }
 
     public void landGrant() {
@@ -36,6 +32,8 @@ public class Game {
             numberOfTurns++;
         }
     }
+
+    public void playerTurn
 
     public int getTurnNumber() { return numberOfTurns; }
     public int getPlayerTurn() { return playersTurn; }

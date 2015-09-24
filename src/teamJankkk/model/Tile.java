@@ -9,7 +9,8 @@ public class Tile {
     private Boolean isEmpty;
     private Player owner;
 
-    public Tile(String resource) {
+    public Tile(String resource, boolean bool) {
+        isEmpty = bool;
         this.resource = resource;
     }
 
@@ -27,5 +28,9 @@ public class Tile {
 
     public boolean getIsEmpty() {
         return isEmpty;
+    }
+
+    public int harvestResource() {
+        return (int) Math.random();
     }
 }
