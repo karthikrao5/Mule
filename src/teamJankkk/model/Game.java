@@ -25,8 +25,10 @@ public class Game {
 
     public void landGrant() {
         if playersTurn == 0 {
+        if (playersTurn == 0) {
 
         } else if playersTurn == 1 {
+        } else if (playersTurn == 1 ){
 
         } else if playersTurn == 2 {
 
