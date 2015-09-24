@@ -69,6 +69,8 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map00Clicked(MouseEvent event) {
         updateLabel();
+        final Image image2 = new Image(Main.class.getResourceAsStream("views/_Images/forest_floor_PURPLE.png"));
+        image00.setImage(image2);
         System.out.println("Clicked");
     }
 
