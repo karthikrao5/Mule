@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
@@ -21,6 +23,9 @@ import java.util.ResourceBundle;
  */
 public class Map1Controller extends Main implements Initializable {
 
+
+    public Game game;
+
      @FXML private ImageView image00, image01,
              image02, image03, image04, image10,
              image11, image12, image13, image14,
@@ -29,6 +34,8 @@ public class Map1Controller extends Main implements Initializable {
              image33, image34, image40, image41,
              image42, image43, image44, image50,
              image51, image52, image53, image54;
+
+    @FXML private Label playerTurnLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -61,8 +68,7 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map00Clicked(MouseEvent event) {
-        System.out.println("Clicked");
-        if Game.
+        updateLabel();
     }
 
     @FXML
@@ -189,8 +195,8 @@ public class Map1Controller extends Main implements Initializable {
         System.out.println("Clicked");
     }
 
-
-
-
+    public void updateLabel() {
+        playerTurnLabel.setText(new Integer(game.getPlayerTurn()).toString());
+    }
 
 }
