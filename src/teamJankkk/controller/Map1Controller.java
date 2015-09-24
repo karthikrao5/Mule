@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
@@ -75,9 +76,8 @@ public class Map1Controller extends Main implements Initializable {
         //Image image2 = new Image(Main.class.getResourceAsStream("../views/_Images/forest_floor_PURPLE.png"));
         //Image image = new Image("forest_floor_PURPLE.png");
         //Image image = new Image(getClass().getClassLoader().getResourceAsStream("views/_Images/forest_floor_PURPLE.png"));
-        Image image = new Image("/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png");
-        String colorCodedImageFilePathString = getColorCode();
-        Image image2 = new Image(colorCodedImageFilePathString);
+        Image image = new Image(updateColor());
+        //Image image2 = new Image(colorCodedImageFilePathString);
         //"\imgs\pic1.jpg"
         image00.setImage(image);
         System.out.println("Clicked");
@@ -86,7 +86,7 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map01Clicked(MouseEvent event) {
-        Image image = new Image("/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png");
+        Image image = new Image(updateColor());
         image01.setImage(image);
         System.out.println("Clicked");
         game.nextTurn();
@@ -223,9 +223,18 @@ public class Map1Controller extends Main implements Initializable {
         playerTurnLabel.setText(new Integer(game.getPlayerTurn()).toString());
     }
 
-    public void updateColor() {
-        PlayerDB.getPlayer();
-        game.getPlayerTurn()
+    public String updateColor() {
+        String color = PlayerDB.getPlayer(game.getPlayerTurn()).getColor();
+        if (color.equals("Blue")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
+        } else if (color.equals("Yellow")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
+        } else if (color.equals("Purple")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+        } else if (color.equals("Red")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
+        }
+        return color;
     }
 
 }
