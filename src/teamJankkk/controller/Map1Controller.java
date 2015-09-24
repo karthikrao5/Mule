@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 
 import java.io.IOException;
@@ -119,7 +120,14 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map22Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        System.out.println("Enter Store");
+        try {
+            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/TheStore.fxml"));
+            stage.setScene(new Scene(screen3));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
