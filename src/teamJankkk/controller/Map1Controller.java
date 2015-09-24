@@ -23,6 +23,9 @@ import java.util.ResourceBundle;
  */
 public class Map1Controller extends Main implements Initializable {
 
+
+    public Game game;
+
      @FXML private ImageView image00, image01,
              image02, image03, image04, image10,
              image11, image12, image13, image14,
@@ -67,6 +70,7 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map00Clicked(MouseEvent event) {
+        updateLabel();
         System.out.println("Clicked");
     }
 
@@ -194,8 +198,8 @@ public class Map1Controller extends Main implements Initializable {
         System.out.println("Clicked");
     }
 
-
-
-
+    public void updateLabel() {
+        playerTurnLabel.setText(new Integer(game.getPlayerTurn()).toString());
+    }
 
 }
