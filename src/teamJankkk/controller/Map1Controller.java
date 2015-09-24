@@ -9,10 +9,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
+import teamJankkk.model.PlayerDB;
 
 import java.io.IOException;
 import java.net.URL;
@@ -70,23 +72,40 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map00Clicked(MouseEvent event) {
-        updateLabel();
+        //updateLabel();
+        //Image image2 = new Image(Main.class.getResourceAsStream("../views/_Images/forest_floor_PURPLE.png"));
+        //Image image = new Image("forest_floor_PURPLE.png");
+        //Image image = new Image(getClass().getClassLoader().getResourceAsStream("views/_Images/forest_floor_PURPLE.png"));
+        Image image = new Image(updateColor());
+        //Image image2 = new Image(colorCodedImageFilePathString);
+        //"\imgs\pic1.jpg"
+        image00.setImage(image);
         System.out.println("Clicked");
+        game.nextTurn();
     }
 
     @FXML
     public void map01Clicked(MouseEvent event) {
+        Image image = new Image(updateColor());
+        image01.setImage(image);
         System.out.println("Clicked");
+        game.nextTurn();
     }
 
     @FXML
     public void map02Clicked(MouseEvent event) {
         System.out.println("Clicked");
+        Image image = new Image("/teamJankkk/views/_Images/Forest/forest_floor_RED.png");
+        image02.setImage(image);
+        game.nextTurn();
     }
 
     @FXML
     public void map03Clicked(MouseEvent event) {
         System.out.println("Clicked");
+        Image image = new Image("/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png");
+        image03.setImage(image);
+        game.nextTurn();
     }
 
     @FXML
@@ -203,6 +222,23 @@ public class Map1Controller extends Main implements Initializable {
 
     public void updateLabel() {
         playerTurnLabel.setText(new Integer(game.getPlayerTurn()).toString());
+    }
+
+    public String updateColor() {
+        String color = PlayerDB.getPlayer(game.getPlayerTurn()).getColor();
+        if (color.equals("Blue")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
+        } else if (color.equals("Yellow")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
+        } else if (color.equals("Purple")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+        } else if (color.equals("Red")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
+        }
+        return color;
+    public void updateColor() {
+        PlayerDB.getPlayer();
+        game.getPlayerTurn();
     }
 
 }
