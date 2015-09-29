@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #200095;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.StoreController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #200095;" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.StoreController">
    <children>
       <StackPane layoutX="-30.0" layoutY="38.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -34,7 +34,7 @@
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <ImageView fx:id="smithoreTile">
+                        <ImageView fx:id="smithoreTile" onMouseClicked="#smithOreClicked">
                            <image>
                               <Image url="@_Images/Store/smithoreTile.png" />
                            </image>
@@ -56,7 +56,7 @@
                      <children>
                         <VBox layoutX="150.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
                            <children>
-                              <ImageView fx:id="energyTile">
+                              <ImageView fx:id="energyTile" onMouseClicked="#energyTileClicked">
                                  <image>
                                     <Image url="@_Images/Store/energyTile.png" />
                                  </image>
@@ -78,7 +78,7 @@
                   </Pane>
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
                      <children>
-                        <ImageView fx:id="foodTile">
+                        <ImageView fx:id="foodTile" onMouseClicked="#foodTileClicked">
                            <image>
                               <Image url="@_Images/Store/foodTile.png" />
                            </image>
@@ -98,7 +98,7 @@
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="thePub">
+                        <ImageView fx:id="thePub" onMouseClicked="#thePubClicked">
                            <image>
                               <Image url="@_Images/Store/Pub.png" />
                            </image>
@@ -118,7 +118,7 @@
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="muleStore">
+                        <ImageView fx:id="muleStore" onMouseClicked="#muleStoreClicked">
                            <image>
                               <Image url="@_Images/Store/MuleStore.png" />
                            </image>
