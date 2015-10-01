@@ -22,6 +22,8 @@ import teamJankkk.model.PlayerDB;
 import java.io.IOException;
 import java.net.URL;
 import javafx.util.Duration;
+import teamJankkk.model.Tile;
+
 import java.util.ResourceBundle;
 
 /**
@@ -31,6 +33,31 @@ public class Map1Controller extends Main implements Initializable {
 
 
     public Game game;
+    private Tile tile00 = new Tile();
+    private Tile tile01 = new Tile();
+    private Tile tile02 = new Tile();
+    private Tile tile03 = new Tile();
+    private Tile tile04 = new Tile();
+    private Tile tile10 = new Tile();
+    private Tile tile11 = new Tile();
+    private Tile tile12 = new Tile();
+    private Tile tile13 = new Tile();
+    private Tile tile14 = new Tile();
+    private Tile tile20 = new Tile();
+    private Tile tile21 = new Tile();
+    private Tile tile22 = new Tile();
+    private Tile tile23 = new Tile();
+    private Tile tile24 = new Tile();
+    private Tile tile30 = new Tile();
+    private Tile tile31 = new Tile();
+    private Tile tile32 = new Tile();
+    private Tile tile33 = new Tile();
+    private Tile tile34 = new Tile();
+    private Tile tile40 = new Tile();
+    private Tile tile41 = new Tile();
+    private Tile tile42 = new Tile();
+    private Tile tile43 = new Tile();
+    private Tile tile44 = new Tile();
 
      @FXML private ImageView image00, image01,
              image02, image03, image04, image10,
@@ -85,6 +112,32 @@ public class Map1Controller extends Main implements Initializable {
         timerLabel.setText(timeSeconds.toString());
         game = new Game(ConfigController.getPlayerCount());
 
+//        Tile tile00 = new Tile(false);
+//        Tile tile01 = new Tile(false);
+//        Tile tile02 = new Tile(false);
+//        Tile tile03 = new Tile(false);
+//        Tile tile04 = new Tile(false);
+//        Tile tile10 = new Tile(false);
+//        Tile tile11 = new Tile(false);
+//        Tile tile12 = new Tile(false);
+//        Tile tile13 = new Tile(false);
+//        Tile tile14 = new Tile(false);
+//        Tile tile20 = new Tile(false);
+//        Tile tile21 = new Tile(false);
+//        Tile tile22 = new Tile(false);
+//        Tile tile23 = new Tile(false);
+//        Tile tile24 = new Tile(false);
+//        Tile tile30 = new Tile(false);
+//        Tile tile31 = new Tile(false);
+//        Tile tile32 = new Tile(false);
+//        Tile tile33 = new Tile(false);
+//        Tile tile34 = new Tile(false);
+//        Tile tile40 = new Tile(false);
+//        Tile tile41 = new Tile(false);
+//        Tile tile42 = new Tile(false);
+//        Tile tile43 = new Tile(false);
+//        Tile tile44 = new Tile(false);
+
     }
     @FXML
     private void endTurn(ActionEvent event) {
@@ -119,16 +172,11 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map00Clicked(MouseEvent event) {
-        //updateLabel();
-        //Image image2 = new Image(Main.class.getResourceAsStream("../views/_Images/forest_floor_PURPLE.png"));
-        //Image image = new Image("forest_floor_PURPLE.png");
-        //Image image = new Image(getClass().getClassLoader().getResourceAsStream("views/_Images/forest_floor_PURPLE.png"));
-        Image image = new Image(updateColor());
-        //Image image2 = new Image(colorCodedImageFilePathString);
-        //"\imgs\pic1.jpg"
-        image00.setImage(image);
-        System.out.println("Clicked");
-        game.nextTurn();
+        tile00.setIsClaimed(true);
+        tile00.setOwner(Game.getCurrentPlayer());
+        System.out.println(tile00.getIsClaimed());
+        System.out.println(Game.getCurrentPlayer());
+//        image00.setImage(new Image(updateColor()));
     }
 
     @FXML

@@ -12,13 +12,12 @@ public class Tile {
 
     List<String> resourceList;
     private String resource;
-    private Boolean isEmpty;
+    private Boolean isClaimed;
     private Player owner;
 
-    public Tile(boolean bool) {
+    public Tile() {
         resourceList = new ArrayList<>(Arrays.asList("SmithOre",
                 "Energy", "Food"));
-        isEmpty = bool;
         Random rand = new Random();
         resource = resourceList.get(rand.nextInt(2));
     }
@@ -35,12 +34,12 @@ public class Tile {
         return owner;
     }
 
-    public void setIsEmpty(boolean bool) {
-        isEmpty = bool;
+    public void setIsClaimed(boolean bool) {
+        isClaimed = bool;
     }
 
-    public boolean getIsEmpty() {
-        return isEmpty;
+    public boolean getIsClaimed() {
+        return isClaimed;
     }
 
     public int harvestResource() {
