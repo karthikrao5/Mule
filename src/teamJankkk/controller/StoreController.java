@@ -40,6 +40,7 @@ public class StoreController extends Main implements Initializable {
         foodTile.setOnMouseClicked(this::foodTileClicked);
     }
 
+    @FXML
     public void goBackToMap() {
         try {
             Pane backToMap = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
@@ -50,22 +51,34 @@ public class StoreController extends Main implements Initializable {
         }
     }
 
+    @FXML
     public void thePubClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
+        try {
+            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/ThePub.fxml"));
+            stage.setScene(new Scene(screen3));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
+    @FXML
     public void muleStoreClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
     }
 
+    @FXML
     public void smithOreClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
     }
 
+    @FXML
     public void energyTileClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
     }
 
+    @FXML
     public void foodTileClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
     }

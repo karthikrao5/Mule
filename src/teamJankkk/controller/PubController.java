@@ -28,15 +28,10 @@ public class PubController extends Main implements Initializable {
     @FXML
     public void pubClicked(MouseEvent event) {
         System.out.println("Enter Pub");
-        try {
-            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/ThePub.fxml"));
-            stage.setScene(new Scene(screen3));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
+    @FXML
     public void goBackToMap() {
         try {
             Pane backToMap = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
