@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.collections.*?>
@@ -8,53 +9,76 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.PlayerSelect4">
-  <children>
-    <Pane layoutX="14.0" layoutY="14.0" prefHeight="207.0" prefWidth="772.0">
-      <children>
-        <ChoiceBox id="raceChoiceBox" fx:id="raceChoiceBox4" layoutX="358.0" layoutY="91.0">
-          <items>
-            <FXCollections fx:factory="observableArrayList">
-              <String fx:value="Mechtron" />
-              <String fx:value="Bonzoid" />
-              <String fx:value="Flapper" />
-              <String fx:value="Gollumer" />
-              <String fx:value="Jankktron" />
-              <String fx:value="Leggite" />
-              <String fx:value="Packer" />
-              <String fx:value="Spheroid" />
-              <String fx:value="Humanoid" />
-            </FXCollections>
-          </items>
-        </ChoiceBox>
-        <ChoiceBox id="colorChoiceBox" fx:id="colorChoiceBox4" layoutX="582.0" layoutY="91.0">
-          <items>
-            <FXCollections fx:factory="observableArrayList">
-              <String fx:value="Red" />
-              <String fx:value="Blue" />
-              <String fx:value="Yellow" />
-              <String fx:value="Green" />
-            </FXCollections>
-          </items>
-        </ChoiceBox>
-        <Label alignment="CENTER" layoutX="352.0" layoutY="70.0" text="Pick a race" />
-        <Label alignment="CENTER" layoutX="565.0" layoutY="70.0" text="Pick a color" />
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="84.0" layoutY="67.0" text="Choose a name" />
-        <TextField id="nameTextField" fx:id="nameTextField4" layoutX="33.0" layoutY="90.0" prefHeight="48.67999267578125" prefWidth="201.0" />
-        <Label id="playerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="279.0" layoutY="11.0" text="PLAYER 4">
-          <font>
-            <Font name="AppleMyungjo Regular" size="41.0" />
-          </font>
-        </Label>
-      </children>
-    </Pane>
-    <Pane layoutX="14.0" layoutY="279.0" prefHeight="207.0" prefWidth="772.0">
-      <children>
-        <Label id="configLabel" fx:id="configLabel4" alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="207.0" prefWidth="772.0" text="Label" />
-        <Button id="nextButton1" fx:id="exitButton4" layoutX="23.0" layoutY="161.0" mnemonicParsing="false" onAction="#exitApp" text="Exit" />
-        <Button fx:id="goToSummaryButton" layoutX="686.0" layoutY="161.0" mnemonicParsing="false" onAction="#goToSummary" text="Continue" />
-        <!--<Button id="nextButton" fx:id="next4Button" layoutX="611.0" layoutY="159.0" mnemonicParsing="false" onAction="#nextScreen" text="Player 2 selection" />-->
-      </children>
-    </Pane>
-  </children>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: YELLOW;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.PlayerSelect4">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="207.0" prefWidth="772.0">
+         <children>
+            <ChoiceBox fx:id="raceChoiceBox4" layoutX="299.0" layoutY="90.0" prefHeight="49.0" prefWidth="175.0" style="-fx-background-color: #ff7f00;">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Mechtron" />
+                     <String fx:value="Bonzoid" />
+                     <String fx:value="Flapper" />
+                     <String fx:value="Gollumer" />
+                     <String fx:value="Jankktron" />
+                     <String fx:value="Leggite" />
+                     <String fx:value="Packer" />
+                     <String fx:value="Spheroid" />
+                     <String fx:value="Humanoid" />
+                  </FXCollections>
+               </items>
+            </ChoiceBox>
+            <ChoiceBox fx:id="colorChoiceBox4" layoutX="564.0" layoutY="90.0" prefHeight="49.0" prefWidth="175.0" style="-fx-background-color: #e559f4;">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Red" />
+                     <String fx:value="Blue" />
+                     <String fx:value="Yellow" />
+                     <String fx:value="Green" />
+                  </FXCollections>
+               </items>
+            </ChoiceBox>
+            <Label alignment="CENTER" layoutX="341.0" layoutY="70.0" text="PICK A RACE:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="602.0" layoutY="70.0" text="PICK A COLOR:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="33.0" layoutY="70.0" text="CHOOSE A NAME:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameTextField4" layoutX="33.0" layoutY="90.0" prefHeight="49.0" prefWidth="175.0" style="-fx-background-color: BLUE;" />
+            <Label id="playerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="14.0" text="PLAYER 4">
+               <font>
+                  <Font name="AppleMyungjo Regular" size="41.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="279.0" prefHeight="207.0" prefWidth="772.0">
+         <children>
+            <Button fx:id="goToSummaryButton" layoutX="639.0" layoutY="136.0" mnemonicParsing="false" onAction="#goToSummary" prefHeight="49.0" prefWidth="108.0" style="-fx-background-color: #00c51d;" text="CONTINUE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button id="nextButton1" fx:id="exitApp" layoutX="36.0" layoutY="136.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="49.0" prefWidth="108.0" style="-fx-background-color: RED;" text="EXIT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="191.0" fitWidth="277.0" layoutX="288.0" layoutY="-81.0">
+               <image>
+                  <Image url="@_Images/Mule_Sprites/MULE_gray.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

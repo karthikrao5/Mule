@@ -21,7 +21,6 @@ import java.util.ResourceBundle;
 public class PlayerSelect3 extends Main implements Initializable {
 
     @FXML private TextField nameTextField3;
-    @FXML private Label configLabel3;
     @FXML private Button next3Button;
     @FXML private Button save3Button;
     @FXML private Button exitButton3;
@@ -71,16 +70,9 @@ public class PlayerSelect3 extends Main implements Initializable {
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                configLabel3.setText("What up boss, your name is "
-                        + name
-                        + " , your race is: " + race
-                        + " and you'll be playing for the " + color);
-
                 PlayerDB.createPlayer(name, 2);
                 PlayerDB.setRace(race, 2);
                 PlayerDB.setColor(color, 2);
-                configLabel3.setText(PlayerDB.toString(2));
-
                 if (ConfigController.getPlayerCount() > 3) {
                     Pane screen4 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player4Select.fxml"));
                     stage.setScene(new Scene(screen4));

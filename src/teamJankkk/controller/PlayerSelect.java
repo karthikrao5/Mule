@@ -35,7 +35,6 @@ import javafx.scene.control.Alert.AlertType;
 public class PlayerSelect extends Main implements Initializable{
 
     @FXML private TextField nameTextField;
-    @FXML private Label configLabel;
     @FXML private Button nextButton1;
     @FXML private Button saveButton1;
     @FXML private Button exitButton1;
@@ -91,14 +90,9 @@ public class PlayerSelect extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                configLabel.setText("What up boss, your name is "
-                        + name
-                        + ", your race is " + race
-                        + " and you'll be playing for the " + color + " team!");
                 PlayerDB.createPlayer(name, 0);
                 PlayerDB.setRace(race, 0);
                 PlayerDB.setColor(color, 0);
-                configLabel.setText(PlayerDB.toString(0));
 
                 if (ConfigController.getPlayerCount() > 1) {
                     Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));
