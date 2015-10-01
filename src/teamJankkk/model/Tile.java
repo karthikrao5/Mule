@@ -15,7 +15,7 @@ public class Tile {
     private Boolean isEmpty;
     private Player owner;
 
-    public Tile(String resource, boolean bool) {
+    public Tile(boolean bool) {
         resourceList = new ArrayList<>(Arrays.asList("SmithOre",
                 "Energy", "Food"));
         isEmpty = bool;
@@ -25,6 +25,10 @@ public class Tile {
 
     public void setOwner(int p) {
         owner = PlayerDB.getPlayer(p);
+    }
+
+    public String getResource() {
+        return resource;
     }
 
     public Player getOwner() {
