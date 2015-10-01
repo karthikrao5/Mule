@@ -95,10 +95,10 @@ public class PlayerSelect extends Main implements Initializable{
                         + name
                         + ", your race is " + race
                         + " and you'll be playing for the " + color + " team!");
-                PlayerDB.createPlayer(name, 0);
-                PlayerDB.setRace(race, 0);
-                PlayerDB.setColor(color, 0);
-                configLabel.setText(PlayerDB.toString(0));
+                PlayerDB.createPlayer(name, 1);
+                PlayerDB.setRace(race, 1);
+                PlayerDB.setColor(color, 1);
+                configLabel.setText(PlayerDB.toString(1));
 
                 if (ConfigController.getPlayerCount() > 1) {
                     Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));
