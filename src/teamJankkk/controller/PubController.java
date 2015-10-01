@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
@@ -18,16 +20,13 @@ import java.util.ResourceBundle;
 public class PubController extends Main implements Initializable {
 
     @FXML
+    private ImageView gambleButton;
 
+    @FXML
+    private Label winningsLabel, goBackLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-    }
-
-    @FXML
-    public void pubClicked(MouseEvent event) {
-        System.out.println("Enter Pub");
 
     }
 
