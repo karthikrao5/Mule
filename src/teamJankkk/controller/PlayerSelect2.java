@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import teamJankkk.Main;
+import teamJankkk.model.Game;
 import teamJankkk.model.Player;
 import teamJankkk.model.PlayerDB;
 import javafx.scene.control.Alert;
@@ -70,13 +71,10 @@ public class PlayerSelect2 extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 1);
-                PlayerDB.setRace(race, 1);
-                PlayerDB.setColor(color, 1);
                 PlayerDB.createPlayer(name, 2);
                 PlayerDB.setRace(race, 2);
                 PlayerDB.setColor(color, 2);
-                if (ConfigController.getPlayerCount() > 2) {
+                if (Game.getNumberOfPlayers() > 2) {
                     Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player3Screen.fxml"));
                     stage.setScene(new Scene(screen3));
                     stage.show();
@@ -88,6 +86,7 @@ public class PlayerSelect2 extends Main implements Initializable{
             }
 
         } catch (IOException e) {
+            System.out.println(e.getMessage() + " " + e.getCause());
             e.printStackTrace();
         }
     }

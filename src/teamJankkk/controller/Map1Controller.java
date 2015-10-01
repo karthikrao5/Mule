@@ -110,34 +110,6 @@ public class Map1Controller extends Main implements Initializable {
         image44.setOnMouseClicked(this::map44Clicked);
         endTurnButton.setOnAction(this::endTurn);
         timerLabel.setText(timeSeconds.toString());
-        Game.setNumberOfPlayers(ConfigController.getPlayerCount());
-
-//        Tile tile00 = new Tile(false);
-//        Tile tile01 = new Tile(false);
-//        Tile tile02 = new Tile(false);
-//        Tile tile03 = new Tile(false);
-//        Tile tile04 = new Tile(false);
-//        Tile tile10 = new Tile(false);
-//        Tile tile11 = new Tile(false);
-//        Tile tile12 = new Tile(false);
-//        Tile tile13 = new Tile(false);
-//        Tile tile14 = new Tile(false);
-//        Tile tile20 = new Tile(false);
-//        Tile tile21 = new Tile(false);
-//        Tile tile22 = new Tile(false);
-//        Tile tile23 = new Tile(false);
-//        Tile tile24 = new Tile(false);
-//        Tile tile30 = new Tile(false);
-//        Tile tile31 = new Tile(false);
-//        Tile tile32 = new Tile(false);
-//        Tile tile33 = new Tile(false);
-//        Tile tile34 = new Tile(false);
-//        Tile tile40 = new Tile(false);
-//        Tile tile41 = new Tile(false);
-//        Tile tile42 = new Tile(false);
-//        Tile tile43 = new Tile(false);
-//        Tile tile44 = new Tile(false);
-
     }
 
     @FXML
@@ -175,82 +147,159 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map00Clicked(MouseEvent event) {
-        tile00.setIsClaimed(true);
-        tile00.setOwner(Game.getCurrentPlayer());
-        System.out.println(tile00.getIsClaimed());
-        System.out.println(Game.getCurrentPlayer());
-        image00.setImage(new Image(updateColor()));
-        endTurn();
+        if(!tile00.getIsClaimed()) {
+            tile00.setIsClaimed(true);
+            tile00.setOwner(Game.getCurrentPlayer());
+            System.out.println(updateColor());
+            image00.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
+
     }
 
     @FXML
     public void map01Clicked(MouseEvent event) {
-        tile01.setIsClaimed(true);
-        tile01.setOwner(Game.getCurrentPlayer());
-        System.out.println(tile01.getIsClaimed());
-        System.out.println(Game.getCurrentPlayer());
-        image01.setImage(new Image(updateColor()));
-        endTurn();
+        if(!tile01.getIsClaimed()) {
+            tile01.setIsClaimed(true);
+            tile01.setOwner(Game.getCurrentPlayer());
+            System.out.println(tile01.getIsClaimed());
+            System.out.println(Game.getCurrentPlayer());
+            image01.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map02Clicked(MouseEvent event) {
-        tile02.setIsClaimed(true);
-        tile02.setOwner(Game.getCurrentPlayer());
-        System.out.println(tile02.getIsClaimed());
-        System.out.println(Game.getCurrentPlayer());
-        image02.setImage(new Image(updateColor()));
-        endTurn();
+        if(!tile02.getIsClaimed()) {
+            tile02.setIsClaimed(true);
+            tile02.setOwner(Game.getCurrentPlayer());
+            System.out.println(tile02.getIsClaimed());
+            System.out.println(Game.getCurrentPlayer());
+            image02.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
+
+
     }
 
     @FXML
     public void map03Clicked(MouseEvent event) {
-        System.out.println("Clicked");
-        Image image = new Image(updateColor());
-        image03.setImage(image);
-        endTurn();
+        if(!tile03.getIsClaimed()) {
+            tile03.setIsClaimed(true);
+            tile03.setOwner(Game.getCurrentPlayer());
+            System.out.println(tile03.getIsClaimed());
+            System.out.println(Game.getCurrentPlayer());
+            image03.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map04Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile04.getIsClaimed()) {
+            tile04.setIsClaimed(true);
+            tile04.setOwner(Game.getCurrentPlayer());
+            System.out.println(tile04.getIsClaimed());
+            System.out.println(Game.getCurrentPlayer());
+            image04.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map10Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile10.getIsClaimed()) {
+            tile10.setIsClaimed(true);
+            tile10.setOwner(Game.getCurrentPlayer());
+            System.out.println(tile10.getIsClaimed());
+            System.out.println(Game.getCurrentPlayer());
+            image10.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map11Clicked(MouseEvent event) {
-        System.out.println("Clicked");
-    }
+        if(!tile11.getIsClaimed()) {
+            tile11.setIsClaimed(true);
+            tile11.setOwner(Game.getCurrentPlayer());
+            image11.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }        }
 
     @FXML
     public void map12Clicked(MouseEvent event) {
-        System.out.println("Clicked");
-
-
+        if(!tile12.getIsClaimed()) {
+            tile12.setIsClaimed(true);
+            tile12.setOwner(Game.getCurrentPlayer());
+            image12.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map13Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile13.getIsClaimed()) {
+            tile13.setIsClaimed(true);
+            tile13.setOwner(Game.getCurrentPlayer());
+            image13.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map14Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile14.getIsClaimed()) {
+            tile14.setIsClaimed(true);
+            tile14.setOwner(Game.getCurrentPlayer());
+            image14.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map20Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile20.getIsClaimed()) {
+            tile20.setIsClaimed(true);
+            tile20.setOwner(Game.getCurrentPlayer());
+            image20.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map21Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile21.getIsClaimed()) {
+            tile21.setIsClaimed(true);
+            tile21.setOwner(Game.getCurrentPlayer());
+            image21.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
 
@@ -269,72 +318,145 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map23Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile23.getIsClaimed()) {
+            tile23.setIsClaimed(true);
+            tile23.setOwner(Game.getCurrentPlayer());
+            image23.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map24Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile24.getIsClaimed()) {
+            tile24.setIsClaimed(true);
+            tile24.setOwner(Game.getCurrentPlayer());
+            image24.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map30Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile30.getIsClaimed()) {
+            tile30.setIsClaimed(true);
+            tile30.setOwner(Game.getCurrentPlayer());
+            image30.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map31Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile31.getIsClaimed()) {
+            tile31.setIsClaimed(true);
+            tile31.setOwner(Game.getCurrentPlayer());
+            image31.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map32Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile32.getIsClaimed()) {
+            tile32.setIsClaimed(true);
+            tile32.setOwner(Game.getCurrentPlayer());
+            image32.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
     @FXML
     public void map33Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile33.getIsClaimed()) {
+            tile33.setIsClaimed(true);
+            tile33.setOwner(Game.getCurrentPlayer());
+            image33.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map34Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile34.getIsClaimed()) {
+            tile34.setIsClaimed(true);
+            tile34.setOwner(Game.getCurrentPlayer());
+            image34.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map40Clicked(MouseEvent event) {
-        System.out.println("Clicked");
+        if(!tile40.getIsClaimed()) {
+            tile40.setIsClaimed(true);
+            tile40.setOwner(Game.getCurrentPlayer());
+            image40.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map41Clicked(MouseEvent event) {
-        System.out.println("Clicked");
-        Image image = new Image(updateColor());
-        image41.setImage(image);
-        endTurn();
+        if(!tile41.getIsClaimed()) {
+            tile41.setIsClaimed(true);
+            tile41.setOwner(Game.getCurrentPlayer());
+            image41.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
+
     @FXML
     public void map42Clicked(MouseEvent event) {
-        System.out.println("Clicked");
-        Image image = new Image(updateColor());
-        image42.setImage(image);
-        endTurn();
+        if(!tile42.getIsClaimed()) {
+            tile42.setIsClaimed(true);
+            tile42.setOwner(Game.getCurrentPlayer());
+            image42.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map43Clicked(MouseEvent event) {
-        System.out.println("Clicked");
-        Image image = new Image(updateColor());
-        image43.setImage(image);
-        endTurn();
+        if(!tile43.getIsClaimed()) {
+            tile43.setIsClaimed(true);
+            tile43.setOwner(Game.getCurrentPlayer());
+            image43.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     @FXML
     public void map44Clicked(MouseEvent event) {
-        System.out.println("Clicked");
-        Image image = new Image(updateColor());
-        image44.setImage(image);
-        endTurn();
+        if(!tile44.getIsClaimed()) {
+            tile44.setIsClaimed(true);
+            tile44.setOwner(Game.getCurrentPlayer());
+            image44.setImage(new Image(updateColor()));
+            endTurn();
+        } else {
+            System.out.println("Player has already claimed this land");
+        }
     }
 
     public void updateLabel() {
@@ -344,19 +466,25 @@ public class Map1Controller extends Main implements Initializable {
     }
 
     public String updateColor() {
-        String color = PlayerDB.getPlayer(playerTURN).getColor();
-        if (color.equals("Blue")) {
-            color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
-        } else if (color.equals("Yellow")) {
-            color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
-        } else if (color.equals("Purple")) {
-            color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
-        } else if (color.equals("Green")) {
-            color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
-        } else if (color.equals("Red")) {
-            color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
+
+        try {
+            String color = PlayerDB.getPlayer(playerTURN).getColor();
+            if (color.equals("Blue")) {
+                color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
+            } else if (color.equals("Yellow")) {
+                color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
+            } else if (color.equals("Purple")) {
+                color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+            } else if (color.equals("Green")) {
+                color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+            } else if (color.equals("Red")) {
+                color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
+            }
+            return color;
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage() + " " + e.getCause());
         }
-        return color;
+        return null;
     }
 
 }

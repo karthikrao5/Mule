@@ -20,6 +20,7 @@ public class Tile {
                 "Energy", "Food"));
         Random rand = new Random();
         resource = resourceList.get(rand.nextInt(2));
+        isClaimed = false;
     }
 
     public void setOwner(int p) {

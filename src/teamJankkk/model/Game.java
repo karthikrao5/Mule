@@ -7,13 +7,12 @@ import teamJankkk.controller.ConfigController;
  */
 public class Game {
 
-    private static int currentTurn, numberOfPlayers;
-    private static int currentPlayer;
-
+    private static int currentTurn = 0;
+    private static int numberOfPlayers = 0;
+    private static int currentPlayer = 1;
     public boolean endGame = false;
 
     public Game() {
-        this.currentPlayer = 1;
     }
 
     public static void setNumberOfPlayers(int num) {
@@ -22,7 +21,9 @@ public class Game {
 
     public static int nextTurn() {
         currentTurn++;
-        return nextPlayer();
+        int n = nextPlayer();
+        System.out.println("nextTurn = " + n);
+        return n;
 
     }
 
@@ -42,11 +43,12 @@ public class Game {
         return currentPlayer;
     }
 
-    public int getNumberOfPlayers() {
+    public static int getNumberOfPlayers() {
         return numberOfPlayers;
     }
 
     private static int nextPlayer() {
+        System.out.println("getNumberofPlayers " + numberOfPlayers);
         if(currentPlayer >= numberOfPlayers) {
             currentPlayer = 1;
         } else {

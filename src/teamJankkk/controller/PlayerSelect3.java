@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import teamJankkk.Main;
+import teamJankkk.model.Game;
 import teamJankkk.model.Player;
 import teamJankkk.model.PlayerDB;
 
@@ -21,7 +22,7 @@ import java.util.ResourceBundle;
 public class PlayerSelect3 extends Main implements Initializable {
 
     @FXML private TextField nameTextField3;
-    @FXML private Button next3Button;
+    @FXML private Button nextButton3;
     @FXML private Button save3Button;
     @FXML private Button exitButton3;
     @FXML private ChoiceBox<String> raceChoiceBox3;
@@ -35,7 +36,7 @@ public class PlayerSelect3 extends Main implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //save3Button.setOnAction(this::saveName);
-        next3Button.setOnAction(this::nextScreen);
+        nextButton3.setOnAction(this::nextScreen);
     }
 
     /*
@@ -70,13 +71,10 @@ public class PlayerSelect3 extends Main implements Initializable {
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 2);
-                PlayerDB.setRace(race, 2);
-                PlayerDB.setColor(color, 2);
                 PlayerDB.createPlayer(name, 3);
                 PlayerDB.setRace(race, 3);
                 PlayerDB.setColor(color, 3);
-                if (ConfigController.getPlayerCount() > 3) {
+                if (Game.getNumberOfPlayers() > 3) {
                     Pane screen4 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player4Select.fxml"));
                     stage.setScene(new Scene(screen4));
                     stage.show();

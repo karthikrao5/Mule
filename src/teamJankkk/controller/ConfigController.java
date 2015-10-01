@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
+import teamJankkk.model.Game;
 import teamJankkk.model.PlayerDB;
 
 
@@ -48,29 +49,29 @@ public class ConfigController extends Main implements Initializable {
 
     @FXML
     void setPlayers1(ActionEvent event) {
-        Integer one = 1;
-        String jaboo = one.toString();
-        playerLabel.setText(jaboo + " Player");
-        players = 1;
+        playerLabel.setText("1 players");
+        Game.setNumberOfPlayers(1);
+
     }
     @FXML
     void setPlayers2(ActionEvent event) {
         playerLabel.setText("2 players");
-        ConfigController.players = 2;
+        Game.setNumberOfPlayers(2);
+        System.out.println("config screen: " + Game.getNumberOfPlayers());
+
     }
     @FXML
     void setPlayers3(ActionEvent event) {
-        Integer one = 3;
-        String jaboo = one.toString();
-        playerLabel.setText(jaboo + " Players");
-        players = 3;
+        playerLabel.setText("3 players");
+        Game.setNumberOfPlayers(3);
+
     }
     @FXML
     void setPlayers4(ActionEvent event) {
-        Integer one = 4;
-        String jaboo = one.toString();
-        playerLabel.setText(jaboo + " Players");
-        players = 4;
+        playerLabel.setText("4 players");
+        Game.setNumberOfPlayers(4);
+
+
     }
     @FXML
     void setDiff1(ActionEvent event) {

@@ -10,6 +10,7 @@ import javafx.scene.control.Control;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import teamJankkk.model.Game;
 import teamJankkk.model.Player;
 import teamJankkk.Main;
 
@@ -90,13 +91,10 @@ public class PlayerSelect extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 0);
-                PlayerDB.setRace(race, 0);
-                PlayerDB.setColor(color, 0);
                 PlayerDB.createPlayer(name, 1);
                 PlayerDB.setRace(race, 1);
                 PlayerDB.setColor(color, 1);
-                if (ConfigController.getPlayerCount() > 1) {
+                if (Game.getNumberOfPlayers() > 1) {
                     Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));
                     stage.setScene(new Scene(screen2));
                     stage.show();
