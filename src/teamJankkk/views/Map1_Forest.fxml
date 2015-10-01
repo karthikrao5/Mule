@@ -10,226 +10,228 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.Map1Controller">
-  <children>
-    <StackPane />
-    <GridPane gridLinesVisible="true" layoutX="0.0" prefHeight="508.0" prefWidth="800.0">
-      <children>
-        <ImageView fx:id="image01" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map01Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wRocks1.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image02" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map02Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="2">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wTrees2.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image03" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map03Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="3">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image04" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map04Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="4">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image10" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map10Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="0">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image11" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map11Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wTrees1.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image12" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map12Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wRocks4.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image13" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map13Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image14" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map14Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wRocks2.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image20" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map20Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="0">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wWater1.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image21" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map21Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wWater2.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image22" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map22Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
-          <image>
-            <Image url="@_Images/Misc/Store_Tile.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image23" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map23Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wWater2.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image24" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map24Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="4">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wWater1.png" />
-          </image>
-        </ImageView>
-        <ImageView id="image03" fx:id="image30" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map30Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="0">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wRocks3.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image31" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map31Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wTrees3.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image32" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map32Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image00" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map00Clicked" pickOnBounds="true" preserveRatio="false">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image33" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map33Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image34" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map34Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wTrees2.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image40" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map40Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="0">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image41" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map41Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="1">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image42" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map42Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="2">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image43" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map43Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="3">
-          <image>
-            <Image url="@_Images/Forest/forest_floor_wTrees1.png" />
-          </image>
-        </ImageView>
-        <ImageView fx:id="image44" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map44Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="4">
-          <image>
-            <Image url="@_Images/Forest/forest_floor.png" />
-          </image>
-        </ImageView>
-            <Button fx:id="endTurnButton" mnemonicParsing="false" onAction="#endTurn" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: GRAY;" text="End Turn" textFill="WHITE" GridPane.columnIndex="4">
-               <GridPane.margin>
-                  <Insets left="80.0" top="-60.0" />
-               </GridPane.margin>
-               <effect>
-                  <InnerShadow radius="6.965" width="8.86" />
-               </effect>
-            </Button>
-            <Label fx:id="turnCounterLabel" text="1" textFill="WHITE" GridPane.rowIndex="4">
-               <font>
-                  <Font name="American Typewriter" size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="60.0" />
-               </padding>
-               <GridPane.margin>
-                  <Insets bottom="-75.0" left="35.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Turn Count:" textFill="WHITE" GridPane.rowIndex="4">
-               <font>
-                  <Font name="American Typewriter" size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <GridPane.margin>
-                  <Insets bottom="-75.0" />
-               </GridPane.margin>
-            </Label>
-            <Label layoutX="10.0" layoutY="496.0" text="Player:" textFill="WHITE">
-               <font>
-                  <Font name="American Typewriter" size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <GridPane.margin>
-                  <Insets top="-75.0" />
-               </GridPane.margin>
-            </Label>
-            <Label fx:id="timerLabel" layoutX="45.0" layoutY="496.0" text="60" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="4">
-               <font>
-                  <Font name="American Typewriter" size="28.0" />
-               </font>
-               <padding>
-                  <Insets bottom="-60.0" left="110.0" />
-               </padding>
-            </Label>
-            <Label fx:id="playerTurnLabel" layoutX="45.0" layoutY="496.0" text="1" textFill="WHITE">
-               <font>
-                  <Font name="American Typewriter" size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="60.0" />
-               </padding>
-               <GridPane.margin>
-                  <Insets left="5.0" top="-75.0" />
-               </GridPane.margin>
-            </Label>
-      </children>
-      <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      </columnConstraints>
-      <rowConstraints>
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      </rowConstraints>
-    </GridPane>
-      <!--<Label text="Player " textFill="WHITE">-->
-         <!--<font>-->
-            <!--<Font name="American Typewriter" size="14.0" />-->
-         <!--</font>-->
-         <!--<padding>-->
-            <!--<Insets left="10.0" />-->
-         <!--</padding>-->
-      <!--</Label>-->
-      <!--<Label fx:id="playerTurnLabel" text="1" textFill="WHITE">-->
-         <!--<font>-->
-            <!--<Font name="American Typewriter" size="14.0" />-->
-         <!--</font>-->
-         <!--<padding>-->
-            <!--<Insets left="60.0" />-->
-         <!--</padding>-->
-      <!--</Label>-->
-  </children>
+    <children>
+        <StackPane />
+        <GridPane gridLinesVisible="true" layoutX="0.0" prefHeight="508.0" prefWidth="800.0">
+            <children>
+                <ImageView fx:id="image01" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map01Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wRocks1.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image02" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map02Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wTrees2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image03" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map03Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image04" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map04Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image10" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map10Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image11" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map11Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wTrees1.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image12" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map12Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wRocks4.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image13" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map13Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image14" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map14Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wRocks2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image20" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map20Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wWater1.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image21" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map21Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wWater2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image22" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map22Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <image>
+                        <Image url="@_Images/Misc/Store_Tile.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image23" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map23Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wWater2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image24" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map24Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wWater1.png" />
+                    </image>
+                </ImageView>
+                <ImageView id="image03" fx:id="image30" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map30Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wRocks3.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image31" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map31Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wTrees3.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image32" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map32Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image00" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map00Clicked" pickOnBounds="true" preserveRatio="false">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image33" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map33Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image34" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map34Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wTrees2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image40" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map40Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="0">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image41" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map41Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image42" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map42Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image43" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map43Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor_wTrees1.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="image44" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map44Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                    <image>
+                        <Image url="@_Images/Forest/forest_floor.png" />
+                    </image>
+                </ImageView>
+                <Button fx:id="endTurnButton" mnemonicParsing="false" onAction="#endTurn" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: GRAY;" text="End Turn" textFill="WHITE" GridPane.columnIndex="4">
+                    <GridPane.margin>
+                        <Insets left="80.0" top="-60.0" />
+                    </GridPane.margin>
+                    <effect>
+                        <InnerShadow radius="6.965" width="8.86" />
+                    </effect>
+                </Button>
+                <Label fx:id="turnCounterLabel" text="1" textFill="WHITE" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="American Typewriter" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="60.0" />
+                    </padding>
+                    <GridPane.margin>
+                        <Insets bottom="-75.0" left="35.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="turnCounterLabel2" text="Turn Count:" textFill="WHITE" GridPane.rowIndex="4">
+
+
+                    <font>
+                        <Font name="American Typewriter" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <GridPane.margin>
+                        <Insets bottom="-75.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label layoutX="10.0" layoutY="496.0" text="Player:" textFill="WHITE">
+                    <font>
+                        <Font name="American Typewriter" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <GridPane.margin>
+                        <Insets top="-75.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="timerLabel" layoutX="45.0" layoutY="496.0" text="60" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="American Typewriter" size="28.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="-60.0" left="110.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="turnCounterLabel1" layoutX="45.0" layoutY="496.0" text="1" textFill="WHITE">
+                    <font>
+                        <Font name="American Typewriter" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="60.0" />
+                    </padding>
+                    <GridPane.margin>
+                        <Insets left="5.0" top="-75.0" />
+                    </GridPane.margin>
+                </Label>
+            </children>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <!--<Label text="Player " textFill="WHITE">-->
+        <!--<font>-->
+        <!--<Font name="American Typewriter" size="14.0" />-->
+        <!--</font>-->
+        <!--<padding>-->
+        <!--<Insets left="10.0" />-->
+        <!--</padding>-->
+        <!--</Label>-->
+        <!--<Label fx:id="playerTurnLabel" text="1" textFill="WHITE">-->
+        <!--<font>-->
+        <!--<Font name="American Typewriter" size="14.0" />-->
+        <!--</font>-->
+        <!--<padding>-->
+        <!--<Insets left="60.0" />-->
+        <!--</padding>-->
+        <!--</Label>-->
+    </children>
 </AnchorPane>

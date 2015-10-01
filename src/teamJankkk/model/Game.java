@@ -1,22 +1,26 @@
 package teamJankkk.model;
 
+import teamJankkk.controller.ConfigController;
+
 /**
  * Created by karthik on 9/23/15.
  */
 public class Game {
 
-    private static int currentTurn, numberOfPlayers, currentPlayer;
+    private static int currentTurn, numberOfPlayers;
+    private static int currentPlayer;
 
     public boolean endGame = false;
 
     public Game(int numberOfPlayers) {
         this.numberOfPlayers = numberOfPlayers;
-        currentPlayer = 0;
+        this.currentPlayer = 1;
     }
 
-    public static void nextTurn() {
+    public static int nextTurn() {
         currentTurn++;
-        nextPlayer();
+        return nextPlayer();
+
     }
 
     public void landGrant() {
@@ -27,11 +31,11 @@ public class Game {
 
     }
 
-    public int getCurrentTurnNumber() {
+    public static int getCurrentTurnNumber() {
         return currentTurn;
     }
 
-    public int getCurrentPlayer() {
+    public static int getCurrentPlayer() {
         return currentPlayer;
     }
 
@@ -39,11 +43,12 @@ public class Game {
         return numberOfPlayers;
     }
 
-    private static void nextPlayer() {
+    private static int nextPlayer() {
         if(currentPlayer >= numberOfPlayers) {
             currentPlayer = 0;
         } else {
             currentPlayer++;
         }
+        return currentPlayer;
     }
 }

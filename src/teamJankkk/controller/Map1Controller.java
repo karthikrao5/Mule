@@ -42,12 +42,17 @@ public class Map1Controller extends Main implements Initializable {
              image51, image52, image53, image54;
 
     @FXML private Label playerTurnLabel;
+    @FXML private Label turnCounterLabel1;
+    @FXML private Label turnCounterLabel2;
     @FXML private Label timerLabel;
     private Integer timeSeconds = STARTTIME;
+    private Integer playerTURN = 1;
+    private Integer turnCOUNT = 1;
     private static final Integer STARTTIME = 60;
     private Timeline timeline;
     @FXML private Label turnCounterLabel;
     @FXML private Button endTurnButton;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -78,11 +83,13 @@ public class Map1Controller extends Main implements Initializable {
         image44.setOnMouseClicked(this::map44Clicked);
         endTurnButton.setOnAction(this::endTurn);
         timerLabel.setText(timeSeconds.toString());
-        //game = new Game(game.getNumberOfPlayers());
+        game = new Game(ConfigController.getPlayerCount());
+
     }
     @FXML
     private void endTurn(ActionEvent event) {
-        Game.nextTurn();
+        playerTURN = game.nextTurn();
+        updateLabel();
         if (timeline != null) {
             timeline.stop();
         }
@@ -100,7 +107,9 @@ public class Map1Controller extends Main implements Initializable {
                                     timeSeconds.toString());
                             if (timeSeconds <= 0) {
                                 timeline.stop();
-                                //timeSeconds = STARTTIME;
+                                timeSeconds = STARTTIME;
+                                Game.nextTurn();
+                                updateLabel();
 
                             }
                         }));
@@ -263,7 +272,9 @@ public class Map1Controller extends Main implements Initializable {
     }
 
     public void updateLabel() {
-//         playerTurnLabel.setText(new Integer(game.getPlayerTurn()).toString());
+        turnCOUNT = game.getCurrentTurnNumber();
+        turnCounterLabel1.setText(playerTURN.toString());
+        turnCounterLabel2.setText("Turn Count: " + turnCOUNT.toString());
     }
 
     public String updateColor() {
