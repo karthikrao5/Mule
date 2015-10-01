@@ -55,30 +55,26 @@ public class StoreController extends Main implements Initializable {
     public void thePubClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
         try {
-            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/ThePub.fxml"));
-            stage.setScene(new Scene(screen3));
+            Pane pubScreen = (Pane) FXMLLoader.load(getClass().getResource("../views/ThePub.fxml"));
+            stage.setScene(new Scene(pubScreen));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    @FXML
     public void muleStoreClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
     }
 
-    @FXML
     public void smithOreClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
     }
 
-    @FXML
     public void energyTileClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
     }
 
-    @FXML
     public void foodTileClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
     }
