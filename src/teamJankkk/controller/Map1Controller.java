@@ -180,22 +180,27 @@ public class Map1Controller extends Main implements Initializable {
         tile00.setOwner(Game.getCurrentPlayer());
         System.out.println(tile00.getIsClaimed());
         System.out.println(Game.getCurrentPlayer());
-//        image00.setImage(new Image(updateColor()));
+        image00.setImage(new Image(updateColor()));
+        endTurn();
     }
 
     @FXML
     public void map01Clicked(MouseEvent event) {
-        Image image = new Image(updateColor());
-        image01.setImage(image);
-        System.out.println("Clicked");
+        tile01.setIsClaimed(true);
+        tile01.setOwner(Game.getCurrentPlayer());
+        System.out.println(tile01.getIsClaimed());
+        System.out.println(Game.getCurrentPlayer());
+        image01.setImage(new Image(updateColor()));
         endTurn();
     }
 
     @FXML
     public void map02Clicked(MouseEvent event) {
-        System.out.println("Clicked");
-        Image image = new Image(updateColor());
-        image02.setImage(image);
+        tile02.setIsClaimed(true);
+        tile02.setOwner(Game.getCurrentPlayer());
+        System.out.println(tile02.getIsClaimed());
+        System.out.println(Game.getCurrentPlayer());
+        image02.setImage(new Image(updateColor()));
         endTurn();
     }
 
@@ -340,7 +345,7 @@ public class Map1Controller extends Main implements Initializable {
     }
 
     public String updateColor() {
-        String color = PlayerDB.getPlayer(playerTURN-1).getColor();
+        String color = PlayerDB.getPlayer(playerTURN).getColor();
         if (color.equals("Blue")) {
             color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
         } else if (color.equals("Yellow")) {
