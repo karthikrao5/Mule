@@ -34,5 +34,10 @@
             </Label>
          </children>
       </Pane>
+      <Label fx:id="goBackLabel" layoutX="8.0" layoutY="467.0" onMouseClicked="#goBackToMap" text="&lt;&lt; BACK" textFill="#fcfcfc">
+         <font>
+            <Font name="American Typewriter" size="27.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
