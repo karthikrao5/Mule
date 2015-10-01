@@ -1,6 +1,7 @@
 package teamJankkk.controller;
 
 import javafx.event.ActionEvent;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -38,6 +39,10 @@ public class Map1Controller extends Main implements Initializable {
              image51, image52, image53, image54;
 
     @FXML private Label playerTurnLabel;
+    @FXML private Label timerLabel;
+    private Integer timeSeconds = STARTTIME;
+    private static final Integer STARTTIME = 15;
+    private Timeline timeline;
     @FXML private Label turnCounterLabel;
     @FXML private Button endTurnButton;
 
@@ -69,12 +74,11 @@ public class Map1Controller extends Main implements Initializable {
         image43.setOnMouseClicked(this::map43Clicked);
         image44.setOnMouseClicked(this::map44Clicked);
         endTurnButton.setOnAction(this::endTurn);
-
+        timerLabel.setText(timeSeconds.toString());
     }
 
     private void endTurn(ActionEvent event) {
         game.nextTurn();
-
     }
 
 
@@ -236,24 +240,17 @@ public class Map1Controller extends Main implements Initializable {
     }
 
     public String updateColor() {
-//        String color = PlayerDB.getPlayer(game.getPlayerTurn()).getColor();
-//        if (color.equals("Blue")) {
-//            color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
-//        } else if (color.equals("Yellow")) {
-//            color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
-//        } else if (color.equals("Purple")) {
-//            color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
-//        } else if (color.equals("Red")) {
-//            color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
-//        }
-//        return color;
-        return null;
+        String color = PlayerDB.getPlayer(game.getCurrentPlayer()).getColor();
+        if (color.equals("Blue")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
+        } else if (color.equals("Yellow")) {
+            color = "/teamJankkk/views/_Imfages/Forest/forest_floor_YELLOW.png";
+        } else if (color.equals("Purple")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+        } else if (color.equals("Red")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
+        }
+        return color;
     }
-    /*
-    public void updateColor() {
-        PlayerDB.getPlayer();
-        game.getPlayerTurn();
-    }
-    */
 
 }
