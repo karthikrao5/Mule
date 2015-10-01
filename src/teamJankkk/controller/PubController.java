@@ -49,10 +49,10 @@ public class PubController extends Main implements Initializable {
     }
 
     @FXML
-    public void goBackToMap() {
+    public void goBackToStore() {
         try {
-            Pane backToMap = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
-            stage.setScene(new Scene(backToMap));
+            Pane backToStore = (Pane) FXMLLoader.load(getClass().getResource("../views/TheStore.fxml"));
+            stage.setScene(new Scene(backToStore));
             stage.show();
         } catch(IOException e) {
             e.printStackTrace();
