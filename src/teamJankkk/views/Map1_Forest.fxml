@@ -188,7 +188,7 @@
                   <Insets bottom="-60.0" left="110.0" />
                </padding>
             </Label>
-            <Label fx:id="turnCounterLabel1" layoutX="45.0" layoutY="496.0" text="1" textFill="WHITE">
+            <Label fx:id="playerTurnLabel" layoutX="45.0" layoutY="496.0" text="1" textFill="WHITE">
                <font>
                   <Font name="American Typewriter" size="14.0" />
                </font>

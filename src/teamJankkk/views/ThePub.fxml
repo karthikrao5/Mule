@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #300449;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="504.0" fitWidth="805.0">
+         <image>
+            <Image url="@_Images/Pub/pubBackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="gambleButton" fitHeight="200.0" fitWidth="200.0" layoutX="300.0" layoutY="150.0" opacity="0.9">
+         <image>
+            <Image url="@_Images/Pub/gambleButton.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="222.0" layoutY="423.0">
+         <children>
+            <Label fx:id="winningsLabel" layoutX="328.0" text="0" textFill="WHITE">
+               <font>
+                  <Font size="51.0" />
+               </font>
+            </Label>
+            <Label text="WINNINGS: $" textFill="WHITE">
+               <font>
+                  <Font size="51.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
