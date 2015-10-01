@@ -80,10 +80,10 @@ public class PlayerSelect4 extends Main implements Initializable {
                         + " , your race is: " + race
                         + " and you'll be playing for the " + color);
 
-                PlayerDB.createPlayer(name, 3);
-                PlayerDB.setRace(race, 3);
-                PlayerDB.setColor(color, 3);
-                configLabel4.setText(PlayerDB.toString(3));
+                PlayerDB.createPlayer(name, 4);
+                PlayerDB.setRace(race, 4);
+                PlayerDB.setColor(color, 4);
+                configLabel4.setText(PlayerDB.toString(4));
 
                 Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
                 stage.setScene(new Scene(gameSumPane));
