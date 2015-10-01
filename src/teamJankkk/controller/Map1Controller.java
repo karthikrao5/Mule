@@ -33,7 +33,6 @@ import java.util.ResourceBundle;
 public class Map1Controller extends Main implements Initializable {
 
 
-    public Game game;
     private Tile tile00 = new Tile();
     private Tile tile01 = new Tile();
     private Tile tile02 = new Tile();
@@ -111,7 +110,7 @@ public class Map1Controller extends Main implements Initializable {
         image44.setOnMouseClicked(this::map44Clicked);
         endTurnButton.setOnAction(this::endTurn);
         timerLabel.setText(timeSeconds.toString());
-        game = new Game(ConfigController.getPlayerCount());
+        Game.setNumberOfPlayers(ConfigController.getPlayerCount());
 
 //        Tile tile00 = new Tile(false);
 //        Tile tile01 = new Tile(false);
@@ -147,7 +146,7 @@ public class Map1Controller extends Main implements Initializable {
     }
 
     private void endTurn() {
-        playerTURN = game.nextTurn();
+        playerTURN = Game.nextTurn();
         updateLabel();
         if (timeline != null) {
             timeline.stop();
@@ -339,7 +338,7 @@ public class Map1Controller extends Main implements Initializable {
     }
 
     public void updateLabel() {
-        turnCOUNT = game.getCurrentTurnNumber();
+        turnCOUNT = Game.getCurrentTurnNumber();
         turnCounterLabel1.setText(playerTURN.toString());
         turnCounterLabel.setText(turnCOUNT.toString());
     }

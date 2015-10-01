@@ -12,9 +12,12 @@ public class Game {
 
     public boolean endGame = false;
 
-    public Game(int numberOfPlayers) {
-        this.numberOfPlayers = numberOfPlayers;
+    public Game() {
         this.currentPlayer = 1;
+    }
+
+    public static void setNumberOfPlayers(int num) {
+        numberOfPlayers = num;
     }
 
     public static int nextTurn() {
