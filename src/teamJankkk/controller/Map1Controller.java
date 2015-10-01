@@ -78,10 +78,11 @@ public class Map1Controller extends Main implements Initializable {
         image44.setOnMouseClicked(this::map44Clicked);
         endTurnButton.setOnAction(this::endTurn);
         timerLabel.setText(timeSeconds.toString());
+        //game = new Game(game.getNumberOfPlayers());
     }
-
+    @FXML
     private void endTurn(ActionEvent event) {
-        game.nextTurn();
+        Game.nextTurn();
         if (timeline != null) {
             timeline.stop();
         }
@@ -99,6 +100,8 @@ public class Map1Controller extends Main implements Initializable {
                                     timeSeconds.toString());
                             if (timeSeconds <= 0) {
                                 timeline.stop();
+                                //timeSeconds = STARTTIME;
+
                             }
                         }));
         timeline.playFromStart();

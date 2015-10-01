@@ -14,7 +14,7 @@ public class Game {
         currentPlayer = 0;
     }
 
-    public void nextTurn() {
+    public static void nextTurn() {
         currentTurn++;
         nextPlayer();
     }
@@ -35,8 +35,12 @@ public class Game {
         return currentPlayer;
     }
 
-    private void nextPlayer() {
-        if(currentPlayer >= 2) {
+    public int getNumberOfPlayers() {
+        return numberOfPlayers;
+    }
+
+    private static void nextPlayer() {
+        if(currentPlayer >= numberOfPlayers) {
             currentPlayer = 0;
         } else {
             currentPlayer++;
