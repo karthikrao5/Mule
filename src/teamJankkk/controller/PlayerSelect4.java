@@ -32,7 +32,7 @@ public class PlayerSelect4 extends Main implements Initializable {
     @FXML private ChoiceBox<String> raceChoiceBox4;
     @FXML private ChoiceBox<String> colorChoiceBox4;
 
-    public static teamJankkk.model.Player p4;
+    //public static teamJankkk.model.Player p4;
 
 
     @Override

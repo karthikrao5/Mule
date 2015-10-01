@@ -1,21 +1,34 @@
 package teamJankkk.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 /**
  * Created by karthik on 9/24/15.
  */
 public class Tile {
 
+    List<String> resourceList;
     private String resource;
     private Boolean isEmpty;
     private Player owner;
 
-    public Tile(String resource, boolean bool) {
+    public Tile(boolean bool) {
+        resourceList = new ArrayList<>(Arrays.asList("SmithOre",
+                "Energy", "Food"));
         isEmpty = bool;
-        this.resource = resource;
+        Random rand = new Random();
+        resource = resourceList.get(rand.nextInt(2));
     }
 
-    public void setOwner(Player p) {
-        owner = p;
+    public void setOwner(int p) {
+        owner = PlayerDB.getPlayer(p);
+    }
+
+    public String getResource() {
+        return resource;
     }
 
     public Player getOwner() {
