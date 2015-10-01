@@ -24,6 +24,7 @@ import java.net.URL;
 import javafx.util.Duration;
 import teamJankkk.model.Tile;
 
+import javax.swing.*;
 import java.util.ResourceBundle;
 
 /**
@@ -139,8 +140,13 @@ public class Map1Controller extends Main implements Initializable {
 //        Tile tile44 = new Tile(false);
 
     }
+
     @FXML
     private void endTurn(ActionEvent event) {
+        endTurn();
+    }
+
+    private void endTurn() {
         playerTURN = game.nextTurn();
         updateLabel();
         if (timeline != null) {
