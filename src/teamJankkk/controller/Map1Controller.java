@@ -106,11 +106,10 @@ public class Map1Controller extends Main implements Initializable {
                             timerLabel.setText(
                                     timeSeconds.toString());
                             if (timeSeconds <= 0) {
-                                timeline.stop();
+                                //timeline.stop();
                                 timeSeconds = STARTTIME;
                                 Game.nextTurn();
                                 updateLabel();
-
                             }
                         }));
         timeline.playFromStart();
