@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="teamJankkk.controller.ConfigController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: YELLOW;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.ConfigController">
   <children>
     <HBox prefHeight="100.0" prefWidth="600.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="233.0">
       <children>
@@ -17,25 +19,53 @@
                 <Font name="AppleMyungjo Regular" size="24.0" fx:id="x1" />
               </font>
             </Label>
-            <Button fx:id="Beg" mnemonicParsing="false" onAction="#setDiff1" prefHeight="40.0" prefWidth="200.0" text="Beginner" />
-            <Button fx:id="Int" mnemonicParsing="false" onAction="#setDiff2" prefHeight="40.0" prefWidth="200.0" text="Intermediate" />
+            <Button fx:id="Beg" mnemonicParsing="false" onAction="#setDiff1" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: c50000;" text="Beginner" textFill="WHITE" textOverrun="CLIP">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
+            <Button fx:id="Int" mnemonicParsing="false" onAction="#setDiff2" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: BLUE;" text="Intermediate" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
           </children>
         </VBox>
         <VBox prefHeight="200.0" prefWidth="200.0">
           <children>
             <Label alignment="CENTER" font="$x1" prefWidth="200.0" text="MAP TYPE" textAlignment="CENTER" />
-            <Button fx:id="Map1" mnemonicParsing="false" onAction="#setMap1" prefHeight="40.0" prefWidth="200.0" text="Map 1" />
-            <Button fx:id="Map2" mnemonicParsing="false" onAction="#setMap2" prefHeight="40.0" prefWidth="200.0" text="Map 2" />
-            <Button fx:id="Map3" mnemonicParsing="false" onAction="#setMap3" prefHeight="40.0" prefWidth="200.0" text="Map 3" />
+            <Button fx:id="Map1" mnemonicParsing="false" onAction="#setMap1" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #00a188;" text="Map 1" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
+            <Button fx:id="Map2" mnemonicParsing="false" onAction="#setMap2" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: PURPLE;" text="Map 2" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
+            <Button fx:id="Map3" mnemonicParsing="false" onAction="#setMap3" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #ff7f00;" text="Map 3" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
           </children>
         </VBox>
         <VBox prefHeight="200.0" prefWidth="200.0">
           <children>
             <Label alignment="CENTER" font="$x1" prefWidth="200.0" text="# PLAYERS" textAlignment="CENTER" />
-            <Button fx:id="onePlayer" mnemonicParsing="false" onAction="#setPlayers1" prefHeight="30.0" prefWidth="200.0" text="1" />
-            <Button fx:id="twoPlayer" mnemonicParsing="false" onAction="#setPlayers2" prefWidth="200.0" text="2" />
-            <Button fx:id="threePlayer" mnemonicParsing="false" onAction="#setPlayers3" prefWidth="200.0" text="3" />
-            <Button fx:id="fourPlayer" mnemonicParsing="false" onAction="#setPlayers4" prefHeight="30.0" prefWidth="200.0" text="4" />
+            <Button fx:id="onePlayer" mnemonicParsing="false" onAction="#setPlayers1" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #60db80;" text="1" textFill="WHITE">
+                     <font>
+                        <Font name="System Font Bold" size="13.0" />
+                     </font></Button>
+            <Button fx:id="twoPlayer" mnemonicParsing="false" onAction="#setPlayers2" prefWidth="200.0" style="-fx-background-color: e03f3f;" text="2" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
+            <Button fx:id="threePlayer" mnemonicParsing="false" onAction="#setPlayers3" prefWidth="200.0" style="-fx-background-color: #e559f4;" text="3" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
+            <Button fx:id="fourPlayer" mnemonicParsing="false" onAction="#setPlayers4" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #088de0;" text="4" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
           </children>
         </VBox>
       </children>
@@ -51,21 +81,24 @@
         <Label fx:id="playerLabel" alignment="CENTER" font="$x2" prefHeight="40.0" prefWidth="200.0" text="1 Player" textAlignment="CENTER" />
       </children>
     </HBox>
-    <Text layoutX="195.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M.U.L.E" textAlignment="JUSTIFY">
-      <font>
-        <Font name="AppleMyungjo Regular" size="96.0" />
-      </font>
-    </Text>
-    <Button fx:id="startButton" layoutX="325.0" layoutY="426.0" mnemonicParsing="false" onAction="#goToPlayerSelection" prefHeight="50.0" prefWidth="150.0" text="START" />
-    <Text layoutX="322.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM JANKK" textAlignment="JUSTIFY">
+    <Button fx:id="startButton" layoutX="325.0" layoutY="426.0" mnemonicParsing="false" onAction="#goToPlayerSelection" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #00c51d;" text="START!" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Button>
+    <Text layoutX="322.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM JANKK" textAlignment="JUSTIFY">
       <font>
         <Font name="AppleMyungjo Regular" size="22.0" />
       </font>
     </Text>
-    <Text layoutX="121.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="John Hudgins | Albert Abedi | Nikhil Howlett | Kevin Rose | Karthik Rao" textAlignment="JUSTIFY">
+    <Text layoutX="122.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="John Hudgins | Albert Abedi | Nikhil Howlett | Kevin Rose | Karthik Rao" textAlignment="JUSTIFY">
       <font>
         <Font name="AppleMyungjo Regular" size="16.0" />
       </font>
     </Text>
+      <ImageView fitHeight="93.0" fitWidth="465.0" layoutX="168.0" layoutY="32.0">
+         <image>
+            <Image url="@_Images/MULE_logo.png" />
+         </image>
+      </ImageView>
   </children>
 </AnchorPane>

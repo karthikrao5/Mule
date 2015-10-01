@@ -44,6 +44,7 @@ public class PubController extends Main implements Initializable {
         System.out.println("Player # is: " + Game.getCurrentPlayer());
         System.out.print(" and bitchfuck " + PlayerDB.getPlayer(Game.getCurrentPlayer()));
         PlayerDB.getPlayer(Game.getCurrentPlayer()).addMoney(randomNum);
+        Game.nextTurn();
         // check global val for player turn, add to this player
     }
 
