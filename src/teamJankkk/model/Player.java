@@ -37,7 +37,11 @@ public class Player {
         money = input;
     }
 
-    public int getMoney() { return money; }
+    public int getMoney() {return money;}
+
+    public void addMoney(int moneyToAdd) {
+        this.money = money + moneyToAdd;
+    }
 
     public String getName() {
         return name;

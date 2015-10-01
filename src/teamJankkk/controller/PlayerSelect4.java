@@ -31,7 +31,7 @@ public class PlayerSelect4 extends Main implements Initializable {
     @FXML private ChoiceBox<String> raceChoiceBox4;
     @FXML private ChoiceBox<String> colorChoiceBox4;
 
-    public static teamJankkk.model.Player p4;
+    //public static teamJankkk.model.Player p4;
 
 
     @Override
@@ -74,9 +74,22 @@ public class PlayerSelect4 extends Main implements Initializable {
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
+<<<<<<< HEAD
                 PlayerDB.createPlayer(name, 3);
                 PlayerDB.setRace(race, 3);
                 PlayerDB.setColor(color, 3);
+=======
+                configLabel4.setText("What up boss, your name is "
+                        + name
+                        + " , your race is: " + race
+                        + " and you'll be playing for the " + color);
+
+                PlayerDB.createPlayer(name, 4);
+                PlayerDB.setRace(race, 4);
+                PlayerDB.setColor(color, 4);
+                configLabel4.setText(PlayerDB.toString(4));
+
+>>>>>>> d038c28f2c7ad19bd5b6654e8152705e2f28b11e
                 Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
                 stage.setScene(new Scene(gameSumPane));
                 stage.show();

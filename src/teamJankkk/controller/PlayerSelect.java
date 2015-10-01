@@ -90,9 +90,20 @@ public class PlayerSelect extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
+<<<<<<< HEAD
                 PlayerDB.createPlayer(name, 0);
                 PlayerDB.setRace(race, 0);
                 PlayerDB.setColor(color, 0);
+=======
+                configLabel.setText("What up boss, your name is "
+                        + name
+                        + ", your race is " + race
+                        + " and you'll be playing for the " + color + " team!");
+                PlayerDB.createPlayer(name, 1);
+                PlayerDB.setRace(race, 1);
+                PlayerDB.setColor(color, 1);
+                configLabel.setText(PlayerDB.toString(1));
+>>>>>>> d038c28f2c7ad19bd5b6654e8152705e2f28b11e
 
                 if (ConfigController.getPlayerCount() > 1) {
                     Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));

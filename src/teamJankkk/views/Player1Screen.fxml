@@ -34,7 +34,7 @@
               <String fx:value="Red" />
               <String fx:value="Blue" />
               <String fx:value="Yellow" />
-              <String fx:value="Green" />
+              <String fx:value="Purple" />
             </FXCollections>
           </items>
         </ChoiceBox>
