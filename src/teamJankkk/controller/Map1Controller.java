@@ -1,6 +1,8 @@
 package teamJankkk.controller;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +21,7 @@ import teamJankkk.model.PlayerDB;
 
 import java.io.IOException;
 import java.net.URL;
+import javafx.util.Duration;
 import java.util.ResourceBundle;
 
 /**
@@ -41,7 +44,7 @@ public class Map1Controller extends Main implements Initializable {
     @FXML private Label playerTurnLabel;
     @FXML private Label timerLabel;
     private Integer timeSeconds = STARTTIME;
-    private static final Integer STARTTIME = 15;
+    private static final Integer STARTTIME = 60;
     private Timeline timeline;
     @FXML private Label turnCounterLabel;
     @FXML private Button endTurnButton;
@@ -79,7 +82,28 @@ public class Map1Controller extends Main implements Initializable {
 
     private void endTurn(ActionEvent event) {
         game.nextTurn();
+        if (timeline != null) {
+            timeline.stop();
+        }
+        timeSeconds = STARTTIME;
+        // update timerLabel
+        timerLabel.setText(timeSeconds.toString());
+        timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.getKeyFrames().add(
+                new KeyFrame(Duration.seconds(1),
+                        event1 -> {
+                            timeSeconds--;
+                            // update timerLabel
+                            timerLabel.setText(
+                                    timeSeconds.toString());
+                            if (timeSeconds <= 0) {
+                                timeline.stop();
+                            }
+                        }));
+        timeline.playFromStart();
     }
+
 
 
     @FXML
