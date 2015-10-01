@@ -9,6 +9,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
+import teamJankkk.model.Game;
+import teamJankkk.model.PlayerDB;
+
+import java.util.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,14 +24,27 @@ import java.util.ResourceBundle;
 public class PubController extends Main implements Initializable {
 
     @FXML
-    private ImageView gambleButton;
+    private ImageView gambleView;
 
     @FXML
     private Label winningsLabel, goBackLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        gambleView.setOnMouseClicked(this::gambleButtonClicked);
+    }
 
+    @FXML
+    public void gambleButtonClicked(MouseEvent event) {
+        // need to use random class for gambling
+        Random rand = new Random();
+        int randomNum = rand.nextInt(1000) - 500;
+        int finRand = randomNum;
+        winningsLabel.setText(Integer.toString(finRand));
+        System.out.println("Player # is: " + Game.getCurrentPlayer());
+        System.out.print(" and bitchfuck " + PlayerDB.getPlayer(Game.getCurrentPlayer()));
+        PlayerDB.getPlayer(Game.getCurrentPlayer()).addMoney(randomNum);
+        // check global val for player turn, add to this player
     }
 
     @FXML

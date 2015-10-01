@@ -14,7 +14,7 @@
             <Image url="@_Images/Pub/pubBackground.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="gambleButton" fitHeight="200.0" fitWidth="200.0" layoutX="300.0" layoutY="150.0" opacity="0.9">
+      <ImageView fx:id="gambleView" fitHeight="200.0" fitWidth="200.0" layoutX="300.0" layoutY="150.0" opacity="0.9">
          <image>
             <Image url="@_Images/Pub/gambleButton.png" />
          </image>
