@@ -161,14 +161,12 @@ public class Map1Controller extends Main implements Initializable {
                             if (timeSeconds <= 0) {
                                 //timeline.stop();
                                 timeSeconds = STARTTIME;
-                                Game.nextTurn();
+                                //game.nextTurn();
                                 updateLabel();
                             }
                         }));
         timeline.playFromStart();
     }
-
-
 
     @FXML
     public void map00Clicked(MouseEvent event) {
@@ -184,23 +182,23 @@ public class Map1Controller extends Main implements Initializable {
         Image image = new Image(updateColor());
         image01.setImage(image);
         System.out.println("Clicked");
-        game.nextTurn();
+        endTurn();
     }
 
     @FXML
     public void map02Clicked(MouseEvent event) {
         System.out.println("Clicked");
-        Image image = new Image("/teamJankkk/views/_Images/Forest/forest_floor_RED.png");
+        Image image = new Image(updateColor());
         image02.setImage(image);
-        game.nextTurn();
+        endTurn();
     }
 
     @FXML
     public void map03Clicked(MouseEvent event) {
         System.out.println("Clicked");
-        Image image = new Image("/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png");
+        Image image = new Image(updateColor());
         image03.setImage(image);
-        game.nextTurn();
+        endTurn();
     }
 
     @FXML
@@ -290,7 +288,6 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map34Clicked(MouseEvent event) {
-
         System.out.println("Clicked");
     }
 
@@ -302,20 +299,32 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map41Clicked(MouseEvent event) {
         System.out.println("Clicked");
+        Image image = new Image(updateColor());
+        image41.setImage(image);
+        endTurn();
     }
     @FXML
     public void map42Clicked(MouseEvent event) {
         System.out.println("Clicked");
+        Image image = new Image(updateColor());
+        image42.setImage(image);
+        endTurn();
     }
 
     @FXML
     public void map43Clicked(MouseEvent event) {
         System.out.println("Clicked");
+        Image image = new Image(updateColor());
+        image43.setImage(image);
+        endTurn();
     }
 
     @FXML
     public void map44Clicked(MouseEvent event) {
         System.out.println("Clicked");
+        Image image = new Image(updateColor());
+        image44.setImage(image);
+        endTurn();
     }
 
     public void updateLabel() {
@@ -325,12 +334,14 @@ public class Map1Controller extends Main implements Initializable {
     }
 
     public String updateColor() {
-        String color = PlayerDB.getPlayer(game.getCurrentPlayer()).getColor();
+        String color = PlayerDB.getPlayer(playerTURN-1).getColor();
         if (color.equals("Blue")) {
             color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
         } else if (color.equals("Yellow")) {
-            color = "/teamJankkk/views/_Imfages/Forest/forest_floor_YELLOW.png";
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
         } else if (color.equals("Purple")) {
+            color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+        } else if (color.equals("Green")) {
             color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
         } else if (color.equals("Red")) {
             color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
