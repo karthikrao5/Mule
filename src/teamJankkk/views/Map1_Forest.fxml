@@ -139,7 +139,7 @@
             <Image url="@_Images/Forest/forest_floor.png" />
           </image>
         </ImageView>
-            <Button fx:id="endTurnButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: GRAY;" text="End Turn" textFill="WHITE" GridPane.columnIndex="4">
+            <Button fx:id="endTurnButton" onAction="#endTurn" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: GRAY;" text="End Turn" textFill="WHITE" GridPane.columnIndex="4">
                <GridPane.margin>
                   <Insets left="80.0" top="-60.0" />
                </GridPane.margin>
@@ -163,21 +163,21 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-      <Label text="Player " textFill="WHITE">
-         <font>
-            <Font name="American Typewriter" size="14.0" />
-         </font>
-         <padding>
-            <Insets left="10.0" />
-         </padding>
-      </Label>
-      <Label fx:id="playerTurnLabel" text="1" textFill="WHITE">
-         <font>
-            <Font name="American Typewriter" size="14.0" />
-         </font>
-         <padding>
-            <Insets left="60.0" />
-         </padding>
-      </Label>
+      <!--<Label text="Player " textFill="WHITE">-->
+         <!--<font>-->
+            <!--<Font name="American Typewriter" size="14.0" />-->
+         <!--</font>-->
+         <!--<padding>-->
+            <!--<Insets left="10.0" />-->
+         <!--</padding>-->
+      <!--</Label>-->
+      <!--<Label fx:id="playerTurnLabel" text="1" textFill="WHITE">-->
+         <!--<font>-->
+            <!--<Font name="American Typewriter" size="14.0" />-->
+         <!--</font>-->
+         <!--<padding>-->
+            <!--<Insets left="60.0" />-->
+         <!--</padding>-->
+      <!--</Label>-->
   </children>
 </AnchorPane>
