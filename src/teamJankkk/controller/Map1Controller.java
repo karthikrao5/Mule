@@ -41,7 +41,7 @@ public class Map1Controller extends Main implements Initializable {
              image42, image43, image44, image50,
              image51, image52, image53, image54;
 
-    @FXML private Label playerTurnLabel;
+    //@FXML private Label turnCounterLabel;
     @FXML private Label turnCounterLabel1;
     @FXML private Label turnCounterLabel2;
     @FXML private Label timerLabel;
@@ -274,7 +274,7 @@ public class Map1Controller extends Main implements Initializable {
     public void updateLabel() {
         turnCOUNT = game.getCurrentTurnNumber();
         turnCounterLabel1.setText(playerTURN.toString());
-        turnCounterLabel2.setText("Turn Count: " + turnCOUNT.toString());
+        turnCounterLabel.setText(turnCOUNT.toString());
     }
 
     public String updateColor() {
