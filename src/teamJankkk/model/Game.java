@@ -44,7 +44,7 @@ public class Game {
     }
 
     private static int nextPlayer() {
-        if(currentPlayer >= 4) {
+        if(currentPlayer >= numberOfPlayers) {
             currentPlayer = 1;
         } else {
             currentPlayer++;
