@@ -99,7 +99,7 @@
             <Image url="@_Images/Forest/forest_floor.png" />
           </image>
         </ImageView>
-        <ImageView fx:id="image00" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map00Clicked" pickOnBounds="true" preserveRatio="false" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <ImageView fx:id="image00" fitHeight="105.0" fitWidth="159.6666717529297" onMouseClicked="#map00Clicked" pickOnBounds="true" preserveRatio="false">
           <image>
             <Image url="@_Images/Forest/forest_floor.png" />
           </image>
@@ -147,6 +147,28 @@
                   <InnerShadow radius="6.965" width="8.86" />
                </effect>
             </Button>
+            <Label fx:id="turnCounterLabel" text="1" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font name="American Typewriter" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="-75.0" left="35.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Turn Count:" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font name="American Typewriter" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="-75.0" />
+               </GridPane.margin>
+            </Label>
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
