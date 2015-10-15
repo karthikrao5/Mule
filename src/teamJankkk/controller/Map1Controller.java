@@ -24,6 +24,8 @@ import java.io.IOException;
 import java.net.URL;
 import javafx.util.Duration;
 import teamJankkk.model.Tile;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.*;
 import java.util.ResourceBundle;
@@ -622,7 +624,25 @@ public class Map1Controller extends Main implements Initializable {
     }
 
     public void updateColors() {
-        
+        /*List<Tile> tileList = Game.getTileList();
+        for(Tile t : tileList) {
+            if (t.getIsClaimed()) {
+                int playerNumber = t.getOwnerNumber();
+                String color = PlayerDB.getPlayer(playerNumber).getColor();
+                if (color.equals("Blue")) {
+                    color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
+                } else if (color.equals("Yellow")) {
+                    color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
+                } else if (color.equals("Purple")) {
+                    color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+                } else if (color.equals("Green")) {
+                    color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+                } else if (color.equals("Red")) {
+                    color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
+                }
+
+            }
+        }*/
     }
 
     public String updateColor() {
