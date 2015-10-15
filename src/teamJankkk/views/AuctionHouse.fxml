@@ -8,7 +8,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
+<<<<<<< HEAD
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.AuctionHouseController">
+>>>>>>> d746897666fd58da092d2ae549d5b548100047bb
    <children>
       <Group>
          <children>
@@ -60,7 +64,11 @@
             </ImageView>
          </children>
       </Group>
+<<<<<<< HEAD
       <Button fx:id="goButton" layoutX="408.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="GO!">
+=======
+      <Button fx:id="goButton" layoutX="408.0" layoutY="383.0" mnemonicParsing="false" onAction="#goLogic" prefHeight="48.0" prefWidth="128.0" text="GO!">
+>>>>>>> d746897666fd58da092d2ae549d5b548100047bb
          <font>
             <Font name="American Typewriter" size="27.0" />
          </font>
@@ -140,12 +148,12 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="91.0">
                <children>
-                  <Label layoutX="10.0" layoutY="67.0" text="Money:" textFill="WHITE">
+                  <Label layoutX="10.0" layoutY="67.0" text="Money:" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="American Typewriter" size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="moneyLabelPlayer" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
+                  <Label fx:id="moneyLabelPlayer" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="American Typewriter" size="20.0" />
                      </font>
@@ -255,7 +263,11 @@
             </HBox>
          </children>
       </VBox>
+<<<<<<< HEAD
       <Button fx:id="cancelButton" alignment="CENTER" layoutX="144.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="CANCEL">
+=======
+      <Button fx:id="cancelButton" alignment="CENTER" layoutX="144.0" layoutY="383.0" mnemonicParsing="false" onAction="#goBackToStore" prefHeight="48.0" prefWidth="128.0" text="CANCEL">
+>>>>>>> d746897666fd58da092d2ae549d5b548100047bb
          <font>
             <Font name="American Typewriter" size="21.0" />
          </font>

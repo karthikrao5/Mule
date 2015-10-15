@@ -26,7 +26,8 @@ import java.util.ResourceBundle;
 public class StoreController extends Main implements Initializable {
 
     @FXML
-    private ImageView thePub, muleStore, smithoreTile, energyTile, foodTile;
+    private ImageView thePub, auctionHouse, muleStore;
+            //, smithoreTile, energyTile, foodTile;
 
     @FXML
     private Label moneyLabel, goBackLabel, playerLabel;
@@ -34,10 +35,12 @@ public class StoreController extends Main implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         thePub.setOnMouseClicked(this::thePubClicked);
+        auctionHouse.setOnMouseClicked(this::theAuctionHouseClicked);
         muleStore.setOnMouseClicked(this::muleStoreClicked);
-        smithoreTile.setOnMouseClicked((this::smithOreClicked));
-        energyTile.setOnMouseClicked((this::energyTileClicked));
-        foodTile.setOnMouseClicked(this::foodTileClicked);
+        //smithoreTile.setOnMouseClicked((this::smithOreClicked));
+        //energyTile.setOnMouseClicked((this::energyTileClicked));
+        //foodTile.setOnMouseClicked(this::foodTileClicked);
+        moneyLabel.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney()));
     }
 
     @FXML
@@ -63,8 +66,27 @@ public class StoreController extends Main implements Initializable {
         }
     }
 
+    @FXML
+    public void theAuctionHouseClicked(MouseEvent event) {
+        System.out.println("The AuctionHouse was clicked");
+        try {
+            Pane pubScreen = (Pane) FXMLLoader.load(getClass().getResource("../views/AuctionHouse.fxml"));
+            stage.setScene(new Scene(pubScreen));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void muleStoreClicked(MouseEvent event) {
-        System.out.println("The Pub was clicked");
+        System.out.println("The muleSTore was clicked");
+        try {
+            Pane pubScreen = (Pane) FXMLLoader.load(getClass().getResource("../views/BuyMule.fxml"));
+            stage.setScene(new Scene(pubScreen));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void smithOreClicked(MouseEvent event) {

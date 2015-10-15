@@ -95,11 +95,33 @@ public class Player {
         return name;
     }
 
+    public int getFood() {
+        return food;
+    }
+
+    public int getSmithore() {
+        return smithore;
+    }
+
+    public int getEnergy() {
+        return energy;
+    }
+
     public String getRace() {
         return race;
     }
 
     public String getColor() {
         return color;
+    }
+
+    public int howManyMules() {
+        int muleCount = 0;
+        for (int l = 0; l < tilesOwned.size(); l++) {
+            if (tilesOwned.get(l).isInstalled()) {
+                muleCount++;
+            }
+        }
+        return muleCount;
     }
 }

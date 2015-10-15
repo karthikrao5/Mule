@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #eeff67;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.PlayerSelect2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #eeff67;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.PlayerSelect">
     <children>
         <VBox layoutX="285.0" layoutY="14.0" prefHeight="375.0" prefWidth="250.0">
             <children>
@@ -83,7 +83,7 @@
         </VBox>
         <Pane layoutX="24.0" layoutY="289.0" prefHeight="207.0" prefWidth="772.0">
             <children>
-                <Button fx:id="nextButton" layoutX="639.0" layoutY="136.0" mnemonicParsing="false" onAction="#nextScreen" prefHeight="49.0" prefWidth="108.0" style="-fx-background-color: #00c51d;" text="CONTINUE" textFill="WHITE">
+                <Button fx:id="nextButton" layoutX="639.0" layoutY="136.0" mnemonicParsing="false" onAction="#goToSummary" prefHeight="49.0" prefWidth="108.0" style="-fx-background-color: #00c51d;" text="CONTINUE" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>

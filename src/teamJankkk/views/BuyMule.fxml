@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #00ae68;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #00ae68;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.BuyMuleController">
    <children>
       <ImageView fitHeight="138.0" fitWidth="200.0" layoutX="300.0" layoutY="65.0">
          <image>
@@ -35,12 +35,12 @@
             <Font name="American Typewriter" size="27.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="307.0" layoutY="300.0" prefHeight="43.0" prefWidth="169.0">
+      <ChoiceBox fx:id="outfitChoiceBox" layoutX="307.0" layoutY="300.0" prefHeight="43.0" prefWidth="169.0">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="Smithore" />
-               <String fx:value="Energy"/>
-               <String fx:value="Food"/>
+               <String fx:value="Energy" />
+               <String fx:value="Food" />
             </FXCollections>
          </items>
       </ChoiceBox>
@@ -49,6 +49,6 @@
             <Font name="American Typewriter" size="22.0" />
          </font>
       </Label>
-      <Button layoutX="330.0" layoutY="403.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="124.0" text="\$$ BUY $$" />
+      <Button fx:id="buyButton" layoutX="330.0" layoutY="403.0" mnemonicParsing="false" onAction="#buy" prefHeight="43.0" prefWidth="124.0" text="\$$ BUY $$" />
    </children>
 </AnchorPane>

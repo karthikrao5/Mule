@@ -51,7 +51,7 @@ public class PlayerDB {
         for(Map.Entry<Player, Integer> p : db.entrySet()) {
             sb.append("Player: " + p.getKey().getName()
                     + ". Race: " + p.getKey().getRace()
-                    + ". Color: "+ p.getKey().getRace());
+                    + ". Color: "+ p.getKey().getColor());
             stringPlayerList.add(sb.toString());
             count++;
 
