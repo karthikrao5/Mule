@@ -40,26 +40,35 @@ public class BuyMuleController extends Main implements Initializable {
     public void buy(ActionEvent event) {
         Player thisPlayer = PlayerDB.getPlayer(Game.getCurrentPlayer());
         int howMuchTheyGot = thisPlayer.getMoney();
-        if (howMuchTheyGot >= 100) {
-            PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(100);
-            onThisScreenHowManyDidYouBuy++;
-            updateLabel();
-            Mule newMule = new Mule(outfitChoiceBox.getValue());
-            Pane gameSumPane = null;
-            try {
-                gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setScene(new Scene(gameSumPane));
-            stage.show();
-        } else {
+        if (outfitChoiceBox.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             //alert.initOwner(ConfigController.);
-            alert.setTitle("Not Enough Dosh");
-            alert.setHeaderText("Need more Dosh");
-            alert.setContentText("You need more Dosh to buy a MULE.");
+            alert.setTitle("No Outfit!");
+            alert.setHeaderText("No outfit selected for Mule!");
+            alert.setContentText("Please select outfit for Mule!");
             alert.showAndWait();
+        } else {
+            if (howMuchTheyGot >= 100) {
+                PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(100);
+                onThisScreenHowManyDidYouBuy++;
+                updateLabel();
+                Mule newMule = new Mule(outfitChoiceBox.getValue());
+                Pane gameSumPane = null;
+                try {
+                    gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                stage.setScene(new Scene(gameSumPane));
+                stage.show();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                //alert.initOwner(ConfigController.);
+                alert.setTitle("Not Enough Dosh");
+                alert.setHeaderText("Need more Dosh");
+                alert.setContentText("You need more Dosh to buy a MULE.");
+                alert.showAndWait();
+            }
         }
     }
 
