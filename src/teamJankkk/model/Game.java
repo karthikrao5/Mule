@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Game {
 
-    private int currentTurn = 0;
+    private static int currentTurn = 0;
     private static int numberOfPlayers = 0;
     private static int currentPlayer = 1;
     public boolean endGame = false;
@@ -122,7 +122,7 @@ public class Game {
 
     }
 
-    public int getCurrentTurnNumber() {
+    public static int getCurrentTurnNumber() {
         return currentTurn;
     }
 
