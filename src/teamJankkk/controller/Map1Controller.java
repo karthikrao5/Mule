@@ -109,12 +109,14 @@ public class Map1Controller extends Main implements Initializable {
         image44.setOnMouseClicked(this::map44Clicked);
         endTurnButton.setOnAction(this::endTurn);
         // timerLabel.setText(timeSeconds.toString());
+        timer();
         game = new Game();
     }
 
     @FXML
     private void endTurn(ActionEvent event) {
         playerTURN = game.nextTurn();
+        timer();
         //Game.nextTurn();
         updateLabel();
     }
