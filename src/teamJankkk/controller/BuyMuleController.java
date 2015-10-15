@@ -34,6 +34,7 @@ public class BuyMuleController extends Main implements Initializable {
         //save3Button.setOnAction(this::saveName);
         buyButton.setOnAction(this::buy);
         nameLabel21.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).howManyMules()));
+        
     }
 
     @FXML

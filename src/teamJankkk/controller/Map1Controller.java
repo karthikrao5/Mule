@@ -335,14 +335,14 @@ public class Map1Controller extends Main implements Initializable {
     //store tile
     @FXML
     public void map22Clicked(MouseEvent event) {
-//        System.out.println("Enter Store");
-//        try {
-//            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/TheStore.fxml"));
-//            stage.setScene(new Scene(screen3));
-//            stage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        System.out.println("Enter Store");
+        try {
+            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/TheStore.fxml"));
+            stage.setScene(new Scene(screen3));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

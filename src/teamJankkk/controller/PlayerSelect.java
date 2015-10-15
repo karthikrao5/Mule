@@ -35,18 +35,18 @@ import javafx.scene.control.Alert.AlertType;
 
 public class PlayerSelect extends Main implements Initializable{
 
-    @FXML private TextField nameTextField;
+    @FXML private TextField nameTextField1;
     @FXML private Button nextButton;
     @FXML private Button saveButton1;
-    @FXML private Button exitButton1;
-    @FXML private ChoiceBox<String> raceChoiceBox;
-    @FXML private ChoiceBox<String> colorChoiceBox;
+    @FXML private Button exitButton2;
+    @FXML private ChoiceBox<String> raceChoiceBox1;
+    @FXML private ChoiceBox<String> colorChoiceBox1;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //saveButton1.setOnAction(this::saveName);
-        nextButton.setOnAction(this::nextScreen);
-        exitButton1.setOnAction(this::exitApp);
+        nextButton.setOnAction(this::goToSummary);
+        exitButton2.setOnAction(this::exitApp);
     }
 
     /*
@@ -77,11 +77,11 @@ public class PlayerSelect extends Main implements Initializable{
     */
 
     @FXML
-    public void nextScreen(ActionEvent event) {
+    public void goToSummary(ActionEvent event) {
         try {
-            String name = nameTextField.getText();
-            String race = raceChoiceBox.getSelectionModel().getSelectedItem();
-            String color = colorChoiceBox.getSelectionModel().getSelectedItem();
+            String name = nameTextField1.getText();
+            String race = raceChoiceBox1.getSelectionModel().getSelectedItem();
+            String color = colorChoiceBox1.getSelectionModel().getSelectedItem();
             if(name == null || race == null || color == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
@@ -90,9 +90,9 @@ public class PlayerSelect extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 4);
-                PlayerDB.setRace(race, 4);
-                PlayerDB.setColor(color, 4);
+                PlayerDB.createPlayer(name, 1);
+                PlayerDB.setRace(race, 1);
+                PlayerDB.setColor(color, 1);
                 Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
                 stage.setScene(new Scene(gameSumPane));
                 stage.show();
@@ -105,7 +105,7 @@ public class PlayerSelect extends Main implements Initializable{
 
     @FXML
     public void exitApp(ActionEvent event) {
-        Stage stage = (Stage) exitButton1.getScene().getWindow();
+        Stage stage = (Stage) exitButton2.getScene().getWindow();
         stage.close();
     }
 }
