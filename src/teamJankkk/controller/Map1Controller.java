@@ -226,10 +226,8 @@ public class Map1Controller extends Main implements Initializable {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile02")) {
-            System.out.println("Tile 02 is not owned. Buying tile now.");
             game.connectTile("tile02");
         } else {
-            System.out.println("Else");
             game.dropMule("tile02");
         }
 

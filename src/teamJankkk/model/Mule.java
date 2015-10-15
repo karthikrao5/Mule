@@ -15,6 +15,10 @@ public class Mule {
         this.hasOutfit = false;
     }
 
+    public String getTile() {
+        return muleTile.getTileName();
+    }
+
     public String getMuleType() {
         return outfit;
     }

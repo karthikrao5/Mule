@@ -1,5 +1,7 @@
 package teamJankkk.model;
 
+import teamJankkk.controller.BuyMuleController;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.Random;
  */
 public class Tile {
 
-    List<String> resourceList;
+
     private String resource;
     private Boolean isClaimed;
     private Boolean isInstalled;
@@ -20,21 +22,31 @@ public class Tile {
 
     public Tile(String inputName) {
         tileName = inputName;
-        resourceList = new ArrayList<>(Arrays.asList("SmithOre",
-                "Energy", "Food"));
-        Random rand = new Random();
-        resource = resourceList.get(rand.nextInt(2));
+//        Random rand = new Random();
+//        resource = resourceList.get(rand.nextInt(2));
         isClaimed = false;
         isInstalled = false;
         mule = null;
     }
 
     public void createMule() {
-        if(mule.getMuleType().equals(resource)) {
-            mule = new Mule(resource);
-            isInstalled = true;
-            System.out.println("Mule created.");
+        if(BuyMuleController.hasMule) {
+            System.out.println("inside hasMule");
+            System.out.println("This tile's resource is : " + resource);
+            System.out.println("buymulecontroller: " + BuyMuleController.outfitString);
+            if(BuyMuleController.outfitString.equals(resource)) {
+                System.out.println("inside muletype equals");
+                Mule newMule = new Mule(BuyMuleController.outfitString);
+                isInstalled = true;
+                newMule.setTile(this);
+                System.out.println("Mule created.");
+                System.out.println("Mule belongs to :" + newMule.getTile());
+            }
         }
+    }
+
+    public void setResource(String input) {
+        resource = input;
     }
 
     public String getTileName() {

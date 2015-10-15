@@ -27,6 +27,8 @@ public class BuyMuleController extends Main implements Initializable {
     @FXML private Label nameLabel21, nameLabel1;
     @FXML private ChoiceBox<String> outfitChoiceBox;
     int onThisScreenHowManyDidYouBuy = 0;
+    public static boolean hasMule;
+    public static String outfitString;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -34,6 +36,8 @@ public class BuyMuleController extends Main implements Initializable {
         buyButton.setOnAction(this::buy);
         nameLabel21.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).howManyMules()));
         nameLabel1.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney()));
+        hasMule = false;
+        outfitString = "";
     }
 
     @FXML
@@ -52,7 +56,9 @@ public class BuyMuleController extends Main implements Initializable {
                 PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(100);
                 onThisScreenHowManyDidYouBuy++;
                 updateLabel();
-                Mule newMule = new Mule(outfitChoiceBox.getValue());
+                hasMule = true;
+                outfitString = outfitChoiceBox.getValue();
+                //Mule newMule = new Mule(outfitChoiceBox.getValue());
                 Pane gameSumPane = null;
                 try {
                     gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
