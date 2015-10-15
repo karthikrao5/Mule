@@ -197,7 +197,11 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-
+        if(!game.tileIsOwned("tile01")) {
+            game.connectTile("tile01");
+        } else {
+            game.dropMule("tile01");
+        }
 
 
     }
@@ -214,6 +218,13 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
+        if(!game.tileIsOwned("tile02")) {
+            System.out.println("Tile 02 is not owned. Buying tile now.");
+            game.connectTile("tile02");
+        } else {
+            System.out.println("Else");
+            game.dropMule("tile02");
+        }
 
     }
 
@@ -229,6 +240,11 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
+        if(!game.tileIsOwned("tile03")) {
+            game.connectTile("tile03");
+        } else {
+            game.dropMule("tile03");
+        }
     }
 
     @FXML
@@ -243,6 +259,11 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
+        if(!game.tileIsOwned("tile04")) {
+            game.connectTile("tile04");
+        } else {
+            game.dropMule("tile04");
+        }
     }
 
     @FXML
@@ -455,7 +476,6 @@ public class Map1Controller extends Main implements Initializable {
             game.connectTile("tile41");
         } else {
             game.dropMule("tile41");
-
         }
     }
 

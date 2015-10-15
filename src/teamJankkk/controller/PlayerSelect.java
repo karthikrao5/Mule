@@ -90,9 +90,9 @@ public class PlayerSelect extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 4);
-                PlayerDB.setRace(race, 4);
-                PlayerDB.setColor(color, 4);
+                PlayerDB.createPlayer(name, 1);
+                PlayerDB.setRace(race, 1);
+                PlayerDB.setColor(color, 1);
                 Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
                 stage.setScene(new Scene(gameSumPane));
                 stage.show();

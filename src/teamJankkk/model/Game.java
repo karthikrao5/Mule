@@ -30,12 +30,14 @@ public class Game {
                 }
             }
         }
+        System.out.println(tileList.toString());
         playerPurchasedLand = false;
     }
 
     public void dropMule(String name) {
         Tile temp = getTileFromList(name);
         temp.createMule();
+        System.out.println("Mule dropped here.");
     }
 
     public Tile getTileFromList(String name) {
@@ -48,25 +50,19 @@ public class Game {
     }
 
     public boolean tileIsOwned(String name) {
-        try {
-            Tile temp = getTileFromList(name);
-            if(!temp.getIsClaimed()) {
-                temp.setIsClaimed(true);
-            } else {
-                System.out.println("Player has already claimed this land.");
-            }
-        } catch(NullPointerException e) {
-            System.out.println(e.getStackTrace());
-        }
-        return false;
+        System.out.println(getTileFromList(name).getTileName());
+        System.out.println("tileIsOwned: " + getTileFromList(name).getIsClaimed());
+        return getTileFromList(name).getIsClaimed();
     }
 
     public void connectTile(String name) {
         try {
             if(PlayerDB.getPlayer(currentPlayer).getMoney() >= 100) {
+                System.out.println("hello");
                 if(!playerPurchasedLand) {
-                    Tile temp = getTileFromList(name);
-                    PlayerDB.getPlayer(currentPlayer).addTilestoPlayerList(temp);
+                    getTileFromList(name).setIsClaimed(true);
+                    System.out.println("After connect tile: " + getTileFromList(name).getIsClaimed());
+                    PlayerDB.getPlayer(currentPlayer).addTilestoPlayerList(getTileFromList(name));
                     PlayerDB.getPlayer(currentPlayer).subtractMoney(100);
                     playerPurchasedLand = true;
                 } else {
@@ -78,7 +74,7 @@ public class Game {
                         "money to buy this land!");
             }
         } catch(NullPointerException e) {
-            System.out.println(e.getStackTrace());
+            e.getStackTrace();
         }
 
     }
