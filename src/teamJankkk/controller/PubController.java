@@ -41,10 +41,10 @@ public class PubController extends Main implements Initializable {
         int randomNum = rand.nextInt(1000) - 500;
         int finRand = randomNum;
         winningsLabel.setText(Integer.toString(finRand));
-        System.out.println("Player # is: " + Game.getCurrentPlayer());
-        System.out.print(" and bitchfuck " + PlayerDB.getPlayer(Game.getCurrentPlayer()));
-        PlayerDB.getPlayer(Game.getCurrentPlayer()).addMoney(randomNum);
-        Game.nextTurn();
+//        System.out.println("Player # is: " + Game.getCurrentPlayer());
+//        System.out.print(" and bitchfuck " + PlayerDB.getPlayer(Game.getCurrentPlayer()));
+//        PlayerDB.getPlayer(Game.getCurrentPlayer()).addMoney(randomNum);
+//        Game.nextTurn();
         // check global val for player turn, add to this player
     }
 

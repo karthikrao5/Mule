@@ -7,12 +7,16 @@ public class Mule {
     private String outfit;
     private Boolean hasOutfit;
     private Boolean isInstalled;
-    private Tile thisTile;
+    private Tile muleTile;
 
-    public Mule() {
-        this.outfit = "";
+    public Mule(String outfit) {
+        this.outfit = outfit;
         this.isInstalled = false;
         this.hasOutfit = false;
+    }
+
+    public String getMuleType() {
+        return outfit;
     }
 
     public String getOutfit() {
@@ -25,7 +29,7 @@ public class Mule {
     }
 
     public void setTile(Tile input) {
-        this.thisTile = input;
+        this.muleTile = input;
         this.isInstalled = true;
     }
 
