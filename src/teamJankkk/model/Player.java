@@ -95,6 +95,18 @@ public class Player {
         return name;
     }
 
+    public int getFood() {
+        return food;
+    }
+
+    public int getSmithore() {
+        return smithore;
+    }
+
+    public int getEnergy() {
+        return energy;
+    }
+
     public String getRace() {
         return race;
     }

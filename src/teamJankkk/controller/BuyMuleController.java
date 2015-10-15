@@ -26,7 +26,7 @@ public class BuyMuleController extends Main implements Initializable {
     private Button buyButton;
     //@FXML private TextField nameTextField1;
     //name label 21 holds Mule Count for that player
-    @FXML private Label nameLabel21;
+    @FXML private Label nameLabel21, nameLabel1;
     int onThisScreenHowManyDidYouBuy = 0;
 
     @Override
@@ -34,7 +34,7 @@ public class BuyMuleController extends Main implements Initializable {
         //save3Button.setOnAction(this::saveName);
         buyButton.setOnAction(this::buy);
         nameLabel21.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).howManyMules()));
-        
+        nameLabel1.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney()));
     }
 
     @FXML
@@ -65,5 +65,6 @@ public class BuyMuleController extends Main implements Initializable {
 
     public void updateLabel() {
         nameLabel21.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).howManyMules()+onThisScreenHowManyDidYouBuy));
+        nameLabel1.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney()));
     }
 }

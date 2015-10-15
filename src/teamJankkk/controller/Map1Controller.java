@@ -455,7 +455,6 @@ public class Map1Controller extends Main implements Initializable {
             game.connectTile("tile41");
         } else {
             game.dropMule("tile41");
-
         }
     }
 
