@@ -1,14 +1,11 @@
 package teamJankkk.controller;
 
-<<<<<<< HEAD
-=======
+
 import javafx.event.ActionEvent;
->>>>>>> d746897666fd58da092d2ae549d5b548100047bb
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-<<<<<<< HEAD
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -20,7 +17,6 @@ import java.util.ResourceBundle;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
 import teamJankkk.model.PlayerDB;
-=======
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -35,29 +31,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import teamJankkk.Main;
 import javafx.fxml.Initializable;
->>>>>>> d746897666fd58da092d2ae549d5b548100047bb
-
 /**
  * Created by KRose on 10/15/15.
  */
-<<<<<<< HEAD
-public class AuctionHouseController extends Main implements Initializable{
 
-    @FXML
-    private TextField buySmithore, sellSmithore, buyEnergy, sellEnergy,
-        buyFood, sellFood;
-
-    @FXML
-    private Button goButton, cancelButton;
-
-    @FXML Label smithoreLabelPlayer, smithoreLabelMarket, energyLabelPlayer,
-        energyLabelMarket, foodLabelPlayer, foodLabelMarket, moneyLabelPlayer,
-        moneyLabelMarket;
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
-=======
 public class AuctionHouseController extends Main implements Initializable {
     @FXML private TextField buySmithore;
     @FXML private TextField buyEnergy;
@@ -204,6 +181,4 @@ public class AuctionHouseController extends Main implements Initializable {
         smithoreLabelPlayer.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getSmithore()));
         energyLabelPlayer.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getEnergy()));
     }
-
->>>>>>> d746897666fd58da092d2ae549d5b548100047bb
 }
