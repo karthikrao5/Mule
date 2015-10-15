@@ -108,7 +108,7 @@ public class Map1Controller extends Main implements Initializable {
         image43.setOnMouseClicked(this::map43Clicked);
         image44.setOnMouseClicked(this::map44Clicked);
         endTurnButton.setOnAction(this::endTurn);
-        timerLabel.setText(timeSeconds.toString());
+        // timerLabel.setText(timeSeconds.toString());
         game = new Game();
     }
 

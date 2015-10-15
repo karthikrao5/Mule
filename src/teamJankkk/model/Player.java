@@ -1,6 +1,7 @@
 package teamJankkk.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
 
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 public class Player {
     private String name, race, color;
     private int money, score, food, energy, smithore, crystite;
+    private List<Tile> tilesOwned = new ArrayList<Tile>();
 
     public Player(String name, String race, String color) {
         this.name = name;
@@ -55,10 +57,6 @@ public class Player {
 
     public void addMoney(int moneyToAdd) {
         this.money = money + moneyToAdd;
-    }
-
-    public void subtractMoney(int moneyToSubtract) {
-        this.money = money + moneyToSubtract;
     }
 
     public void addFood(int foodToAdd) {

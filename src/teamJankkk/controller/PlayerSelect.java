@@ -36,7 +36,7 @@ import javafx.scene.control.Alert.AlertType;
 public class PlayerSelect extends Main implements Initializable{
 
     @FXML private TextField nameTextField;
-    @FXML private Button nextButton1;
+    @FXML private Button nextButton;
     @FXML private Button saveButton1;
     @FXML private Button exitButton1;
     @FXML private ChoiceBox<String> raceChoiceBox;
@@ -45,7 +45,7 @@ public class PlayerSelect extends Main implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //saveButton1.setOnAction(this::saveName);
-        nextButton1.setOnAction(this::nextScreen);
+        nextButton.setOnAction(this::nextScreen);
         exitButton1.setOnAction(this::exitApp);
     }
 
@@ -79,31 +79,25 @@ public class PlayerSelect extends Main implements Initializable{
     @FXML
     public void nextScreen(ActionEvent event) {
         try {
-            // at button, check num players, then skip to game Summary window if at that number
             String name = nameTextField.getText();
             String race = raceChoiceBox.getSelectionModel().getSelectedItem();
             String color = colorChoiceBox.getSelectionModel().getSelectedItem();
-            if (name == null || race == null || color == null) {
-                Alert alert = new Alert(AlertType.WARNING);
+            if(name == null || race == null || color == null) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
                 alert.setTitle("Empty Field");
                 alert.setHeaderText("One of the Fields has not been filled in.");
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 1);
-                PlayerDB.setRace(race, 1);
-                PlayerDB.setColor(color, 1);
-                if (Game.getNumberOfPlayers() > 1) {
-                    Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));
-                    stage.setScene(new Scene(screen2));
-                    stage.show();
-                } else {
-                    Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
-                    stage.setScene(new Scene(gameSumPane));
-                    stage.show();
-                }
+                PlayerDB.createPlayer(name, 4);
+                PlayerDB.setRace(race, 4);
+                PlayerDB.setColor(color, 4);
+                Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
+                stage.setScene(new Scene(gameSumPane));
+                stage.show();
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
