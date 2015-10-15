@@ -18,7 +18,7 @@ public class Game {
     private static int numberOfPlayers = 0;
     private static int currentPlayer = 1;
     public boolean endGame = false;
-    List<Tile> tileList = new ArrayList<>();
+    static List<Tile> tileList = new ArrayList<>();
     boolean playerPurchasedLand;
     List<String> resourceList = new ArrayList<>(Arrays.asList("SmithOre", "Energy",
             "Food"));
@@ -152,6 +152,10 @@ public class Game {
 
     public static int getNumberOfPlayers() {
         return numberOfPlayers;
+    }
+
+    public static List<Tile> getTileList()  {
+        return tileList;
     }
 
     private int nextPlayer() {

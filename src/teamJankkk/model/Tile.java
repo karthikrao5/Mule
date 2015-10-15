@@ -75,6 +75,10 @@ public class Tile {
         return isClaimed;
     }
 
+    public int getOwnerNumber() {
+        return owner;
+    }
+
     public boolean getIsInstalled() {
         return isInstalled;
     }
