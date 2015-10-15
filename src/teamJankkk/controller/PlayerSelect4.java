@@ -24,12 +24,23 @@ import java.util.ResourceBundle;
  */
 public class PlayerSelect4 extends Main implements Initializable {
 
-    @FXML private TextField nameTextField4;
+
     @FXML private Button goToSummaryButton;
     @FXML private Button save4Button;
     @FXML private Button exitButton4;
     @FXML private ChoiceBox<String> raceChoiceBox4;
     @FXML private ChoiceBox<String> colorChoiceBox4;
+    @FXML private TextField nameTextField4;
+    @FXML private ChoiceBox<String> raceChoiceBox3;
+    @FXML private ChoiceBox<String> colorChoiceBox3;
+    @FXML private TextField nameTextField3;
+    @FXML private ChoiceBox<String> raceChoiceBox2;
+    @FXML private ChoiceBox<String> colorChoiceBox2;
+    @FXML private TextField nameTextField2;
+    @FXML private ChoiceBox<String> raceChoiceBox1;
+    @FXML private ChoiceBox<String> colorChoiceBox1;
+    @FXML private TextField nameTextField1;
+    @FXML private Button nextButton;
 
     //public static teamJankkk.model.Player p4;
 
@@ -38,7 +49,7 @@ public class PlayerSelect4 extends Main implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 //        p4 = new Player(null, null, null);
         //save4Button.setOnAction(this::saveName);
-        goToSummaryButton.setOnAction(this::goToSummary);
+        nextButton.setOnAction(this::goToSummary);
     }
 
     /*
@@ -63,9 +74,18 @@ public class PlayerSelect4 extends Main implements Initializable {
     @FXML
     public void goToSummary(ActionEvent event) {
         try {
-            String name = nameTextField4.getText();
-            String race = raceChoiceBox4.getSelectionModel().getSelectedItem();
-            String color = colorChoiceBox4.getSelectionModel().getSelectedItem();
+            String name = nameTextField1.getText();
+            String race = raceChoiceBox1.getSelectionModel().getSelectedItem();
+            String color = colorChoiceBox1.getSelectionModel().getSelectedItem();
+            String name2 = nameTextField2.getText();
+            String race2 = raceChoiceBox2.getSelectionModel().getSelectedItem();
+            String color2 = colorChoiceBox2.getSelectionModel().getSelectedItem();
+            String name3 = nameTextField3.getText();
+            String race3 = raceChoiceBox3.getSelectionModel().getSelectedItem();
+            String color3 = colorChoiceBox3.getSelectionModel().getSelectedItem();
+            String name4 = nameTextField4.getText();
+            String race4 = raceChoiceBox4.getSelectionModel().getSelectedItem();
+            String color4 = colorChoiceBox4.getSelectionModel().getSelectedItem();
             if(name == null || race == null || color == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
@@ -74,9 +94,18 @@ public class PlayerSelect4 extends Main implements Initializable {
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 4);
-                PlayerDB.setRace(race, 4);
-                PlayerDB.setColor(color, 4);
+                PlayerDB.createPlayer(name, 1);
+                PlayerDB.setRace(race, 1);
+                PlayerDB.setColor(color, 1);
+                PlayerDB.createPlayer(name2, 2);
+                PlayerDB.setRace(race2, 2);
+                PlayerDB.setColor(color2, 2);
+                PlayerDB.createPlayer(name3, 3);
+                PlayerDB.setRace(race3, 3);
+                PlayerDB.setColor(color3, 3);
+                PlayerDB.createPlayer(name4, 4);
+                PlayerDB.setRace(race4, 4);
+                PlayerDB.setColor(color4, 4);
                 Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
                 stage.setScene(new Scene(gameSumPane));
                 stage.show();
