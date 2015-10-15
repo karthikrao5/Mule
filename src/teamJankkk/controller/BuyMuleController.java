@@ -23,6 +23,7 @@ public class BuyMuleController extends Main implements Initializable {
     //@FXML private TextField nameTextField1;
     //name label 21 holds Mule Count for that player
     @FXML private Label nameLabel21;
+    int onThisScreenHowManyDidYouBuy = 0;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -37,6 +38,7 @@ public class BuyMuleController extends Main implements Initializable {
         int howMuchTheyGot = thisPlayer.getMoney();
         if (howMuchTheyGot >= 100) {
             PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(100);
+            onThisScreenHowManyDidYouBuy++;
             updateLabel();
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -49,6 +51,6 @@ public class BuyMuleController extends Main implements Initializable {
     }
 
     public void updateLabel() {
-        nameLabel21.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).howManyMules()));
+        nameLabel21.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).howManyMules()+onThisScreenHowManyDidYouBuy));
     }
 }
