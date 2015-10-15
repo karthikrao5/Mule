@@ -48,6 +48,10 @@ public class AuctionHouseController extends Main implements Initializable {
     @FXML private Label foodLabelPlayer;
     @FXML private Label smithoreLabelPlayer;
     @FXML private Label energyLabelPlayer;
+    @FXML private Label smithoreLabelMarket;
+    @FXML private Label energyLabelMarket;
+    @FXML private Label foodLabelMarket;
+    @FXML private Label moneyLabelMarket;
 
     @FXML private Button goButton;
     @FXML private Button cancelButton;
@@ -57,6 +61,7 @@ public class AuctionHouseController extends Main implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //save3Button.setOnAction(this::saveName);
         //buyButton.setOnAction(this::buy);
+        calculateMarket();
         goButton.setOnAction(this::goLogic);
         cancelButton.setOnAction(this::goBackToStore);
         System.out.println(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney());
@@ -173,6 +178,7 @@ public class AuctionHouseController extends Main implements Initializable {
             }
         }
         updateLabels();
+        calculateMarket();
     }
 
     public void updateLabels() {
@@ -180,5 +186,22 @@ public class AuctionHouseController extends Main implements Initializable {
         foodLabelPlayer.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getFood()));
         smithoreLabelPlayer.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getSmithore()));
         energyLabelPlayer.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getEnergy()));
+    }
+
+    public void calculateMarket() {
+        int smithTotal = 0;
+        int energTotal = 0;
+        int foodTotal = 0;
+        int GDP = 0;
+        for (int thisPlayer = 1; thisPlayer < Game.getNumberOfPlayers(); thisPlayer++) {
+            smithTotal = smithTotal + PlayerDB.getPlayer(thisPlayer).getSmithore();
+            energTotal = energTotal + PlayerDB.getPlayer(thisPlayer).getEnergy();
+            foodTotal = foodTotal + PlayerDB.getPlayer(thisPlayer).getFood();
+            GDP = GDP + PlayerDB.getPlayer(thisPlayer).getMoney();
+        }
+        smithoreLabelMarket.setText(String.valueOf(smithTotal));
+        energyLabelMarket.setText(String.valueOf(energTotal));
+        foodLabelMarket.setText(String.valueOf(foodTotal));
+        moneyLabelMarket.setText(String.valueOf(GDP));
     }
 }
