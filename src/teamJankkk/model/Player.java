@@ -48,20 +48,40 @@ public class Player {
         this.money = money + moneyToAdd;
     }
 
+    public void subtractMoney(int moneyToSubtract) {
+        this.money = money + moneyToSubtract;
+    }
+
     public void addFood(int foodToAdd) {
         this.food = food + foodToAdd;
+    }
+
+    public void subtractFood(int foodToSubtract) {
+        this.food = food - foodToSubtract;
     }
 
     public void addEnergy(int energyToAdd) {
         this.energy = energy + energyToAdd;
     }
 
+    public void subtractEnergy(int energyToSubtract) {
+        this.energy = energy - energyToSubtract;
+    }
+
     public void addSmithore(int smithoreToAdd) {
         this.smithore = smithore + smithoreToAdd;
     }
 
+    public void subtractSmithore(int smithoreToSubtract) {
+        this.smithore = smithore + smithoreToSubtract;
+    }
+
     public void addCrystite(int crystiteToAdd) {
         this.crystite = crystite + crystiteToAdd;
+    }
+
+    public void subtractCrystite(int crystiteToSubtract) {
+        this.crystite = crystite + crystiteToSubtract;
     }
 
     public String getName() {
