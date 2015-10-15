@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Group>
+         <children>
+            <TextField fx:id="sellFood" layoutX="436.0" layoutY="279.0" prefHeight="30.0" prefWidth="100.0" AnchorPane.leftAnchor="436.0" />
+            <TextField fx:id="sellEnergy" layoutX="295.0" layoutY="279.0" prefHeight="30.0" prefWidth="100.0" AnchorPane.leftAnchor="295.0" />
+            <Label layoutX="34.0" layoutY="277.0" text="SELL:" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="27.0" />
+               </font>
+            </Label>
+            <TextField fx:id="buyEnergy" layoutX="295.0" layoutY="219.0" prefHeight="30.0" prefWidth="100.0" AnchorPane.leftAnchor="295.0" />
+            <Label layoutX="302.0" layoutY="32.0" text="ENERGY" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="145.0" layoutY="32.0" text="SMITHORE" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="20.0" />
+               </font>
+            </Label>
+            <ImageView layoutX="295.0" layoutY="63.0" AnchorPane.leftAnchor="300.0">
+               <image>
+                  <Image url="@_Images/Store/energyTile.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="46.0" layoutY="217.0" text="BUY:" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="27.0" />
+               </font>
+            </Label>
+            <TextField fx:id="buySmithore" layoutX="149.0" layoutY="219.0" prefHeight="30.0" prefWidth="100.0" AnchorPane.leftAnchor="150.0" />
+            <TextField fx:id="sellSmithore" layoutX="149.0" layoutY="279.0" prefHeight="30.0" prefWidth="100.0" AnchorPane.leftAnchor="149.0" />
+            <Label layoutX="459.0" layoutY="32.0" text="FOOD" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="20.0" />
+               </font>
+            </Label>
+            <ImageView layoutX="436.0" layoutY="63.0" AnchorPane.leftAnchor="450.0">
+               <image>
+                  <Image url="@_Images/Store/foodTile.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="buyFood" layoutX="436.0" layoutY="219.0" prefHeight="30.0" prefWidth="100.0" AnchorPane.leftAnchor="436.0" />
+            <ImageView layoutX="149.0" layoutY="63.0" AnchorPane.leftAnchor="150.0">
+               <image>
+                  <Image url="@_Images/Store/smithoreTile.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+      <Button layoutX="408.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="GO!">
+         <font>
+            <Font name="American Typewriter" size="27.0" />
+         </font>
+      </Button>
+      <VBox layoutX="578.0" layoutY="44.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER" layoutX="589.0" layoutY="47.0" text="Player Assets" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="American Typewriter" size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox>
+               <children>
+                  <Label text="Smithore:" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="smithoreLabelPlayer" alignment="CENTER_RIGHT" layoutY="10.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="90.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label layoutX="10.0" layoutY="43.0" text="Energy:" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="energyLabelPlayer" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="110.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label layoutX="10.0" layoutY="67.0" text="Food:" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="foodLabelPlayer" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="133.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="91.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="67.0" text="Money:" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="moneyLabelPlayer" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="114.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="578.0" layoutY="255.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER" layoutX="589.0" layoutY="47.0" text="Market Assets" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="American Typewriter" size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </Label>
+            <HBox>
+               <children>
+                  <Label text="Smithore:" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="smithoreLabelMarket" alignment="CENTER_RIGHT" layoutY="10.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="90.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label layoutX="10.0" layoutY="43.0" text="Energy:" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="energyLabelMarket" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="110.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label layoutX="10.0" layoutY="67.0" text="Food:" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="foodLabelMarket" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="133.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="91.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="67.0" text="Money:" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="moneyLabelMarket" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="American Typewriter" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="114.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Button alignment="CENTER" layoutX="144.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="CANCEL">
+         <font>
+            <Font name="American Typewriter" size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
