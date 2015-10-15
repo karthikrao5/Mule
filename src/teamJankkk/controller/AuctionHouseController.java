@@ -1,10 +1,22 @@
 package teamJankkk.controller;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+
+import java.awt.*;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import teamJankkk.Main;
+import teamJankkk.model.Game;
+import teamJankkk.model.PlayerDB;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -19,10 +31,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import teamJankkk.Main;
 import javafx.fxml.Initializable;
-
 /**
  * Created by KRose on 10/15/15.
  */
+
 public class AuctionHouseController extends Main implements Initializable {
     @FXML private TextField buySmithore;
     @FXML private TextField buyEnergy;
@@ -169,5 +181,4 @@ public class AuctionHouseController extends Main implements Initializable {
         smithoreLabelPlayer.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getSmithore()));
         energyLabelPlayer.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getEnergy()));
     }
-
 }
