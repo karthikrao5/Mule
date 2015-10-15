@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #00ae68;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="138.0" fitWidth="200.0" layoutX="307.0" layoutY="150.0">
+         <image>
+            <Image url="@_Images/Mule_Sprites/MULE_gray.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="buyMuleLabel" layoutX="173.0" layoutY="319.0" text="&gt;&gt; CLICK HERE TO BUY A MULE &lt;&lt;" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="American Typewriter" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" text="NAME" textFill="WHITE">
+         <font>
+            <Font name="American Typewriter" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel1" layoutX="682.0" layoutY="14.0" text="\$$$$$$" textFill="WHITE">
+         <font>
+            <Font name="American Typewriter" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel2" layoutX="14.0" layoutY="453.0" text="Mule Count:" textFill="WHITE">
+         <font>
+            <Font name="American Typewriter" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel21" layoutX="173.0" layoutY="453.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="American Typewriter" size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
