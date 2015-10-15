@@ -1,5 +1,8 @@
 package teamJankkk.controller;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
 import javafx.event.ActionEvent;
@@ -11,6 +14,7 @@ import javafx.fxml.Initializable;
 import teamJankkk.model.Player;
 import teamJankkk.model.PlayerDB;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -40,6 +44,14 @@ public class BuyMuleController extends Main implements Initializable {
             PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(100);
             onThisScreenHowManyDidYouBuy++;
             updateLabel();
+            Pane gameSumPane = null;
+            try {
+                gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            stage.setScene(new Scene(gameSumPane));
+            stage.show();
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             //alert.initOwner(ConfigController.);
