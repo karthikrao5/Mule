@@ -11,9 +11,9 @@ import java.util.List;
  */
 public class Game {
 
-    private int currentTurn = 0;
+    private static int currentTurn = 0;
     private static int numberOfPlayers = 0;
-    private int currentPlayer = 1;
+    private static int currentPlayer = 1;
     public boolean endGame = false;
     List<Tile> tileList = new ArrayList<>();
     boolean playerPurchasedLand;
@@ -85,10 +85,11 @@ public class Game {
 
     public int nextTurn() {
         currentTurn++;
-        Map1Controller.timer();
+        //Map1Controller.timer();
         playerPurchasedLand = false;
         int n = nextPlayer();
         System.out.println("nextTurn = " + n);
+        nextTurnLogic();
         return n;
     }
 
@@ -117,11 +118,11 @@ public class Game {
 
     }
 
-    public int getCurrentTurnNumber() {
+    public static int getCurrentTurnNumber() {
         return currentTurn;
     }
 
-    public int getCurrentPlayer() {
+    public static int getCurrentPlayer() {
         return currentPlayer;
     }
 

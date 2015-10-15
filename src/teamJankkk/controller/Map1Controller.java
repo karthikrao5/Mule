@@ -67,10 +67,10 @@ public class Map1Controller extends Main implements Initializable {
          image33, image34, image40, image41,
          image42, image43, image44, image50,
          image51, image52, image53, image54;
-    @FXML private static Label turnCounterLabel1;
+    @FXML private Label turnCounterLabel1;
     @FXML private Label turnCounterLabel2;
-    @FXML private static Label timerLabel;
-    @FXML private static Label turnCounterLabel;
+    @FXML private Label timerLabel;
+    @FXML private Label turnCounterLabel;
     @FXML private Button endTurnButton;
     private static final Integer STARTTIME = 60;
     private static Integer timeSeconds = STARTTIME;
@@ -109,17 +109,19 @@ public class Map1Controller extends Main implements Initializable {
         image44.setOnMouseClicked(this::map44Clicked);
         endTurnButton.setOnAction(this::endTurn);
         // timerLabel.setText(timeSeconds.toString());
+        timer();
         game = new Game();
     }
 
     @FXML
     private void endTurn(ActionEvent event) {
         playerTURN = game.nextTurn();
+        timer();
         //Game.nextTurn();
         updateLabel();
     }
 
-    public static void timer() {
+    public void timer() {
 
         if (timeline != null) {
             timeline.stop();
@@ -356,14 +358,14 @@ public class Map1Controller extends Main implements Initializable {
     //store tile
     @FXML
     public void map22Clicked(MouseEvent event) {
-//        System.out.println("Enter Store");
-//        try {
-//            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/TheStore.fxml"));
-//            stage.setScene(new Scene(screen3));
-//            stage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        System.out.println("Enter Store");
+        try {
+            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/TheStore.fxml"));
+            stage.setScene(new Scene(screen3));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -515,9 +517,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
     }
 
-    public static void updateLabel() {
+    public void updateLabel() {
 //        turnCOUNT = Game.getCurrentTurnNumber();
         turnCounterLabel1.setText(playerTURN.toString());
+        turnCOUNT = Game.getCurrentTurnNumber();
         turnCounterLabel.setText(turnCOUNT.toString());
         //newLabel.setTet(mode);
     }

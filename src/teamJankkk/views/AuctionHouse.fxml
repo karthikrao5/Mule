@@ -8,8 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.AuctionHouseController">
    <children>
       <Group>
          <children>
@@ -61,7 +60,7 @@
             </ImageView>
          </children>
       </Group>
-      <Button layoutX="408.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="GO!">
+      <Button fx:id="goButton" layoutX="408.0" layoutY="383.0" mnemonicParsing="false" onAction="#goLogic" prefHeight="48.0" prefWidth="128.0" text="GO!">
          <font>
             <Font name="American Typewriter" size="27.0" />
          </font>
@@ -80,18 +79,18 @@
                <children>
                   <Label text="Smithore:" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                   </Label>
                   <Label fx:id="smithoreLabelPlayer" alignment="CENTER_RIGHT" layoutY="10.0" text="0" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                      <padding>
-                        <Insets left="90.0" />
+                        <Insets left="10.0" />
                      </padding>
                   </Label>
                </children>
@@ -103,15 +102,15 @@
                <children>
                   <Label layoutX="10.0" layoutY="43.0" text="Energy:" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                   </Label>
                   <Label fx:id="energyLabelPlayer" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                      <padding>
-                        <Insets left="110.0" />
+                        <Insets left="27.0" />
                      </padding>
                   </Label>
                </children>
@@ -123,15 +122,15 @@
                <children>
                   <Label layoutX="10.0" layoutY="67.0" text="Food:" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                   </Label>
                   <Label fx:id="foodLabelPlayer" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                      <padding>
-                        <Insets left="133.0" />
+                        <Insets left="47.0" />
                      </padding>
                   </Label>
                </children>
@@ -143,15 +142,15 @@
                <children>
                   <Label layoutX="10.0" layoutY="67.0" text="Money:" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                   </Label>
                   <Label fx:id="moneyLabelPlayer" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                      <padding>
-                        <Insets left="114.0" />
+                        <Insets left="30.0" />
                      </padding>
                   </Label>
                </children>
@@ -175,15 +174,15 @@
                <children>
                   <Label text="Smithore:" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                   </Label>
                   <Label fx:id="smithoreLabelMarket" alignment="CENTER_RIGHT" layoutY="10.0" text="0" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                      <padding>
-                        <Insets left="90.0" />
+                        <Insets left="10.0" />
                      </padding>
                      <HBox.margin>
                         <Insets />
@@ -198,15 +197,15 @@
                <children>
                   <Label layoutX="10.0" layoutY="43.0" text="Energy:" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                   </Label>
                   <Label fx:id="energyLabelMarket" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                      <padding>
-                        <Insets left="110.0" />
+                        <Insets left="27.0" />
                      </padding>
                   </Label>
                </children>
@@ -218,15 +217,15 @@
                <children>
                   <Label layoutX="10.0" layoutY="67.0" text="Food:" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                   </Label>
                   <Label fx:id="foodLabelMarket" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                      <padding>
-                        <Insets left="133.0" />
+                        <Insets left="47.0" />
                      </padding>
                   </Label>
                </children>
@@ -238,15 +237,15 @@
                <children>
                   <Label layoutX="10.0" layoutY="67.0" text="Money:" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                   </Label>
                   <Label fx:id="moneyLabelMarket" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
                      <font>
-                        <Font name="American Typewriter" size="20.0" />
+                        <Font name="American Typewriter" size="17.0" />
                      </font>
                      <padding>
-                        <Insets left="114.0" />
+                        <Insets left="30.0" />
                      </padding>
                   </Label>
                </children>
@@ -256,7 +255,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button alignment="CENTER" layoutX="144.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="CANCEL">
+      <Button fx:id="cancelButton" alignment="CENTER" layoutX="144.0" layoutY="383.0" mnemonicParsing="false" onAction="#goBackToStore" prefHeight="48.0" prefWidth="128.0" text="CANCEL">
          <font>
             <Font name="American Typewriter" size="21.0" />
          </font>
