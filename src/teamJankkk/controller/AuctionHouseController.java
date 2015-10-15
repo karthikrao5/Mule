@@ -96,7 +96,7 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setContentText("You cannot buy more than you can afford");
                 alert.showAndWait();
             } else {
-                PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractSmithore(theyWannaBuy);
+                PlayerDB.getPlayer(Game.getCurrentPlayer()).addSmithore(theyWannaBuy);
                 PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(theyWannaBuy);
             }
         }
@@ -112,7 +112,7 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setContentText("You cannot buy more than you can afford");
                 alert.showAndWait();
             } else {
-                PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractFood(theyWannaBuy);
+                PlayerDB.getPlayer(Game.getCurrentPlayer()).addFood(theyWannaBuy);
                 PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(theyWannaBuy);
             }
         }
@@ -128,7 +128,7 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setContentText("You cannot buy more than you can afford");
                 alert.showAndWait();
             } else {
-                PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractEnergy(theyWannaBuy);
+                PlayerDB.getPlayer(Game.getCurrentPlayer()).addEnergy(theyWannaBuy);
                 PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(theyWannaBuy);
             }
         }
@@ -193,7 +193,7 @@ public class AuctionHouseController extends Main implements Initializable {
         int energTotal = 0;
         int foodTotal = 0;
         int GDP = 0;
-        for (int thisPlayer = 1; thisPlayer < Game.getNumberOfPlayers(); thisPlayer++) {
+        for (int thisPlayer = 1; thisPlayer <= Game.getNumberOfPlayers(); thisPlayer++) {
             smithTotal = smithTotal + PlayerDB.getPlayer(thisPlayer).getSmithore();
             energTotal = energTotal + PlayerDB.getPlayer(thisPlayer).getEnergy();
             foodTotal = foodTotal + PlayerDB.getPlayer(thisPlayer).getFood();

@@ -89,7 +89,7 @@ public class Game {
 
     public int nextTurn() {
         currentTurn++;
-        Map1Controller.timer();
+        //Map1Controller.timer();
         playerPurchasedLand = false;
         int n = nextPlayer();
         System.out.println("nextTurn = " + n);

@@ -69,8 +69,8 @@ public class Map1Controller extends Main implements Initializable {
          image51, image52, image53, image54;
     @FXML private static Label turnCounterLabel1;
     @FXML private Label turnCounterLabel2;
-    @FXML private static Label timerLabel;
-    @FXML private static Label turnCounterLabel;
+    @FXML private Label timerLabel;
+    @FXML private Label turnCounterLabel;
     @FXML private Button endTurnButton;
     private static final Integer STARTTIME = 60;
     private static Integer timeSeconds = STARTTIME;
@@ -121,7 +121,7 @@ public class Map1Controller extends Main implements Initializable {
         updateLabel();
     }
 
-    public static void timer() {
+    public void timer() {
 
         if (timeline != null) {
             timeline.stop();
@@ -496,7 +496,7 @@ public class Map1Controller extends Main implements Initializable {
 //        }
     }
 
-    public static void updateLabel() {
+    public void updateLabel() {
 //        turnCOUNT = Game.getCurrentTurnNumber();
         turnCounterLabel1.setText(playerTURN.toString());
         turnCounterLabel.setText(turnCOUNT.toString());

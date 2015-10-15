@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.AuctionHouseController">
    <children>
       <Group>
          <children>
@@ -60,7 +60,7 @@
             </ImageView>
          </children>
       </Group>
-      <Button layoutX="408.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="GO!">
+      <Button fx:id="goButton" layoutX="408.0" layoutY="383.0" mnemonicParsing="false" onAction="#goLogic" prefHeight="48.0" prefWidth="128.0" text="GO!">
          <font>
             <Font name="American Typewriter" size="27.0" />
          </font>
@@ -255,7 +255,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button alignment="CENTER" layoutX="144.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="CANCEL">
+      <Button fx:id="cancelButton" alignment="CENTER" layoutX="144.0" layoutY="383.0" mnemonicParsing="false" onAction="#goBackToStore" prefHeight="48.0" prefWidth="128.0" text="CANCEL">
          <font>
             <Font name="American Typewriter" size="21.0" />
          </font>

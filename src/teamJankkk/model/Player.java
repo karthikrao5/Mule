@@ -80,7 +80,7 @@ public class Player {
     }
 
     public void subtractSmithore(int smithoreToSubtract) {
-        this.smithore = smithore + smithoreToSubtract;
+        this.smithore = smithore - smithoreToSubtract;
     }
 
     public void addCrystite(int crystiteToAdd) {
