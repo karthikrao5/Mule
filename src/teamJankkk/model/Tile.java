@@ -13,6 +13,7 @@ public class Tile {
     List<String> resourceList;
     private String resource;
     private Boolean isClaimed;
+    private Boolean isInstalled;
     private Player owner;
 
     public Tile() {

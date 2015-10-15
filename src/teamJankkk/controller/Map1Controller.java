@@ -154,6 +154,7 @@ public class Map1Controller extends Main implements Initializable {
             image00.setImage(new Image(updateColor()));
             endTurn();
         } else {
+
             System.out.println("Player has already claimed this land");
         }
 

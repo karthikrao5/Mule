@@ -4,51 +4,33 @@ package teamJankkk.model;
  * Created by karthik on 9/21/15.
  */
 public class Mule {
-    private String name, race, color;
-    private int money, score;
+    private String outfit;
+    private Boolean hasOutfit;
+    private Boolean isInstalled;
+    private Tile thisTile;
 
-    public Mule(String name, String race, String color) {
-        this.name = name;
-        this.race = race;
-        this.color = color;
-        this.money = 1500;
+    public Mule() {
+        this.outfit = "";
+        this.isInstalled = false;
+        this.hasOutfit = false;
     }
 
-    public int getScore() {
-        return score;
+    public String getOutfit() {
+        return this.outfit;
     }
 
-    public void setName(String input) {
-        name = input;
+    public void setOutfit(String input) {
+        this.outfit = input;
+        this.hasOutfit = true;
     }
 
-    public void setRace(String input) {
-        race = input;
+    public void setTile(Tile input) {
+        this.thisTile = input;
+        this.isInstalled = true;
     }
 
-    public void setColor(String input) {
-        color = input;
-    }
-
-    public void setMoney(int input) {
-        money = input;
-    }
-
-    public int getMoney() {return money;}
-
-    public void addMoney(int moneyToAdd) {
-        this.money = money + moneyToAdd;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getRace() {
-        return race;
-    }
-
-    public String getColor() {
-        return color;
+    public void removeOutfit() {
+        this.outfit = "";
+        this.hasOutfit = false;
     }
 }
