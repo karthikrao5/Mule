@@ -8,15 +8,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<<<<<<< HEAD
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-=======
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamJankkk.controller.AuctionHouseController">
->>>>>>> d746897666fd58da092d2ae549d5b548100047bb
    <children>
       <Group>
          <children>
-            <TextField fx:id="sellFood" layoutX="436.0" layoutY="279.0" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: ;" AnchorPane.leftAnchor="436.0" />
+            <TextField fx:id="sellFood" layoutX="436.0" layoutY="279.0" prefHeight="30.0" prefWidth="100.0" AnchorPane.leftAnchor="436.0" />
             <TextField fx:id="sellEnergy" layoutX="295.0" layoutY="279.0" prefHeight="30.0" prefWidth="100.0" AnchorPane.leftAnchor="295.0" />
             <Label layoutX="34.0" layoutY="277.0" text="SELL:" textFill="WHITE">
                <font>
@@ -64,11 +60,7 @@
             </ImageView>
          </children>
       </Group>
-<<<<<<< HEAD
-      <Button fx:id="goButton" layoutX="408.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="GO!">
-=======
-      <Button fx:id="goButton" layoutX="408.0" layoutY="383.0" mnemonicParsing="false" onAction="#goLogic" prefHeight="48.0" prefWidth="128.0" text="GO!">
->>>>>>> d746897666fd58da092d2ae549d5b548100047bb
+      <Button layoutX="408.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="GO!">
          <font>
             <Font name="American Typewriter" size="27.0" />
          </font>
@@ -98,7 +90,7 @@
                         <Insets />
                      </HBox.margin>
                      <padding>
-                        <Insets left="90.0" />
+                        <Insets left="10.0" />
                      </padding>
                   </Label>
                </children>
@@ -118,7 +110,7 @@
                         <Font name="American Typewriter" size="20.0" />
                      </font>
                      <padding>
-                        <Insets left="110.0" />
+                        <Insets left="30.0" />
                      </padding>
                   </Label>
                </children>
@@ -138,7 +130,7 @@
                         <Font name="American Typewriter" size="20.0" />
                      </font>
                      <padding>
-                        <Insets left="133.0" />
+                        <Insets left="53.0" />
                      </padding>
                   </Label>
                </children>
@@ -148,17 +140,17 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="91.0">
                <children>
-                  <Label layoutX="10.0" layoutY="67.0" text="Money:" textFill="WHITE" wrapText="true">
+                  <Label layoutX="10.0" layoutY="67.0" text="Money:" textFill="WHITE">
                      <font>
                         <Font name="American Typewriter" size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="moneyLabelPlayer" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE" wrapText="true">
+                  <Label fx:id="moneyLabelPlayer" layoutX="10.0" layoutY="10.0" text="0" textFill="WHITE">
                      <font>
                         <Font name="American Typewriter" size="20.0" />
                      </font>
                      <padding>
-                        <Insets left="114.0" />
+                        <Insets left="34.0" />
                      </padding>
                   </Label>
                </children>
@@ -190,7 +182,7 @@
                         <Font name="American Typewriter" size="20.0" />
                      </font>
                      <padding>
-                        <Insets left="90.0" />
+                        <Insets left="10.0" />
                      </padding>
                      <HBox.margin>
                         <Insets />
@@ -213,7 +205,7 @@
                         <Font name="American Typewriter" size="20.0" />
                      </font>
                      <padding>
-                        <Insets left="110.0" />
+                        <Insets left="30.0" />
                      </padding>
                   </Label>
                </children>
@@ -233,7 +225,7 @@
                         <Font name="American Typewriter" size="20.0" />
                      </font>
                      <padding>
-                        <Insets left="133.0" />
+                        <Insets left="53.0" />
                      </padding>
                   </Label>
                </children>
@@ -253,7 +245,7 @@
                         <Font name="American Typewriter" size="20.0" />
                      </font>
                      <padding>
-                        <Insets left="114.0" />
+                        <Insets left="34.0" />
                      </padding>
                   </Label>
                </children>
@@ -263,11 +255,7 @@
             </HBox>
          </children>
       </VBox>
-<<<<<<< HEAD
-      <Button fx:id="cancelButton" alignment="CENTER" layoutX="144.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="CANCEL">
-=======
-      <Button fx:id="cancelButton" alignment="CENTER" layoutX="144.0" layoutY="383.0" mnemonicParsing="false" onAction="#goBackToStore" prefHeight="48.0" prefWidth="128.0" text="CANCEL">
->>>>>>> d746897666fd58da092d2ae549d5b548100047bb
+      <Button alignment="CENTER" layoutX="144.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="128.0" text="CANCEL">
          <font>
             <Font name="American Typewriter" size="21.0" />
          </font>
