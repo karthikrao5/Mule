@@ -35,32 +35,6 @@ import java.util.ResourceBundle;
  */
 public class Map1Controller extends Main implements Initializable {
 
-//    private Tile tile00 = new Tile();
-//    private Tile tile01 = new Tile();
-//    private Tile tile02 = new Tile();
-//    private Tile tile03 = new Tile();
-//    private Tile tile04 = new Tile();
-//    private Tile tile10 = new Tile();
-//    private Tile tile11 = new Tile();
-//    private Tile tile12 = new Tile();
-//    private Tile tile13 = new Tile();
-//    private Tile tile14 = new Tile();
-//    private Tile tile20 = new Tile();
-//    private Tile tile21 = new Tile();
-//    private Tile tile22 = new Tile();
-//    private Tile tile23 = new Tile();
-//    private Tile tile24 = new Tile();
-//    private Tile tile30 = new Tile();
-//    private Tile tile31 = new Tile();
-//    private Tile tile32 = new Tile();
-//    private Tile tile33 = new Tile();
-//    private Tile tile34 = new Tile();
-//    private Tile tile40 = new Tile();
-//    private Tile tile41 = new Tile();
-//    private Tile tile42 = new Tile();
-//    private Tile tile43 = new Tile();
-//    private Tile tile44 = new Tile();
-
     @FXML private ImageView image00, image01,
          image02, image03, image04, image10,
          image11, image12, image13, image14,
@@ -114,6 +88,7 @@ public class Map1Controller extends Main implements Initializable {
         timer();
         updateColors();
         game = new Game();
+        game.loadGameState();
     }
 
     @FXML
@@ -400,6 +375,7 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map22Clicked(MouseEvent event) {
         System.out.println("Enter Store");
+        game.saveGameState();
         try {
             Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/TheStore.fxml"));
             stage.setScene(new Scene(screen3));
@@ -490,7 +466,7 @@ public class Map1Controller extends Main implements Initializable {
         if(!game.tileIsOwned("tile32")) {
             game.connectTile("tile32");
         } else {
-            game.dropMule("tile321");
+            game.dropMule("tile32");
         }
     }
     @FXML
@@ -574,6 +550,8 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile42")) {
             game.connectTile("tile42");
+            updateColor();
+
         } else {
             game.dropMule("tile42");
         }
@@ -591,6 +569,8 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile43")) {
             game.connectTile("tile43");
+            updateColor();
+
         } else {
             game.dropMule("tile43");
         }
@@ -608,13 +588,13 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile44")) {
             game.connectTile("tile44");
+            updateColor();
         } else {
             game.dropMule("tile44");
         }
     }
 
     public void updateLabel() {
-//        turnCOUNT = Game.getCurrentTurnNumber();
         turnCounterLabel1.setText(playerTURN.toString());
         turnCOUNT = Game.getCurrentTurnNumber();
         turnCounterLabel.setText(turnCOUNT.toString());
@@ -640,7 +620,8 @@ public class Map1Controller extends Main implements Initializable {
                 }
 
             }
-        }*/
+        }
+        */
     }
 
     public String updateColor() {

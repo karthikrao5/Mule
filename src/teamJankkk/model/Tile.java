@@ -31,16 +31,13 @@ public class Tile {
 
     public void createMule() {
         if(BuyMuleController.hasMule) {
-            System.out.println("inside hasMule");
             System.out.println("This tile's resource is : " + resource);
-            System.out.println("buymulecontroller: " + BuyMuleController.outfitString);
             if(BuyMuleController.outfitString.equals(resource)) {
-                System.out.println("inside muletype equals");
                 Mule newMule = new Mule(BuyMuleController.outfitString);
                 isInstalled = true;
                 newMule.setTile(this);
                 System.out.println("Mule created.");
-                System.out.println("Mule belongs to :" + newMule.getTile());
+                System.out.println("Mule belongs to: " + newMule.getTile());
             }
         }
     }

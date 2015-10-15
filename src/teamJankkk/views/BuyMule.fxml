@@ -38,7 +38,7 @@
       <ChoiceBox fx:id="outfitChoiceBox" layoutX="307.0" layoutY="300.0" prefHeight="43.0" prefWidth="169.0">
          <items>
             <FXCollections fx:factory="observableArrayList">
-               <String fx:value="Smithore" />
+               <String fx:value="SmithOre" />
                <String fx:value="Energy" />
                <String fx:value="Food" />
             </FXCollections>

@@ -18,11 +18,18 @@ public class Game {
     private static int numberOfPlayers = 0;
     private static int currentPlayer = 1;
     public boolean endGame = false;
-    static List<Tile> tileList = new ArrayList<>();
+    private static List<Tile> tileList = new ArrayList<>();
     boolean playerPurchasedLand;
     List<String> resourceList = new ArrayList<>(Arrays.asList("SmithOre", "Energy",
             "Food"));
-    Random rand;
+    private Random rand;
+
+
+    private static int tempCurrentTurn = 0;
+    private static int tempNumberOfPlayers = 0;
+    private static int tempCurrentPlayer = 1;
+    private static List<Tile> tempTileList = new ArrayList<>();
+
 
     public Game() {
 
@@ -78,7 +85,7 @@ public class Game {
     }
 
     public boolean tileIsOwned(String name) {
-        System.out.println(getTileFromList(name).getTileName() + " and it contains" +
+        System.out.println(getTileFromList(name).getTileName() + " contains" +
                 " " + getTileFromList(name).getResource());
         System.out.println("tileIsOwned: " + getTileFromList(name).getIsClaimed() + " by: " + PlayerDB.getPlayer(currentPlayer).getName());
         return getTileFromList(name).getIsClaimed();
@@ -120,8 +127,17 @@ public class Game {
         return n;
     }
 
-    private void nextTurnLogic() {
+    private int nextPlayer() {
+//        System.out.println("getNumberofPlayers " + numberOfPlayers);
+        if(currentPlayer >= numberOfPlayers) {
+            currentPlayer = 1;
+        } else {
+            currentPlayer++;
+        }
+        return currentPlayer;
+    }
 
+    private void nextTurnLogic() {
         if (currentTurn > 2) {
             this.harvest();
         }
@@ -158,13 +174,23 @@ public class Game {
         return tileList;
     }
 
-    private int nextPlayer() {
-//        System.out.println("getNumberofPlayers " + numberOfPlayers);
-        if(currentPlayer >= numberOfPlayers) {
-            currentPlayer = 1;
-        } else {
-            currentPlayer++;
+
+    public void saveGameState() {
+        for(int i = 0; i < tileList.size(); i++) {
+            tempTileList.add(tileList.get(i));
         }
-        return currentPlayer;
+        tempCurrentPlayer = currentPlayer;
+        tempCurrentTurn = currentTurn;
+        tempNumberOfPlayers = numberOfPlayers;
+
+    }
+
+    public void loadGameState() {
+        for(int i = 0; i < tempTileList.size(); i++) {
+            tileList.add(tempTileList.get(i));
+        }
+        currentPlayer = tempCurrentPlayer;
+        currentTurn = tempCurrentTurn;
+        numberOfPlayers = tempNumberOfPlayers;
     }
 }
