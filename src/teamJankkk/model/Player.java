@@ -9,15 +9,18 @@ import java.util.ArrayList;
  */
 public class Player {
     private String name, race, color;
-    private int money, score;
-    private ArrayList<Tile> tilesOwned;
+    private int money, score, food, energy, smithore, crystite;
 
     public Player(String name, String race, String color) {
         this.name = name;
         this.race = race;
         this.color = color;
         this.money = 1500;
-        tilesOwned = new ArrayList<>();
+        score = 0;
+        food = 0;
+        energy = 0;
+        smithore = 0;
+        crystite = 0;
     }
 
     public void addTilestoPlayerList(Tile tile) {
@@ -52,6 +55,42 @@ public class Player {
 
     public void addMoney(int moneyToAdd) {
         this.money = money + moneyToAdd;
+    }
+
+    public void subtractMoney(int moneyToSubtract) {
+        this.money = money + moneyToSubtract;
+    }
+
+    public void addFood(int foodToAdd) {
+        this.food = food + foodToAdd;
+    }
+
+    public void subtractFood(int foodToSubtract) {
+        this.food = food - foodToSubtract;
+    }
+
+    public void addEnergy(int energyToAdd) {
+        this.energy = energy + energyToAdd;
+    }
+
+    public void subtractEnergy(int energyToSubtract) {
+        this.energy = energy - energyToSubtract;
+    }
+
+    public void addSmithore(int smithoreToAdd) {
+        this.smithore = smithore + smithoreToAdd;
+    }
+
+    public void subtractSmithore(int smithoreToSubtract) {
+        this.smithore = smithore + smithoreToSubtract;
+    }
+
+    public void addCrystite(int crystiteToAdd) {
+        this.crystite = crystite + crystiteToAdd;
+    }
+
+    public void subtractCrystite(int crystiteToSubtract) {
+        this.crystite = crystite + crystiteToSubtract;
     }
 
     public String getName() {
