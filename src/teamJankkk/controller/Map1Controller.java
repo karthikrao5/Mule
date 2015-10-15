@@ -110,6 +110,7 @@ public class Map1Controller extends Main implements Initializable {
         endTurnButton.setOnAction(this::endTurn);
         // timerLabel.setText(timeSeconds.toString());
         timer();
+        updateColors();
         game = new Game();
     }
 
@@ -504,7 +505,9 @@ public class Map1Controller extends Main implements Initializable {
         //newLabel.setTet(mode);
     }
 
-
+    public void updateColors() {
+        
+    }
 
     public String updateColor() {
 

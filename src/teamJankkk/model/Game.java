@@ -134,6 +134,10 @@ public class Game {
         return numberOfPlayers;
     }
 
+    public List<Tile> getTileList()  {
+        return this.tileList;
+    }
+
     private int nextPlayer() {
 //        System.out.println("getNumberofPlayers " + numberOfPlayers);
         if(currentPlayer >= numberOfPlayers) {
