@@ -90,11 +90,14 @@ public class Tile {
         } else {
             String theType = this.getResource();
             if (theType.equals("SmithOre")) {
-                PlayerDB.getPlayer(Game.getCurrentPlayer()).addSmithore(100);
+                addSmithore(currentPlayer, 100);
+//                PlayerDB.getPlayer(currentPlayer).addSmithore(100);
             } else if (theType.equals("Energy")) {
-                PlayerDB.getPlayer(Game.getCurrentPlayer()).addEnergy(100);
+                addEnergy(currentPlayer, 100);
+//                PlayerDB.getPlayer(Game.getCurrentPlayer()).addEnergy(100);
             } else if (theType.equals("Food")) {
-                PlayerDB.getPlayer(Game.getCurrentPlayer()).addFood(100);
+                addFood(currentPlayer, 100);
+//                PlayerDB.getPlayer(Game.getCurrentPlayer()).addFood(100);
             }
         }
     }

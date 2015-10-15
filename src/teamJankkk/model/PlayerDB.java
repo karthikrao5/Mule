@@ -12,31 +12,28 @@ import java.util.Map;
  */
 public class PlayerDB {
 
-    private static HashMap<Player, Integer> db;
-    private static ArrayList<Player> playerList;
-    private static ArrayList<String> stringPlayerList;
+    private HashMap<Player, Integer> db;
+    private ArrayList<Player> playerList;
+    private ArrayList<String> stringPlayerList;
 
     public PlayerDB() {
-    }
-
-    public static void createDB() {
         db = new HashMap<>();
     }
 
-    public static void createPlayer(String name, int index) {
+    public void createPlayer(String name, int index) {
         Player newPlayer = new Player(name, null, null);
         db.put(newPlayer, index);
     }
 
-    public static void setRace(String race, int index) {
+    public void setRace(String race, int index) {
         getPlayer(index).setRace(race);
     }
 
-    public static void setColor(String color, int index) {
+    public void setColor(String color, int index) {
         getPlayer(index).setColor(color);
     }
 
-    public static List<Player> getPlayerList() {
+    public List<Player> getPlayerList() {
         playerList = new ArrayList<>();
         for(Map.Entry<Player, Integer> p : db.entrySet()) {
             playerList.add(p.getKey());
@@ -44,7 +41,7 @@ public class PlayerDB {
         return playerList;
     }
 
-    public static List<String> getStringPlayerList() {
+    public List<String> getStringPlayerList() {
         stringPlayerList = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         int count = 0;
@@ -60,7 +57,7 @@ public class PlayerDB {
     }
 
 
-    public static Player getPlayer(int index) {
+    public Player getPlayer(int index) {
 
         if(index > 4) {
             System.out.println("Sorry player not inbounds");
@@ -74,7 +71,7 @@ public class PlayerDB {
         return null;
     }
 
-    public static String toString(int index) {
+    public String toString(int index) {
         String name = getPlayer(index).getName();
         String color = getPlayer(index).getColor();
         String race = getPlayer(index).getRace();

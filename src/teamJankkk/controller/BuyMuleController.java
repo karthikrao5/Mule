@@ -20,8 +20,9 @@ import java.util.ResourceBundle;
  * Created by KRose on 10/14/15.
  */
 public class BuyMuleController extends Main implements Initializable {
-    @FXML
-    private Button buyButton;
+
+    Game game;
+    @FXML private Button buyButton;
     //@FXML private TextField nameTextField1;
     //name label 21 holds Mule Count for that player
     @FXML private Label nameLabel21, nameLabel1;
@@ -30,19 +31,23 @@ public class BuyMuleController extends Main implements Initializable {
     public static boolean hasMule;
     public static String outfitString;
 
+    public void passGame(Game game) {
+        this.game = game;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //save3Button.setOnAction(this::saveName);
         buyButton.setOnAction(this::buy);
-        nameLabel21.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).howManyMules()));
-        nameLabel1.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney()));
+        nameLabel21.setText(String.valueOf(game.getMuleCount(game.getCurrentPlayer())));
+        nameLabel1.setText(String.valueOf(game.getMoney(game.getCurrentPlayer())));
         hasMule = false;
         outfitString = "";
     }
 
     @FXML
     public void buy(ActionEvent event) {
-        Player thisPlayer = PlayerDB.getPlayer(Game.getCurrentPlayer());
+        Player thisPlayer = game.getPlayer(game.getCurrentPlayer());
         int howMuchTheyGot = thisPlayer.getMoney();
         if (outfitChoiceBox.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -53,7 +58,8 @@ public class BuyMuleController extends Main implements Initializable {
             alert.showAndWait();
         } else {
             if (howMuchTheyGot >= 100) {
-                PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(100);
+                game.getPlayer(game.getCurrentPlayer()).subtractMoney(100);
+//                PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(100);
                 onThisScreenHowManyDidYouBuy++;
                 updateLabel();
                 hasMule = true;
@@ -79,7 +85,7 @@ public class BuyMuleController extends Main implements Initializable {
     }
 
     public void updateLabel() {
-        nameLabel21.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).howManyMules()+onThisScreenHowManyDidYouBuy));
-        nameLabel1.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney()));
+        nameLabel21.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).howManyMules()+onThisScreenHowManyDidYouBuy));
+        nameLabel1.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getMoney()));
     }
 }

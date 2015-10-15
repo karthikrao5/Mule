@@ -23,6 +23,8 @@ import java.util.ResourceBundle;
  */
 public class PubController extends Main implements Initializable {
 
+    Game game;
+
     @FXML
     private ImageView gambleView;
 
@@ -32,6 +34,10 @@ public class PubController extends Main implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         gambleView.setOnMouseClicked(this::gambleButtonClicked);
+    }
+
+    public void passGame(Game game) {
+        this.game = game;
     }
 
     @FXML

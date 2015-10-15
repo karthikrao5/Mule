@@ -29,12 +29,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 public class PlayerSelect extends Main implements Initializable{
 
+    Game game;
     @FXML private TextField nameTextField1;
     @FXML private Button nextButton;
     @FXML private Button saveButton1;
@@ -47,6 +49,10 @@ public class PlayerSelect extends Main implements Initializable{
         //saveButton1.setOnAction(this::saveName);
         nextButton.setOnAction(this::goToSummary);
         exitButton2.setOnAction(this::exitApp);
+    }
+
+    public void passGame(Game game) {
+        this.game = game;
     }
 
     /*
@@ -90,10 +96,15 @@ public class PlayerSelect extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 1);
-                PlayerDB.setRace(race, 1);
-                PlayerDB.setColor(color, 1);
-                Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
+                game.createPlayer(name, 1);
+                game.setRace(race, 1);
+                game.setColor(color, 1);
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
+                Pane gameSumPane = (Pane) loader.load();
+                Map1Controller controller = loader.<Map1Controller>getController();
+                controller.passGame(game);
+//                Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
                 stage.setScene(new Scene(gameSumPane));
                 stage.show();
             }

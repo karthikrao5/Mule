@@ -44,7 +44,6 @@ public class Map1Controller extends Main implements Initializable {
          image42, image43, image44, image50,
          image51, image52, image53, image54;
     @FXML private Label turnCounterLabel1;
-    @FXML private Label turnCounterLabel2;
     @FXML private Label timerLabel;
     @FXML private Label turnCounterLabel;
     @FXML private Button endTurnButton;
@@ -87,8 +86,11 @@ public class Map1Controller extends Main implements Initializable {
         // timerLabel.setText(timeSeconds.toString());
         timer();
         updateColors();
-        game = new Game();
-        game.loadGameState();
+//        game.loadGameState();
+    }
+
+    public void passGame(Game game) {
+        this.game = game;
     }
 
     @FXML
@@ -377,7 +379,11 @@ public class Map1Controller extends Main implements Initializable {
         System.out.println("Enter Store");
         game.saveGameState();
         try {
-            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/TheStore.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/TheStore.fxml"));
+            Pane screen3 = (Pane) loader.load();
+//            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/TheStore.fxml"));
+            StoreController controller = loader.<StoreController>getController();
+            controller.setGame(game);
             stage.setScene(new Scene(screen3));
             stage.show();
         } catch (IOException e) {
@@ -596,7 +602,7 @@ public class Map1Controller extends Main implements Initializable {
 
     public void updateLabel() {
         turnCounterLabel1.setText(playerTURN.toString());
-        turnCOUNT = Game.getCurrentTurnNumber();
+        turnCOUNT = game.getCurrentTurnNumber();
         turnCounterLabel.setText(turnCOUNT.toString());
         //newLabel.setTet(mode);
     }
@@ -627,7 +633,7 @@ public class Map1Controller extends Main implements Initializable {
     public String updateColor() {
 
         try {
-            String color = PlayerDB.getPlayer(playerTURN).getColor();
+            String color = game.getColor(playerTURN);
             if (color.equals("Blue")) {
                 color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
             } else if (color.equals("Yellow")) {

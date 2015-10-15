@@ -18,6 +18,7 @@ import teamJankkk.model.PlayerDB;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
@@ -25,6 +26,8 @@ import java.util.ResourceBundle;
  */
 public class StoreController extends Main implements Initializable {
 
+
+    Game game;
     @FXML
     private ImageView thePub, auctionHouse, muleStore;
             //, smithoreTile, energyTile, foodTile;
@@ -40,13 +43,23 @@ public class StoreController extends Main implements Initializable {
         //smithoreTile.setOnMouseClicked((this::smithOreClicked));
         //energyTile.setOnMouseClicked((this::energyTileClicked));
         //foodTile.setOnMouseClicked(this::foodTileClicked);
-        moneyLabel.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney()));
+//        moneyLabel.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney()));
+        int temp = game.getCurrentPlayer();
+        moneyLabel.setText(String.valueOf(game.getMoney(temp)));
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 
     @FXML
     public void goBackToMap() {
         try {
-            Pane backToMap = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
+            Pane backToMap = (Pane) loader.load();
+            Map1Controller controller = loader.<Map1Controller>getController();
+            controller.passGame(game);
+//            Pane backToMap = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
             stage.setScene(new Scene(backToMap));
             stage.show();
         } catch(IOException e) {
@@ -58,7 +71,11 @@ public class StoreController extends Main implements Initializable {
     public void thePubClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
         try {
-            Pane pubScreen = (Pane) FXMLLoader.load(getClass().getResource("../views/ThePub.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/ThePub.fxml"));
+            Pane pubScreen = (Pane) loader.load();
+            PubController controller = loader.<PubController>getController();
+            controller.passGame(game);
+//            Pane pubScreen = (Pane) FXMLLoader.load(getClass().getResource("../views/ThePub.fxml"));
             stage.setScene(new Scene(pubScreen));
             stage.show();
         } catch (IOException e) {
@@ -70,8 +87,12 @@ public class StoreController extends Main implements Initializable {
     public void theAuctionHouseClicked(MouseEvent event) {
         System.out.println("The AuctionHouse was clicked");
         try {
-            Pane pubScreen = (Pane) FXMLLoader.load(getClass().getResource("../views/AuctionHouse.fxml"));
-            stage.setScene(new Scene(pubScreen));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/AuctionHouse.fxml"));
+            Pane auctionHousePane = (Pane) loader.load();
+            AuctionHouseController controller = loader.<AuctionHouseController>getController();
+            controller.passGame(game);
+//            Pane pubScreen = (Pane) FXMLLoader.load(getClass().getResource("../views/AuctionHouse.fxml"));
+            stage.setScene(new Scene(auctionHousePane));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

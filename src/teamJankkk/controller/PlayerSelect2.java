@@ -22,6 +22,8 @@ import java.util.ResourceBundle;
 
 public class PlayerSelect2 extends Main implements Initializable{
 
+    Game game;
+
     @FXML private Button save2Button;
     @FXML private Button exitButton2;
     @FXML private ChoiceBox<String> raceChoiceBox2;
@@ -40,6 +42,10 @@ public class PlayerSelect2 extends Main implements Initializable{
 //        p2 = new Player(null, null, null);
         //save2Button.setOnAction(this::saveName);
         nextButton.setOnAction(this::goToSummary);
+    }
+
+    public void passGame(Game game) {
+        this.game = game;
     }
 
     /*
@@ -74,9 +80,9 @@ public class PlayerSelect2 extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 4);
-                PlayerDB.setRace(race, 4);
-                PlayerDB.setColor(color, 4);
+                game.createPlayer(name, 4);
+                game.setRace(race, 4);
+                game.setColor(color, 4);
                 Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
                 stage.setScene(new Scene(gameSumPane));
                 stage.show();
@@ -104,12 +110,12 @@ public class PlayerSelect2 extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 1);
-                PlayerDB.setRace(race, 1);
-                PlayerDB.setColor(color, 1);
-                PlayerDB.createPlayer(name2, 2);
-                PlayerDB.setRace(race2, 2);
-                PlayerDB.setColor(color2, 2);
+                game.createPlayer(name, 1);
+                game.setRace(race, 1);
+                game.setColor(color, 1);
+                game.createPlayer(name2, 2);
+                game.setRace(race2, 2);
+                game.setColor(color2, 2);
                 Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
                 stage.setScene(new Scene(gameSumPane));
                 stage.show();

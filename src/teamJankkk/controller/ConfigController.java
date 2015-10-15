@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
+import teamJankkk.model.Player;
 import teamJankkk.model.PlayerDB;
 
 
@@ -21,6 +22,7 @@ import java.util.ResourceBundle;
 public class ConfigController extends Main implements Initializable {
 
 
+    Game game;
     @FXML private Button onePlayer;
     @FXML private Button twoPlayer;
     @FXML private Button threePlayer;
@@ -43,36 +45,36 @@ public class ConfigController extends Main implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         startButton.setOnAction(this::goToPlayerSelection);
-        PlayerDB.createDB();
+        game = new Game();
     }
 
 
     @FXML
     void setPlayers1(ActionEvent event) {
         playerLabel.setText("1 players");
-        Game.setNumberOfPlayers(1);
+        game.setNumberOfPlayers(1);
         players = 1;
 
     }
     @FXML
     void setPlayers2(ActionEvent event) {
         playerLabel.setText("2 players");
-        Game.setNumberOfPlayers(2);
-        System.out.println("config screen: " + Game.getNumberOfPlayers());
+        game.setNumberOfPlayers(2);
+        System.out.println("config screen: " + game.getNumberOfPlayers());
         players = 2;
 
     }
     @FXML
     void setPlayers3(ActionEvent event) {
         playerLabel.setText("3 players");
-        Game.setNumberOfPlayers(3);
+        game.setNumberOfPlayers(3);
         players = 3;
 
     }
     @FXML
     void setPlayers4(ActionEvent event) {
         playerLabel.setText("4 players");
-        Game.setNumberOfPlayers(4);
+        game.setNumberOfPlayers(4);
         players = 4;
 
 
@@ -116,19 +118,35 @@ public class ConfigController extends Main implements Initializable {
             // at button, check if playerdb.player # = 3 for example, then skip to game Summary window
             // also, take out save button func and put it in next - also throw error when player does not fill out all fields
             if (players == 1) {
-                Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml"));
+                FXMLLoader loader1 = new FXMLLoader(getClass().getResource("../views/Player1Screen.fxml"));
+                Pane screen1 = (Pane) loader1.load();
+                PlayerSelect controller1 = loader1.<PlayerSelect>getController();
+                controller1.passGame(game);
+//                Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml"));
                 stage.setScene(new Scene(screen1));
                 stage.show();
             } else if (players == 2) {
-                Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));
+                FXMLLoader loader2 = new FXMLLoader(getClass().getResource("../views/Player2Select.fxml"));
+                Pane screen2 = (Pane) loader2.load();
+                PlayerSelect controller2 = loader2.<PlayerSelect>getController();
+                controller2.passGame(game);
+//                Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));
                 stage.setScene(new Scene(screen2));
                 stage.show();
             } else if (players == 3) {
-                Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player3Screen.fxml"));
+                FXMLLoader loader3 = new FXMLLoader(getClass().getResource("../views/Player3Screen.fxml"));
+                Pane screen3 = (Pane) loader3.load();
+                PlayerSelect controller3 = loader3.<PlayerSelect>getController();
+                controller3.passGame(game);
+//                Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player3Screen.fxml"));
                 stage.setScene(new Scene(screen3));
                 stage.show();
             } else {
-                Pane screen4 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player4Select.fxml"));
+                FXMLLoader loader4 = new FXMLLoader(getClass().getResource("../views/Player4Select.fxml"));
+                Pane screen4 = (Pane) loader4.load();
+                PlayerSelect controller4 = loader4.<PlayerSelect>getController();
+                controller4.passGame(game);
+//                Pane screen4 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player4Select.fxml"));
                 stage.setScene(new Scene(screen4));
                 stage.show();
             }

@@ -11,8 +11,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import sun.font.BidiUtils;
 import teamJankkk.Main;
+import teamJankkk.model.Game;
 import teamJankkk.model.Player;
-import teamJankkk.model.PlayerDB;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -24,6 +24,8 @@ import java.util.ResourceBundle;
  */
 public class PlayerSelect4 extends Main implements Initializable {
 
+
+    Game game;
 
     @FXML private Button goToSummaryButton;
     @FXML private Button save4Button;
@@ -52,6 +54,10 @@ public class PlayerSelect4 extends Main implements Initializable {
         nextButton.setOnAction(this::goToSummary);
     }
 
+    public void passGame(Game game) {
+        this.game = game;
+    }
+
     /*
     @FXML
     void saveName(ActionEvent event) {
@@ -63,10 +69,10 @@ public class PlayerSelect4 extends Main implements Initializable {
                 + " , your race is: " + race
                 + " and you'll be playing for the " + color);
 
-        PlayerDB.createPlayer(name, 3);
-        PlayerDB.setRace(race, 3);
-        PlayerDB.setColor(color, 3);
-        configLabel4.setText(PlayerDB.toString(3));
+        game.createPlayer(name, 3);
+        game.setRace(race, 3);
+        game.setColor(color, 3);
+        configLabel4.setText(game.toString(3));
 
     }
     */
@@ -94,18 +100,18 @@ public class PlayerSelect4 extends Main implements Initializable {
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                PlayerDB.createPlayer(name, 1);
-                PlayerDB.setRace(race, 1);
-                PlayerDB.setColor(color, 1);
-                PlayerDB.createPlayer(name2, 2);
-                PlayerDB.setRace(race2, 2);
-                PlayerDB.setColor(color2, 2);
-                PlayerDB.createPlayer(name3, 3);
-                PlayerDB.setRace(race3, 3);
-                PlayerDB.setColor(color3, 3);
-                PlayerDB.createPlayer(name4, 4);
-                PlayerDB.setRace(race4, 4);
-                PlayerDB.setColor(color4, 4);
+                game.createPlayer(name, 1);
+                game.setRace(race, 1);
+                game.setColor(color, 1);
+                game.createPlayer(name2, 2);
+                game.setRace(race2, 2);
+                game.setColor(color2, 2);
+                game.createPlayer(name3, 3);
+                game.setRace(race3, 3);
+                game.setColor(color3, 3);
+                game.createPlayer(name4, 4);
+                game.setRace(race4, 4);
+                game.setColor(color4, 4);
                 Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
                 stage.setScene(new Scene(gameSumPane));
                 stage.show();

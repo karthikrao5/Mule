@@ -14,39 +14,40 @@ import java.util.Random;
  */
 public class Game {
 
-    private static int currentTurn = 0;
-    private static int numberOfPlayers = 0;
-    private static int currentPlayer = 1;
-    public boolean endGame = false;
-    private static List<Tile> tileList = new ArrayList<>();
+    PlayerDB database;
+    int currentTurn = 0;
+    int numberOfPlayers = 0;
+    int currentPlayer = 1;
+    boolean endGame = false;
+    List<Tile> tileList = new ArrayList<>();
     boolean playerPurchasedLand;
     List<String> resourceList = new ArrayList<>(Arrays.asList("SmithOre", "Energy",
             "Food"));
-    private Random rand;
+    Random rand;
 
 
-    private static int tempCurrentTurn = 0;
-    private static int tempNumberOfPlayers = 0;
-    private static int tempCurrentPlayer = 1;
-    private static List<Tile> tempTileList = new ArrayList<>();
+    int tempCurrentTurn = 0;
+    int tempNumberOfPlayers = 0;
+    int tempCurrentPlayer = 1;
+    List<Tile> tempTileList = new ArrayList<>();
 
 
     public Game() {
-
+        database = new PlayerDB();
         rand = new Random();
         //x axis is i
         //y axis is j
-        for(int i = 0; i < 5; i++) {
-            for(int j = 0; j < 5; j++) {
-                if(i == 2 && j == 2) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (i == 2 && j == 2) {
                     System.out.println("Tiles instantiated.");
-                } else if((i == 0 && j == 1) || (i == 1 && j == 2) ||
-                        (i == 3 && j == 0) || (i == 1 && j == 4)){
+                } else if ((i == 0 && j == 1) || (i == 1 && j == 2) ||
+                        (i == 3 && j == 0) || (i == 1 && j == 4)) {
 
                     Tile temp = new Tile("tile" + i + j);
                     temp.setResource("SmithOre");
                     tileList.add(temp);
-                } else if((i == 0 && j == 2) || (i == 1 && j == 1) ||
+                } else if ((i == 0 && j == 2) || (i == 1 && j == 1) ||
                         (i == 3 && j == 1) || (i == 4 && j == 3) ||
                         (i == 3 && j == 4)) {
 
@@ -54,7 +55,7 @@ public class Game {
                     temp.setResource("Energy");
                     tileList.add(temp);
 
-                } else if((i == 2 && j == 0) || (i == 2 && j == 1) ||
+                } else if ((i == 2 && j == 0) || (i == 2 && j == 1) ||
                         (i == 2 && j == 3) || (i == 2 && j == 4)) {
                     Tile temp = new Tile("tile" + i + j);
                     temp.setResource("Food");
@@ -76,8 +77,8 @@ public class Game {
     }
 
     public Tile getTileFromList(String name) {
-        for(Tile t : tileList) {
-            if(t.getTileName().equals(name)) {
+        for (Tile t : tileList) {
+            if (t.getTileName().equals(name)) {
                 return t;
             }
         }
@@ -87,17 +88,17 @@ public class Game {
     public boolean tileIsOwned(String name) {
         System.out.println(getTileFromList(name).getTileName() + " contains" +
                 " " + getTileFromList(name).getResource());
-        System.out.println("tileIsOwned: " + getTileFromList(name).getIsClaimed() + " by: " + PlayerDB.getPlayer(currentPlayer).getName());
+        System.out.println("tileIsOwned: " + getTileFromList(name).getIsClaimed() + " by: " + database.getPlayer(currentPlayer).getName());
         return getTileFromList(name).getIsClaimed();
     }
 
     public void connectTile(String name) {
         try {
-            if(PlayerDB.getPlayer(currentPlayer).getMoney() >= 100) {
-                if(!playerPurchasedLand) {
+            if (database.getPlayer(currentPlayer).getMoney() >= 100) {
+                if (!playerPurchasedLand) {
                     getTileFromList(name).setIsClaimed(true);
-                    PlayerDB.getPlayer(currentPlayer).addTilestoPlayerList(getTileFromList(name));
-                    PlayerDB.getPlayer(currentPlayer).subtractMoney(100);
+                    database.getPlayer(currentPlayer).addTilestoPlayerList(getTileFromList(name));
+                    database.getPlayer(currentPlayer).subtractMoney(100);
                     playerPurchasedLand = true;
                 } else {
                     System.out.println("Land already purchased in your turn.");
@@ -107,13 +108,13 @@ public class Game {
                 System.out.println("You do not have enough" +
                         "money to buy this land!");
             }
-        } catch(NullPointerException e) {
+        } catch (NullPointerException e) {
             e.getStackTrace();
         }
 
     }
 
-    public static void setNumberOfPlayers(int num) {
+    public void setNumberOfPlayers(int num) {
         numberOfPlayers = num;
     }
 
@@ -129,7 +130,7 @@ public class Game {
 
     private int nextPlayer() {
 //        System.out.println("getNumberofPlayers " + numberOfPlayers);
-        if(currentPlayer >= numberOfPlayers) {
+        if (currentPlayer >= numberOfPlayers) {
             currentPlayer = 1;
         } else {
             currentPlayer++;
@@ -151,32 +152,32 @@ public class Game {
         return (currentTurn < 2);
     }
 
-    public void harvest()  {
-        for(Tile t : tileList) {
+    public void harvest() {
+        for (Tile t : tileList) {
             t.calculateProduction();
         }
     }
 
 
-    public static int getCurrentTurnNumber() {
+    public int getCurrentTurnNumber() {
         return currentTurn;
     }
 
-    public static int getCurrentPlayer() {
+    public int getCurrentPlayer() {
         return currentPlayer;
     }
 
-    public static int getNumberOfPlayers() {
+    public int getNumberOfPlayers() {
         return numberOfPlayers;
     }
 
-    public static List<Tile> getTileList()  {
+    public List<Tile> getTileList() {
         return tileList;
     }
 
 
     public void saveGameState() {
-        for(int i = 0; i < tileList.size(); i++) {
+        for (int i = 0; i < tileList.size(); i++) {
             tempTileList.add(tileList.get(i));
         }
         tempCurrentPlayer = currentPlayer;
@@ -186,11 +187,56 @@ public class Game {
     }
 
     public void loadGameState() {
-        for(int i = 0; i < tempTileList.size(); i++) {
+        for (int i = 0; i < tempTileList.size(); i++) {
             tileList.add(tempTileList.get(i));
         }
         currentPlayer = tempCurrentPlayer;
         currentTurn = tempCurrentTurn;
         numberOfPlayers = tempNumberOfPlayers;
     }
+
+    public void createPlayer(String name, int index) {
+        database.createPlayer(name, index);
+    }
+
+    public void setRace(String name, int index) {
+        database.setRace(name, index);
+    }
+
+    public void setColor(String name, int index) {
+        database.setColor(name, index);
+    }
+
+    public Player getPlayer(int index) {
+        return database.getPlayer(index);
+    }
+
+    public String getColor(int index) {
+        return database.getPlayer(index).getColor();
+    }
+
+    public int getMoney(int index) {
+        return database.getPlayer(index).getMoney();
+    }
+
+    public void addSmithore(int index, int sum) {
+        database.getPlayer(index).addSmithore(sum);
+    }
+
+    public void addEnergy(int index, int sum) {
+        database.getPlayer(index).addEnergy(sum);
+    }
+
+    public void addFood(int index, int sum) {
+        database.getPlayer(index).addFood(sum);
+    }
+
+    public int getMuleCount(int index) {
+        return database.getPlayer(index).howManyMules();
+    }
+
+    public void subtractMoney(int index, int sum) {
+        database.getPlayer(index).subtractMoney(sum);
+    }
+
 }
