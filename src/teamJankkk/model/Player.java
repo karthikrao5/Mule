@@ -102,4 +102,14 @@ public class Player {
     public String getColor() {
         return color;
     }
+
+    public int howManyMules() {
+        int muleCount = 0;
+        for (int l = 0; l < tilesOwned.size(); l++) {
+            if (tilesOwned.get(l).isInstalled()) {
+                muleCount++;
+            }
+        }
+        return muleCount;
+    }
 }

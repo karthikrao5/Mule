@@ -73,7 +73,18 @@ public class Tile {
         if (!isInstalled) {
             System.out.println("Land piece isn't Installed;");
         } else {
-
+            String theType = this.getResource();
+            if (theType.equals("SmithOre")) {
+                PlayerDB.getPlayer(Game.getCurrentPlayer()).addSmithore(100);
+            } else if (theType.equals("Energy")) {
+                PlayerDB.getPlayer(Game.getCurrentPlayer()).addEnergy(100);
+            } else if (theType.equals("Food")) {
+                PlayerDB.getPlayer(Game.getCurrentPlayer()).addFood(100);
+            }
         }
+    }
+
+    public boolean isInstalled() {
+        return isInstalled;
     }
 }
