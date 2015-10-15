@@ -1,15 +1,13 @@
 package teamJankkk.controller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
+import teamJankkk.model.Mule;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.fxml.Initializable;
 import teamJankkk.model.Player;
 import teamJankkk.model.PlayerDB;
@@ -27,6 +25,7 @@ public class BuyMuleController extends Main implements Initializable {
     //@FXML private TextField nameTextField1;
     //name label 21 holds Mule Count for that player
     @FXML private Label nameLabel21, nameLabel1;
+    @FXML private ChoiceBox<String> outfitChoiceBox;
     int onThisScreenHowManyDidYouBuy = 0;
 
     @Override
@@ -45,6 +44,7 @@ public class BuyMuleController extends Main implements Initializable {
             PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(100);
             onThisScreenHowManyDidYouBuy++;
             updateLabel();
+            Mule newMule = new Mule(outfitChoiceBox.getValue());
             Pane gameSumPane = null;
             try {
                 gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
