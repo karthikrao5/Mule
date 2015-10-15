@@ -33,6 +33,7 @@ public class Tile {
         if(mule.getMuleType().equals(resource)) {
             mule = new Mule(resource);
             isInstalled = true;
+            System.out.println("Mule created.");
         }
     }
 

@@ -31,6 +31,7 @@ public class Player {
 
     public void subtractMoney(int amount) {
         money -= amount;
+        System.out.println("Player " + name + " has: " + money + " now.");
     }
 
     public int getScore() {
