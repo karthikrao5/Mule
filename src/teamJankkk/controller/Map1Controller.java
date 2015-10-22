@@ -47,11 +47,11 @@ public class Map1Controller extends Main implements Initializable {
     @FXML private Label timerLabel;
     @FXML private Label turnCounterLabel;
     @FXML private Button endTurnButton;
-    private static final Integer STARTTIME = 60;
-    private static Integer timeSeconds = STARTTIME;
-    private static Integer playerTURN = 1;
-    private static Integer turnCOUNT = 1;
-    private static Timeline timeline;
+    private final Integer STARTTIME = 60;
+    private Integer timeSeconds = STARTTIME;
+    private Integer playerTURN = 1;
+    private Integer turnCOUNT = 1;
+    private Timeline timeline;
     private Game game;
 
 
