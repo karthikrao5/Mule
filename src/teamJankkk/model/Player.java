@@ -146,4 +146,8 @@ public class Player {
             }
         }
     }
+
+    public List<Tile> getTileList() {
+        return tilesOwned;
+    }
 }

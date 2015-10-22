@@ -240,4 +240,14 @@ public class Game {
         database.getPlayer(index).subtractMoney(sum);
     }
 
+    public boolean isTileOwned(String tileName) {
+        List<Tile> temp = database.getPlayer(currentPlayer).getTileList();
+        for(Tile t : temp) {
+            if(t.getTileName().equals(tileName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
