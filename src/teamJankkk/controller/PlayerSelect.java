@@ -47,7 +47,7 @@ public class PlayerSelect extends Main implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //saveButton1.setOnAction(this::saveName);
-        nextButton.setOnAction(this::goToSummary);
+        nextButton.setOnAction(this::goToMap1);
         exitButton2.setOnAction(this::exitApp);
     }
 
@@ -83,7 +83,7 @@ public class PlayerSelect extends Main implements Initializable{
     */
 
     @FXML
-    public void goToSummary(ActionEvent event) {
+    public void goToMap1(ActionEvent event) {
         try {
             String name = nameTextField1.getText();
             String race = raceChoiceBox1.getSelectionModel().getSelectedItem();
@@ -113,6 +113,26 @@ public class PlayerSelect extends Main implements Initializable{
             e.printStackTrace();
         }
     }
+
+//    @FXML
+//    public void goToMap1(ActionEvent event) {
+//
+//
+//        try {
+//
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Player1Screen.fxml"));
+//            Pane screen1 = (Pane) loader.load();
+//            Map1Controller controller1 = loader.<Map1Controller>getController();
+//            controller1.passGame(game);
+////                Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml"));
+//            stage.setScene(new Scene(screen1));
+//            stage.show();
+//        } catch(IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//
+//    }
 
     @FXML
     public void exitApp(ActionEvent event) {

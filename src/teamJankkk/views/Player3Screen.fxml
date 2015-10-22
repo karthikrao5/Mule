@@ -83,7 +83,7 @@
         </VBox>
         <Pane layoutX="24.0" layoutY="289.0" prefHeight="207.0" prefWidth="772.0">
             <children>
-                <Button fx:id="nextButton" layoutX="639.0" layoutY="136.0" mnemonicParsing="false" onAction="#goToSummary" prefHeight="49.0" prefWidth="108.0" style="-fx-background-color: #00c51d;" text="CONTINUE" textFill="WHITE">
+                <Button fx:id="nextButton" layoutX="639.0" layoutY="136.0" mnemonicParsing="false" onAction="#goToMap1" prefHeight="49.0" prefWidth="108.0" style="-fx-background-color: #00c51d;" text="CONTINUE" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>

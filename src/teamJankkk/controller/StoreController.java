@@ -28,12 +28,11 @@ public class StoreController extends Main implements Initializable {
 
 
     Game game;
-    @FXML
-    private ImageView thePub, auctionHouse, muleStore;
+    private int temp;
+    @FXML private ImageView thePub, auctionHouse, muleStore;
             //, smithoreTile, energyTile, foodTile;
 
-    @FXML
-    private Label moneyLabel, goBackLabel, playerLabel;
+    @FXML private Label moneyLabel, goBackLabel, playerLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -44,12 +43,12 @@ public class StoreController extends Main implements Initializable {
         //energyTile.setOnMouseClicked((this::energyTileClicked));
         //foodTile.setOnMouseClicked(this::foodTileClicked);
 //        moneyLabel.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney()));
-        int temp = game.getCurrentPlayer();
-        moneyLabel.setText(String.valueOf(game.getMoney(temp)));
     }
 
     public void setGame(Game game) {
         this.game = game;
+        temp = game.getCurrentPlayer();
+        moneyLabel.setText(String.valueOf(game.getMoney(temp)));
     }
 
     @FXML

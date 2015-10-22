@@ -130,40 +130,7 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map00Clicked(MouseEvent event) {
-//        if(!tile00.getIsClaimed()) {
-//                tile00.setIsClaimed(true);
-//                tile00.setOwner(Game.getCurrentPlayer());
-//                System.out.println(updateColor());
-//                image00.setImage(new Image(updateColor()));
-//                endTurn();
-//        } else {
-//            if (Game.getCurrentTurnNumber() < 2) {
-//                System.out.println("Player has already claimed this land");
-//            } else if (tile00.getOwner().equals(Game.getCurrentPlayer())) {
-//                if (tile00.getIsInstalled() == false) {
-//
-//                }
-//            } else {
-//                System.out.println("Another player has claimed this land.");
-//            }
-            //so in this else , it's claimed
-            //now check if the player it's claimed by is the right player
-            //if its the right player then proceed else outprint wrong player
-            //PROCEED
-            //check if its installed If so - show alert window
-            // do you want to harvest ou trynna harvest??????
-            //NOTINSTALLED
-            //
-            // else show alert window
-            // would you like to install mule?
-            // if press yes, check if they have any mules that don't have tiles
-            // if there are mules that aren't installed, check if they have
-            // oufits
-            // if theyre outfitted for the wrong type of land, print
-            // WRONG type of land
-            // if theyre outfitted for the right type of land,
-            // show alert window: mule installed
-//        }
+
         if(!game.tileIsOwned("tile00")) {
             game.connectTile("tile00");
         } else {
@@ -174,16 +141,7 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map01Clicked(MouseEvent event) {
-//        if(!tile01.getIsClaimed()) {
-//            tile01.setIsClaimed(true);
-//            tile01.setOwner(Game.getCurrentPlayer());
-//            System.out.println(tile01.getIsClaimed());
-//            System.out.println(Game.getCurrentPlayer());
-//            image01.setImage(new Image(updateColor()));
-//            endTurn();
-//        } else {
-//            System.out.println("Player has already claimed this land");
-//        }
+
         if(!game.tileIsOwned("tile01")) {
             game.connectTile("tile01");
         } else {
@@ -195,16 +153,7 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map02Clicked(MouseEvent event) {
-//        if(!tile02.getIsClaimed()) {
-//            tile02.setIsClaimed(true);
-//            tile02.setOwner(Game.getCurrentPlayer());
-//            System.out.println(tile02.getIsClaimed());
-//            System.out.println(Game.getCurrentPlayer());
-//            image02.setImage(new Image(updateColor()));
-//            endTurn();
-//        } else {
-//            System.out.println("Player has already claimed this land");
-//        }
+
         if(!game.tileIsOwned("tile02")) {
             game.connectTile("tile02");
         } else {
@@ -215,16 +164,7 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     public void map03Clicked(MouseEvent event) {
-//        if(!tile03.getIsClaimed()) {
-//            tile03.setIsClaimed(true);
-//            tile03.setOwner(Game.getCurrentPlayer());
-//            System.out.println(tile03.getIsClaimed());
-//            System.out.println(Game.getCurrentPlayer());
-//            image03.setImage(new Image(updateColor()));
-//            endTurn();
-//        } else {
-//            System.out.println("Player has already claimed this land");
-//        }
+
         if(!game.tileIsOwned("tile03")) {
             game.connectTile("tile03");
         } else {

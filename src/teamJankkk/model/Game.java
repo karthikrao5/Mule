@@ -153,8 +153,9 @@ public class Game {
     }
 
     public void harvest() {
-        for (Tile t : tileList) {
-            t.calculateProduction();
+        List<Player> playerList = database.getPlayerList();
+        for(Player p : playerList) {
+            p.calculateProduction();
         }
     }
 

@@ -60,6 +60,7 @@ public class AuctionHouseController extends Main implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //save3Button.setOnAction(this::saveName);
         //buyButton.setOnAction(this::buy);
+        passGame(game);
         calculateMarket();
         goButton.setOnAction(this::goLogic);
         cancelButton.setOnAction(this::goBackToStore);

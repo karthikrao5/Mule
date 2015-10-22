@@ -51,7 +51,7 @@ public class PlayerSelect4 extends Main implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 //        p4 = new Player(null, null, null);
         //save4Button.setOnAction(this::saveName);
-        nextButton.setOnAction(this::goToSummary);
+        nextButton.setOnAction(this::goToMap1);
     }
 
     public void passGame(Game game) {
@@ -78,7 +78,7 @@ public class PlayerSelect4 extends Main implements Initializable {
     */
 
     @FXML
-    public void goToSummary(ActionEvent event) {
+    public void goToMap1(ActionEvent event) {
         try {
             String name = nameTextField1.getText();
             String race = raceChoiceBox1.getSelectionModel().getSelectedItem();
@@ -112,8 +112,12 @@ public class PlayerSelect4 extends Main implements Initializable {
                 game.createPlayer(name4, 4);
                 game.setRace(race4, 4);
                 game.setColor(color4, 4);
-                Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
-                stage.setScene(new Scene(gameSumPane));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
+                Pane screen1 = (Pane) loader.load();
+                Map1Controller controller1 = loader.<Map1Controller>getController();
+                controller1.passGame(game);
+//                Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml"));
+                stage.setScene(new Scene(screen1));
                 stage.show();
             }
 

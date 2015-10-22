@@ -84,23 +84,6 @@ public class Tile {
         return (int) Math.random();
     }
 
-    public void calculateProduction() {
-        if (!this.isInstalled) {
-            System.out.println("Land piece isn't Installed");
-        } else {
-            String theType = this.getResource();
-            if (theType.equals("SmithOre")) {
-                addSmithore(currentPlayer, 100);
-//                PlayerDB.getPlayer(currentPlayer).addSmithore(100);
-            } else if (theType.equals("Energy")) {
-                addEnergy(currentPlayer, 100);
-//                PlayerDB.getPlayer(Game.getCurrentPlayer()).addEnergy(100);
-            } else if (theType.equals("Food")) {
-                addFood(currentPlayer, 100);
-//                PlayerDB.getPlayer(Game.getCurrentPlayer()).addFood(100);
-            }
-        }
-    }
 
     public boolean isInstalled() {
         return isInstalled;

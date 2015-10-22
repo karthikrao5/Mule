@@ -30,6 +30,11 @@
           </children>
         </VBox>
         <VBox prefHeight="200.0" prefWidth="200.0">
+            <Button fx:id="testButton" layoutX="400.0" layoutY="500.0" mnemonicParsing="false" onAction="#testSelection" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #00c51d;" text="Test Start" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Button>
           <children>
             <Label alignment="CENTER" font="$x1" prefWidth="200.0" text="MAP TYPE" textAlignment="CENTER" />
             <Button fx:id="Map1" mnemonicParsing="false" onAction="#setMap1" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #00a188;" text="Map 1" textFill="WHITE">
@@ -84,7 +89,8 @@
     <Button fx:id="startButton" layoutX="325.0" layoutY="426.0" mnemonicParsing="false" onAction="#goToPlayerSelection" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #00c51d;" text="START!" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
-         </font></Button>
+         </font>
+    </Button>
     <Text layoutX="322.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEAM JANKK" textAlignment="JUSTIFY">
       <font>
         <Font name="AppleMyungjo Regular" size="22.0" />

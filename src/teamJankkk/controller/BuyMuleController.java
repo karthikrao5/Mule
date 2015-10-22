@@ -37,6 +37,7 @@ public class BuyMuleController extends Main implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         //save3Button.setOnAction(this::saveName);
         buyButton.setOnAction(this::buy);
         nameLabel21.setText(String.valueOf(game.getMuleCount(game.getCurrentPlayer())));

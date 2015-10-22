@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -33,6 +34,7 @@ public class ConfigController extends Main implements Initializable {
     @FXML private Button Map1;
     @FXML private Button Map2;
     @FXML private Button Map3;
+    @FXML private Button testButton;
     @FXML private Label playerLabel;
     @FXML private Label mapLabel;
     @FXML private Label diffLabel;
@@ -45,6 +47,7 @@ public class ConfigController extends Main implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         startButton.setOnAction(this::goToPlayerSelection);
+        testButton.setOnAction(this::testSelection);
         game = new Game();
     }
 
@@ -128,7 +131,7 @@ public class ConfigController extends Main implements Initializable {
             } else if (players == 2) {
                 FXMLLoader loader2 = new FXMLLoader(getClass().getResource("../views/Player2Select.fxml"));
                 Pane screen2 = (Pane) loader2.load();
-                PlayerSelect controller2 = loader2.<PlayerSelect>getController();
+                PlayerSelect2 controller2 = loader2.<PlayerSelect2>getController();
                 controller2.passGame(game);
 //                Pane screen2 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player2Select.fxml"));
                 stage.setScene(new Scene(screen2));
@@ -136,7 +139,7 @@ public class ConfigController extends Main implements Initializable {
             } else if (players == 3) {
                 FXMLLoader loader3 = new FXMLLoader(getClass().getResource("../views/Player3Screen.fxml"));
                 Pane screen3 = (Pane) loader3.load();
-                PlayerSelect controller3 = loader3.<PlayerSelect>getController();
+                PlayerSelect3 controller3 = loader3.<PlayerSelect3>getController();
                 controller3.passGame(game);
 //                Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player3Screen.fxml"));
                 stage.setScene(new Scene(screen3));
@@ -144,12 +147,54 @@ public class ConfigController extends Main implements Initializable {
             } else {
                 FXMLLoader loader4 = new FXMLLoader(getClass().getResource("../views/Player4Select.fxml"));
                 Pane screen4 = (Pane) loader4.load();
-                PlayerSelect controller4 = loader4.<PlayerSelect>getController();
+                PlayerSelect4 controller4 = loader4.<PlayerSelect4>getController();
                 controller4.passGame(game);
 //                Pane screen4 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player4Select.fxml"));
                 stage.setScene(new Scene(screen4));
                 stage.show();
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void testSelection(ActionEvent event) {
+
+        try {
+//            String name = nameTextField1.getText();
+            String name = "player1";
+            String color = "Blue";
+            String race = "Jankktron";
+
+            String name2 = "player2";
+            String color2 = "Red";
+            String race2 = "Packer";
+
+            if(name == null || race == null || color == null) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                //alert.initOwner(ConfigController.);
+                alert.setTitle("Empty Field");
+                alert.setHeaderText("One of the Fields has not been filled in.");
+                alert.setContentText("Please fill in all text fields.");
+                alert.showAndWait();
+            } else {
+                game.createPlayer(name, 1);
+                game.setRace(race, 1);
+                game.setColor(color, 1);
+                game.createPlayer(name2, 2);
+                game.setRace(race2, 2);
+                game.setColor(color2, 2);
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
+                Pane screen1 = (Pane) loader.load();
+                Map1Controller controller1 = loader.<Map1Controller>getController();
+                controller1.passGame(game);
+//                Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml"));
+                stage.setScene(new Scene(screen1));
+                stage.show();
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
