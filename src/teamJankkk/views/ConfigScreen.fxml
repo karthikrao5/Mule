@@ -30,11 +30,6 @@
           </children>
         </VBox>
         <VBox prefHeight="200.0" prefWidth="200.0">
-            <Button fx:id="testButton" layoutX="400.0" layoutY="500.0" mnemonicParsing="false" onAction="#testSelection" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #00c51d;" text="Test Start" textFill="WHITE">
-                <font>
-                    <Font name="System Bold" size="24.0" />
-                </font>
-            </Button>
           <children>
             <Label alignment="CENTER" font="$x1" prefWidth="200.0" text="MAP TYPE" textAlignment="CENTER" />
             <Button fx:id="Map1" mnemonicParsing="false" onAction="#setMap1" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #00a188;" text="Map 1" textFill="WHITE">
@@ -106,5 +101,10 @@
             <Image url="@_Images/MULE_logo.png" />
          </image>
       </ImageView>
+   <Button fx:id="testButton" layoutX="44.0" layoutY="434.0" mnemonicParsing="false" onAction="#testSelection" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #00c51d;" text="TEST" textFill="WHITE">
+       <font>
+           <Font name="System Bold" size="17.0" />
+       </font>
+   </Button>
   </children>
 </AnchorPane>
