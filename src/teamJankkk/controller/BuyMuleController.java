@@ -66,14 +66,18 @@ public class BuyMuleController extends Main implements Initializable {
                 outfitString = outfitChoiceBox.getValue();
                 Mule newMule = new Mule(outfitChoiceBox.getValue());
                 game.justBoughtAMule(newMule);
+
                 Pane gameSumPane = null;
                 try {
-                    gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
+                    Pane pubScreen = (Pane) loader.load();
+                    Map1Controller controller86 = loader.<Map1Controller>getController();
+                    controller86.passGame(game);
+                    stage.setScene(new Scene(pubScreen));
+                    stage.show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                stage.setScene(new Scene(gameSumPane));
-                stage.show();
             } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);

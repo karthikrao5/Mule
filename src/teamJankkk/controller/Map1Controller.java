@@ -97,7 +97,6 @@ public class Map1Controller extends Main implements Initializable {
     private void endTurn(ActionEvent event) {
         playerTURN = game.nextTurn();
         timer();
-        //Game.nextTurn();
         updateLabel();
     }
 

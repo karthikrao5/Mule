@@ -74,7 +74,7 @@ public class Game {
 
     public void dropMule(String name) {
         Tile temp = getTileFromList(name);
-        if (currentMule.equals(null)) {
+        if (currentMule == null) {
             System.out.println("Yo you aint got a Mule to install.");
         } else {
             if (temp.isInstalled()) {
@@ -83,6 +83,7 @@ public class Game {
             } else if (temp.getOwnerNumber() == currentPlayer) {
                 if (temp.getResource().equals(currentMule.getOutfit())) {
                     temp.setMule(currentMule);
+                    System.out.println("MULE SET");
                     currentMule = null;
                 } else {
                     deleteMule();
@@ -108,8 +109,7 @@ public class Game {
     }
 
     public boolean tileIsOwned(String name) {
-        System.out.println(getTileFromList(name).getTileName() + " contains" +
-                " " + getTileFromList(name).getResource());
+        System.out.println(getTileFromList(name).getTileName() + " contains" + " " + getTileFromList(name).getResource());
         System.out.println("tileIsOwned: " + getTileFromList(name).getIsClaimed() + " by: " + database.getPlayer(currentPlayer).getName());
         return getTileFromList(name).getIsClaimed();
     }
@@ -129,6 +129,7 @@ public class Game {
                     getTileFromList(name).setIsClaimed(true);
                     database.getPlayer(currentPlayer).addTilestoPlayerList(getTileFromList(name));
                     database.getPlayer(currentPlayer).subtractMoney(100);
+                    getTileFromList(name).setOwner(currentPlayer);
                     playerPurchasedLand = true;
                 } else {
                     System.out.println("Land already purchased in your turn.");
