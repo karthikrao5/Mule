@@ -133,6 +133,10 @@ public class Map1Controller extends Main implements Initializable {
 
         if(!game.tileIsOwned("tile00")) {
             game.connectTile("tile00");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image34.setImage(new Image(newName));
         } else {
             game.dropMule("tile00");
         }
@@ -144,6 +148,10 @@ public class Map1Controller extends Main implements Initializable {
 
         if(!game.tileIsOwned("tile01")) {
             game.connectTile("tile01");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks1";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image01.setImage(new Image(newName));
         } else {
             game.dropMule("tile01");
         }
@@ -156,6 +164,10 @@ public class Map1Controller extends Main implements Initializable {
 
         if(!game.tileIsOwned("tile02")) {
             game.connectTile("tile02");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees2";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image02.setImage(new Image(newName));
         } else {
             game.dropMule("tile02");
         }
@@ -167,6 +179,10 @@ public class Map1Controller extends Main implements Initializable {
 
         if(!game.tileIsOwned("tile03")) {
             game.connectTile("tile03");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image03.setImage(new Image(newName));
         } else {
             game.dropMule("tile03");
         }
@@ -186,6 +202,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile04")) {
             game.connectTile("tile04");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image04.setImage(new Image(newName));
         } else {
             game.dropMule("tile04");
         }
@@ -205,6 +225,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile10")) {
             game.connectTile("tile10");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image10.setImage(new Image(newName));
         } else {
             game.dropMule("tile10");
         }
@@ -222,6 +246,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile11")) {
             game.connectTile("tile11");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees1";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image11.setImage(new Image(newName));
         } else {
             game.dropMule("tile11");
         }
@@ -239,6 +267,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile12")) {
             game.connectTile("tile12");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks4";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image12.setImage(new Image(newName));
         } else {
             game.dropMule("tile12");
         }
@@ -256,6 +288,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile13")) {
             game.connectTile("tile13");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image13.setImage(new Image(newName));
         } else {
             game.dropMule("tile13");
         }
@@ -273,6 +309,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile14")) {
             game.connectTile("tile14");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks2";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image14.setImage(new Image(newName));
         } else {
             game.dropMule("tile14");
         }
@@ -290,6 +330,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile20")) {
             game.connectTile("tile20");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater1";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image20.setImage(new Image(newName));
         } else {
             game.dropMule("tile20");
         }
@@ -307,6 +351,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile21")) {
             game.connectTile("tile21");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater2";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image21.setImage(new Image(newName));
         } else {
             game.dropMule("tile21");
         }
@@ -343,6 +391,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile23")) {
             game.connectTile("tile23");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater2";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image23.setImage(new Image(newName));
         } else {
             game.dropMule("tile23");
         }
@@ -360,6 +412,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile24")) {
             game.connectTile("tile24");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater1";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image24.setImage(new Image(newName));
         } else {
             game.dropMule("tile24");
         }
@@ -377,6 +433,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile30")) {
             game.connectTile("tile30");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks3";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image30.setImage(new Image(newName));
         } else {
             game.dropMule("tile30");
         }
@@ -394,6 +454,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile31")) {
             game.connectTile("tile31");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees3";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image31.setImage(new Image(newName));
         } else {
             game.dropMule("tile31");
         }
@@ -411,6 +475,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile32")) {
             game.connectTile("tile32");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image32.setImage(new Image(newName));
         } else {
             game.dropMule("tile32");
         }
@@ -427,6 +495,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile33")) {
             game.connectTile("tile33");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image33.setImage(new Image(newName));
         } else {
             game.dropMule("tile33");
         }
@@ -444,6 +516,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile34")) {
             game.connectTile("tile34");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees2";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image34.setImage(new Image(newName));
         } else {
             game.dropMule("tile34");
         }
@@ -461,6 +537,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile40")) {
             game.connectTile("tile40");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image40.setImage(new Image(newName));
         } else {
             game.dropMule("tile40");
         }
@@ -479,6 +559,11 @@ public class Map1Controller extends Main implements Initializable {
 
         if(!game.tileIsOwned("tile41")) {
             game.connectTile("tile41");
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            System.out.println("IMAGE NAME IS " + newName);
+            image41.setImage(new Image(newName));
         } else {
             game.dropMule("tile41");
         }
@@ -496,8 +581,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile42")) {
             game.connectTile("tile42");
-            updateColor();
-
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image42.setImage(new Image(newName));
         } else {
             game.dropMule("tile42");
         }
@@ -515,8 +602,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile43")) {
             game.connectTile("tile43");
-            updateColor();
-
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees1";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image43.setImage(new Image(newName));
         } else {
             game.dropMule("tile43");
         }
@@ -534,7 +623,10 @@ public class Map1Controller extends Main implements Initializable {
 //        }
         if(!game.tileIsOwned("tile44")) {
             game.connectTile("tile44");
-            updateColor();
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image44.setImage(new Image(newName));
         } else {
             game.dropMule("tile44");
         }
@@ -570,26 +662,29 @@ public class Map1Controller extends Main implements Initializable {
         */
     }
 
-    public String updateColor() {
-
-        try {
-            String color = game.getColor(playerTURN);
-            if (color.equals("Blue")) {
-                color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
-            } else if (color.equals("Yellow")) {
-                color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
-            } else if (color.equals("Purple")) {
-                color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
-            } else if (color.equals("Green")) {
-                color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
-            } else if (color.equals("Red")) {
-                color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
-            }
-            return color;
-        } catch (NullPointerException e) {
-            System.out.println(e.getMessage() + " " + e.getCause());
-        }
-        return null;
-    }
+//    public String updateColor(String imageName, String color) {
+//
+//        try {
+////            String color = game.getColor(playerTURN);
+////            if (color.equals("Blue")) {
+////                color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
+////            } else if (color.equals("Yellow")) {
+////                color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
+////            } else if (color.equals("Purple")) {
+////                color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+////            } else if (color.equals("Green")) {
+////                color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+////            } else if (color.equals("Red")) {
+////                color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
+////            }
+////            return color;
+//            color = color.toUpperCase();
+//            imageName = imageName + "_" + color + ".png";
+//            return imageName
+//        } catch (NullPointerException e) {
+//            System.out.println(e.getMessage() + " " + e.getCause());
+//        }
+//        return null;
+//    }
 
 }
