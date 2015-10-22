@@ -65,10 +65,10 @@ public class AuctionHouseController extends Main implements Initializable {
         goButton.setOnAction(this::goLogic);
         cancelButton.setOnAction(this::goBackToStore);
         System.out.println(game.getPlayer(game.getCurrentPlayer()).getMoney());
-        moneyLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getMoney()));
+        /*moneyLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getMoney()));
         foodLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getFood()));
         smithoreLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getSmithore()));
-        energyLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getEnergy()));
+        energyLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getEnergy()));*/
     }
 
     public void passGame(Game game) {
