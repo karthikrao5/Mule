@@ -80,7 +80,11 @@ public class AuctionHouseController extends Main implements Initializable {
     @FXML
     public void goBackToStore(ActionEvent actionEvent) {
         try {
-            Pane backToMap = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
+            Pane backToMap = (Pane) loader.load();
+            Map1Controller controller = loader.<Map1Controller>getController();
+            controller.passGame(game);
+//            Pane backToMap = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
             stage.setScene(new Scene(backToMap));
             stage.show();
         } catch(IOException e) {
