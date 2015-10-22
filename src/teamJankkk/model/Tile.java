@@ -64,6 +64,10 @@ public class Tile {
 //        return owner;
 //    }
 
+    public void setMule(Mule daMule) {
+        this.mule = daMule;
+    }
+
     public void setIsClaimed(boolean bool) {
         isClaimed = bool;
     }

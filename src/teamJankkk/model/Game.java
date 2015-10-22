@@ -24,6 +24,7 @@ public class Game {
     List<String> resourceList = new ArrayList<>(Arrays.asList("SmithOre", "Energy",
             "Food"));
     Random rand;
+    Mule currentMule;
 
 
     int tempCurrentTurn = 0;
@@ -73,7 +74,28 @@ public class Game {
 
     public void dropMule(String name) {
         Tile temp = getTileFromList(name);
-        temp.createMule();
+        if (currentMule.equals(null)) {
+            System.out.println("Yo you aint got a Mule to install.");
+        } else {
+            if (temp.isInstalled()) {
+                System.out.println("There is already a Mule installed here.");
+                //temp.createMule();
+            } else if (temp.getOwnerNumber() == currentPlayer) {
+                if (temp.getResource().equals(currentMule.getOutfit())) {
+                    temp.setMule(currentMule);
+                    currentMule = null;
+                } else {
+                    deleteMule();
+                    System.out.println("Your Mule has been deleted. Better luck next time.");
+                }
+            } else if (temp.getOwnerNumber() != currentPlayer) {
+                System.out.println("This land is not yours, are you color blind?");
+            }
+        }
+    }
+
+    public void justBoughtAMule(Mule daMule) {
+        currentMule = daMule;
     }
 
     public Tile getTileFromList(String name) {
@@ -90,6 +112,14 @@ public class Game {
                 " " + getTileFromList(name).getResource());
         System.out.println("tileIsOwned: " + getTileFromList(name).getIsClaimed() + " by: " + database.getPlayer(currentPlayer).getName());
         return getTileFromList(name).getIsClaimed();
+    }
+
+    public void setTileIsOwned(String name, boolean bool) {
+        getTileFromList(name).setIsClaimed(bool);
+    }
+
+    public void deleteMule() {
+        currentMule = null;
     }
 
     public void connectTile(String name) {

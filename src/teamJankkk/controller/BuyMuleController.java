@@ -65,7 +65,8 @@ public class BuyMuleController extends Main implements Initializable {
                 updateLabel();
                 hasMule = true;
                 outfitString = outfitChoiceBox.getValue();
-                //Mule newMule = new Mule(outfitChoiceBox.getValue());
+                Mule newMule = new Mule(outfitChoiceBox.getValue());
+                game.justBoughtAMule(newMule);
                 Pane gameSumPane = null;
                 try {
                     gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
