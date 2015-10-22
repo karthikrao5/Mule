@@ -83,6 +83,7 @@ public class BuyMuleController extends Main implements Initializable {
                 alert.showAndWait();
             }
         }
+        updateLabel();
     }
 
     public void updateLabel() {
