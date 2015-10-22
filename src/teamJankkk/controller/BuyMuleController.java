@@ -33,6 +33,7 @@ public class BuyMuleController extends Main implements Initializable {
 
     public void passGame(Game game) {
         this.game = game;
+        updateLabel();
     }
 
     @Override
@@ -40,8 +41,6 @@ public class BuyMuleController extends Main implements Initializable {
 
         //save3Button.setOnAction(this::saveName);
         buyButton.setOnAction(this::buy);
-        nameLabel21.setText(String.valueOf(game.getMuleCount(game.getCurrentPlayer())));
-        nameLabel1.setText(String.valueOf(game.getMoney(game.getCurrentPlayer())));
         hasMule = false;
         outfitString = "";
     }
@@ -90,5 +89,8 @@ public class BuyMuleController extends Main implements Initializable {
     public void updateLabel() {
         nameLabel21.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).howManyMules()+onThisScreenHowManyDidYouBuy));
         nameLabel1.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getMoney()));
+        /*nameLabel21.setText(String.valueOf(game.getMuleCount(game.getCurrentPlayer())));
+        nameLabel1.setText(String.valueOf(game.getMoney(game.getCurrentPlayer())));*/
+
     }
 }

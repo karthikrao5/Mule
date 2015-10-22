@@ -101,7 +101,10 @@ public class StoreController extends Main implements Initializable {
     public void muleStoreClicked(MouseEvent event) {
         System.out.println("The muleSTore was clicked");
         try {
-            Pane pubScreen = (Pane) FXMLLoader.load(getClass().getResource("../views/BuyMule.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/BuyMule.fxml"));
+            Pane pubScreen = (Pane) loader.load();
+            BuyMuleController controller86 = loader.<BuyMuleController>getController();
+            controller86.passGame(game);
             stage.setScene(new Scene(pubScreen));
             stage.show();
         } catch (IOException e) {
