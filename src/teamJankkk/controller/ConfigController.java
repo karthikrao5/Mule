@@ -10,6 +10,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
 import teamJankkk.model.Player;
@@ -120,6 +122,16 @@ public class ConfigController extends Main implements Initializable {
         try {
             // at button, check if playerdb.player # = 3 for example, then skip to game Summary window
             // also, take out save button func and put it in next - also throw error when player does not fill out all fields
+
+            //AUDIO PART
+//            try {
+//                String audio = "file:///Macintosh HD/Users/KRose/Documents/GT/Fall15/2340/Mule/src/teamJankkk/views/_Audio/Yeah.mp3";
+//                Media yeah = new Media(audio);
+//                MediaPlayer player = new MediaPlayer(yeah);
+//                player.play();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
             if (players == 1) {
                 FXMLLoader loader1 = new FXMLLoader(getClass().getResource("../views/Player1Screen.fxml"));
                 Pane screen1 = (Pane) loader1.load();

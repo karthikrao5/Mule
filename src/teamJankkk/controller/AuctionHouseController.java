@@ -60,11 +60,10 @@ public class AuctionHouseController extends Main implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //save3Button.setOnAction(this::saveName);
         //buyButton.setOnAction(this::buy);
-        passGame(game);
-        calculateMarket();
+        //passGame(game);
+
         goButton.setOnAction(this::goLogic);
         cancelButton.setOnAction(this::goBackToStore);
-        System.out.println(game.getPlayer(game.getCurrentPlayer()).getMoney());
         /*moneyLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getMoney()));
         foodLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getFood()));
         smithoreLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getSmithore()));
@@ -73,12 +72,17 @@ public class AuctionHouseController extends Main implements Initializable {
 
     public void passGame(Game game) {
         this.game = game;
+        calculateMarket();
+        System.out.println(game.getPlayer(game.getCurrentPlayer()).getMoney());
     }
 
     @FXML
     public void goBackToStore(ActionEvent actionEvent) {
         try {
-            Pane backToMap = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
+            Pane backToMap = (Pane) loader.load();
+            Map1Controller controller = loader.<Map1Controller>getController();
+            controller.passGame(game);
             stage.setScene(new Scene(backToMap));
             stage.show();
         } catch(IOException e) {
