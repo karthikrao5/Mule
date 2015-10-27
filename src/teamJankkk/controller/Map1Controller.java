@@ -54,6 +54,8 @@ public class Map1Controller extends Main implements Initializable {
     private static Timeline timeline;
     private Game game;
 
+    private boolean hasSelectedLand = false;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -97,6 +99,7 @@ public class Map1Controller extends Main implements Initializable {
     private void endTurn(ActionEvent event) {
         playerTURN = game.nextTurn();
         timer();
+        hasSelectedLand = false;
         //Game.nextTurn();
         updateLabel();
     }
@@ -131,8 +134,15 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map00Clicked(MouseEvent event) {
 
-        if(!game.tileIsOwned("tile00")) {
+        if(!game.tileIsOwned("tile00") && !hasSelectedLand) {
             game.connectTile("tile00");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image00.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile00");
         }
@@ -142,8 +152,15 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map01Clicked(MouseEvent event) {
 
-        if(!game.tileIsOwned("tile01")) {
+        if(!game.tileIsOwned("tile01") && !hasSelectedLand) {
             game.connectTile("tile01");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks1";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image01.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile01");
         }
@@ -154,8 +171,15 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map02Clicked(MouseEvent event) {
 
-        if(!game.tileIsOwned("tile02")) {
+        if(!game.tileIsOwned("tile02") && !hasSelectedLand) {
             game.connectTile("tile02");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees2";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image02.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile02");
         }
@@ -165,8 +189,15 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map03Clicked(MouseEvent event) {
 
-        if(!game.tileIsOwned("tile03")) {
+        if(!game.tileIsOwned("tile03") && !hasSelectedLand) {
             game.connectTile("tile03");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image03.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile03");
         }
@@ -184,8 +215,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile04")) {
+        if(!game.tileIsOwned("tile04") && !hasSelectedLand) {
             game.connectTile("tile04");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image04.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile04");
         }
@@ -203,8 +241,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile10")) {
+        if(!game.tileIsOwned("tile10") && !hasSelectedLand) {
             game.connectTile("tile10");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image10.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile10");
         }
@@ -220,8 +265,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile11")) {
+        if(!game.tileIsOwned("tile11") && !hasSelectedLand) {
             game.connectTile("tile11");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees1";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image11.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile11");
         }
@@ -237,8 +289,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile12")) {
+        if(!game.tileIsOwned("tile12") && !hasSelectedLand) {
             game.connectTile("tile12");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks4";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image12.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile12");
         }
@@ -254,8 +313,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile13")) {
+        if(!game.tileIsOwned("tile13") && !hasSelectedLand) {
             game.connectTile("tile13");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image13.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile13");
         }
@@ -271,8 +337,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile14")) {
+        if(!game.tileIsOwned("tile14") && !hasSelectedLand) {
             game.connectTile("tile14");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks2";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image14.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile14");
         }
@@ -288,8 +361,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile20")) {
+        if(!game.tileIsOwned("tile20") && !hasSelectedLand) {
             game.connectTile("tile20");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater1";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image20.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile20");
         }
@@ -305,8 +385,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile21")) {
+        if(!game.tileIsOwned("tile21") && !hasSelectedLand) {
             game.connectTile("tile21");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater2";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image21.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile21");
         }
@@ -341,8 +428,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile23")) {
+        if(!game.tileIsOwned("tile23") && !hasSelectedLand) {
             game.connectTile("tile23");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater2";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image23.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile23");
         }
@@ -358,8 +452,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile24")) {
+        if(!game.tileIsOwned("tile24") && !hasSelectedLand) {
             game.connectTile("tile24");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater1";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image24.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile24");
         }
@@ -375,8 +476,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile30")) {
+        if(!game.tileIsOwned("tile30") && !hasSelectedLand) {
             game.connectTile("tile30");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks3";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image30.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile30");
         }
@@ -392,8 +500,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile31")) {
+        if(!game.tileIsOwned("tile31") && !hasSelectedLand) {
             game.connectTile("tile31");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees3";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image31.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile31");
         }
@@ -409,8 +524,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile32")) {
+        if(!game.tileIsOwned("tile32") && !hasSelectedLand) {
             game.connectTile("tile32");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image32.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile32");
         }
@@ -425,8 +547,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile33")) {
+        if(!game.tileIsOwned("tile33") && !hasSelectedLand) {
             game.connectTile("tile33");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image33.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile33");
         }
@@ -442,8 +571,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile34")) {
+        if(!game.tileIsOwned("tile34") && !hasSelectedLand) {
             game.connectTile("tile34");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees2";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image34.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile34");
         }
@@ -459,8 +595,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile40")) {
+        if(!game.tileIsOwned("tile40") && !hasSelectedLand) {
             game.connectTile("tile40");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image40.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile40");
         }
@@ -477,8 +620,16 @@ public class Map1Controller extends Main implements Initializable {
 //            System.out.println("Player has already claimed this land");
 //        }
 
-        if(!game.tileIsOwned("tile41")) {
+        if(!game.tileIsOwned("tile41") && !hasSelectedLand) {
             game.connectTile("tile41");
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            System.out.println("IMAGE NAME IS " + newName);
+            image41.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile41");
         }
@@ -494,10 +645,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile42")) {
+        if(!game.tileIsOwned("tile42") && !hasSelectedLand) {
             game.connectTile("tile42");
-            updateColor();
-
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image42.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile42");
         }
@@ -513,10 +669,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile43")) {
+        if(!game.tileIsOwned("tile43") && !hasSelectedLand) {
             game.connectTile("tile43");
-            updateColor();
-
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees1";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image43.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile43");
         }
@@ -532,9 +693,15 @@ public class Map1Controller extends Main implements Initializable {
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
-        if(!game.tileIsOwned("tile44")) {
+        if(!game.tileIsOwned("tile44") && !hasSelectedLand) {
             game.connectTile("tile44");
-            updateColor();
+            hasSelectedLand = true;
+            String color = game.getColor(game.getCurrentPlayer());
+            String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
+            String newName = imageName + "_" + color.toUpperCase() + ".png";
+            image44.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
             game.dropMule("tile44");
         }
@@ -570,26 +737,29 @@ public class Map1Controller extends Main implements Initializable {
         */
     }
 
-    public String updateColor() {
-
-        try {
-            String color = game.getColor(playerTURN);
-            if (color.equals("Blue")) {
-                color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
-            } else if (color.equals("Yellow")) {
-                color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
-            } else if (color.equals("Purple")) {
-                color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
-            } else if (color.equals("Green")) {
-                color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
-            } else if (color.equals("Red")) {
-                color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
-            }
-            return color;
-        } catch (NullPointerException e) {
-            System.out.println(e.getMessage() + " " + e.getCause());
-        }
-        return null;
-    }
+//    public String updateColor(String imageName, String color) {
+//
+//        try {
+////            String color = game.getColor(playerTURN);
+////            if (color.equals("Blue")) {
+////                color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
+////            } else if (color.equals("Yellow")) {
+////                color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
+////            } else if (color.equals("Purple")) {
+////                color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+////            } else if (color.equals("Green")) {
+////                color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+////            } else if (color.equals("Red")) {
+////                color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
+////            }
+////            return color;
+//            color = color.toUpperCase();
+//            imageName = imageName + "_" + color + ".png";
+//            return imageName
+//        } catch (NullPointerException e) {
+//            System.out.println(e.getMessage() + " " + e.getCause());
+//        }
+//        return null;
+//    }
 
 }
