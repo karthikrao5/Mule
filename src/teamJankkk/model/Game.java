@@ -15,6 +15,7 @@ import java.util.Random;
 public class Game {
 
     PlayerDB database;
+    Mule boughtMule;
     int currentTurn = 0;
     int numberOfPlayers = 0;
     int currentPlayer = 1;
@@ -69,9 +70,35 @@ public class Game {
         playerPurchasedLand = false;
     }
 
+
+    //====================TILE METHODS====================================
+    public boolean getPlayerIsBoughtMule() {
+        return getCurrentPlayer().isBoughtMule();
+    }
+
+    public void setPlayerIsBoughtMule(Boolean bool) {
+        getCurrentPlayer().setIsBoughtMule(bool);
+    }
+
     public void dropMule(String name) {
-        Tile temp = getTileFromList(name);
-        temp.createMule();
+
+        if(playerPurchasedLand) {
+            Tile currTile = getTileFromList(name);
+            if(currTile.getTileOwner().equals(getCurrentPlayer())) {
+                if(getCurrentPlayer().isBoughtMule()
+                        && boughtMule.getOutfit().equals(currTile.getResource())) {
+                    boughtMule.setTileThatOwnsMule(currTile);
+                    getCurrentPlayer().setIsBoughtMule(false);
+                }
+            }
+
+        } else {
+            System.out.println("You do not have a mule purchased.");
+        }
+    }
+
+    public void buyMule(String outfit) {
+        boughtMule = new Mule(null, outfit);
     }
 
     public Tile getTileFromList(String name) {
@@ -84,19 +111,25 @@ public class Game {
     }
 
     public boolean tileIsOwned(String name) {
-        System.out.println(getTileFromList(name).getTileName() + " contains" +
-                " " + getTileFromList(name).getResource());
-        System.out.println("tileIsOwned: " + getTileFromList(name).getIsClaimed() + " by: " + database.getPlayer(currentPlayer).getName());
+//        System.out.println(getTileFromList(name).getTileName() + " contains" +
+//                " " + getTileFromList(name).getResource());
+//        System.out.println("tileIsOwned: " + getTileFromList(name).getIsClaimed() + " by: " + database.getPlayer(currentPlayer).getName());
         return getTileFromList(name).getIsClaimed();
     }
 
-    public void connectTile(String name) {
+    public void buyTile(String name) {
         try {
-            if (database.getPlayer(currentPlayer).getMoney() >= 100) {
+            if (getCurrentPlayer().getMoney() >= 100) {
+                System.out.println("playerPurchasedLand: " + playerPurchasedLand);
                 if (!playerPurchasedLand) {
-                    getTileFromList(name).setIsClaimed(true);
-                    database.getPlayer(currentPlayer).addTilestoPlayerList(getTileFromList(name));
-                    database.getPlayer(currentPlayer).subtractMoney(100);
+                    System.out.println("INside !playerPurchasedLand");
+                    Tile currTile = getTileFromList(name);
+                    currTile.setIsClaimed(true);
+                    currTile.setTileOwner(getCurrentPlayer());
+                    getCurrentPlayer().addTilestoPlayerList(currTile);
+                    getCurrentPlayer().subtractMoney(100);
+                    System.out.println("Mule's tile location: "
+                            + currTile.getResidentMule().getTileThatOwnsMule().getTileName());
                     playerPurchasedLand = true;
                 } else {
                     System.out.println("Land already purchased in your turn.");
@@ -110,6 +143,33 @@ public class Game {
             e.getStackTrace();
         }
 
+    }
+
+    public List<Tile> getTileList() {
+        return tileList;
+    }
+
+    public boolean isTileOwned(String tileName) {
+        for(Tile t : database.getPlayer(currentPlayer).getTileList()) {
+            if(t.getTileName().equals(tileName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+    //====================GAME STATE METHODS============================
+
+
+    public boolean getIsSelectedLandInCurrentTurn() {
+        System.out.println("getIsSelectedLandInCurrentTurn returning: " + playerPurchasedLand);
+        return playerPurchasedLand;
+    }
+
+    public void setIsSelectedLandInCurrentTurn(Boolean bool) {
+        playerPurchasedLand = bool;
     }
 
     public void setNumberOfPlayers(int num) {
@@ -135,7 +195,7 @@ public class Game {
     }
 
     public void harvest() {
-        database.calculateProduction();
+        calculateProduction();
     }
 
 
@@ -151,9 +211,6 @@ public class Game {
         return numberOfPlayers;
     }
 
-    public List<Tile> getTileList() {
-        return tileList;
-    }
 
 
     public void saveGameState() {
@@ -187,6 +244,10 @@ public class Game {
         database.setColor(name, index);
     }
 
+
+    //===========================RESOURCE METHODS==================================
+
+
     public int getMoney() {
         return database.getPlayer(currentPlayer).getMoney();
     }
@@ -204,25 +265,17 @@ public class Game {
 
     }
 
-
 //    public Player getPlayer(int index) {
 //        return database.getPlayer(index);
 //    }
 
-    public String getColor(int index) {
-        return database.getPlayer(index).getColor();
+    public String getColor() {
+        return database.getPlayer(currentPlayer).getColor();
     }
 
 //    public int getMoney(int index) {
 //        return database.getPlayer(index).getMoney();
 //    }
-
-    public int getMuleCount() {
-        return database.getPlayer(currentPlayer).howManyMules();
-    }
-
-
-
 
 
     public void addEnergy(int amount) {
@@ -257,16 +310,7 @@ public class Game {
     }
 
 
-
-    public boolean isTileOwned(String tileName) {
-        List<Tile> temp = database.getPlayer(currentPlayer).getTileList();
-        for(Tile t : temp) {
-            if(t.getTileName().equals(tileName)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    //================MARKET LOGIC================================
 
     public ArrayList<Integer> calculateMarket() {
         ArrayList<Integer> marketTotal = new ArrayList<>();
@@ -289,4 +333,22 @@ public class Game {
 
     }
 
+    public void calculateProduction() {
+        for(Player p : database.dbKeySet()) {
+            for(Tile t : p.getTileList()) {
+                if (!t.getIsInstalled()) {
+                    System.out.println("Land piece isn't Installed");
+                } else {
+                    String theType = t.getResource();
+                    if (theType.equals("SmithOre")) {
+                        p.addSmithore(100);
+                    } else if (theType.equals("Energy")) {
+                        p.addEnergy(100);
+                    } else if (theType.equals("Food")) {
+                        p.addFood(100);
+                    }
+                }
+            }
+        }
+    }
 }

@@ -37,20 +37,17 @@ public class BuyMuleController extends Main implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        //save3Button.setOnAction(this::saveName);
         buyButton.setOnAction(this::buy);
-        nameLabel21.setText(String.valueOf(game.getMuleCount()));
-        nameLabel1.setText(String.valueOf(game.getMoney()));
+//        nameLabel21.setText(String.valueOf(game.getMuleCount()));
+//        nameLabel1.setText(String.valueOf(game.getMoney()));
         hasMule = false;
         outfitString = "";
     }
 
     @FXML
     public void buy(ActionEvent event) {
-        Player currPlayer = game.getCurrentPlayer();
-//        Player currPlayer = game.getPlayer(game.getCurrentPlayer());
-        int howMuchTheyGot = currPlayer.getMoney();
+
+        int currPlayerMoney = game.getMoney();
         if (outfitChoiceBox.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             //alert.initOwner(ConfigController.);
@@ -59,21 +56,17 @@ public class BuyMuleController extends Main implements Initializable {
             alert.setContentText("Please select outfit for Mule!");
             alert.showAndWait();
         } else {
-            if (howMuchTheyGot >= 100) {
+            if (currPlayerMoney >= 100) {
                 game.subtractMoney(100);
-//                PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(100);
                 onThisScreenHowManyDidYouBuy++;
-                updateLabel();
-                hasMule = true;
                 outfitString = outfitChoiceBox.getValue();
-                //Mule newMule = new Mule(outfitChoiceBox.getValue());
-                Pane gameSumPane = null;
+                game.buyMule(outfitString);
+                game.getCurrentPlayer().setIsBoughtMule(true);
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
                     Pane backToMap = (Pane) loader.load();
                     Map1Controller controller = loader.<Map1Controller>getController();
                     controller.passGame(game);
-//            Pane backToMap = (Pane) FXMLLoader.load(getClass().getResource("../views/Map1_Forest.fxml"));
                     stage.setScene(new Scene(backToMap));
                     stage.show();
                 } catch (IOException e) {
@@ -92,7 +85,7 @@ public class BuyMuleController extends Main implements Initializable {
     }
 
     public void updateLabel() {
-        nameLabel21.setText(String.valueOf(game.getMuleCount()+onThisScreenHowManyDidYouBuy));
+//        nameLabel21.setText(String.valueOf(game.getMuleCount()+onThisScreenHowManyDidYouBuy));
         nameLabel1.setText(String.valueOf(game.getMoney()));
     }
 }

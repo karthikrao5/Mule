@@ -7,17 +7,20 @@ public class Mule {
     private String outfit;
     private Boolean hasOutfit;
     private Boolean isInstalled;
-    private Tile muleTile;
+    private Tile tileThatOwnsMule;
 
-    public Mule(String outfit, Tile tile) {
-        this.outfit = outfit;
+    public Mule(String tileName, String resource) {
+        this.outfit = resource;
         this.isInstalled = false;
         this.hasOutfit = false;
-        muleTile = tile;
     }
 
-    public String getTile() {
-        return muleTile.getTileName();
+    public void setTileThatOwnsMule(Tile tile) {
+        tileThatOwnsMule = tile;
+    }
+
+    public Tile getTileThatOwnsMule() {
+        return tileThatOwnsMule;
     }
 
     public String getMuleType() {

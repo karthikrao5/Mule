@@ -1,5 +1,7 @@
 package teamJankkk.model;
 
+import teamJankkk.controller.BuyMuleController;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +14,7 @@ public class Player {
     private String name, race, color;
     private int money, score, food, energy, smithore, crystite;
     private List<Tile> tilesOwned = new ArrayList<Tile>();
+    private boolean hasEmptyMule;
 
     public Player(String name, String race, String color) {
         this.name = name;
@@ -23,6 +26,7 @@ public class Player {
         energy = 0;
         smithore = 0;
         crystite = 0;
+        hasEmptyMule = false;
     }
 
     public void addTilestoPlayerList(Tile tile) {
@@ -31,7 +35,7 @@ public class Player {
 
     public void subtractMoney(int amount) {
         money -= amount;
-        System.out.println("Player " + name + " has: " + money + " now.");
+        System.out.println(name + " has: " + money + " left.");
     }
 
     public int getScore() {
@@ -119,7 +123,7 @@ public class Player {
     public int howManyMules() {
         int muleCount = 0;
         for (int l = 0; l < tilesOwned.size(); l++) {
-            if (tilesOwned.get(l).isInstalled()) {
+            if (tilesOwned.get(l).getIsInstalled()) {
                 muleCount++;
             }
         }
@@ -129,4 +133,22 @@ public class Player {
     public List<Tile> getTileList() {
         return tilesOwned;
     }
+
+    public Tile getTile(String name) {
+        for(Tile t : tilesOwned) {
+            if(t.getTileName().equals(name)) {
+                return t;
+            }
+        }
+        return null;
+    }
+
+    public boolean isBoughtMule() {
+        return hasEmptyMule;
+    }
+
+    public void setIsBoughtMule(boolean bool) {
+        hasEmptyMule = bool;
+    }
+
 }

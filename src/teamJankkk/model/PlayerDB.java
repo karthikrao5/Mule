@@ -72,23 +72,4 @@ public class PlayerDB {
         return "Player " + name + " of the " + race
                 + " race and on the " + color + " team.";
     }
-
-    public void calculateProduction() {
-        for(Player p : db.keySet()) {
-            for(Tile t : p.getTileList()) {
-                if (!t.isInstalled()) {
-                    System.out.println("Land piece isn't Installed");
-                } else {
-                    String theType = t.getResource();
-                    if (theType.equals("SmithOre")) {
-                        p.addSmithore(100);
-                    } else if (theType.equals("Energy")) {
-                        p.addEnergy(100);
-                    } else if (theType.equals("Food")) {
-                        p.addFood(100);
-                    }
-                }
-            }
-        }
-    }
 }

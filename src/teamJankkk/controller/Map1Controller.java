@@ -47,11 +47,11 @@ public class Map1Controller extends Main implements Initializable {
     @FXML private Label timerLabel;
     @FXML private Label turnCounterLabel;
     @FXML private Button endTurnButton;
-    private static final Integer STARTTIME = 60;
-    private static Integer timeSeconds = STARTTIME;
-    private static Integer playerTURN = 1;
-    private static Integer turnCOUNT = 1;
-    private static Timeline timeline;
+    private final Integer STARTTIME = 60;
+    private Integer timeSeconds = STARTTIME;
+    private Integer playerTURN = 1;
+    private Integer turnCOUNT = 1;
+    private Timeline timeline;
     private Game game;
 
     private boolean hasSelectedLand = false;
@@ -134,72 +134,86 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map00Clicked(MouseEvent event) {
 
-        if(!game.tileIsOwned("tile00") && !hasSelectedLand) {
-            game.connectTile("tile00");
-            hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+        System.out.println("Tile00 contains: " + game.getTileFromList("tile00").getResource());
+
+        //if tile is not owned
+        System.out.println("tileIsOwned 00: " + game.isTileOwned("tile00"));
+        if(game.tileIsOwned("tile00") || !game.getIsSelectedLandInCurrentTurn()) {
+            //set owner
+            game.buyTile("tile00");
+            game.setIsSelectedLandInCurrentTurn(true);
+            //change the color of the tile to match the player
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image00.setImage(new Image(newName));
-        } else if (hasSelectedLand) {
-            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
-            game.dropMule("tile00");
+            if(game.getIsSelectedLandInCurrentTurn() && game.getPlayerIsBoughtMule()) {
+                game.dropMule("tile00");
+            }
         }
-
     }
 
     @FXML
     public void map01Clicked(MouseEvent event) {
+        System.out.println("Tile00 contains: " + game.getTileFromList("tile01").getResource());
 
-        if(!game.tileIsOwned("tile01") && !hasSelectedLand) {
-            game.connectTile("tile01");
-            hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+
+        System.out.println("tileIsOwned 01: " + game.isTileOwned("tile01"));
+        if(game.tileIsOwned("tile01") || !game.getIsSelectedLandInCurrentTurn()) {
+
+            game.buyTile("tile01");
+            game.setIsSelectedLandInCurrentTurn(true);
+
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks1";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image01.setImage(new Image(newName));
-        } else if (hasSelectedLand) {
-            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
-            game.dropMule("tile01");
+            if(game.getIsSelectedLandInCurrentTurn() && game.getPlayerIsBoughtMule()) {
+                game.dropMule("tile01");
+            }
         }
-
-
     }
 
     @FXML
     public void map02Clicked(MouseEvent event) {
+        System.out.println("Tile02 contains: " + game.getTileFromList("tile02").getResource());
 
-        if(!game.tileIsOwned("tile02") && !hasSelectedLand) {
-            game.connectTile("tile02");
-            hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+
+        System.out.println("tileIsOwned 02: " + game.isTileOwned("tile02"));
+        if(game.tileIsOwned("tile02") || !game.getIsSelectedLandInCurrentTurn()) {
+
+            game.buyTile("tile02");
+            game.setIsSelectedLandInCurrentTurn(true);
+
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees2";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
-            image02.setImage(new Image(newName));
-        } else if (hasSelectedLand) {
-            System.out.println("You have already selected land this turn, ya dingus!");
+            image01.setImage(new Image(newName));
         } else {
-            game.dropMule("tile02");
+            if(game.getIsSelectedLandInCurrentTurn() && game.getPlayerIsBoughtMule()) {
+                game.dropMule("tile02");
+            }
         }
-
     }
 
     @FXML
     public void map03Clicked(MouseEvent event) {
+        System.out.println("Tile03 contains: " + game.getTileFromList("tile03").getResource());
 
-        if(!game.tileIsOwned("tile03") && !hasSelectedLand) {
-            game.connectTile("tile03");
-            hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+
+        if(game.tileIsOwned("tile03")) {
+            game.buyTile("tile03");
+            game.setIsSelectedLandInCurrentTurn(true);
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image03.setImage(new Image(newName));
-        } else if (hasSelectedLand) {
-            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
-            game.dropMule("tile03");
+            if(game.getIsSelectedLandInCurrentTurn() && game.getPlayerIsBoughtMule()) {
+                game.dropMule("tile03");
+            }
         }
     }
 
@@ -207,18 +221,18 @@ public class Map1Controller extends Main implements Initializable {
     public void map04Clicked(MouseEvent event) {
 //        if(!tile04.getIsClaimed()) {
 //            tile04.setIsClaimed(true);
-//            tile04.setOwner(Game.getCurrentPlayer());
+//            tile04.setOwner();
 //            System.out.println(tile04.getIsClaimed());
-//            System.out.println(Game.getCurrentPlayer());
+//            System.out.println();
 //            image04.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile04") && !hasSelectedLand) {
-            game.connectTile("tile04");
+            game.buyTile("tile04");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image04.setImage(new Image(newName));
@@ -233,18 +247,18 @@ public class Map1Controller extends Main implements Initializable {
     public void map10Clicked(MouseEvent event) {
 //        if(!tile10.getIsClaimed()) {
 //            tile10.setIsClaimed(true);
-//            tile10.setOwner(Game.getCurrentPlayer());
+//            tile10.setOwner();
 //            System.out.println(tile10.getIsClaimed());
-//            System.out.println(Game.getCurrentPlayer());
+//            System.out.println();
 //            image10.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile10") && !hasSelectedLand) {
-            game.connectTile("tile10");
+            game.buyTile("tile10");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image10.setImage(new Image(newName));
@@ -259,16 +273,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map11Clicked(MouseEvent event) {
 //        if(!tile11.getIsClaimed()) {
 //            tile11.setIsClaimed(true);
-//            tile11.setOwner(Game.getCurrentPlayer());
+//            tile11.setOwner();
 //            image11.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile11") && !hasSelectedLand) {
-            game.connectTile("tile11");
+            game.buyTile("tile11");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees1";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image11.setImage(new Image(newName));
@@ -283,16 +297,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map12Clicked(MouseEvent event) {
 //        if(!tile12.getIsClaimed()) {
 //            tile12.setIsClaimed(true);
-//            tile12.setOwner(Game.getCurrentPlayer());
+//            tile12.setOwner();
 //            image12.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile12") && !hasSelectedLand) {
-            game.connectTile("tile12");
+            game.buyTile("tile12");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks4";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image12.setImage(new Image(newName));
@@ -307,16 +321,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map13Clicked(MouseEvent event) {
 //        if(!tile13.getIsClaimed()) {
 //            tile13.setIsClaimed(true);
-//            tile13.setOwner(Game.getCurrentPlayer());
+//            tile13.setOwner();
 //            image13.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile13") && !hasSelectedLand) {
-            game.connectTile("tile13");
+            game.buyTile("tile13");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image13.setImage(new Image(newName));
@@ -331,16 +345,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map14Clicked(MouseEvent event) {
 //        if(!tile14.getIsClaimed()) {
 //            tile14.setIsClaimed(true);
-//            tile14.setOwner(Game.getCurrentPlayer());
+//            tile14.setOwner();
 //            image14.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile14") && !hasSelectedLand) {
-            game.connectTile("tile14");
+            game.buyTile("tile14");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks2";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image14.setImage(new Image(newName));
@@ -355,16 +369,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map20Clicked(MouseEvent event) {
 //        if(!tile20.getIsClaimed()) {
 //            tile20.setIsClaimed(true);
-//            tile20.setOwner(Game.getCurrentPlayer());
+//            tile20.setOwner();
 //            image20.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile20") && !hasSelectedLand) {
-            game.connectTile("tile20");
+            game.buyTile("tile20");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater1";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image20.setImage(new Image(newName));
@@ -379,16 +393,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map21Clicked(MouseEvent event) {
 //        if(!tile21.getIsClaimed()) {
 //            tile21.setIsClaimed(true);
-//            tile21.setOwner(Game.getCurrentPlayer());
+//            tile21.setOwner();
 //            image21.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile21") && !hasSelectedLand) {
-            game.connectTile("tile21");
+            game.buyTile("tile21");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater2";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image21.setImage(new Image(newName));
@@ -408,7 +422,6 @@ public class Map1Controller extends Main implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/TheStore.fxml"));
             Pane screen3 = (Pane) loader.load();
-//            Pane screen3 = (Pane) FXMLLoader.load(getClass().getResource("../views/TheStore.fxml"));
             StoreController controller = loader.<StoreController>getController();
             controller.setGame(game);
             stage.setScene(new Scene(screen3));
@@ -422,16 +435,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map23Clicked(MouseEvent event) {
 //        if(!tile23.getIsClaimed()) {
 //            tile23.setIsClaimed(true);
-//            tile23.setOwner(Game.getCurrentPlayer());
+//            tile23.setOwner();
 //            image23.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile23") && !hasSelectedLand) {
-            game.connectTile("tile23");
+            game.buyTile("tile23");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater2";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image23.setImage(new Image(newName));
@@ -446,16 +459,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map24Clicked(MouseEvent event) {
 //        if(!tile24.getIsClaimed()) {
 //            tile24.setIsClaimed(true);
-//            tile24.setOwner(Game.getCurrentPlayer());
+//            tile24.setOwner();
 //            image24.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile24") && !hasSelectedLand) {
-            game.connectTile("tile24");
+            game.buyTile("tile24");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wWater1";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image24.setImage(new Image(newName));
@@ -470,16 +483,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map30Clicked(MouseEvent event) {
 //        if(!tile30.getIsClaimed()) {
 //            tile30.setIsClaimed(true);
-//            tile30.setOwner(Game.getCurrentPlayer());
+//            tile30.setOwner();
 //            image30.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile30") && !hasSelectedLand) {
-            game.connectTile("tile30");
+            game.buyTile("tile30");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks3";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image30.setImage(new Image(newName));
@@ -494,16 +507,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map31Clicked(MouseEvent event) {
 //        if(!tile31.getIsClaimed()) {
 //            tile31.setIsClaimed(true);
-//            tile31.setOwner(Game.getCurrentPlayer());
+//            tile31.setOwner();
 //            image31.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile31") && !hasSelectedLand) {
-            game.connectTile("tile31");
+            game.buyTile("tile31");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees3";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image31.setImage(new Image(newName));
@@ -518,16 +531,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map32Clicked(MouseEvent event) {
 //        if(!tile32.getIsClaimed()) {
 //            tile32.setIsClaimed(true);
-//            tile32.setOwner(Game.getCurrentPlayer());
+//            tile32.setOwner();
 //            image32.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile32") && !hasSelectedLand) {
-            game.connectTile("tile32");
+            game.buyTile("tile32");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image32.setImage(new Image(newName));
@@ -541,16 +554,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map33Clicked(MouseEvent event) {
 //        if(!tile33.getIsClaimed()) {
 //            tile33.setIsClaimed(true);
-//            tile33.setOwner(Game.getCurrentPlayer());
+//            tile33.setOwner();
 //            image33.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile33") && !hasSelectedLand) {
-            game.connectTile("tile33");
+            game.buyTile("tile33");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image33.setImage(new Image(newName));
@@ -565,16 +578,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map34Clicked(MouseEvent event) {
 //        if(!tile34.getIsClaimed()) {
 //            tile34.setIsClaimed(true);
-//            tile34.setOwner(Game.getCurrentPlayer());
+//            tile34.setOwner();
 //            image34.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile34") && !hasSelectedLand) {
-            game.connectTile("tile34");
+            game.buyTile("tile34");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees2";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image34.setImage(new Image(newName));
@@ -589,16 +602,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map40Clicked(MouseEvent event) {
 //        if(!tile40.getIsClaimed()) {
 //            tile40.setIsClaimed(true);
-//            tile40.setOwner(Game.getCurrentPlayer());
+//            tile40.setOwner();
 //            image40.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile40") && !hasSelectedLand) {
-            game.connectTile("tile40");
+            game.buyTile("tile40");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image40.setImage(new Image(newName));
@@ -613,7 +626,7 @@ public class Map1Controller extends Main implements Initializable {
     public void map41Clicked(MouseEvent event) {
 //        if(!tile41.getIsClaimed()) {
 //            tile41.setIsClaimed(true);
-//            tile41.setOwner(Game.getCurrentPlayer());
+//            tile41.setOwner();
 //            image41.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
@@ -621,9 +634,9 @@ public class Map1Controller extends Main implements Initializable {
 //        }
 
         if(!game.tileIsOwned("tile41") && !hasSelectedLand) {
-            game.connectTile("tile41");
+            game.buyTile("tile41");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             System.out.println("IMAGE NAME IS " + newName);
@@ -639,16 +652,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map42Clicked(MouseEvent event) {
 //        if(!tile42.getIsClaimed()) {
 //            tile42.setIsClaimed(true);
-//            tile42.setOwner(Game.getCurrentPlayer());
+//            tile42.setOwner();
 //            image42.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile42") && !hasSelectedLand) {
-            game.connectTile("tile42");
+            game.buyTile("tile42");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image42.setImage(new Image(newName));
@@ -663,16 +676,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map43Clicked(MouseEvent event) {
 //        if(!tile43.getIsClaimed()) {
 //            tile43.setIsClaimed(true);
-//            tile43.setOwner(Game.getCurrentPlayer());
+//            tile43.setOwner();
 //            image43.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile43") && !hasSelectedLand) {
-            game.connectTile("tile43");
+            game.buyTile("tile43");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees1";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image43.setImage(new Image(newName));
@@ -687,16 +700,16 @@ public class Map1Controller extends Main implements Initializable {
     public void map44Clicked(MouseEvent event) {
 //        if(!tile44.getIsClaimed()) {
 //            tile44.setIsClaimed(true);
-//            tile44.setOwner(Game.getCurrentPlayer());
+//            tile44.setOwner();
 //            image44.setImage(new Image(updateColor()));
 //            endTurn();
 //        } else {
 //            System.out.println("Player has already claimed this land");
 //        }
         if(!game.tileIsOwned("tile44") && !hasSelectedLand) {
-            game.connectTile("tile44");
+            game.buyTile("tile44");
             hasSelectedLand = true;
-            String color = game.getColor(game.getCurrentPlayer());
+            String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image44.setImage(new Image(newName));

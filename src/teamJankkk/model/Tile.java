@@ -12,33 +12,44 @@ import java.util.Random;
  */
 public class Tile {
 
-
     private String resource;
     private Boolean isClaimed;
     private Boolean isInstalled;
-    private int owner;
     private String tileName;
-    private Mule mule;
+    private Player owner;
+    private Mule residentMule;
 
-    public Tile(String inputName) {
-        tileName = inputName;
-//        Random rand = new Random();
-//        resource = resourceList.get(rand.nextInt(2));
+    public Tile(String tileName) {
+        this.tileName = tileName;
         isClaimed = false;
         isInstalled = false;
-        mule = null;
+        owner = null;
+        residentMule = null;
+
     }
 
-    public void createMule() {
-        if(BuyMuleController.hasMule) {
-            System.out.println("This tile's resource is : " + resource);
-            if(BuyMuleController.outfitString.equals(resource)) {
-                Mule newMule = new Mule(BuyMuleController.outfitString, this);
-                isInstalled = true;
-                System.out.println("Mule created.");
-                System.out.println("Mule belongs to: " + newMule.getTile());
-            }
-        }
+    public void setResidentMule(Mule mule) {
+        residentMule = mule;
+    }
+
+    public Mule getResidentMule() {
+        return residentMule;
+    }
+
+    public void setTileOwner(Player p) {
+        owner = p;
+    }
+
+    public Player getTileOwner() {
+        return owner;
+    }
+
+    public boolean getIsInstalled() {
+        return isInstalled;
+    }
+
+    public void setIsInstalled(Boolean bool) {
+        isInstalled = bool;
     }
 
     public void setResource(String input) {
@@ -49,19 +60,9 @@ public class Tile {
         return tileName;
     }
 
-    public void setOwner(int p) {
-        owner = p;
-        isClaimed = true;
-        //owner = PlayerDB.getPlayer(p);
-    }
-
     public String getResource() {
         return resource;
     }
-
-//    public Player getOwner() {
-//        return owner;
-//    }
 
     public void setIsClaimed(boolean bool) {
         isClaimed = bool;
@@ -71,20 +72,8 @@ public class Tile {
         return isClaimed;
     }
 
-    public int getOwnerNumber() {
-        return owner;
-    }
-
-    public boolean getIsInstalled() {
-        return isInstalled;
-    }
-
     public int harvestResource() {
         return (int) Math.random();
     }
 
-
-    public boolean isInstalled() {
-        return isInstalled;
-    }
 }
