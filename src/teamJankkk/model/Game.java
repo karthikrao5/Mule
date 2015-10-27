@@ -24,8 +24,6 @@ public class Game {
     List<String> resourceList = new ArrayList<>(Arrays.asList("SmithOre", "Energy",
             "Food"));
     Random rand;
-
-
     int tempCurrentTurn = 0;
     int tempNumberOfPlayers = 0;
     int tempCurrentPlayer = 1;
@@ -122,30 +120,14 @@ public class Game {
         currentTurn++;
         //Map1Controller.timer();
         playerPurchasedLand = false;
-        int n = nextPlayer();
-        System.out.println("nextTurn = " + n);
-        nextTurnLogic();
-        return n;
-    }
 
-    private int nextPlayer() {
-//        System.out.println("getNumberofPlayers " + numberOfPlayers);
         if (currentPlayer >= numberOfPlayers) {
             currentPlayer = 1;
         } else {
             currentPlayer++;
         }
+        harvest();
         return currentPlayer;
-    }
-
-    private void nextTurnLogic() {
-        if (currentTurn > 2) {
-            this.harvest();
-        }
-    }
-
-    public void landGrant() {
-
     }
 
     public boolean isLandGrantPhase() {
@@ -153,10 +135,7 @@ public class Game {
     }
 
     public void harvest() {
-        List<Player> playerList = database.getPlayerList();
-        for(Player p : playerList) {
-            p.calculateProduction();
-        }
+        database.calculateProduction();
     }
 
 
@@ -164,8 +143,8 @@ public class Game {
         return currentTurn;
     }
 
-    public int getCurrentPlayer() {
-        return currentPlayer;
+    public Player getCurrentPlayer() {
+        return database.getPlayer(currentPlayer);
     }
 
     public int getNumberOfPlayers() {
@@ -208,37 +187,76 @@ public class Game {
         database.setColor(name, index);
     }
 
-    public Player getPlayer(int index) {
-        return database.getPlayer(index);
+    public int getMoney() {
+        return database.getPlayer(currentPlayer).getMoney();
     }
+
+    public int getEnergy() {
+        return database.getPlayer(currentPlayer).getEnergy();
+    }
+
+    public int getFood() {
+        return database.getPlayer(currentPlayer).getFood();
+    }
+
+    public int getSmithore() {
+        return database.getPlayer(currentPlayer).getSmithore();
+
+    }
+
+
+//    public Player getPlayer(int index) {
+//        return database.getPlayer(index);
+//    }
 
     public String getColor(int index) {
         return database.getPlayer(index).getColor();
     }
 
-    public int getMoney(int index) {
-        return database.getPlayer(index).getMoney();
+//    public int getMoney(int index) {
+//        return database.getPlayer(index).getMoney();
+//    }
+
+    public int getMuleCount() {
+        return database.getPlayer(currentPlayer).howManyMules();
     }
 
-    public void addSmithore(int index, int sum) {
-        database.getPlayer(index).addSmithore(sum);
+
+
+
+
+    public void addEnergy(int amount) {
+        database.getPlayer(currentPlayer).addEnergy(amount);
     }
 
-    public void addEnergy(int index, int sum) {
-        database.getPlayer(index).addEnergy(sum);
+    public void addSmithore(int amount) {
+        database.getPlayer(currentPlayer).addSmithore(amount);
     }
 
-    public void addFood(int index, int sum) {
-        database.getPlayer(index).addFood(sum);
+    public void addFood(int amount) {
+        database.getPlayer(currentPlayer).addFood(amount);
     }
 
-    public int getMuleCount(int index) {
-        return database.getPlayer(index).howManyMules();
+    public void addMoney(int amount) {
+        database.getPlayer(currentPlayer).addMoney(amount);
     }
 
-    public void subtractMoney(int index, int sum) {
-        database.getPlayer(index).subtractMoney(sum);
+    public void subtractMoney(int amount) {
+        database.getPlayer(currentPlayer).subtractMoney(amount);
     }
+
+    public void subtractEnergy(int amount) {
+        database.getPlayer(currentPlayer).subtractEnergy(amount);
+    }
+
+    public void subtractSmithore(int amount) {
+        database.getPlayer(currentPlayer).subtractSmithore(amount);
+    }
+    public void subtractFood(int amount) {
+        database.getPlayer(currentPlayer).subtractFood(amount);
+    }
+
+
 
     public boolean isTileOwned(String tileName) {
         List<Tile> temp = database.getPlayer(currentPlayer).getTileList();
@@ -248,6 +266,27 @@ public class Game {
             }
         }
         return false;
+    }
+
+    public ArrayList<Integer> calculateMarket() {
+        ArrayList<Integer> marketTotal = new ArrayList<>();
+        int totalSmithore = 0;
+        int totalEnergy = 0;
+        int totalFood = 0;
+        int totalMoney = 0;
+
+        for(Player p : database.dbKeySet()) {
+            totalSmithore += p.getSmithore();
+            totalEnergy += p.getEnergy();
+            totalFood += p.getFood();
+            totalMoney = p.getMoney();
+        }
+        marketTotal.add(totalSmithore);
+        marketTotal.add(totalEnergy);
+        marketTotal.add(totalEnergy);
+        marketTotal.add(totalMoney);
+        return marketTotal;
+
     }
 
 }

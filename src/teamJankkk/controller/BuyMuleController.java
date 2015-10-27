@@ -40,16 +40,17 @@ public class BuyMuleController extends Main implements Initializable {
 
         //save3Button.setOnAction(this::saveName);
         buyButton.setOnAction(this::buy);
-        nameLabel21.setText(String.valueOf(game.getMuleCount(game.getCurrentPlayer())));
-        nameLabel1.setText(String.valueOf(game.getMoney(game.getCurrentPlayer())));
+        nameLabel21.setText(String.valueOf(game.getMuleCount()));
+        nameLabel1.setText(String.valueOf(game.getMoney()));
         hasMule = false;
         outfitString = "";
     }
 
     @FXML
     public void buy(ActionEvent event) {
-        Player thisPlayer = game.getPlayer(game.getCurrentPlayer());
-        int howMuchTheyGot = thisPlayer.getMoney();
+        Player currPlayer = game.getCurrentPlayer();
+//        Player currPlayer = game.getPlayer(game.getCurrentPlayer());
+        int howMuchTheyGot = currPlayer.getMoney();
         if (outfitChoiceBox.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             //alert.initOwner(ConfigController.);
@@ -59,7 +60,7 @@ public class BuyMuleController extends Main implements Initializable {
             alert.showAndWait();
         } else {
             if (howMuchTheyGot >= 100) {
-                game.getPlayer(game.getCurrentPlayer()).subtractMoney(100);
+                game.subtractMoney(100);
 //                PlayerDB.getPlayer(Game.getCurrentPlayer()).subtractMoney(100);
                 onThisScreenHowManyDidYouBuy++;
                 updateLabel();
@@ -90,7 +91,7 @@ public class BuyMuleController extends Main implements Initializable {
     }
 
     public void updateLabel() {
-        nameLabel21.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).howManyMules()+onThisScreenHowManyDidYouBuy));
-        nameLabel1.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getMoney()));
+        nameLabel21.setText(String.valueOf(game.getMuleCount()+onThisScreenHowManyDidYouBuy));
+        nameLabel1.setText(String.valueOf(game.getMoney()));
     }
 }

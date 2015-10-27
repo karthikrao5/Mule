@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 
 import java.awt.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import teamJankkk.Main;
@@ -34,7 +35,7 @@ import javafx.fxml.Initializable;
  */
 
 public class AuctionHouseController extends Main implements Initializable {
-    @FXML private TextField buySmithore;
+    @FXML private TextField smithoreTextField;
     @FXML private TextField buyEnergy;
     @FXML private TextField buyFood;
 
@@ -64,11 +65,11 @@ public class AuctionHouseController extends Main implements Initializable {
 //        calculateMarket();
         goButton.setOnAction(this::goLogic);
         cancelButton.setOnAction(this::goBackToStore);
-//        System.out.println(game.getPlayer(game.getCurrentPlayer()).getMoney());
-//        moneyLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getMoney()));
-//        foodLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getFood()));
-//        smithoreLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getSmithore()));
-//        energyLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getEnergy()));
+//        System.out.println(game.getMoney());
+//        moneyLabelPlayer.setText(String.valueOf(game.getMoney()));
+//        foodLabelPlayer.setText(String.valueOf(game.getFood()));
+//        smithoreLabelPlayer.setText(String.valueOf(game.getSmithore()));
+//        energyLabelPlayer.setText(String.valueOf(game.getEnergy()));
     }
 
 
@@ -92,13 +93,22 @@ public class AuctionHouseController extends Main implements Initializable {
         }
     }
 
+    int currentResourceAmount;
+    int currentMoney;
+    int amountToBuy;
+    
     @FXML
     public void goLogic(ActionEvent actionEvent) {
-        if (buySmithore.getText().length() > 0) {
-            int howMuchTheyHave = game.getPlayer(game.getCurrentPlayer()).getSmithore();
-            int theyGotDosh = game.getPlayer(game.getCurrentPlayer()).getMoney();
-            int theyWannaBuy = Integer.parseInt(buySmithore.getText());
-            if (theyWannaBuy > theyGotDosh) {
+        currentResourceAmount = 0;
+        currentMoney = 0;
+        amountToBuy = 0;
+        
+        if (smithoreTextField.getText().length() > 0) {
+            
+            currentResourceAmount = game.getSmithore();
+            currentMoney = game.getMoney();
+            amountToBuy = Integer.parseInt(smithoreTextField.getText());
+            if (amountToBuy > currentMoney) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
                 alert.setTitle("Action Not Possible");
@@ -106,15 +116,15 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setContentText("You cannot buy more than you can afford");
                 alert.showAndWait();
             } else {
-                game.getPlayer(game.getCurrentPlayer()).addSmithore(theyWannaBuy);
-                game.getPlayer(game.getCurrentPlayer()).subtractMoney(theyWannaBuy);
+                game.addSmithore(amountToBuy);
+                game.subtractMoney(amountToBuy);
             }
         }
         if (buyFood.getText().length() > 0) {
-            int howMuchTheyHave = game.getPlayer(game.getCurrentPlayer()).getFood();
-            int theyWannaBuy = Integer.parseInt(buyFood.getText());
-            int theyGotDosh = game.getPlayer(game.getCurrentPlayer()).getMoney();
-            if (theyWannaBuy > theyGotDosh) {
+            currentResourceAmount = game.getFood();
+            amountToBuy = Integer.parseInt(buyFood.getText());
+            currentMoney = game.getMoney();
+            if (amountToBuy > currentMoney) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
                 alert.setTitle("Action Not Possible");
@@ -122,15 +132,15 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setContentText("You cannot buy more than you can afford");
                 alert.showAndWait();
             } else {
-                game.getPlayer(game.getCurrentPlayer()).addFood(theyWannaBuy);
-                game.getPlayer(game.getCurrentPlayer()).subtractMoney(theyWannaBuy);
+                game.addFood(amountToBuy);
+                game.subtractMoney(amountToBuy);
             }
         }
         if (buyEnergy.getText().length() > 0) {
-            int howMuchTheyHave = game.getPlayer(game.getCurrentPlayer()).getEnergy();
-            int theyWannaBuy = Integer.parseInt(buyEnergy.getText());
-            int theyGotDosh = game.getPlayer(game.getCurrentPlayer()).getMoney();
-            if (theyWannaBuy > theyGotDosh) {
+            currentResourceAmount = game.getEnergy();
+            amountToBuy = Integer.parseInt(buyEnergy.getText());
+            currentMoney = game.getMoney();
+            if (amountToBuy > currentMoney) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
                 alert.setTitle("Action Not Possible");
@@ -138,14 +148,14 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setContentText("You cannot buy more than you can afford");
                 alert.showAndWait();
             } else {
-                game.getPlayer(game.getCurrentPlayer()).addEnergy(theyWannaBuy);
-                game.getPlayer(game.getCurrentPlayer()).subtractMoney(theyWannaBuy);
+                game.addEnergy(amountToBuy);
+                game.subtractMoney(amountToBuy);
             }
         }
         if (sellSmithore.getText().length() > 0) {
-            int howMuchTheyHave = game.getPlayer(game.getCurrentPlayer()).getSmithore();
+            currentResourceAmount = game.getSmithore();
             int theyWannaSell = Integer.parseInt(sellSmithore.getText());
-            if (theyWannaSell > howMuchTheyHave) {
+            if (theyWannaSell > currentResourceAmount) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
                 alert.setTitle("Action Not Possible");
@@ -153,14 +163,14 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setContentText("You cannot sell more of this resouce than you have!");
                 alert.showAndWait();
             } else {
-                game.getPlayer(game.getCurrentPlayer()).subtractSmithore(theyWannaSell);
-                game.getPlayer(game.getCurrentPlayer()).addMoney(theyWannaSell);
+                game.subtractSmithore(theyWannaSell);
+                game.addMoney(theyWannaSell);
             }
         }
         if (sellFood.getText().length() > 0) {
-            int howMuchTheyHave = game.getPlayer(game.getCurrentPlayer()).getFood();
+            currentResourceAmount = game.getFood();
             int theyWannaSell = Integer.parseInt(sellFood.getText());
-            if (theyWannaSell > howMuchTheyHave) {
+            if (theyWannaSell > currentResourceAmount) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
                 alert.setTitle("Action Not Possible");
@@ -168,14 +178,14 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setContentText("You cannot sell more of this resouce than you have!");
                 alert.showAndWait();
             } else {
-                game.getPlayer(game.getCurrentPlayer()).subtractFood(theyWannaSell);
-                game.getPlayer(game.getCurrentPlayer()).addMoney(theyWannaSell);
+                game.subtractFood(theyWannaSell);
+                game.addMoney(theyWannaSell);
             }
         }
         if (sellEnergy.getText().length() > 0) {
-            int howMuchTheyHave = game.getPlayer(game.getCurrentPlayer()).getEnergy();
+            currentResourceAmount = game.getEnergy();
             int theyWannaSell = Integer.parseInt(sellEnergy.getText());
-            if (theyWannaSell > howMuchTheyHave) {
+            if (theyWannaSell > currentResourceAmount) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
                 alert.setTitle("Action Not Possible");
@@ -183,37 +193,26 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setContentText("You cannot sell more of this resouce than you have!");
                 alert.showAndWait();
             } else {
-                game.getPlayer(game.getCurrentPlayer()).subtractEnergy(theyWannaSell);
-                game.getPlayer(game.getCurrentPlayer()).addMoney(theyWannaSell);
+                game.subtractEnergy(theyWannaSell);
+                game.addMoney(theyWannaSell);
             }
         }
-        updateLabels();
-        calculateMarket();
+        updateMarketAndLabels();
     }
 
     public void updateLabels() {
-        calculateMarket();
-        System.out.println(game.getPlayer(game.getCurrentPlayer()).getMoney());
-        moneyLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getMoney()));
-        foodLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getFood()));
-        smithoreLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getSmithore()));
-        energyLabelPlayer.setText(String.valueOf(game.getPlayer(game.getCurrentPlayer()).getEnergy()));
+        System.out.println(game.getMoney());
+        moneyLabelPlayer.setText(String.valueOf(game.getMoney()));
+        foodLabelPlayer.setText(String.valueOf(game.getFood()));
+        smithoreLabelPlayer.setText(String.valueOf(game.getSmithore()));
+        energyLabelPlayer.setText(String.valueOf(game.getEnergy()));
     }
 
-    public void calculateMarket() {
-        int smithTotal = 0;
-        int energTotal = 0;
-        int foodTotal = 0;
-        int GDP = 0;
-        for (int thisPlayer = 1; thisPlayer <= game.getNumberOfPlayers(); thisPlayer++) {
-            smithTotal = smithTotal + game.getPlayer(thisPlayer).getSmithore();
-            energTotal = energTotal + game.getPlayer(thisPlayer).getEnergy();
-            foodTotal = foodTotal + game.getPlayer(thisPlayer).getFood();
-            GDP = GDP + game.getPlayer(thisPlayer).getMoney();
-        }
-        smithoreLabelMarket.setText(String.valueOf(smithTotal));
-        energyLabelMarket.setText(String.valueOf(energTotal));
-        foodLabelMarket.setText(String.valueOf(foodTotal));
-        moneyLabelMarket.setText(String.valueOf(GDP));
+    public void updateMarketAndLabels() {
+        ArrayList<Integer> market = game.calculateMarket();
+        smithoreLabelMarket.setText(market.get(0).toString());
+        energyLabelMarket.setText(market.get(1).toString());
+        foodLabelMarket.setText(market.get(2).toString());
+        moneyLabelMarket.setText(market.get(3).toString());
     }
 }

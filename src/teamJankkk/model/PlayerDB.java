@@ -2,10 +2,7 @@ package teamJankkk.model;
 
 import teamJankkk.model.Player;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by karthik on 9/21/15.
@@ -33,12 +30,8 @@ public class PlayerDB {
         getPlayer(index).setColor(color);
     }
 
-    public List<Player> getPlayerList() {
-        playerList = new ArrayList<>();
-        for(Map.Entry<Player, Integer> p : db.entrySet()) {
-            playerList.add(p.getKey());
-        }
-        return playerList;
+    public Set<Player> dbKeySet() {
+        return db.keySet();
     }
 
     public List<String> getStringPlayerList() {
@@ -78,5 +71,24 @@ public class PlayerDB {
 
         return "Player " + name + " of the " + race
                 + " race and on the " + color + " team.";
+    }
+
+    public void calculateProduction() {
+        for(Player p : db.keySet()) {
+            for(Tile t : p.getTileList()) {
+                if (!t.isInstalled()) {
+                    System.out.println("Land piece isn't Installed");
+                } else {
+                    String theType = t.getResource();
+                    if (theType.equals("SmithOre")) {
+                        p.addSmithore(100);
+                    } else if (theType.equals("Energy")) {
+                        p.addEnergy(100);
+                    } else if (theType.equals("Food")) {
+                        p.addFood(100);
+                    }
+                }
+            }
+        }
     }
 }

@@ -47,8 +47,7 @@ public class StoreController extends Main implements Initializable {
 
     public void setGame(Game game) {
         this.game = game;
-        temp = game.getCurrentPlayer();
-        moneyLabel.setText(String.valueOf(game.getMoney(temp)));
+        moneyLabel.setText(String.valueOf(game.getMoney()));
     }
 
     @FXML

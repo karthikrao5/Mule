@@ -33,9 +33,8 @@ public class Tile {
         if(BuyMuleController.hasMule) {
             System.out.println("This tile's resource is : " + resource);
             if(BuyMuleController.outfitString.equals(resource)) {
-                Mule newMule = new Mule(BuyMuleController.outfitString);
+                Mule newMule = new Mule(BuyMuleController.outfitString, this);
                 isInstalled = true;
-                newMule.setTile(this);
                 System.out.println("Mule created.");
                 System.out.println("Mule belongs to: " + newMule.getTile());
             }

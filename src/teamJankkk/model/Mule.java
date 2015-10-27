@@ -9,10 +9,11 @@ public class Mule {
     private Boolean isInstalled;
     private Tile muleTile;
 
-    public Mule(String outfit) {
+    public Mule(String outfit, Tile tile) {
         this.outfit = outfit;
         this.isInstalled = false;
         this.hasOutfit = false;
+        muleTile = tile;
     }
 
     public String getTile() {
@@ -30,11 +31,6 @@ public class Mule {
     public void setOutfit(String input) {
         this.outfit = input;
         this.hasOutfit = true;
-    }
-
-    public void setTile(Tile input) {
-        this.muleTile = input;
-        this.isInstalled = true;
     }
 
     public void removeOutfit() {

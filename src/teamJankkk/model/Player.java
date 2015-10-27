@@ -126,27 +126,6 @@ public class Player {
         return muleCount;
     }
 
-    public void calculateProduction() {
-
-        for(Tile t : tilesOwned) {
-            if (!t.isInstalled()) {
-                System.out.println("Land piece isn't Installed");
-            } else {
-                String theType = t.getResource();
-                if (theType.equals("SmithOre")) {
-                    addSmithore(100);
-//                PlayerDB.getPlayer(currentPlayer).addSmithore(100);
-                } else if (theType.equals("Energy")) {
-                    addEnergy(100);
-//                PlayerDB.getPlayer(Game.getCurrentPlayer()).addEnergy(100);
-                } else if (theType.equals("Food")) {
-                    addFood(100);
-//                PlayerDB.getPlayer(Game.getCurrentPlayer()).addFood(100);
-                }
-            }
-        }
-    }
-
     public List<Tile> getTileList() {
         return tilesOwned;
     }
