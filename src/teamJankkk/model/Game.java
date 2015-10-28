@@ -323,14 +323,15 @@ public class Game {
             totalSmithore += p.getSmithore();
             totalEnergy += p.getEnergy();
             totalFood += p.getFood();
-            totalMoney = p.getMoney();
+            totalMoney += p.getMoney();
         }
         marketTotal.add(totalSmithore);
         marketTotal.add(totalEnergy);
         marketTotal.add(totalEnergy);
         marketTotal.add(totalMoney);
         return marketTotal;
-
+        //returns an arraylist so AuctionHouseController
+        //can display the market totals in labels
     }
 
     public void calculateProduction() {
