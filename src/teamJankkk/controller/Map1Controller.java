@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import java.util.Random;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -110,6 +111,7 @@ public class Map1Controller extends Main implements Initializable {
         hasSelectedLand = false;
         //Game.nextTurn();
         updateLabel();
+        randomEvent();
     }
 
     public void timer() {
@@ -720,6 +722,33 @@ public class Map1Controller extends Main implements Initializable {
         turnCOUNT = game.getCurrentTurnNumber();
         turnCounterLabel.setText(turnCOUNT.toString());
         //newLabel.setTet(mode);
+    }
+
+    public void randomEvent() {
+        int currentPlayerNumber = game.getCurrentTurnNumber();
+        int curPlayRank = game.currentPlayerRank();
+        String randoStringHeader = "";
+        String randoStringText = "";
+        Random random = new Random();
+        String[] theRandomEventString;
+        int randomNumber;
+        if (curPlayRank >= 1) {
+            randomNumber = random.nextInt(6);
+        } else {
+            randomNumber = random.nextInt(3) + 3;
+        }
+        theRandomEventString = game.getRandomEvent(randomNumber);
+        randoStringHeader = theRandomEventString[0];
+        randoStringText = theRandomEventString[1];
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Random Event!!!");
+        alert.setHeaderText(randoStringHeader);
+        alert.setContentText(randoStringText);
+        alert.showAndWait();
+        int currentPlayerNumber2 = game.getCurrentTurnNumber();
+        if (currentPlayerNumber != currentPlayerNumber2) {
+            endTurn();
+        }
     }
 
     public void updateColors() {
