@@ -334,7 +334,7 @@ public class Game {
     public int currentPlayerRank() {
         int thisPlayazScore = getCurrentPlayer().getScore();
         int returnRank = 0;
-        for (int i = 0; i < numberOfPlayers; i++) {
+        for (int i = 1; i == numberOfPlayers; i++) {
             if (database.getPlayer(i).getScore() <= thisPlayazScore) {
                 returnRank++;
             }
@@ -373,6 +373,7 @@ public class Game {
             theRandomEvent[1] = "HERES 100 FREE CASH!!";
             getCurrentPlayer().addMoney(100);
         }
+        return theRandomEvent;
     }
 
     public void calculateProduction() {

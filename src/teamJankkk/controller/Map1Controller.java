@@ -103,6 +103,7 @@ public class Map1Controller extends Main implements Initializable {
         hasSelectedLand = false;
         //Game.nextTurn();
         updateLabel();
+        randomEvent();
     }
 
     private void endTurn() {
