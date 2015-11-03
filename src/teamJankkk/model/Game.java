@@ -4,17 +4,15 @@ import teamJankkk.controller.BuyMuleController;
 import teamJankkk.controller.ConfigController;
 import teamJankkk.controller.Map1Controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * Created by karthik on 9/23/15.
  */
 public class Game {
 
-    PlayerDB database;
+//    PlayerDB database;
     Mule boughtMule;
     int currentTurn = 0;
     int numberOfPlayers = 0;
@@ -29,10 +27,11 @@ public class Game {
     int tempNumberOfPlayers = 0;
     int tempCurrentPlayer = 1;
     List<Tile> tempTileList = new ArrayList<>();
-
+    private HashMap<Player, Integer> database;
 
     public Game() {
-        database = new PlayerDB();
+//        database = new PlayerDB();
+        database = new HashMap<>();
         rand = new Random();
         //x axis is i
         //y axis is j
@@ -150,7 +149,7 @@ public class Game {
     }
 
     public boolean isTileOwned(String tileName) {
-        for(Tile t : database.getPlayer(currentPlayer).getTileList()) {
+        for(Tile t : getCurrentPlayer().getTileList()) {
             if(t.getTileName().equals(tileName)) {
                 return true;
             }
@@ -204,7 +203,13 @@ public class Game {
     }
 
     public Player getCurrentPlayer() {
-        return database.getPlayer(currentPlayer);
+        for(Map.Entry<Player, Integer> p : database.entrySet()) {
+            if(p.getValue().compareTo(currentPlayer) == 0) {
+                return p.getKey();
+            }
+        }
+//        return database.get(currentPlayer);
+        return null;
     }
 
     public int getNumberOfPlayers() {
@@ -232,16 +237,30 @@ public class Game {
         numberOfPlayers = tempNumberOfPlayers;
     }
 
+//    private Set<Map.Entry<Player, Integer>> getEntrySet() {
+//        return database.entrySet();
+//    }
+
     public void createPlayer(String name, int index) {
-        database.createPlayer(name, index);
+//        database.add(index, new Player(name, null, null));
+        database.put(new Player(name, null, null), index);
     }
 
     public void setRace(String name, int index) {
-        database.setRace(name, index);
+        getCurrentPlayer().setRace(name);
+//        database.get(index).setRace(name);
+//        database.setRace(name, index);
     }
 
     public void setColor(String name, int index) {
-        database.setColor(name, index);
+        getCurrentPlayer().setColor(name);
+//        database.get(index).setColor(name);
+//        database.setColor(name, index);
+    }
+
+    public String getColor() {
+        return getCurrentPlayer().getColor();
+//        return database.get(currentPlayer).getColor();
     }
 
 
@@ -249,19 +268,22 @@ public class Game {
 
 
     public int getMoney() {
-        return database.getPlayer(currentPlayer).getMoney();
+        return getCurrentPlayer().getMoney();
+//        return database.get(currentPlayer).getMoney();
     }
 
     public int getEnergy() {
-        return database.getPlayer(currentPlayer).getEnergy();
+        return getCurrentPlayer().getEnergy();
     }
 
     public int getFood() {
-        return database.getPlayer(currentPlayer).getFood();
+        return getCurrentPlayer().getFood();
+//        return database.get(currentPlayer).getFood();
     }
 
     public int getSmithore() {
-        return database.getPlayer(currentPlayer).getSmithore();
+        return getCurrentPlayer().getSmithore();
+//        return database.get(currentPlayer).getSmithore();
 
     }
 
@@ -269,9 +291,6 @@ public class Game {
 //        return database.getPlayer(index);
 //    }
 
-    public String getColor() {
-        return database.getPlayer(currentPlayer).getColor();
-    }
 
 //    public int getMoney(int index) {
 //        return database.getPlayer(index).getMoney();
@@ -279,34 +298,42 @@ public class Game {
 
 
     public void addEnergy(int amount) {
-        database.getPlayer(currentPlayer).addEnergy(amount);
+        getCurrentPlayer().addEnergy(amount);
+//        database.get(currentPlayer).addEnergy(amount);
     }
 
     public void addSmithore(int amount) {
-        database.getPlayer(currentPlayer).addSmithore(amount);
+        getCurrentPlayer().addSmithore(amount);
+//        database.get(currentPlayer).addSmithore(amount);
     }
 
     public void addFood(int amount) {
-        database.getPlayer(currentPlayer).addFood(amount);
+        getCurrentPlayer().addFood(amount);
+//        database.get(currentPlayer).addFood(amount);
     }
 
     public void addMoney(int amount) {
-        database.getPlayer(currentPlayer).addMoney(amount);
+        getCurrentPlayer().addMoney(amount);
+//        database.get(currentPlayer).addMoney(amount);
     }
 
     public void subtractMoney(int amount) {
-        database.getPlayer(currentPlayer).subtractMoney(amount);
+        getCurrentPlayer().subtractMoney(amount);
+//        database.get(currentPlayer).subtractMoney(amount);
     }
 
     public void subtractEnergy(int amount) {
-        database.getPlayer(currentPlayer).subtractEnergy(amount);
+        getCurrentPlayer().subtractEnergy(amount);
+//        database.get(currentPlayer).subtractEnergy(amount);
     }
 
     public void subtractSmithore(int amount) {
-        database.getPlayer(currentPlayer).subtractSmithore(amount);
+        getCurrentPlayer().subtractSmithore(amount);
+//        database.get(currentPlayer).subtractSmithore(amount);
     }
     public void subtractFood(int amount) {
-        database.getPlayer(currentPlayer).subtractFood(amount);
+        getCurrentPlayer().subtractFood(amount);
+//        database.get(currentPlayer).subtractFood(amount);
     }
 
 
@@ -319,7 +346,7 @@ public class Game {
         int totalFood = 0;
         int totalMoney = 0;
 
-        for(Player p : database.dbKeySet()) {
+        for(Player p : database.keySet()) {
             totalSmithore += p.getSmithore();
             totalEnergy += p.getEnergy();
             totalFood += p.getFood();
@@ -335,7 +362,7 @@ public class Game {
     }
 
     public void calculateProduction() {
-        for(Player p : database.dbKeySet()) {
+        for(Player p : database.keySet()) {
             for(Tile t : p.getTileList()) {
                 if (!t.getIsInstalled()) {
                     System.out.println("Land piece isn't Installed");
