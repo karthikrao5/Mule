@@ -107,8 +107,8 @@ public class Map1Controller extends Main implements Initializable {
         timer();
         hasSelectedLand = false;
         //Game.nextTurn();
-        updateLabel();
         randomEvent();
+        updateLabel();
     }
 
     private void endTurn() {
@@ -118,6 +118,7 @@ public class Map1Controller extends Main implements Initializable {
         //Game.nextTurn();
         updateLabel();
         randomEvent();
+        updateLabel();
     }
 
     public void timer() {
