@@ -238,22 +238,24 @@ public class Game {
     }
 
     public void saveGameState() {
-        for (int i = 0; i < tileList.size(); i++) {
-            tempTileList.add(tileList.get(i));
-        }
-        tempCurrentPlayer = currentPlayer;
-        tempCurrentTurn = currentTurn;
-        tempNumberOfPlayers = numberOfPlayers;
+        GameState state = new GameState();
+        state.saveGame(this);
+//        for (int i = 0; i < tileList.size(); i++) {
+//            tempTileList.add(tileList.get(i));
+//        }
+//        tempCurrentPlayer = currentPlayer;
+//        tempCurrentTurn = currentTurn;
+//        tempNumberOfPlayers = numberOfPlayers;
 
     }
 
     public void loadGameState() {
-        for (int i = 0; i < tempTileList.size(); i++) {
-            tileList.add(tempTileList.get(i));
-        }
-        currentPlayer = tempCurrentPlayer;
-        currentTurn = tempCurrentTurn;
-        numberOfPlayers = tempNumberOfPlayers;
+//        for (int i = 0; i < tempTileList.size(); i++) {
+//            tileList.add(tempTileList.get(i));
+//        }
+//        currentPlayer = tempCurrentPlayer;
+//        currentTurn = tempCurrentTurn;
+//        numberOfPlayers = tempNumberOfPlayers;
     }
 
 //    private Set<Map.Entry<Player, Integer>> getEntrySet() {
