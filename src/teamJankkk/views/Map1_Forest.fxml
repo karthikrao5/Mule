@@ -171,7 +171,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
         </GridPane>
-      <Pane fx:id="infoPane" opacity="0.34" prefHeight="129.0" prefWidth="117.0">
+      <Pane fx:id="infoPane" opacity="0.46" prefHeight="129.0" prefWidth="117.0">
          <children>
                 <Label fx:id="playerName" prefHeight="18.0" prefWidth="118.0" text="PLAYER NAME" textFill="WHITE">
                     <font>
@@ -181,7 +181,7 @@
                   <Insets left="1.0" />
                </padding>
                 </Label>
-                <Label fx:id="turnCounterLabel2" layoutY="18.0" text="Turn #" textFill="WHITE">
+                <Label layoutY="18.0" text="Turn #" textFill="WHITE">
 
 
                     <font>
@@ -191,7 +191,7 @@
                         <Insets left="5.0" />
                     </padding>
                 </Label>
-                <Label fx:id="turnCounterLabel" layoutY="18.0" prefHeight="18.0" prefWidth="67.0" text="1" textFill="WHITE">
+                <Label fx:id="turnCounterLabel1" layoutY="18.0" prefHeight="18.0" prefWidth="67.0" text="1" textFill="WHITE">
                     <font>
                         <Font name="American Typewriter" size="14.0" />
                     </font>
@@ -199,7 +199,7 @@
                         <Insets left="60.0" />
                     </padding>
                 </Label>
-            <Label fx:id="turnCounterLabel1" layoutX="-2.0" layoutY="36.0" prefHeight="18.0" prefWidth="22.0" text="\$" textFill="WHITE">
+            <Label layoutX="-2.0" layoutY="36.0" prefHeight="18.0" prefWidth="22.0" text="\$" textFill="WHITE">
                <font>
                   <Font name="American Typewriter" size="14.0" />
                </font>
@@ -264,6 +264,9 @@
                </padding>
             </Label>
          </children>
+         <effect>
+            <DropShadow />
+         </effect>
       </Pane>
         <!--<Label text="Player " textFill="WHITE">-->
         <!--<font>-->

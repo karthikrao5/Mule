@@ -38,17 +38,17 @@ import java.util.ResourceBundle;
 public class Map1Controller extends Main implements Initializable {
 
     @FXML private ImageView image00, image01,
-         image02, image03, image04, image10,
-         image11, image12, image13, image14,
-         image20, image21, image22, image23,
-         image24, image30, image31, image32,
-         image33, image34, image40, image41,
-         image42, image43, image44, image50,
-         image51, image52, image53, image54;
-    @FXML private Label turnCounterLabel1;
-    @FXML private Label timerLabel;
-    @FXML private Label turnCounterLabel;
+        image02, image03, image04, image10,
+        image11, image12, image13, image14,
+        image20, image21, image22, image23,
+        image24, image30, image31, image32,
+        image33, image34, image40, image41,
+        image42, image43, image44;
+    @FXML private Label turnCounterLabel1, timerLabel, playerName,
+        turnCounterLabel, playerMoney, energyLabel, smithoreLabel,
+        foodLabel;
     @FXML private Button endTurnButton;
+    @FXML private Pane infoPane;
     private final Integer STARTTIME = 60;
     private Integer timeSeconds = STARTTIME;
     private Integer playerTURN = 1;
