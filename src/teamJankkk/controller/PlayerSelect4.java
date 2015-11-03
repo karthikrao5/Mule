@@ -100,18 +100,20 @@ public class PlayerSelect4 extends Main implements Initializable {
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                game.createPlayer(name, 1);
-                game.setRace(race, 1);
-                game.setColor(color, 1);
-                game.createPlayer(name2, 2);
-                game.setRace(race2, 2);
-                game.setColor(color2, 2);
-                game.createPlayer(name3, 3);
-                game.setRace(race3, 3);
-                game.setColor(color3, 3);
-                game.createPlayer(name4, 4);
-                game.setRace(race4, 4);
-                game.setColor(color4, 4);
+                game.createPlayer(name, race, color, 1);
+                game.setNumberOfPlayers(4);
+
+//                game.setRace(race, 1);
+//                game.setColor(color, 1);
+                game.createPlayer(name2, race2, color2, 2);
+//                game.setRace(race2, 2);
+//                game.setColor(color2, 2);
+                game.createPlayer(name3, race3, color3, 3);
+//                game.setRace(race3, 3);
+//                game.setColor(color3, 3);
+                game.createPlayer(name4, race4, color3, 4);
+//                game.setRace(race4, 4);
+//                game.setColor(color4, 4);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
                 Pane screen1 = (Pane) loader.load();
                 Map1Controller controller1 = loader.<Map1Controller>getController();

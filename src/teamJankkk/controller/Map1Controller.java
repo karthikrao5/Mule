@@ -99,7 +99,11 @@ public class Map1Controller extends Main implements Initializable {
 
     @FXML
     private void endTurn(ActionEvent event) {
+        System.out.println("Turn counter before end turn: "+game.getCurrentTurnNumber());
+        System.out.println("PLayer before endturn: "+game.getCurrentPlayer().getName());
         playerTURN = game.nextTurn();
+        System.out.println("PLayer after endturn: "+game.getCurrentPlayer().getName());
+        System.out.println("Turn counter after end turn: "+game.getCurrentTurnNumber());
         timer();
         hasSelectedLand = false;
         //Game.nextTurn();

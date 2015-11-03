@@ -27,7 +27,7 @@ public class Game {
     int tempNumberOfPlayers = 0;
     int tempCurrentPlayer = 1;
     List<Tile> tempTileList = new ArrayList<>();
-    private HashMap<Player, Integer> database;
+    private HashMap<Integer, Player> database;
 
     public Game() {
 //        database = new PlayerDB();
@@ -47,7 +47,8 @@ public class Game {
                     tileList.add(temp);
                 } else if ((i == 0 && j == 2) || (i == 1 && j == 1) ||
                         (i == 3 && j == 1) || (i == 4 && j == 3) ||
-                        (i == 3 && j == 4)) {
+                        (i == 3 && j == 4) || (i == 2 && (j == 0 || j == 1 ||
+                    j == 3 || j == 4))) {
 
                     Tile temp = new Tile("tile" + i + j);
                     temp.setResource("Energy");
@@ -202,9 +203,9 @@ public class Game {
     }
 
     public Player getCurrentPlayer() {
-        for(Map.Entry<Player, Integer> p : database.entrySet()) {
-            if(p.getValue().compareTo(currentPlayer) == 0) {
-                return p.getKey();
+        for(Map.Entry<Integer, Player> p : database.entrySet()) {
+            if(p.getKey().compareTo(currentPlayer) == 0) {
+                return p.getValue();
             }
         }
 //        return database.get(currentPlayer);
@@ -238,9 +239,12 @@ public class Game {
 //        return database.entrySet();
 //    }
 
-    public void createPlayer(String name, int index) {
+    public void createPlayer(String name, String race, String color, int index) {
 //        database.add(index, new Player(name, null, null));
-        database.put(new Player(name, null, null), index);
+        database.put(index, new Player(name, race, color));
+//        for(Player p : database.keySet()) {
+//            System.out.println(p.getColor());
+//        }
     }
 
     public void setRace(String name, int index) {
@@ -256,6 +260,11 @@ public class Game {
     }
 
     public String getColor() {
+        for(Player p : database.values()) {
+            System.out.println("Player name: " + p.getName()
+                    + "\n player color: " + p.getColor()
+                    + "\n player race: " + p.getRace());
+        }
         return getCurrentPlayer().getColor();
 //        return database.get(currentPlayer).getColor();
     }
@@ -343,7 +352,7 @@ public class Game {
         int totalFood = 0;
         int totalMoney = 0;
 
-        for(Player p : database.keySet()) {
+        for(Player p : database.values()) {
             totalSmithore += p.getSmithore();
             totalEnergy += p.getEnergy();
             totalFood += p.getFood();
@@ -362,7 +371,7 @@ public class Game {
         int thisPlayazScore = getCurrentPlayer().getScore();
         int returnRank = 0;
 
-        for(Player p : database.keySet()) {
+        for(Player p : database.values()) {
             if(p.getScore() <= getCurrentPlayer().getScore()) {
                 returnRank++;
             }
@@ -406,7 +415,7 @@ public class Game {
     }
 
     public void calculateProduction() {
-        for(Player p : database.keySet()) {
+        for(Player p : database.values()) {
             for(Tile t : p.getTileList()) {
                 if (!t.getIsInstalled()) {
                     System.out.println("Land piece isn't Installed");

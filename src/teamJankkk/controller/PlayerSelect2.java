@@ -66,32 +66,32 @@ public class PlayerSelect2 extends Main implements Initializable{
     }
     */
 
-    @FXML
-    public void nextScreen(ActionEvent event) {
-        try {
-            String name = nameTextField2.getText();
-            String race = raceChoiceBox2.getSelectionModel().getSelectedItem();
-            String color = colorChoiceBox2.getSelectionModel().getSelectedItem();
-            if(name == null || race == null || color == null) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                //alert.initOwner(ConfigController.);
-                alert.setTitle("Empty Field");
-                alert.setHeaderText("One of the Fields has not been filled in.");
-                alert.setContentText("Please fill in all text fields.");
-                alert.showAndWait();
-            } else {
-                game.createPlayer(name, 4);
-                game.setRace(race, 4);
-                game.setColor(color, 4);
-                Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
-                stage.setScene(new Scene(gameSumPane));
-                stage.show();
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    @FXML
+//    public void nextScreen(ActionEvent event) {
+//        try {
+//            String name = nameTextField2.getText();
+//            String race = raceChoiceBox2.getSelectionModel().getSelectedItem();
+//            String color = colorChoiceBox2.getSelectionModel().getSelectedItem();
+//            if(name == null || race == null || color == null) {
+//                Alert alert = new Alert(Alert.AlertType.WARNING);
+//                //alert.initOwner(ConfigController.);
+//                alert.setTitle("Empty Field");
+//                alert.setHeaderText("One of the Fields has not been filled in.");
+//                alert.setContentText("Please fill in all text fields.");
+//                alert.showAndWait();
+//            } else {
+//                game.createPlayer(name, 4);
+//                game.setRace(race, 4);
+//                game.setColor(color, 4);
+//                Pane gameSumPane = (Pane) FXMLLoader.load(getClass().getResource("../views/GameSummary.fxml"));
+//                stage.setScene(new Scene(gameSumPane));
+//                stage.show();
+//            }
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     @FXML
     public void goToMap1(ActionEvent event) {
@@ -110,12 +110,18 @@ public class PlayerSelect2 extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                game.createPlayer(name, 1);
-                game.setRace(race, 1);
-                game.setColor(color, 1);
-                game.createPlayer(name2, 2);
-                game.setRace(race2, 2);
-                game.setColor(color2, 2);
+                System.out.println("FIRST P COLOR: " + color);
+//                game.createPlayer(name, 1);
+                game.createPlayer(name, race, color, 1);
+                game.setNumberOfPlayers(2);
+
+//                game.setRace(race, 1);
+//                game.setColor(color, 1);
+//                game.createPlayer(name2, 2);
+                game.createPlayer(name2, race2, color2, 2);
+                System.out.println("SECOND P COLOR: " + color2);
+//                game.setRace(race2, 2);
+//                game.setColor(color2, 2);
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
                 Pane screen1 = (Pane) loader.load();
