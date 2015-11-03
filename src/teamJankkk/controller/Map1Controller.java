@@ -89,13 +89,13 @@ public class Map1Controller extends Main implements Initializable {
         endTurnButton.setOnAction(this::endTurn);
         // timerLabel.setText(timeSeconds.toString());
         timer();
-        updateColors();
 //        game.loadGameState();
     }
 
     public void passGame(Game game) {
         this.game = game;
         updateLabel();
+        updateColors();
     }
 
     @FXML
