@@ -119,6 +119,8 @@ public class PlayerSelect3 extends Main implements Initializable {
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
+                game.setNumberOfPlayers(3);
+
 //                game.createPlayer(name, 1);
                 game.createPlayer(name, race, color, 1);
 //                game.setRace(race, 1);

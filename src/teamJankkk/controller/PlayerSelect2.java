@@ -113,6 +113,8 @@ public class PlayerSelect2 extends Main implements Initializable{
                 System.out.println("FIRST P COLOR: " + color);
 //                game.createPlayer(name, 1);
                 game.createPlayer(name, race, color, 1);
+                game.setNumberOfPlayers(2);
+
 //                game.setRace(race, 1);
 //                game.setColor(color, 1);
 //                game.createPlayer(name2, 2);

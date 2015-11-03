@@ -101,6 +101,8 @@ public class PlayerSelect4 extends Main implements Initializable {
                 alert.showAndWait();
             } else {
                 game.createPlayer(name, race, color, 1);
+                game.setNumberOfPlayers(4);
+
 //                game.setRace(race, 1);
 //                game.setColor(color, 1);
                 game.createPlayer(name2, race2, color2, 2);

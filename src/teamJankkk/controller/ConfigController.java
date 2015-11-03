@@ -170,7 +170,7 @@ public class ConfigController extends Main implements Initializable {
             String name2 = "player2";
             String color2 = "Red";
             String race2 = "Packer";
-
+            game.setNumberOfPlayers(2);
             game.createPlayer(name, race, color, 1);
 //                game.setRace(race, 1);
 //                game.setColor(color, 1);
