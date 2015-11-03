@@ -46,7 +46,7 @@ public class Map1Controller extends Main implements Initializable {
         image42, image43, image44;
     @FXML private Label turnCounterLabel1, timerLabel, playerName,
         turnCounterLabel, playerMoney, energyLabel, smithoreLabel,
-        foodLabel;
+        foodLabel, colorLabel;
     @FXML private Button endTurnButton;
     @FXML private Pane infoPane;
     private final Integer STARTTIME = 60;
@@ -95,6 +95,7 @@ public class Map1Controller extends Main implements Initializable {
 
     public void passGame(Game game) {
         this.game = game;
+        updateLabel();
     }
 
     @FXML
@@ -183,6 +184,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile01");
         }
+        updateLabel();
     }
 
     @FXML
@@ -201,6 +203,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile02");
         }
+        updateLabel();
     }
 
     @FXML
@@ -217,6 +220,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile03");
         }
+        updateLabel();
     }
 
     @FXML
@@ -233,6 +237,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile04");
         }
+        updateLabel();
 
 //        if(!tile04.getIsClaimed()) {
 //            tile04.setIsClaimed(true);
@@ -270,6 +275,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile10");
         }
+        updateLabel();
     }
 
     @FXML
@@ -294,6 +300,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile11");
         }
+        updateLabel();
     }
 
     @FXML
@@ -321,6 +328,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile12");
         }
+        updateLabel();
     }
 
     @FXML
@@ -345,6 +353,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile13");
         }
+        updateLabel();
     }
 
     @FXML
@@ -369,6 +378,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile14");
         }
+        updateLabel();
     }
 
     @FXML
@@ -393,6 +403,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile20");
         }
+        updateLabel();
     }
 
     @FXML
@@ -417,6 +428,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile21");
         }
+        updateLabel();
     }
 
 
@@ -459,6 +471,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile23");
         }
+        updateLabel();
     }
 
     @FXML
@@ -483,6 +496,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile24");
         }
+        updateLabel();
     }
 
     @FXML
@@ -507,6 +521,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile30");
         }
+        updateLabel();
     }
 
     @FXML
@@ -531,6 +546,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile31");
         }
+        updateLabel();
     }
 
     @FXML
@@ -555,6 +571,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile32");
         }
+        updateLabel();
     }
     @FXML
     public void map33Clicked(MouseEvent event) {
@@ -578,6 +595,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile33");
         }
+        updateLabel();
     }
 
     @FXML
@@ -602,6 +620,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile34");
         }
+        updateLabel();
     }
 
     @FXML
@@ -626,6 +645,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile40");
         }
+        updateLabel();
     }
 
     @FXML
@@ -652,6 +672,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile41");
         }
+        updateLabel();
     }
 
     @FXML
@@ -676,6 +697,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile42");
         }
+        updateLabel();
     }
 
     @FXML
@@ -700,6 +722,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile43");
         }
+        updateLabel();
     }
 
     @FXML
@@ -724,6 +747,7 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile44");
         }
+        updateLabel();
     }
 
     @FXML
@@ -739,6 +763,16 @@ public class Map1Controller extends Main implements Initializable {
     public void updateLabel() {
         turnCounterLabel1.setText(playerTURN.toString());
         turnCOUNT = game.getCurrentTurnNumber();
+        playerName.setText(game.getCurrentPlayer().getName());
+        Integer money = game.getMoney();
+        Integer energy = game.getEnergy();
+        Integer smithore = game.getSmithore();
+        Integer food = game.getFood();
+        playerMoney.setText(money.toString());
+        energyLabel.setText(energy.toString());
+        smithoreLabel.setText(smithore.toString());
+        foodLabel.setText(food.toString());
+        colorLabel.setText(game.getColor().toUpperCase());
         System.out.println(turnCOUNT);
         //turnCounterLabel.setText(turnCOUNT.toString());
         //newLabel.setTet(mode);
