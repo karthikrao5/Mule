@@ -200,7 +200,8 @@ public class Game {
         currentTurn++;
         //Map1Controller.timer();
         playerPurchasedLand = false;
-
+        System.out.println("currentPlayer in game.nextTurn "+currentPlayer);
+        System.out.println("numberOfPLayers "+numberOfPlayers);
         if (currentPlayer >= numberOfPlayers) {
             currentPlayer = 1;
         } else {
@@ -280,11 +281,11 @@ public class Game {
     }
 
     public String getColor() {
-        for(Player p : database.values()) {
-            System.out.println("Player name: " + p.getName()
-                    + "\n player color: " + p.getColor()
-                    + "\n player race: " + p.getRace());
-        }
+//        for(Player p : database.values()) {
+//            System.out.println("Player name: " + p.getName()
+//                    + "\n player color: " + p.getColor()
+//                    + "\n player race: " + p.getRace());
+//        }
         return getCurrentPlayer().getColor();
 //        return database.get(currentPlayer).getColor();
     }
