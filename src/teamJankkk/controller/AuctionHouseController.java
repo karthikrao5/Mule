@@ -56,6 +56,10 @@ public class AuctionHouseController extends Main implements Initializable {
     @FXML private Button goButton;
     @FXML private Button cancelButton;
     Game game;
+    private int marketSmithore = 500;
+    private int marketEnergy = 500;
+    private int marketFood = 500;
+    private int marketMoney = 1000;
 
 
     @Override
@@ -119,6 +123,8 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.showAndWait();
             } else {
                 game.addSmithore(amountToBuy);
+                marketSmithore -= amountToBuy;
+                marketMoney += amountToBuy;
                 game.subtractMoney(amountToBuy);
             }
         }
@@ -135,6 +141,8 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.showAndWait();
             } else {
                 game.addFood(amountToBuy);
+                marketFood -= amountToBuy;
+                marketMoney += amountToBuy;
                 game.subtractMoney(amountToBuy);
             }
         }
@@ -151,6 +159,8 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.showAndWait();
             } else {
                 game.addEnergy(amountToBuy);
+                marketEnergy -= amountToBuy;
+                marketMoney += amountToBuy;
                 game.subtractMoney(amountToBuy);
             }
         }
@@ -166,6 +176,8 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.showAndWait();
             } else {
                 game.subtractSmithore(theyWannaSell);
+                marketSmithore += theyWannaSell;
+                marketMoney -= theyWannaSell;
                 game.addMoney(theyWannaSell);
             }
         }
@@ -181,6 +193,8 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.showAndWait();
             } else {
                 game.subtractFood(theyWannaSell);
+                marketFood += theyWannaSell;
+                marketMoney -= theyWannaSell;
                 game.addMoney(theyWannaSell);
             }
         }
@@ -196,10 +210,12 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.showAndWait();
             } else {
                 game.subtractEnergy(theyWannaSell);
+                marketEnergy += theyWannaSell;
+                marketMoney -= theyWannaSell;
                 game.addMoney(theyWannaSell);
             }
         }
-
+        updateMarketAndLabels();
     }
 
     public void updateLabels() {
@@ -211,10 +227,21 @@ public class AuctionHouseController extends Main implements Initializable {
     }
 
     public void updateMarketAndLabels() {
-        ArrayList<Integer> market = game.calculateMarket();
-        smithoreLabelMarket.setText(market.get(0).toString());
-        energyLabelMarket.setText(market.get(1).toString());
-        foodLabelMarket.setText(market.get(2).toString());
-        moneyLabelMarket.setText(market.get(3).toString());
+        Integer energy = marketEnergy;
+        Integer smithore = marketSmithore;
+        Integer food = marketFood;
+        Integer money = marketMoney;
+        Integer playerMoney = game.getMoney();
+        Integer playerSmithore = game.getSmithore();
+        Integer playerFood = game.getFood();
+        Integer playerEnergy = game.getEnergy();
+        smithoreLabelMarket.setText(smithore.toString());
+        energyLabelMarket.setText(energy.toString());
+        foodLabelMarket.setText(food.toString());
+        moneyLabelMarket.setText(money.toString());
+        smithoreLabelPlayer.setText(playerSmithore.toString());
+        energyLabelPlayer.setText(playerEnergy.toString());
+        foodLabelPlayer.setText(playerFood.toString());
+        moneyLabelPlayer.setText(playerMoney.toString());
     }
 }
