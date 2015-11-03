@@ -307,6 +307,9 @@ public class Map1Controller extends Main implements Initializable {
             hasSelectedLand = true;
             String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks4";
+            System.out.println(color);
+            System.out.println(imageName);
+            System.out.println(color.toUpperCase());
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image12.setImage(new Image(newName));
         } else if (hasSelectedLand) {
@@ -722,7 +725,8 @@ public class Map1Controller extends Main implements Initializable {
     public void updateLabel() {
         turnCounterLabel1.setText(playerTURN.toString());
         turnCOUNT = game.getCurrentTurnNumber();
-        turnCounterLabel.setText(turnCOUNT.toString());
+        System.out.println(turnCOUNT);
+        //turnCounterLabel.setText(turnCOUNT.toString());
         //newLabel.setTet(mode);
     }
 
