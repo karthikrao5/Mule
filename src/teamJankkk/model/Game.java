@@ -81,11 +81,9 @@ public class Game {
     }*/
 
     public void dropMule(String tileName) {
-
-        if(playerPurchasedLand) {
-            Tile currTile = getTileFromList(tileName);
-            if(currTile.getTileOwner().equals(getCurrentPlayer())) {
-                if(boughtMule.getOutfit().equals(currTile.getResource())) {
+        Tile currTile = getTileFromList(tileName);
+        if (currTile.getTileOwner().getName().equals(getCurrentPlayer().getName())) {
+                if (boughtMule.getOutfit().equals(currTile.getResource())) {
                     boughtMule.setTileThatOwnsMule(currTile);
                     boughtMule.setTileThatOwnsMule(currTile);
                     System.out.print("Player Name");
@@ -97,10 +95,17 @@ public class Game {
                     System.out.println(boughtMule.getTileThatOwnsMule());
                     boughtMule = null;
                 }
-            }
-
+        } else if (!(boughtMule != null)) {
+            System.out.println("No mule in Game");
         } else {
-            System.out.println("You do not have a mule purchased.");
+            System.out.println("Current mule type");
+            System.out.println(boughtMule.getOutfit());
+            System.out.println("Current tile type");
+            System.out.println(currTile.getResource());
+            System.out.println("True or False, the resources are the same:" + boughtMule.getOutfit().equals(currTile.getResource()));
+            System.out.println(currTile.getTileOwner().getName());
+            System.out.println(getCurrentPlayer().getName());
+            System.out.println("True or False, the players are the same:" + currTile.getTileOwner().getName().equals(getCurrentPlayer().getName()));
         }
     }
 
