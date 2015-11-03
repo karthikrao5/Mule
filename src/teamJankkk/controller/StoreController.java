@@ -51,7 +51,7 @@ public class StoreController extends Main implements Initializable {
     }
 
     @FXML
-    public void goBackToMap() {
+     public void goBackToMap() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
             Pane backToMap = (Pane) loader.load();
