@@ -165,7 +165,7 @@ public class Map1Controller extends Main implements Initializable {
             image00.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile00");
         }
     }
@@ -181,7 +181,7 @@ public class Map1Controller extends Main implements Initializable {
             image01.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile01");
         }
         updateLabel();
@@ -200,7 +200,7 @@ public class Map1Controller extends Main implements Initializable {
             image02.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile02");
         }
         updateLabel();
@@ -217,7 +217,7 @@ public class Map1Controller extends Main implements Initializable {
             image03.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile03");
         }
         updateLabel();
@@ -234,7 +234,7 @@ public class Map1Controller extends Main implements Initializable {
             image04.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile04");
         }
         updateLabel();
@@ -272,7 +272,7 @@ public class Map1Controller extends Main implements Initializable {
             image10.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile10");
         }
         updateLabel();
@@ -297,7 +297,7 @@ public class Map1Controller extends Main implements Initializable {
             image11.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile11");
         }
         updateLabel();
@@ -325,7 +325,7 @@ public class Map1Controller extends Main implements Initializable {
             image12.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile12");
         }
         updateLabel();
@@ -350,7 +350,7 @@ public class Map1Controller extends Main implements Initializable {
             image13.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile13");
         }
         updateLabel();
@@ -375,7 +375,7 @@ public class Map1Controller extends Main implements Initializable {
             image14.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile14");
         }
         updateLabel();
@@ -400,7 +400,7 @@ public class Map1Controller extends Main implements Initializable {
             image20.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile20");
         }
         updateLabel();
@@ -425,7 +425,7 @@ public class Map1Controller extends Main implements Initializable {
             image21.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile21");
         }
         updateLabel();
@@ -468,7 +468,7 @@ public class Map1Controller extends Main implements Initializable {
             image23.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile23");
         }
         updateLabel();
@@ -493,7 +493,7 @@ public class Map1Controller extends Main implements Initializable {
             image24.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile24");
         }
         updateLabel();
@@ -518,7 +518,7 @@ public class Map1Controller extends Main implements Initializable {
             image30.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile30");
         }
         updateLabel();
@@ -543,7 +543,7 @@ public class Map1Controller extends Main implements Initializable {
             image31.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile31");
         }
         updateLabel();
@@ -568,7 +568,7 @@ public class Map1Controller extends Main implements Initializable {
             image32.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile32");
         }
         updateLabel();
@@ -592,7 +592,7 @@ public class Map1Controller extends Main implements Initializable {
             image33.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile33");
         }
         updateLabel();
@@ -617,7 +617,7 @@ public class Map1Controller extends Main implements Initializable {
             image34.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile34");
         }
         updateLabel();
@@ -642,7 +642,7 @@ public class Map1Controller extends Main implements Initializable {
             image40.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile40");
         }
         updateLabel();
@@ -669,7 +669,7 @@ public class Map1Controller extends Main implements Initializable {
             image41.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile41");
         }
         updateLabel();
@@ -694,7 +694,7 @@ public class Map1Controller extends Main implements Initializable {
             image42.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile42");
         }
         updateLabel();
@@ -719,7 +719,7 @@ public class Map1Controller extends Main implements Initializable {
             image43.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile43");
         }
         updateLabel();
@@ -744,7 +744,7 @@ public class Map1Controller extends Main implements Initializable {
             image44.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile44");
         }
         updateLabel();
