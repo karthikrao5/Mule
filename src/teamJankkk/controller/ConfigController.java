@@ -94,7 +94,7 @@ public class ConfigController extends Main implements Initializable {
     }
     @FXML
     void setDiff3(ActionEvent event) {
-        diffLabel.setText("Advanced");
+        diffLabel.setText("HARCORE");
         howhard = 3;
     }
     @FXML

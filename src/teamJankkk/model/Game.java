@@ -47,7 +47,8 @@ public class Game {
                     tileList.add(temp);
                 } else if ((i == 0 && j == 2) || (i == 1 && j == 1) ||
                         (i == 3 && j == 1) || (i == 4 && j == 3) ||
-                        (i == 3 && j == 4)) {
+                        (i == 3 && j == 4) || (i == 2 && (j == 0 || j == 1 ||
+                    j == 3 || j == 4))) {
 
                     Tile temp = new Tile("tile" + i + j);
                     temp.setResource("Energy");

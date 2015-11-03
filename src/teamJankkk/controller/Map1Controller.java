@@ -722,6 +722,16 @@ public class Map1Controller extends Main implements Initializable {
         }
     }
 
+    @FXML
+    public void fullOpacity(MouseEvent event) {
+        infoPane.setOpacity(1);
+    }
+
+    @FXML
+    public void halfOpacity(MouseEvent event) {
+        infoPane.setOpacity(.46);
+    }
+
     public void updateLabel() {
         turnCounterLabel1.setText(playerTURN.toString());
         turnCOUNT = game.getCurrentTurnNumber();
