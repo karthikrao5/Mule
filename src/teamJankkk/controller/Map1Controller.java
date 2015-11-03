@@ -797,7 +797,8 @@ public class Map1Controller extends Main implements Initializable {
         alert.setTitle("Random Event!!!");
         alert.setHeaderText(randoStringHeader);
         alert.setContentText(randoStringText);
-        alert.showAndWait();
+        alert.show();
+        //alert.showAndWait();
         int currentPlayerNumber2 = game.getCurrentTurnNumber();
         if (currentPlayerNumber != currentPlayerNumber2) {
             endTurn();
