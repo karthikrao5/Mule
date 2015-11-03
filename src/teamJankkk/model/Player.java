@@ -14,7 +14,6 @@ public class Player {
     private String name, race, color;
     private int money, score, food, energy, smithore, crystite;
     private List<Tile> tilesOwned = new ArrayList<Tile>();
-    private boolean hasEmptyMule;
 
     public Player(String name, String race, String color) {
         this.name = name;
@@ -26,7 +25,6 @@ public class Player {
         energy = 0;
         smithore = 0;
         crystite = 0;
-        hasEmptyMule = false;
     }
 
     public void addTilestoPlayerList(Tile tile) {
@@ -141,14 +139,6 @@ public class Player {
             }
         }
         return null;
-    }
-
-    public boolean isBoughtMule() {
-        return hasEmptyMule;
-    }
-
-    public void setIsBoughtMule(boolean bool) {
-        hasEmptyMule = bool;
     }
 
 }

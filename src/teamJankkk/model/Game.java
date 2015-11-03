@@ -72,23 +72,30 @@ public class Game {
 
 
     //====================TILE METHODS====================================
-    public boolean getPlayerIsBoughtMule() {
+    /*public boolean getPlayerIsBoughtMule() {
         return getCurrentPlayer().isBoughtMule();
-    }
+    }*/
 
-    public void setPlayerIsBoughtMule(Boolean bool) {
+    /*public void setPlayerIsBoughtMule(Boolean bool) {
         getCurrentPlayer().setIsBoughtMule(bool);
-    }
+    }*/
 
-    public void dropMule(String name) {
+    public void dropMule(String tileName) {
 
         if(playerPurchasedLand) {
-            Tile currTile = getTileFromList(name);
+            Tile currTile = getTileFromList(tileName);
             if(currTile.getTileOwner().equals(getCurrentPlayer())) {
-                if(getCurrentPlayer().isBoughtMule()
-                        && boughtMule.getOutfit().equals(currTile.getResource())) {
+                if(boughtMule.getOutfit().equals(currTile.getResource())) {
                     boughtMule.setTileThatOwnsMule(currTile);
-                    getCurrentPlayer().setIsBoughtMule(false);
+                    boughtMule.setTileThatOwnsMule(currTile);
+                    System.out.print("Player Name");
+                    System.out.println(getCurrentPlayer().getName());
+                    System.out.print("Tile Name");
+                    System.out.println(currTile.getTileName());
+                    System.out.print("Mule Outfit and Tile");
+                    System.out.println(boughtMule.getOutfit());
+                    System.out.println(boughtMule.getTileThatOwnsMule());
+                    boughtMule = null;
                 }
             }
 
@@ -99,6 +106,14 @@ public class Game {
 
     public void buyMule(String outfit) {
         boughtMule = new Mule(null, outfit);
+    }
+
+    public Mule getBoughtMule() {
+        return boughtMule;
+    }
+
+    public boolean muleExists() {
+        return (boughtMule != null);
     }
 
     public Tile getTileFromList(String name) {
