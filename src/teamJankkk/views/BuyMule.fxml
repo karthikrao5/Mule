@@ -25,12 +25,12 @@
             <Font name="American Typewriter" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="nameLabel2" layoutX="14.0" layoutY="453.0" text="Mule's Owned:" textFill="WHITE">
+      <Label fx:id="nameLabel2" layoutX="549.0" layoutY="460.0" text="Mule's Owned:" textFill="WHITE">
          <font>
             <Font name="American Typewriter" size="27.0" />
          </font>
       </Label>
-      <Label fx:id="nameLabel21" layoutX="210.0" layoutY="453.0" text="0" textFill="WHITE">
+      <Label fx:id="nameLabel21" layoutX="734.0" layoutY="460.0" text="0" textFill="WHITE">
          <font>
             <Font name="American Typewriter" size="27.0" />
          </font>
@@ -50,5 +50,10 @@
          </font>
       </Label>
       <Button fx:id="buyButton" layoutX="330.0" layoutY="403.0" mnemonicParsing="false" onAction="#buy" prefHeight="43.0" prefWidth="124.0" text="\$$ BUY $$" />
+      <Label fx:id="backLabel" layoutX="14.0" layoutY="460.0" text="&lt;&lt;&lt; BACK" textFill="WHITE" underline="true">
+         <font>
+            <Font name="American Typewriter" size="27.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

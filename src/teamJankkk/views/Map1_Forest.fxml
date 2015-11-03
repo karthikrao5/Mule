@@ -171,7 +171,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
         </GridPane>
-      <Pane fx:id="infoPane" opacity="0.46" prefHeight="129.0" prefWidth="117.0">
+      <Pane fx:id="infoPane" onMouseEntered="#fullOpacity" onMouseExited="#halfOpacity" opacity="0.46" prefHeight="129.0" prefWidth="117.0">
          <children>
                 <Label fx:id="playerName" prefHeight="18.0" prefWidth="118.0" text="PLAYER NAME" textFill="WHITE">
                     <font>

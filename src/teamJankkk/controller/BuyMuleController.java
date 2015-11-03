@@ -25,7 +25,7 @@ public class BuyMuleController extends Main implements Initializable {
     @FXML private Button buyButton;
     //@FXML private TextField nameTextField1;
     //name label 21 holds Mule Count for that player
-    @FXML private Label nameLabel21, nameLabel1;
+    @FXML private Label nameLabel21, nameLabel1, backLabel;
     @FXML private ChoiceBox<String> outfitChoiceBox;
     int onThisScreenHowManyDidYouBuy = 0;
     public static boolean hasMule;
