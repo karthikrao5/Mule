@@ -126,7 +126,14 @@ public class Map1Controller extends Main implements Initializable {
         if (timeline != null) {
             timeline.stop();
         }
-        timeSeconds = STARTTIME;
+        if (!(timeSeconds != null)) {
+            timeSeconds = STARTTIME;
+        } else if (timeSeconds <= 0) {
+            timeSeconds = STARTTIME;
+        } else {
+            timeSeconds = timeSeconds;
+        }
+
         // update timerLabel
         timerLabel.setText(timeSeconds.toString());
         timeline = new Timeline();
@@ -798,7 +805,8 @@ public class Map1Controller extends Main implements Initializable {
         alert.setTitle("Random Event!!!");
         alert.setHeaderText(randoStringHeader);
         alert.setContentText(randoStringText);
-        alert.showAndWait();
+        alert.show();
+        //alert.showAndWait();
         int currentPlayerNumber2 = game.getCurrentTurnNumber();
         if (currentPlayerNumber != currentPlayerNumber2) {
             endTurn();
