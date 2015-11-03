@@ -45,8 +45,7 @@ public class Map1Controller extends Main implements Initializable {
         image33, image34, image40, image41,
         image42, image43, image44;
     @FXML private Label turnCounterLabel1, timerLabel, playerName,
-        turnCounterLabel, playerMoney, energyLabel, smithoreLabel,
-        foodLabel, colorLabel;
+        playerMoney, energyLabel, smithoreLabel, foodLabel, colorLabel;
     @FXML private Button endTurnButton;
     @FXML private Pane infoPane;
     private final Integer STARTTIME = 60;
@@ -89,13 +88,13 @@ public class Map1Controller extends Main implements Initializable {
         endTurnButton.setOnAction(this::endTurn);
         // timerLabel.setText(timeSeconds.toString());
         timer();
-        updateColors();
 //        game.loadGameState();
     }
 
     public void passGame(Game game) {
         this.game = game;
         updateLabel();
+        updateColors();
     }
 
     @FXML
@@ -763,7 +762,7 @@ public class Map1Controller extends Main implements Initializable {
     public void updateLabel() {
         turnCounterLabel1.setText(playerTURN.toString());
         turnCOUNT = game.getCurrentTurnNumber();
-        playerName.setText(game.getCurrentPlayer().getName());
+        playerName.setText(game.getCurrentPlayer().getName().toUpperCase());
         Integer money = game.getMoney();
         Integer energy = game.getEnergy();
         Integer smithore = game.getSmithore();
