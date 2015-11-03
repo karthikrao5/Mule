@@ -96,9 +96,9 @@ public class PlayerSelect extends Main implements Initializable{
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
             } else {
-                game.createPlayer(name, 1);
-                game.setRace(race, 1);
-                game.setColor(color, 1);
+                game.createPlayer(name, race, color, 1);
+//                game.setRace(race, 1);
+//                game.setColor(color, 1);
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
                 Pane gameSumPane = (Pane) loader.load();

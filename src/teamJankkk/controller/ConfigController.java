@@ -171,33 +171,23 @@ public class ConfigController extends Main implements Initializable {
             String color2 = "Red";
             String race2 = "Packer";
 
-            if(name == null || race == null || color == null) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                //alert.initOwner(ConfigController.);
-                alert.setTitle("Empty Field");
-                alert.setHeaderText("One of the Fields has not been filled in.");
-                alert.setContentText("Please fill in all text fields.");
-                alert.showAndWait();
-            } else {
-                game.createPlayer(name, 1);
-                game.setRace(race, 1);
-                game.setColor(color, 1);
-                game.createPlayer(name2, 2);
-                game.setRace(race2, 2);
-                game.setColor(color2, 2);
+            game.createPlayer(name, race, color, 1);
+//                game.setRace(race, 1);
+//                game.setColor(color, 1);
+            game.createPlayer(name2, race2, color2, 2);
+//                game.setRace(race2, 2);
+//                game.setColor(color2, 2);
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
-                Pane screen1 = (Pane) loader.load();
-                Map1Controller controller1 = loader.<Map1Controller>getController();
-                controller1.passGame(game);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
+            Pane screen1 = (Pane) loader.load();
+            Map1Controller controller1 = loader.<Map1Controller>getController();
+            controller1.passGame(game);
 //                Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml"));
-                stage.setScene(new Scene(screen1));
-                stage.show();
+            stage.setScene(new Scene(screen1));
+            stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public static int getPlayerCount() {
