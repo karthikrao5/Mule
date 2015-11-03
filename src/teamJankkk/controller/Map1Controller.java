@@ -126,7 +126,14 @@ public class Map1Controller extends Main implements Initializable {
         if (timeline != null) {
             timeline.stop();
         }
-        timeSeconds = STARTTIME;
+        if (!(timeSeconds != null)) {
+            timeSeconds = STARTTIME;
+        } else if (timeSeconds <= 0) {
+            timeSeconds = STARTTIME;
+        } else {
+            timeSeconds = timeSeconds;
+        }
+
         // update timerLabel
         timerLabel.setText(timeSeconds.toString());
         timeline = new Timeline();
