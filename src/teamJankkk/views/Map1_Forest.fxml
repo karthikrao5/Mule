@@ -147,41 +147,6 @@
                         <InnerShadow radius="6.965" width="8.86" />
                     </effect>
                 </Button>
-                <Label fx:id="turnCounterLabel" text="1" textFill="WHITE" GridPane.rowIndex="4">
-                    <font>
-                        <Font name="American Typewriter" size="14.0" />
-                    </font>
-                    <padding>
-                        <Insets left="60.0" />
-                    </padding>
-                    <GridPane.margin>
-                        <Insets bottom="-75.0" left="35.0" />
-                    </GridPane.margin>
-                </Label>
-                <Label fx:id="turnCounterLabel2" text="Turn Count:" textFill="WHITE" GridPane.rowIndex="4">
-
-
-                    <font>
-                        <Font name="American Typewriter" size="14.0" />
-                    </font>
-                    <padding>
-                        <Insets left="10.0" />
-                    </padding>
-                    <GridPane.margin>
-                        <Insets bottom="-75.0" />
-                    </GridPane.margin>
-                </Label>
-                <Label layoutX="10.0" layoutY="496.0" text="Player:" textFill="WHITE">
-                    <font>
-                        <Font name="American Typewriter" size="14.0" />
-                    </font>
-                    <padding>
-                        <Insets left="10.0" />
-                    </padding>
-                    <GridPane.margin>
-                        <Insets top="-75.0" />
-                    </GridPane.margin>
-                </Label>
                 <Label fx:id="timerLabel" layoutX="45.0" layoutY="496.0" text="60" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="4">
                     <font>
                         <Font name="American Typewriter" size="28.0" />
@@ -189,17 +154,6 @@
                     <padding>
                         <Insets bottom="-60.0" left="110.0" />
                     </padding>
-                </Label>
-                <Label fx:id="turnCounterLabel1" layoutX="45.0" layoutY="496.0" text="1" textFill="WHITE">
-                    <font>
-                        <Font name="American Typewriter" size="14.0" />
-                    </font>
-                    <padding>
-                        <Insets left="60.0" />
-                    </padding>
-                    <GridPane.margin>
-                        <Insets left="5.0" top="-75.0" />
-                    </GridPane.margin>
                 </Label>
             </children>
             <columnConstraints>
@@ -217,6 +171,100 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
         </GridPane>
+      <Pane fx:id="infoPane" opacity="0.34" prefHeight="129.0" prefWidth="117.0">
+         <children>
+                <Label fx:id="playerName" prefHeight="18.0" prefWidth="118.0" text="PLAYER NAME" textFill="WHITE">
+                    <font>
+                        <Font name="American Typewriter" size="14.0" />
+                    </font>
+               <padding>
+                  <Insets left="1.0" />
+               </padding>
+                </Label>
+                <Label fx:id="turnCounterLabel2" layoutY="18.0" text="Turn #" textFill="WHITE">
+
+
+                    <font>
+                        <Font name="American Typewriter" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="turnCounterLabel" layoutY="18.0" prefHeight="18.0" prefWidth="67.0" text="1" textFill="WHITE">
+                    <font>
+                        <Font name="American Typewriter" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="60.0" />
+                    </padding>
+                </Label>
+            <Label fx:id="turnCounterLabel1" layoutX="-2.0" layoutY="36.0" prefHeight="18.0" prefWidth="22.0" text="\$" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="playerMoney" layoutX="11.0" layoutY="36.0" prefHeight="18.0" prefWidth="103.0" text="Player Money" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="-1.0" layoutY="59.0" prefHeight="18.0" prefWidth="103.0" text="Energy:" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="-1.0" layoutY="77.0" prefHeight="18.0" prefWidth="103.0" text="Ore:" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="-1.0" layoutY="95.0" prefHeight="18.0" prefWidth="103.0" text="Food:" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="energyLabel" layoutX="59.0" layoutY="59.0" prefHeight="18.0" prefWidth="50.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="smithoreLabel" layoutX="31.0" layoutY="77.0" prefHeight="18.0" prefWidth="40.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="foodLabel" layoutX="42.0" layoutY="95.0" prefHeight="18.0" prefWidth="69.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="American Typewriter" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </Pane>
         <!--<Label text="Player " textFill="WHITE">-->
         <!--<font>-->
         <!--<Font name="American Typewriter" size="14.0" />-->
