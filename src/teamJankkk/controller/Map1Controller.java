@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
+import teamJankkk.model.Player;
 import teamJankkk.model.PlayerDB;
 
 import java.io.IOException;
@@ -753,6 +754,33 @@ public class Map1Controller extends Main implements Initializable {
     }
 
     public void updateColors() {
+        List<Tile> tileList = game.getTileList();
+        for (Tile t : tileList) {
+            if (t.getIsClaimed()) {
+                String color = t.getTileOwner().getColor();
+                if (color.equals("Blue")) {
+                    color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
+                } else if (color.equals("Yellow")) {
+                    color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
+                } else if (color.equals("Purple")) {
+                    color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+                } else if (color.equals("Green")) {
+                    color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+                } else if (color.equals("Red")) {
+                    color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
+                }
+                setColor(t.getTileName(), color);
+                        /*image00, image01,
+                        image02, image03, image04, image10,
+                        image11, image12, image13, image14,
+                        image20, image21, image22, image23,
+                        image24, image30, image31, image32,
+                        image33, image34, image40, image41,
+                        image42, image43, image44, image50,
+                        image51, image52, image53, image54;
+                image44.setImage(new Image(color));*/
+            }
+        }
         /*List<Tile> tileList = Game.getTileList();
         for(Tile t : tileList) {
             if (t.getIsClaimed()) {
@@ -773,6 +801,57 @@ public class Map1Controller extends Main implements Initializable {
             }
         }
         */
+    }
+    public void setColor(String tileName, String color) {
+        if (tileName.equals("tile00")) {
+            image00.setImage(new Image(color));
+        } else if (tileName.equals("tile01")) {
+            image01.setImage(new Image(color));
+        } else if (tileName.equals("tile02")) {
+            image02.setImage(new Image(color));
+        } else if (tileName.equals("tile03")) {
+            image03.setImage(new Image(color));
+        } else if (tileName.equals("tile04")) {
+            image04.setImage(new Image(color));
+        } else if (tileName.equals("tile10")) {
+            image10.setImage(new Image(color));
+        } else if (tileName.equals("tile11")) {
+            image11.setImage(new Image(color));
+        } else if (tileName.equals("tile12")) {
+            image12.setImage(new Image(color));
+        } else if (tileName.equals("tile13")) {
+            image13.setImage(new Image(color));
+        } else if (tileName.equals("tile14")) {
+            image14.setImage(new Image(color));
+        } else if (tileName.equals("tile20")) {
+            image20.setImage(new Image(color));
+        } else if (tileName.equals("tile21")) {
+            image21.setImage(new Image(color));
+        } else if (tileName.equals("tile23")) {
+            image23.setImage(new Image(color));
+        } else if (tileName.equals("tile24")) {
+            image24.setImage(new Image(color));
+        } else if (tileName.equals("tile30")) {
+            image30.setImage(new Image(color));
+        } else if (tileName.equals("tile31")) {
+            image31.setImage(new Image(color));
+        } else if (tileName.equals("tile32")) {
+            image32.setImage(new Image(color));
+        } else if (tileName.equals("tile33")) {
+            image33.setImage(new Image(color));
+        } else if (tileName.equals("tile34")) {
+            image34.setImage(new Image(color));
+        } else if (tileName.equals("tile40")) {
+            image40.setImage(new Image(color));
+        } else if (tileName.equals("tile41")) {
+            image41.setImage(new Image(color));
+        } else if (tileName.equals("tile42")) {
+            image42.setImage(new Image(color));
+        } else if (tileName.equals("tile43")) {
+            image43.setImage(new Image(color));
+        } else if (tileName.equals("tile44")) {
+            image44.setImage(new Image(color));
+        }
     }
 
 //    public String updateColor(String imageName, String color) {
