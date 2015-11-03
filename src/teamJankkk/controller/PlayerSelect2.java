@@ -109,6 +109,12 @@ public class PlayerSelect2 extends Main implements Initializable{
                 alert.setHeaderText("One of the Fields has not been filled in.");
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
+            } else if (name.equals(name2)) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Matching names");
+                alert.setHeaderText("Multiple players with the same name!");
+                alert.setContentText("Please select different names for each player.");
+                alert.showAndWait();
             } else {
                 System.out.println("FIRST P COLOR: " + color);
 //                game.createPlayer(name, 1);
@@ -118,6 +124,7 @@ public class PlayerSelect2 extends Main implements Initializable{
 //                game.setRace(race, 1);
 //                game.setColor(color, 1);
 //                game.createPlayer(name2, 2);
+
                 game.createPlayer(name2, race2, color2, 2);
                 System.out.println("SECOND P COLOR: " + color2);
 //                game.setRace(race2, 2);

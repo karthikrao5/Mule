@@ -99,6 +99,13 @@ public class PlayerSelect4 extends Main implements Initializable {
                 alert.setHeaderText("One of the Fields has not been filled in.");
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
+            } else if (name.equals(name2) || name2.equals(name3) || name.equals(name3)
+                    || name.equals(name4) || name2.equals(name4) || name3.equals(name4)) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Matching names");
+                alert.setHeaderText("Multiple players with the same name!");
+                alert.setContentText("Please select different names for each player.");
+                alert.showAndWait();
             } else {
                 game.createPlayer(name, race, color, 1);
                 game.setNumberOfPlayers(4);
