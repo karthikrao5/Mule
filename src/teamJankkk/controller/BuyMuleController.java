@@ -33,6 +33,7 @@ public class BuyMuleController extends Main implements Initializable {
 
     public void passGame(Game game) {
         this.game = game;
+        updateLabel();
     }
 
     @Override
