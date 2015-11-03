@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import java.util.Random;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -102,6 +103,16 @@ public class Map1Controller extends Main implements Initializable {
         hasSelectedLand = false;
         //Game.nextTurn();
         updateLabel();
+        randomEvent();
+    }
+
+    private void endTurn() {
+        playerTURN = game.nextTurn();
+        timer();
+        hasSelectedLand = false;
+        //Game.nextTurn();
+        updateLabel();
+        randomEvent();
     }
 
     public void timer() {
@@ -126,109 +137,85 @@ public class Map1Controller extends Main implements Initializable {
                                 timeSeconds = STARTTIME;
                                 //game.nextTurn();
                                 updateLabel();
+                                endTurn();
                             }
                         }));
         timeline.playFromStart();
     }
 
+
+
+// DONT CHANGE THE MAP CLICKED METHODS OR DELETE hasSelectedLand
+
     @FXML
     public void map00Clicked(MouseEvent event) {
 
-        System.out.println("Tile00 contains: " + game.getTileFromList("tile00").getResource());
-
-        //if tile is not owned
-        System.out.println("tileIsOwned 00: " + game.isTileOwned("tile00"));
-        if(game.tileIsOwned("tile00") || !game.getIsSelectedLandInCurrentTurn()) {
-            //set owner
+        if(!game.tileIsOwned("tile00") && !hasSelectedLand) {
             game.buyTile("tile00");
-            game.setIsSelectedLandInCurrentTurn(true);
-            //change the color of the tile to match the player
+            hasSelectedLand = true;
             String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image00.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
-            if(game.getIsSelectedLandInCurrentTurn() && game.getPlayerIsBoughtMule()) {
-                game.dropMule("tile00");
-            }
+            game.dropMule("tile00");
         }
     }
 
     @FXML
     public void map01Clicked(MouseEvent event) {
-        System.out.println("Tile00 contains: " + game.getTileFromList("tile01").getResource());
-
-
-        System.out.println("tileIsOwned 01: " + game.isTileOwned("tile01"));
-        if(game.tileIsOwned("tile01") || !game.getIsSelectedLandInCurrentTurn()) {
-
+        if(!game.tileIsOwned("tile01") && !hasSelectedLand) {
             game.buyTile("tile01");
-            game.setIsSelectedLandInCurrentTurn(true);
-
+            hasSelectedLand = true;
             String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks1";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image01.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
-            if(game.getIsSelectedLandInCurrentTurn() && game.getPlayerIsBoughtMule()) {
-                game.dropMule("tile01");
-            }
+            game.dropMule("tile01");
         }
     }
 
     @FXML
     public void map02Clicked(MouseEvent event) {
-        System.out.println("Tile02 contains: " + game.getTileFromList("tile02").getResource());
 
 
-        System.out.println("tileIsOwned 02: " + game.isTileOwned("tile02"));
-        if(game.tileIsOwned("tile02") || !game.getIsSelectedLandInCurrentTurn()) {
-
+        if(!game.tileIsOwned("tile02") && !hasSelectedLand) {
             game.buyTile("tile02");
-            game.setIsSelectedLandInCurrentTurn(true);
-
+            hasSelectedLand = true;
             String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wTrees2";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
-            image01.setImage(new Image(newName));
+            image02.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
-            if(game.getIsSelectedLandInCurrentTurn() && game.getPlayerIsBoughtMule()) {
-                game.dropMule("tile02");
-            }
+            game.dropMule("tile02");
         }
     }
 
     @FXML
     public void map03Clicked(MouseEvent event) {
-        System.out.println("Tile03 contains: " + game.getTileFromList("tile03").getResource());
-
-
-        if(game.tileIsOwned("tile03")) {
+        if(!game.tileIsOwned("tile03") && !hasSelectedLand) {
             game.buyTile("tile03");
-            game.setIsSelectedLandInCurrentTurn(true);
+            hasSelectedLand = true;
             String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image03.setImage(new Image(newName));
+        } else if (hasSelectedLand) {
+            System.out.println("You have already selected land this turn, ya dingus!");
         } else {
-            if(game.getIsSelectedLandInCurrentTurn() && game.getPlayerIsBoughtMule()) {
-                game.dropMule("tile03");
-            }
+            game.dropMule("tile03");
         }
     }
 
     @FXML
     public void map04Clicked(MouseEvent event) {
-//        if(!tile04.getIsClaimed()) {
-//            tile04.setIsClaimed(true);
-//            tile04.setOwner();
-//            System.out.println(tile04.getIsClaimed());
-//            System.out.println();
-//            image04.setImage(new Image(updateColor()));
-//            endTurn();
-//        } else {
-//            System.out.println("Player has already claimed this land");
-//        }
         if(!game.tileIsOwned("tile04") && !hasSelectedLand) {
             game.buyTile("tile04");
             hasSelectedLand = true;
@@ -241,6 +228,17 @@ public class Map1Controller extends Main implements Initializable {
         } else {
             game.dropMule("tile04");
         }
+
+//        if(!tile04.getIsClaimed()) {
+//            tile04.setIsClaimed(true);
+//            tile04.setOwner();
+//            System.out.println(tile04.getIsClaimed());
+//            System.out.println();
+//            image04.setImage(new Image(updateColor()));
+//            endTurn();
+//        } else {
+//            System.out.println("Player has already claimed this land");
+//        }
     }
 
     @FXML
@@ -725,6 +723,33 @@ public class Map1Controller extends Main implements Initializable {
         turnCOUNT = game.getCurrentTurnNumber();
         turnCounterLabel.setText(turnCOUNT.toString());
         //newLabel.setTet(mode);
+    }
+
+    public void randomEvent() {
+        int currentPlayerNumber = game.getCurrentTurnNumber();
+        int curPlayRank = game.currentPlayerRank();
+        String randoStringHeader = "";
+        String randoStringText = "";
+        Random random = new Random();
+        String[] theRandomEventString;
+        int randomNumber;
+        if (curPlayRank >= 1) {
+            randomNumber = random.nextInt(6);
+        } else {
+            randomNumber = random.nextInt(3) + 3;
+        }
+        theRandomEventString = game.getRandomEvent(randomNumber);
+        randoStringHeader = theRandomEventString[0];
+        randoStringText = theRandomEventString[1];
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Random Event!!!");
+        alert.setHeaderText(randoStringHeader);
+        alert.setContentText(randoStringText);
+        alert.showAndWait();
+        int currentPlayerNumber2 = game.getCurrentTurnNumber();
+        if (currentPlayerNumber != currentPlayerNumber2) {
+            endTurn();
+        }
     }
 
     public void updateColors() {

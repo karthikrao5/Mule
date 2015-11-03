@@ -197,7 +197,6 @@ public class Game {
         calculateProduction();
     }
 
-
     public int getCurrentTurnNumber() {
         return currentTurn;
     }
@@ -215,8 +214,6 @@ public class Game {
     public int getNumberOfPlayers() {
         return numberOfPlayers;
     }
-
-
 
     public void saveGameState() {
         for (int i = 0; i < tileList.size(); i++) {
@@ -359,6 +356,51 @@ public class Game {
         return marketTotal;
         //returns an arraylist so AuctionHouseController
         //can display the market totals in labels
+    }
+
+    public int currentPlayerRank() {
+        int thisPlayazScore = getCurrentPlayer().getScore();
+        int returnRank = 0;
+        for (int i = 1; i == numberOfPlayers; i++) {
+            if (database.getPlayer(i).getScore() <= thisPlayazScore) {
+                returnRank++;
+            }
+        }
+        return returnRank;
+    }
+
+    public String[] getRandomEvent(int number) {
+        String[] theRandomEvent = new String[2];
+        if (number == 0) {
+            theRandomEvent[0] = "OH CRAP A ROBBER";
+            theRandomEvent[1] = "Minus 100 cash, like stealing money from a baby!";
+            getCurrentPlayer().subtractMoney(100);
+        } else if (number == 1) {
+            theRandomEvent[0] = "YOU SUCK";
+            theRandomEvent[1] = "NO MORE CRYSTITE FOR YOU";
+            getCurrentPlayer().subtractCrystite(100);
+        } else if (number == 2) {
+            theRandomEvent[0] = "YOUR TURN IS OVER";
+            theRandomEvent[1] = "LOSERRRRR";
+            int BITXCH = nextTurn();
+        } else if (number == 3) {
+            theRandomEvent[0] = "Just incase you were tired...";
+            theRandomEvent[1] = "HAVE FUNERGY!!!!";
+            getCurrentPlayer().addEnergy(100);
+        } else if (number == 4) {
+            theRandomEvent[0] = "WE HAVE SOLVED WORLD HUNGER";
+            theRandomEvent[1] = "HERES SOME FREE FOOD";
+            getCurrentPlayer().addFood(100);
+        } else if (number == 5) {
+            theRandomEvent[0] = "NEW SMITHORE!!!";
+            theRandomEvent[1] = "HERES 100 FREE SMITHORE LUCKY DAY";
+            getCurrentPlayer().addSmithore(100);
+        } else if (number == 6) {
+            theRandomEvent[0] = "NEW MONEY!";
+            theRandomEvent[1] = "HERES 100 FREE CASH!!";
+            getCurrentPlayer().addMoney(100);
+        }
+        return theRandomEvent;
     }
 
     public void calculateProduction() {

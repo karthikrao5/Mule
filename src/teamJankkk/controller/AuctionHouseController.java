@@ -38,6 +38,7 @@ public class AuctionHouseController extends Main implements Initializable {
     @FXML private TextField smithoreTextField;
     @FXML private TextField buyEnergy;
     @FXML private TextField buyFood;
+    @FXML private TextField buySmithore;
 
     @FXML private TextField sellSmithore;
     @FXML private TextField sellEnergy;
@@ -75,6 +76,7 @@ public class AuctionHouseController extends Main implements Initializable {
 
     public void passGame(Game game) {
         this.game = game;
+        updateMarketAndLabels();
         updateLabels();
     }
 
@@ -102,12 +104,12 @@ public class AuctionHouseController extends Main implements Initializable {
         currentResourceAmount = 0;
         currentMoney = 0;
         amountToBuy = 0;
-        
-        if (smithoreTextField.getText().length() > 0) {
+        updateMarketAndLabels();
+        if (buySmithore.getText().length() > 0) {
             
             currentResourceAmount = game.getSmithore();
             currentMoney = game.getMoney();
-            amountToBuy = Integer.parseInt(smithoreTextField.getText());
+            amountToBuy = Integer.parseInt(buySmithore.getText());
             if (amountToBuy > currentMoney) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
@@ -197,7 +199,7 @@ public class AuctionHouseController extends Main implements Initializable {
                 game.addMoney(theyWannaSell);
             }
         }
-        updateMarketAndLabels();
+
     }
 
     public void updateLabels() {
