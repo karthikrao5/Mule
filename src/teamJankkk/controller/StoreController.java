@@ -33,6 +33,7 @@ public class StoreController extends Main implements Initializable {
             //, smithoreTile, energyTile, foodTile;
 
     @FXML private Label moneyLabel, goBackLabel, playerLabel;
+    @FXML private Button saveButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -121,6 +122,11 @@ public class StoreController extends Main implements Initializable {
 
     public void foodTileClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
+    }
+
+    @FXML
+    public void saveGame(ActionEvent event) {
+        // SMOKE KUSH
     }
 
 }

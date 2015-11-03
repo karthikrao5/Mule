@@ -190,6 +190,11 @@ public class ConfigController extends Main implements Initializable {
             }
     }
 
+    @FXML
+    public void loadGame(ActionEvent event) {
+        // SMOKE KUSH
+    }
+
     public static int getPlayerCount() {
         return players;
     }
