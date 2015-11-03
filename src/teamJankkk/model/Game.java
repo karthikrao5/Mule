@@ -361,11 +361,13 @@ public class Game {
     public int currentPlayerRank() {
         int thisPlayazScore = getCurrentPlayer().getScore();
         int returnRank = 0;
-        for (int i = 1; i == numberOfPlayers; i++) {
-            if (database.getPlayer(i).getScore() <= thisPlayazScore) {
+
+        for(Player p : database.keySet()) {
+            if(p.getScore() <= getCurrentPlayer().getScore()) {
                 returnRank++;
             }
         }
+        
         return returnRank;
     }
 
