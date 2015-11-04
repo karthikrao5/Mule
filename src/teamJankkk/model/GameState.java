@@ -18,7 +18,6 @@ public class GameState {
         this.game = game;
 
         Gson object = new Gson();
-        Player p = new Player("Kmoney", "jenktron", "blue");
-        System.out.println(object.toJson(p));
+        System.out.println(object.toJson(game));
     }
 }

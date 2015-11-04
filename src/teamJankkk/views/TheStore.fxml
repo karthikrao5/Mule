@@ -82,7 +82,7 @@
             <Font name="AppleMyungjo Regular" size="19.0" />
          </font>
       </Label>
-      <Button fx:id="saveButton" layoutX="639.0" layoutY="434.0" mnemonicParsing="false" onAction="#saveGame" prefHeight="51.0" prefWidth="124.0" style="-fx-background-color: #b7d7ff;" text="Save Game">
+      <Button fx:id="saveButton" layoutX="639.0" layoutY="434.0" mnemonicParsing="false" onMouseClicked="#saveGame" prefHeight="51.0" prefWidth="124.0" style="-fx-background-color: #b7d7ff;" text="Save Game">
          <font>
             <Font size="17.0" />
          </font>

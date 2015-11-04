@@ -1,16 +1,20 @@
 package teamJankkk.model;
 
+import com.google.gson.GsonBuilder;
 import teamJankkk.controller.BuyMuleController;
 import teamJankkk.controller.ConfigController;
 import teamJankkk.controller.Map1Controller;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.*;
+import com.google.gson.Gson;
+
 
 /**
  * Created by karthik on 9/23/15.
  */
-public class Game {
+public class Game implements Serializable{
 
 //    PlayerDB database;
     Mule boughtMule;
@@ -28,6 +32,7 @@ public class Game {
     int tempCurrentPlayer = 1;
     List<Tile> tempTileList = new ArrayList<>();
     private HashMap<Integer, Player> database;
+
 
     public Game() {
 //        database = new PlayerDB();
@@ -229,7 +234,6 @@ public class Game {
                 return p.getValue();
             }
         }
-//        return database.get(currentPlayer);
         return null;
     }
 
@@ -238,14 +242,6 @@ public class Game {
     }
 
     public void saveGameState() {
-        GameState state = new GameState();
-        state.saveGame(this);
-//        for (int i = 0; i < tileList.size(); i++) {
-//            tempTileList.add(tileList.get(i));
-//        }
-//        tempCurrentPlayer = currentPlayer;
-//        tempCurrentTurn = currentTurn;
-//        tempNumberOfPlayers = numberOfPlayers;
 
     }
 
@@ -290,6 +286,13 @@ public class Game {
 //        }
         return getCurrentPlayer().getColor();
 //        return database.get(currentPlayer).getColor();
+    }
+
+    public String getName() {
+        return getCurrentPlayer().getName();
+    }
+    public String getRace() {
+        return getCurrentPlayer().getRace();
     }
 
 

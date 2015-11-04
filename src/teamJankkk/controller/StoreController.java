@@ -40,6 +40,7 @@ public class StoreController extends Main implements Initializable {
         thePub.setOnMouseClicked(this::thePubClicked);
         auctionHouse.setOnMouseClicked(this::theAuctionHouseClicked);
         muleStore.setOnMouseClicked(this::muleStoreClicked);
+        saveButton.setOnMouseClicked(this::saveGame);
         //smithoreTile.setOnMouseClicked((this::smithOreClicked));
         //energyTile.setOnMouseClicked((this::energyTileClicked));
         //foodTile.setOnMouseClicked(this::foodTileClicked);
@@ -125,8 +126,8 @@ public class StoreController extends Main implements Initializable {
     }
 
     @FXML
-    public void saveGame(ActionEvent event) {
-        // SMOKE KUSH
+    public void saveGame(MouseEvent event) {
+        game.saveGameState();
     }
 
 }

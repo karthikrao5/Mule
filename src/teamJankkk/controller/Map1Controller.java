@@ -443,7 +443,6 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map22Clicked(MouseEvent event) {
         System.out.println("Enter Store");
-        game.saveGameState();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/TheStore.fxml"));
             Pane screen3 = (Pane) loader.load();
