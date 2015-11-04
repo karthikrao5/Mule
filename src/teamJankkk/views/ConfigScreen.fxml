@@ -27,6 +27,11 @@
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Button>
+                  <Button fx:id="Hard" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" onAction="#setDiff3" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #030303;" text="\\m/    HARDCORE   \m/" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
           </children>
         </VBox>
         <VBox prefHeight="200.0" prefWidth="200.0">
@@ -106,5 +111,10 @@
            <Font name="System Bold" size="17.0" />
        </font>
    </Button>
+      <Button fx:id="loadButton" layoutX="635.0" layoutY="434.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="34.0" prefWidth="131.0" style="-fx-background-color: #378bff;" text="Load Game" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
   </children>
 </AnchorPane>

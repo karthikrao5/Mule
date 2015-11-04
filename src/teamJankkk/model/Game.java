@@ -1,20 +1,22 @@
 package teamJankkk.model;
 
+import com.google.gson.GsonBuilder;
 import teamJankkk.controller.BuyMuleController;
 import teamJankkk.controller.ConfigController;
 import teamJankkk.controller.Map1Controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.*;
+import com.google.gson.Gson;
+
 
 /**
  * Created by karthik on 9/23/15.
  */
-public class Game {
+public class Game implements Serializable{
 
-    PlayerDB database;
+//    PlayerDB database;
     Mule boughtMule;
     int currentTurn = 0;
     int numberOfPlayers = 0;
@@ -29,10 +31,12 @@ public class Game {
     int tempNumberOfPlayers = 0;
     int tempCurrentPlayer = 1;
     List<Tile> tempTileList = new ArrayList<>();
+    private HashMap<Integer, Player> database;
 
 
     public Game() {
-        database = new PlayerDB();
+//        database = new PlayerDB();
+        database = new HashMap<>();
         rand = new Random();
         //x axis is i
         //y axis is j
@@ -48,7 +52,8 @@ public class Game {
                     tileList.add(temp);
                 } else if ((i == 0 && j == 2) || (i == 1 && j == 1) ||
                         (i == 3 && j == 1) || (i == 4 && j == 3) ||
-                        (i == 3 && j == 4)) {
+                        (i == 3 && j == 4) || (i == 2 && (j == 0 || j == 1 ||
+                    j == 3 || j == 4))) {
 
                     Tile temp = new Tile("tile" + i + j);
                     temp.setResource("Energy");
@@ -72,33 +77,53 @@ public class Game {
 
 
     //====================TILE METHODS====================================
-    public boolean getPlayerIsBoughtMule() {
+    /*public boolean getPlayerIsBoughtMule() {
         return getCurrentPlayer().isBoughtMule();
-    }
+    }*/
 
-    public void setPlayerIsBoughtMule(Boolean bool) {
+    /*public void setPlayerIsBoughtMule(Boolean bool) {
         getCurrentPlayer().setIsBoughtMule(bool);
-    }
+    }*/
 
-    public void dropMule(String name) {
-
-        if(playerPurchasedLand) {
-            Tile currTile = getTileFromList(name);
-            if(currTile.getTileOwner().equals(getCurrentPlayer())) {
-                if(getCurrentPlayer().isBoughtMule()
-                        && boughtMule.getOutfit().equals(currTile.getResource())) {
+    public void dropMule(String tileName) {
+        Tile currTile = getTileFromList(tileName);
+        if (currTile.getTileOwner().getName().equals(getCurrentPlayer().getName())) {
+                if (boughtMule.getOutfit().equals(currTile.getResource())) {
                     boughtMule.setTileThatOwnsMule(currTile);
-                    getCurrentPlayer().setIsBoughtMule(false);
+                    boughtMule.setTileThatOwnsMule(currTile);
+                    System.out.print("Player Name");
+                    System.out.println(getCurrentPlayer().getName());
+                    System.out.print("Tile Name");
+                    System.out.println(currTile.getTileName());
+                    System.out.print("Mule Outfit and Tile");
+                    System.out.println(boughtMule.getOutfit());
+                    System.out.println(boughtMule.getTileThatOwnsMule());
+                    boughtMule = null;
                 }
-            }
-
+        } else if (!(boughtMule != null)) {
+            System.out.println("No mule in Game");
         } else {
-            System.out.println("You do not have a mule purchased.");
+            System.out.println("Current mule type");
+            System.out.println(boughtMule.getOutfit());
+            System.out.println("Current tile type");
+            System.out.println(currTile.getResource());
+            System.out.println("True or False, the resources are the same:" + boughtMule.getOutfit().equals(currTile.getResource()));
+            System.out.println(currTile.getTileOwner().getName());
+            System.out.println(getCurrentPlayer().getName());
+            System.out.println("True or False, the players are the same:" + currTile.getTileOwner().getName().equals(getCurrentPlayer().getName()));
         }
     }
 
     public void buyMule(String outfit) {
         boughtMule = new Mule(null, outfit);
+    }
+
+    public Mule getBoughtMule() {
+        return boughtMule;
+    }
+
+    public boolean muleExists() {
+        return (boughtMule != null);
     }
 
     public Tile getTileFromList(String name) {
@@ -150,7 +175,7 @@ public class Game {
     }
 
     public boolean isTileOwned(String tileName) {
-        for(Tile t : database.getPlayer(currentPlayer).getTileList()) {
+        for(Tile t : getCurrentPlayer().getTileList()) {
             if(t.getTileName().equals(tileName)) {
                 return true;
             }
@@ -180,7 +205,8 @@ public class Game {
         currentTurn++;
         //Map1Controller.timer();
         playerPurchasedLand = false;
-
+        System.out.println("currentPlayer in game.nextTurn "+currentPlayer);
+        System.out.println("numberOfPLayers "+numberOfPlayers);
         if (currentPlayer >= numberOfPlayers) {
             currentPlayer = 1;
         } else {
@@ -203,7 +229,12 @@ public class Game {
     }
 
     public Player getCurrentPlayer() {
-        return database.getPlayer(currentPlayer);
+        for(Map.Entry<Integer, Player> p : database.entrySet()) {
+            if(p.getKey().compareTo(currentPlayer) == 0) {
+                return p.getValue();
+            }
+        }
+        return null;
     }
 
     public int getNumberOfPlayers() {
@@ -211,34 +242,57 @@ public class Game {
     }
 
     public void saveGameState() {
-        for (int i = 0; i < tileList.size(); i++) {
-            tempTileList.add(tileList.get(i));
-        }
-        tempCurrentPlayer = currentPlayer;
-        tempCurrentTurn = currentTurn;
-        tempNumberOfPlayers = numberOfPlayers;
 
     }
 
     public void loadGameState() {
-        for (int i = 0; i < tempTileList.size(); i++) {
-            tileList.add(tempTileList.get(i));
-        }
-        currentPlayer = tempCurrentPlayer;
-        currentTurn = tempCurrentTurn;
-        numberOfPlayers = tempNumberOfPlayers;
+//        for (int i = 0; i < tempTileList.size(); i++) {
+//            tileList.add(tempTileList.get(i));
+//        }
+//        currentPlayer = tempCurrentPlayer;
+//        currentTurn = tempCurrentTurn;
+//        numberOfPlayers = tempNumberOfPlayers;
     }
 
-    public void createPlayer(String name, int index) {
-        database.createPlayer(name, index);
+//    private Set<Map.Entry<Player, Integer>> getEntrySet() {
+//        return database.entrySet();
+//    }
+
+    public void createPlayer(String name, String race, String color, int index) {
+//        database.add(index, new Player(name, null, null));
+        database.put(index, new Player(name, race, color));
+//        for(Player p : database.keySet()) {
+//            System.out.println(p.getColor());
+//        }
     }
 
     public void setRace(String name, int index) {
-        database.setRace(name, index);
+        getCurrentPlayer().setRace(name);
+//        database.get(index).setRace(name);
+//        database.setRace(name, index);
     }
 
     public void setColor(String name, int index) {
-        database.setColor(name, index);
+        getCurrentPlayer().setColor(name);
+//        database.get(index).setColor(name);
+//        database.setColor(name, index);
+    }
+
+    public String getColor() {
+//        for(Player p : database.values()) {
+//            System.out.println("Player name: " + p.getName()
+//                    + "\n player color: " + p.getColor()
+//                    + "\n player race: " + p.getRace());
+//        }
+        return getCurrentPlayer().getColor();
+//        return database.get(currentPlayer).getColor();
+    }
+
+    public String getName() {
+        return getCurrentPlayer().getName();
+    }
+    public String getRace() {
+        return getCurrentPlayer().getRace();
     }
 
 
@@ -246,19 +300,22 @@ public class Game {
 
 
     public int getMoney() {
-        return database.getPlayer(currentPlayer).getMoney();
+        return getCurrentPlayer().getMoney();
+//        return database.get(currentPlayer).getMoney();
     }
 
     public int getEnergy() {
-        return database.getPlayer(currentPlayer).getEnergy();
+        return getCurrentPlayer().getEnergy();
     }
 
     public int getFood() {
-        return database.getPlayer(currentPlayer).getFood();
+        return getCurrentPlayer().getFood();
+//        return database.get(currentPlayer).getFood();
     }
 
     public int getSmithore() {
-        return database.getPlayer(currentPlayer).getSmithore();
+        return getCurrentPlayer().getSmithore();
+//        return database.get(currentPlayer).getSmithore();
 
     }
 
@@ -266,9 +323,6 @@ public class Game {
 //        return database.getPlayer(index);
 //    }
 
-    public String getColor() {
-        return database.getPlayer(currentPlayer).getColor();
-    }
 
 //    public int getMoney(int index) {
 //        return database.getPlayer(index).getMoney();
@@ -276,34 +330,42 @@ public class Game {
 
 
     public void addEnergy(int amount) {
-        database.getPlayer(currentPlayer).addEnergy(amount);
+        getCurrentPlayer().addEnergy(amount);
+//        database.get(currentPlayer).addEnergy(amount);
     }
 
     public void addSmithore(int amount) {
-        database.getPlayer(currentPlayer).addSmithore(amount);
+        getCurrentPlayer().addSmithore(amount);
+//        database.get(currentPlayer).addSmithore(amount);
     }
 
     public void addFood(int amount) {
-        database.getPlayer(currentPlayer).addFood(amount);
+        getCurrentPlayer().addFood(amount);
+//        database.get(currentPlayer).addFood(amount);
     }
 
     public void addMoney(int amount) {
-        database.getPlayer(currentPlayer).addMoney(amount);
+        getCurrentPlayer().addMoney(amount);
+//        database.get(currentPlayer).addMoney(amount);
     }
 
     public void subtractMoney(int amount) {
-        database.getPlayer(currentPlayer).subtractMoney(amount);
+        getCurrentPlayer().subtractMoney(amount);
+//        database.get(currentPlayer).subtractMoney(amount);
     }
 
     public void subtractEnergy(int amount) {
-        database.getPlayer(currentPlayer).subtractEnergy(amount);
+        getCurrentPlayer().subtractEnergy(amount);
+//        database.get(currentPlayer).subtractEnergy(amount);
     }
 
     public void subtractSmithore(int amount) {
-        database.getPlayer(currentPlayer).subtractSmithore(amount);
+        getCurrentPlayer().subtractSmithore(amount);
+//        database.get(currentPlayer).subtractSmithore(amount);
     }
     public void subtractFood(int amount) {
-        database.getPlayer(currentPlayer).subtractFood(amount);
+        getCurrentPlayer().subtractFood(amount);
+//        database.get(currentPlayer).subtractFood(amount);
     }
 
 
@@ -316,7 +378,7 @@ public class Game {
         int totalFood = 0;
         int totalMoney = 0;
 
-        for(Player p : database.dbKeySet()) {
+        for(Player p : database.values()) {
             totalSmithore += p.getSmithore();
             totalEnergy += p.getEnergy();
             totalFood += p.getFood();
@@ -334,11 +396,13 @@ public class Game {
     public int currentPlayerRank() {
         int thisPlayazScore = getCurrentPlayer().getScore();
         int returnRank = 0;
-        for (int i = 1; i == numberOfPlayers; i++) {
-            if (database.getPlayer(i).getScore() <= thisPlayazScore) {
+
+        for(Player p : database.values()) {
+            if(p.getScore() <= getCurrentPlayer().getScore()) {
                 returnRank++;
             }
         }
+        
         return returnRank;
     }
 
@@ -377,7 +441,7 @@ public class Game {
     }
 
     public void calculateProduction() {
-        for(Player p : database.dbKeySet()) {
+        for(Player p : database.values()) {
             for(Tile t : p.getTileList()) {
                 if (!t.getIsInstalled()) {
                     System.out.println("Land piece isn't Installed");

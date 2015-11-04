@@ -99,19 +99,28 @@ public class PlayerSelect4 extends Main implements Initializable {
                 alert.setHeaderText("One of the Fields has not been filled in.");
                 alert.setContentText("Please fill in all text fields.");
                 alert.showAndWait();
+            } else if (name.equals(name2) || name2.equals(name3) || name.equals(name3)
+                    || name.equals(name4) || name2.equals(name4) || name3.equals(name4)) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Matching names");
+                alert.setHeaderText("Multiple players with the same name!");
+                alert.setContentText("Please select different names for each player.");
+                alert.showAndWait();
             } else {
-                game.createPlayer(name, 1);
-                game.setRace(race, 1);
-                game.setColor(color, 1);
-                game.createPlayer(name2, 2);
-                game.setRace(race2, 2);
-                game.setColor(color2, 2);
-                game.createPlayer(name3, 3);
-                game.setRace(race3, 3);
-                game.setColor(color3, 3);
-                game.createPlayer(name4, 4);
-                game.setRace(race4, 4);
-                game.setColor(color4, 4);
+                game.createPlayer(name, race, color, 1);
+                game.setNumberOfPlayers(4);
+
+//                game.setRace(race, 1);
+//                game.setColor(color, 1);
+                game.createPlayer(name2, race2, color2, 2);
+//                game.setRace(race2, 2);
+//                game.setColor(color2, 2);
+                game.createPlayer(name3, race3, color3, 3);
+//                game.setRace(race3, 3);
+//                game.setColor(color3, 3);
+                game.createPlayer(name4, race4, color3, 4);
+//                game.setRace(race4, 4);
+//                game.setColor(color4, 4);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
                 Pane screen1 = (Pane) loader.load();
                 Map1Controller controller1 = loader.<Map1Controller>getController();

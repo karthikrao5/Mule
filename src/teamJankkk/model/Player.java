@@ -1,5 +1,6 @@
 package teamJankkk.model;
 
+import com.google.gson.annotations.Expose;
 import teamJankkk.controller.BuyMuleController;
 
 import java.io.Serializable;
@@ -11,10 +12,17 @@ import java.util.ArrayList;
  * Created by karthik on 9/21/15.
  */
 public class Player {
-    private String name, race, color;
-    private int money, score, food, energy, smithore, crystite;
-    private List<Tile> tilesOwned = new ArrayList<Tile>();
-    private boolean hasEmptyMule;
+
+    @Expose private String name;
+    @Expose private String race;
+    @Expose private String color;
+    @Expose private int money;
+    @Expose private int score;
+    @Expose private int food;
+    @Expose private int energy;
+    @Expose private int smithore;
+    @Expose private int crystite;
+    @Expose private List<Tile> tilesOwned = new ArrayList<Tile>();
 
     public Player(String name, String race, String color) {
         this.name = name;
@@ -26,7 +34,6 @@ public class Player {
         energy = 0;
         smithore = 0;
         crystite = 0;
-        hasEmptyMule = false;
     }
 
     public void addTilestoPlayerList(Tile tile) {
@@ -141,14 +148,6 @@ public class Player {
             }
         }
         return null;
-    }
-
-    public boolean isBoughtMule() {
-        return hasEmptyMule;
-    }
-
-    public void setIsBoughtMule(boolean bool) {
-        hasEmptyMule = bool;
     }
 
 }

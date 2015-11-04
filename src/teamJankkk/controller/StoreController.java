@@ -33,12 +33,14 @@ public class StoreController extends Main implements Initializable {
             //, smithoreTile, energyTile, foodTile;
 
     @FXML private Label moneyLabel, goBackLabel, playerLabel;
+    @FXML private Button saveButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         thePub.setOnMouseClicked(this::thePubClicked);
         auctionHouse.setOnMouseClicked(this::theAuctionHouseClicked);
         muleStore.setOnMouseClicked(this::muleStoreClicked);
+        saveButton.setOnMouseClicked(this::saveGame);
         //smithoreTile.setOnMouseClicked((this::smithOreClicked));
         //energyTile.setOnMouseClicked((this::energyTileClicked));
         //foodTile.setOnMouseClicked(this::foodTileClicked);
@@ -51,7 +53,7 @@ public class StoreController extends Main implements Initializable {
     }
 
     @FXML
-    public void goBackToMap() {
+     public void goBackToMap() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
             Pane backToMap = (Pane) loader.load();
@@ -121,6 +123,11 @@ public class StoreController extends Main implements Initializable {
 
     public void foodTileClicked(MouseEvent event) {
         System.out.println("The Pub was clicked");
+    }
+
+    @FXML
+    public void saveGame(MouseEvent event) {
+        game.saveGameState();
     }
 
 }

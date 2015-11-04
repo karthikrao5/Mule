@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
+import teamJankkk.model.Player;
 import teamJankkk.model.PlayerDB;
 
 import java.io.IOException;
@@ -37,17 +38,16 @@ import java.util.ResourceBundle;
 public class Map1Controller extends Main implements Initializable {
 
     @FXML private ImageView image00, image01,
-         image02, image03, image04, image10,
-         image11, image12, image13, image14,
-         image20, image21, image22, image23,
-         image24, image30, image31, image32,
-         image33, image34, image40, image41,
-         image42, image43, image44, image50,
-         image51, image52, image53, image54;
-    @FXML private Label turnCounterLabel1;
-    @FXML private Label timerLabel;
-    @FXML private Label turnCounterLabel;
+        image02, image03, image04, image10,
+        image11, image12, image13, image14,
+        image20, image21, image22, image23,
+        image24, image30, image31, image32,
+        image33, image34, image40, image41,
+        image42, image43, image44;
+    @FXML private Label turnCounterLabel1, timerLabel, playerName,
+        playerMoney, energyLabel, smithoreLabel, foodLabel, colorLabel;
     @FXML private Button endTurnButton;
+    @FXML private Pane infoPane;
     private final Integer STARTTIME = 60;
     private Integer timeSeconds = STARTTIME;
     private Integer playerTURN = 1;
@@ -88,22 +88,27 @@ public class Map1Controller extends Main implements Initializable {
         endTurnButton.setOnAction(this::endTurn);
         // timerLabel.setText(timeSeconds.toString());
         timer();
-        updateColors();
 //        game.loadGameState();
     }
 
     public void passGame(Game game) {
         this.game = game;
+        updateLabel();
+        updateColors();
     }
 
     @FXML
     private void endTurn(ActionEvent event) {
+        System.out.println("Turn counter before end turn: "+game.getCurrentTurnNumber());
+        System.out.println("PLayer before endturn: "+game.getCurrentPlayer().getName());
         playerTURN = game.nextTurn();
+        System.out.println("PLayer after endturn: "+game.getCurrentPlayer().getName());
+        System.out.println("Turn counter after end turn: "+game.getCurrentTurnNumber());
         timer();
         hasSelectedLand = false;
         //Game.nextTurn();
-        updateLabel();
         randomEvent();
+        updateLabel();
     }
 
     private void endTurn() {
@@ -113,6 +118,7 @@ public class Map1Controller extends Main implements Initializable {
         //Game.nextTurn();
         updateLabel();
         randomEvent();
+        updateLabel();
     }
 
     public void timer() {
@@ -120,7 +126,14 @@ public class Map1Controller extends Main implements Initializable {
         if (timeline != null) {
             timeline.stop();
         }
-        timeSeconds = STARTTIME;
+        if (!(timeSeconds != null)) {
+            timeSeconds = STARTTIME;
+        } else if (timeSeconds <= 0) {
+            timeSeconds = STARTTIME;
+        } else {
+            timeSeconds = timeSeconds;
+        }
+
         // update timerLabel
         timerLabel.setText(timeSeconds.toString());
         timeline = new Timeline();
@@ -159,7 +172,7 @@ public class Map1Controller extends Main implements Initializable {
             image00.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile00");
         }
     }
@@ -175,9 +188,10 @@ public class Map1Controller extends Main implements Initializable {
             image01.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile01");
         }
+        updateLabel();
     }
 
     @FXML
@@ -193,9 +207,10 @@ public class Map1Controller extends Main implements Initializable {
             image02.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile02");
         }
+        updateLabel();
     }
 
     @FXML
@@ -209,9 +224,10 @@ public class Map1Controller extends Main implements Initializable {
             image03.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile03");
         }
+        updateLabel();
     }
 
     @FXML
@@ -225,9 +241,10 @@ public class Map1Controller extends Main implements Initializable {
             image04.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile04");
         }
+        updateLabel();
 
 //        if(!tile04.getIsClaimed()) {
 //            tile04.setIsClaimed(true);
@@ -262,9 +279,10 @@ public class Map1Controller extends Main implements Initializable {
             image10.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile10");
         }
+        updateLabel();
     }
 
     @FXML
@@ -286,9 +304,10 @@ public class Map1Controller extends Main implements Initializable {
             image11.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile11");
         }
+        updateLabel();
     }
 
     @FXML
@@ -306,13 +325,17 @@ public class Map1Controller extends Main implements Initializable {
             hasSelectedLand = true;
             String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks4";
+            System.out.println(color);
+            System.out.println(imageName);
+            System.out.println(color.toUpperCase());
             String newName = imageName + "_" + color.toUpperCase() + ".png";
             image12.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile12");
         }
+        updateLabel();
     }
 
     @FXML
@@ -334,9 +357,10 @@ public class Map1Controller extends Main implements Initializable {
             image13.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile13");
         }
+        updateLabel();
     }
 
     @FXML
@@ -358,9 +382,10 @@ public class Map1Controller extends Main implements Initializable {
             image14.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile14");
         }
+        updateLabel();
     }
 
     @FXML
@@ -382,9 +407,10 @@ public class Map1Controller extends Main implements Initializable {
             image20.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile20");
         }
+        updateLabel();
     }
 
     @FXML
@@ -406,9 +432,10 @@ public class Map1Controller extends Main implements Initializable {
             image21.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile21");
         }
+        updateLabel();
     }
 
 
@@ -416,7 +443,6 @@ public class Map1Controller extends Main implements Initializable {
     @FXML
     public void map22Clicked(MouseEvent event) {
         System.out.println("Enter Store");
-        game.saveGameState();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/TheStore.fxml"));
             Pane screen3 = (Pane) loader.load();
@@ -448,9 +474,10 @@ public class Map1Controller extends Main implements Initializable {
             image23.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile23");
         }
+        updateLabel();
     }
 
     @FXML
@@ -472,9 +499,10 @@ public class Map1Controller extends Main implements Initializable {
             image24.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile24");
         }
+        updateLabel();
     }
 
     @FXML
@@ -496,9 +524,10 @@ public class Map1Controller extends Main implements Initializable {
             image30.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile30");
         }
+        updateLabel();
     }
 
     @FXML
@@ -520,9 +549,10 @@ public class Map1Controller extends Main implements Initializable {
             image31.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile31");
         }
+        updateLabel();
     }
 
     @FXML
@@ -544,9 +574,10 @@ public class Map1Controller extends Main implements Initializable {
             image32.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile32");
         }
+        updateLabel();
     }
     @FXML
     public void map33Clicked(MouseEvent event) {
@@ -567,9 +598,10 @@ public class Map1Controller extends Main implements Initializable {
             image33.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile33");
         }
+        updateLabel();
     }
 
     @FXML
@@ -591,9 +623,10 @@ public class Map1Controller extends Main implements Initializable {
             image34.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile34");
         }
+        updateLabel();
     }
 
     @FXML
@@ -615,9 +648,10 @@ public class Map1Controller extends Main implements Initializable {
             image40.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile40");
         }
+        updateLabel();
     }
 
     @FXML
@@ -641,9 +675,10 @@ public class Map1Controller extends Main implements Initializable {
             image41.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile41");
         }
+        updateLabel();
     }
 
     @FXML
@@ -665,9 +700,10 @@ public class Map1Controller extends Main implements Initializable {
             image42.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile42");
         }
+        updateLabel();
     }
 
     @FXML
@@ -689,9 +725,10 @@ public class Map1Controller extends Main implements Initializable {
             image43.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile43");
         }
+        updateLabel();
     }
 
     @FXML
@@ -713,15 +750,37 @@ public class Map1Controller extends Main implements Initializable {
             image44.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
-        } else {
+        } else if (game.muleExists()) {
             game.dropMule("tile44");
         }
+        updateLabel();
+    }
+
+    @FXML
+    public void fullOpacity(MouseEvent event) {
+        infoPane.setOpacity(1);
+    }
+
+    @FXML
+    public void halfOpacity(MouseEvent event) {
+        infoPane.setOpacity(.46);
     }
 
     public void updateLabel() {
         turnCounterLabel1.setText(playerTURN.toString());
         turnCOUNT = game.getCurrentTurnNumber();
-        turnCounterLabel.setText(turnCOUNT.toString());
+        playerName.setText(game.getCurrentPlayer().getName().toUpperCase());
+        Integer money = game.getMoney();
+        Integer energy = game.getEnergy();
+        Integer smithore = game.getSmithore();
+        Integer food = game.getFood();
+        playerMoney.setText(money.toString());
+        energyLabel.setText(energy.toString());
+        smithoreLabel.setText(smithore.toString());
+        foodLabel.setText(food.toString());
+        colorLabel.setText(game.getColor().toUpperCase());
+        System.out.println(turnCOUNT);
+        //turnCounterLabel.setText(turnCOUNT.toString());
         //newLabel.setTet(mode);
     }
 
@@ -745,7 +804,8 @@ public class Map1Controller extends Main implements Initializable {
         alert.setTitle("Random Event!!!");
         alert.setHeaderText(randoStringHeader);
         alert.setContentText(randoStringText);
-        alert.showAndWait();
+        alert.show();
+        //alert.showAndWait();
         int currentPlayerNumber2 = game.getCurrentTurnNumber();
         if (currentPlayerNumber != currentPlayerNumber2) {
             endTurn();
@@ -753,6 +813,34 @@ public class Map1Controller extends Main implements Initializable {
     }
 
     public void updateColors() {
+        if (game != null) {
+            List<Tile> tileList = game.getTileList();
+            for (Tile t : tileList) {
+                if (t.getIsClaimed()) {
+                    String color = t.getTileOwner().getColor();
+                    if (color.equals("Blue")) {
+                        color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
+                    } else if (color.equals("Yellow")) {
+                        color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
+                    } else if (color.equals("Purple")) {
+                        color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+                    } else if (color.equals("Green")) {
+                        color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
+                    } else if (color.equals("Red")) {
+                        color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
+                    }
+                    setColor(t.getTileName(), color);
+                        /*image00, image01,
+                        image02, image03, image04, image10,
+                        image11, image12, image13, image14,
+                        image20, image21, image22, image23,
+                        image24, image30, image31, image32,
+                        image33, image34, image40, image41,
+                        image42, image43, image44, image50,
+                        image51, image52, image53, image54;
+                image44.setImage(new Image(color));*/
+                }
+            }
         /*List<Tile> tileList = Game.getTileList();
         for(Tile t : tileList) {
             if (t.getIsClaimed()) {
@@ -773,6 +861,58 @@ public class Map1Controller extends Main implements Initializable {
             }
         }
         */
+        }
+    }
+    public void setColor(String tileName, String color) {
+        if (tileName.equals("tile00")) {
+            image00.setImage(new Image(color));
+        } else if (tileName.equals("tile01")) {
+            image01.setImage(new Image(color));
+        } else if (tileName.equals("tile02")) {
+            image02.setImage(new Image(color));
+        } else if (tileName.equals("tile03")) {
+            image03.setImage(new Image(color));
+        } else if (tileName.equals("tile04")) {
+            image04.setImage(new Image(color));
+        } else if (tileName.equals("tile10")) {
+            image10.setImage(new Image(color));
+        } else if (tileName.equals("tile11")) {
+            image11.setImage(new Image(color));
+        } else if (tileName.equals("tile12")) {
+            image12.setImage(new Image(color));
+        } else if (tileName.equals("tile13")) {
+            image13.setImage(new Image(color));
+        } else if (tileName.equals("tile14")) {
+            image14.setImage(new Image(color));
+        } else if (tileName.equals("tile20")) {
+            image20.setImage(new Image(color));
+        } else if (tileName.equals("tile21")) {
+            image21.setImage(new Image(color));
+        } else if (tileName.equals("tile23")) {
+            image23.setImage(new Image(color));
+        } else if (tileName.equals("tile24")) {
+            image24.setImage(new Image(color));
+        } else if (tileName.equals("tile30")) {
+            image30.setImage(new Image(color));
+        } else if (tileName.equals("tile31")) {
+            image31.setImage(new Image(color));
+        } else if (tileName.equals("tile32")) {
+            image32.setImage(new Image(color));
+        } else if (tileName.equals("tile33")) {
+            image33.setImage(new Image(color));
+        } else if (tileName.equals("tile34")) {
+            image34.setImage(new Image(color));
+        } else if (tileName.equals("tile40")) {
+            image40.setImage(new Image(color));
+        } else if (tileName.equals("tile41")) {
+            image41.setImage(new Image(color));
+        } else if (tileName.equals("tile42")) {
+            image42.setImage(new Image(color));
+        } else if (tileName.equals("tile43")) {
+            image43.setImage(new Image(color));
+        } else if (tileName.equals("tile44")) {
+            image44.setImage(new Image(color));
+        }
     }
 
 //    public String updateColor(String imageName, String color) {
