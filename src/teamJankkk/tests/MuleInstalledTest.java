@@ -18,8 +18,11 @@ public class MuleInstalledTest {
 
     @Test
     public void playerCreationTest() {
+        //"SmithOre"
+        //"Energy"
+        //"Food"
         //Player p = (new Player("Name", null, null));
-        Mule m = (new Mule());
-        assertNotNull(m);
+        //Mule m = (new Mule(null, ""));
+        //assertNotNull(m);
     }
 }

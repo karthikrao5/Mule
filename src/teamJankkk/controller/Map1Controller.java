@@ -149,7 +149,15 @@ public class Map1Controller extends Main implements Initializable {
                                 //timeline.stop();
                                 timeSeconds = STARTTIME;
                                 //game.nextTurn();
-                                updateLabel();
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
+                                try {
+                                    Pane screen1 = (Pane) loader.load();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                Map1Controller controller1 = loader.<Map1Controller>getController();
+                                controller1.passGame(game);
+                                //updateLabel();
                                 endTurn();
                             }
                         }));
