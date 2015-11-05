@@ -10,7 +10,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
-import teamJankkk.model.PlayerDB;
 
 import java.util.*;
 

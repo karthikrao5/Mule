@@ -1,12 +1,5 @@
 package teamJankkk.model;
 
-
-import teamJankkk.controller.BuyMuleController;
-import teamJankkk.controller.ConfigController;
-import teamJankkk.controller.Map1Controller;
-
-import java.io.*;
-import java.lang.reflect.Array;
 import java.util.*;
 import java.io.Serializable;
 

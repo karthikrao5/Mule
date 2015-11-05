@@ -1,27 +1,20 @@
 package teamJankkk.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
 import teamJankkk.model.GameState;
-import teamJankkk.model.PlayerDB;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
 
 import java.io.*;
 import java.net.URL;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
