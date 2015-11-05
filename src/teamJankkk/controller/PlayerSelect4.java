@@ -92,7 +92,10 @@ public class PlayerSelect4 extends Main implements Initializable {
             String name4 = nameTextField4.getText();
             String race4 = raceChoiceBox4.getSelectionModel().getSelectedItem();
             String color4 = colorChoiceBox4.getSelectionModel().getSelectedItem();
-            if(name == null || race == null || color == null) {
+            if(name.length() == 0 || name.charAt(0) == (' ') || race == null || color == null
+                    || name2.length() == 0 || name2.charAt(0) == (' ') || race2 == null || color2 == null
+                    || name3.length() == 0 || name3.charAt(0) == (' ') || race3 == null || color3 == null
+                    || name4.length() == 0 || name4.charAt(0) == (' ') || race4 == null || color4 == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
                 alert.setTitle("Empty Field");
@@ -118,7 +121,7 @@ public class PlayerSelect4 extends Main implements Initializable {
                 game.createPlayer(name3, race3, color3, 3);
 //                game.setRace(race3, 3);
 //                game.setColor(color3, 3);
-                game.createPlayer(name4, race4, color3, 4);
+                game.createPlayer(name4, race4, color4, 4);
 //                game.setRace(race4, 4);
 //                game.setColor(color4, 4);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));

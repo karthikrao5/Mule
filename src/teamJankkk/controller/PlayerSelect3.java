@@ -111,7 +111,9 @@ public class PlayerSelect3 extends Main implements Initializable {
             String name3 = nameTextField3.getText();
             String race3 = raceChoiceBox3.getSelectionModel().getSelectedItem();
             String color3 = colorChoiceBox3.getSelectionModel().getSelectedItem();
-            if(name == null || race == null || color == null) {
+            if(name.length() == 0 || name.charAt(0) == (' ') || race == null || color == null
+                    || name2.length() == 0 || name2.charAt(0) == (' ') || race2 == null || color2 == null
+                    || name3.length() == 0 || name3.charAt(0) == (' ') || race3 == null || color3 == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
                 alert.setTitle("Empty Field");

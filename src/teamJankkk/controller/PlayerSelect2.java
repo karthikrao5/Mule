@@ -102,7 +102,16 @@ public class PlayerSelect2 extends Main implements Initializable{
             String name2 = nameTextField2.getText();
             String race2 = raceChoiceBox2.getSelectionModel().getSelectedItem();
             String color2 = colorChoiceBox2.getSelectionModel().getSelectedItem();
-            if(name == null || race == null || color == null) {
+
+
+            if (name.equals(null)) {
+                System.out.println("Player1 name is:" + name);
+            }
+            System.out.println("Player1 str length is" + name.length());
+            System.out.println("Player2 name is:" + name2);
+
+            if(name.length() == 0 || name.charAt(0) == (' ') || race == null || color == null
+                    || name2.length() == 0 || name2.charAt(0) == (' ') || race2 == null || color2 == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 //alert.initOwner(ConfigController.);
                 alert.setTitle("Empty Field");
