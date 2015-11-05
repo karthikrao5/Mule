@@ -1,17 +1,15 @@
 package teamJankkk.model;
 
 import com.google.gson.annotations.Expose;
-import teamJankkk.controller.BuyMuleController;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
 
 /**
  * Created by karthik on 9/21/15.
  */
-public class Player {
+public class Player implements Serializable{
 
     @Expose private String name;
     @Expose private String race;

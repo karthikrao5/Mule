@@ -16,6 +16,7 @@ public class PlayerTest {
 
     @Test
     public void playerCreationTest() {
-        assertNotNull((new Player("Name", null, null), "Player creation returned Null");
+        Player p = (new Player("Name", null, null));
+        assertNotNull(p);
     }
 }

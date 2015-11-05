@@ -1,13 +1,11 @@
 package teamJankkk.controller;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import java.util.Random;
@@ -19,17 +17,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
-import teamJankkk.model.Player;
-import teamJankkk.model.PlayerDB;
 
 import java.io.IOException;
 import java.net.URL;
 import javafx.util.Duration;
 import teamJankkk.model.Tile;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.*;
 import java.util.ResourceBundle;
 
 /**
@@ -185,6 +179,7 @@ public class Map1Controller extends Main implements Initializable {
             String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks1";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
+
             image01.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");

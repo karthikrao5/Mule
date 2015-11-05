@@ -5,12 +5,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
-import teamJankkk.model.Mule;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import teamJankkk.model.Player;
-import teamJankkk.model.PlayerDB;
 
 import java.io.IOException;
 import java.net.URL;

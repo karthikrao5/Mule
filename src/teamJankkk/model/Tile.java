@@ -1,16 +1,11 @@
 package teamJankkk.model;
 
-import teamJankkk.controller.BuyMuleController;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.io.Serializable;
 
 /**
  * Created by karthik on 9/24/15.
  */
-public class Tile {
+public class Tile implements Serializable{
 
     private String resource;
     private Boolean isClaimed;
@@ -18,6 +13,7 @@ public class Tile {
     private String tileName;
     private Player owner;
     private Mule residentMule;
+    private String imageURL;
 
     public Tile(String tileName) {
         this.tileName = tileName;
@@ -26,6 +22,14 @@ public class Tile {
         owner = null;
         residentMule = null;
 
+    }
+
+    public void setImageURL(String input) {
+        imageURL = input;
+    }
+
+    public String getImageURL() {
+        return imageURL;
     }
 
     public void setResidentMule(Mule mule) {

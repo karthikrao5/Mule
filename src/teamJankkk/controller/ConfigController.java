@@ -4,16 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
-import teamJankkk.model.Player;
-import teamJankkk.model.PlayerDB;
+import teamJankkk.model.GameState;
 
 
 import java.io.IOException;
@@ -192,7 +189,21 @@ public class ConfigController extends Main implements Initializable {
 
     @FXML
     public void loadGame(ActionEvent event) {
-        // SMOKE KUSH
+        GameState state = new GameState();
+        Game savedGame = state.loadGame("/Users/karthik/Mule/src/teamJankkk/model/gameState.data");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
+            Pane screen1 = (Pane) loader.load();
+            Map1Controller controller1 = loader.<Map1Controller>getController();
+            controller1.passGame(savedGame);
+//                Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml");
+            stage.setScene(new Scene(screen1));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public static int getPlayerCount() {
