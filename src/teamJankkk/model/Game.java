@@ -1,6 +1,7 @@
 package teamJankkk.model;
 
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import teamJankkk.controller.BuyMuleController;
 import teamJankkk.controller.ConfigController;
 import teamJankkk.controller.Map1Controller;
@@ -242,7 +243,11 @@ public class Game implements Serializable{
     }
 
     public void saveGameState() {
-
+//        GsonBuilder builder = new GsonBuilder();
+//        Gson jsonObj = builder.create();
+//        String s = jsonObj.toJson(getCurrentPlayer(), new TypeToken<Player>(){}.getType());
+//        File file = new File("")
+//        System.out.println(s);
     }
 
     public void loadGameState() {

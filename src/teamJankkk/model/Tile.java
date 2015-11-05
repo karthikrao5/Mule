@@ -18,6 +18,7 @@ public class Tile {
     private String tileName;
     private Player owner;
     private Mule residentMule;
+    private String imageURL;
 
     public Tile(String tileName) {
         this.tileName = tileName;
@@ -26,6 +27,14 @@ public class Tile {
         owner = null;
         residentMule = null;
 
+    }
+
+    public void setImageURL(String input) {
+        imageURL = input;
+    }
+
+    public String getImageURL() {
+        return imageURL;
     }
 
     public void setResidentMule(Mule mule) {

@@ -185,6 +185,7 @@ public class Map1Controller extends Main implements Initializable {
             String color = game.getColor();
             String imageName = "/teamJankkk/views/_Images/Forest/forest_floor_wRocks1";
             String newName = imageName + "_" + color.toUpperCase() + ".png";
+
             image01.setImage(new Image(newName));
         } else if (hasSelectedLand) {
             System.out.println("You have already selected land this turn, ya dingus!");
