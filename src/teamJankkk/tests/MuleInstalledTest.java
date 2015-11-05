@@ -2,9 +2,6 @@ package teamJankkk.tests;
 
 import org.junit.Before;
 import org.junit.Test;
-import teamJankkk.model.Mule;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by nik on 11/4/15.
