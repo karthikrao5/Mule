@@ -1,9 +1,8 @@
 package teamJankkk.model;
 
 
-import java.io.IOException;
-import java.io.StringWriter;
-import com.google.gson.Gson;
+import java.io.*;
+
 
 
 
@@ -11,13 +10,27 @@ import com.google.gson.Gson;
  * Created by karthik on 11/3/15.
  */
 public class GameState {
-    Game game;
-
 
     public void saveGame(Game game) {
-        this.game = game;
+        try {
+            FileOutputStream fos = new FileOutputStream(new File("/Users/karthik/Mule/src/teamJankkk/model/gameState.data"));
+            ObjectOutputStream obj = new ObjectOutputStream(fos);
+            obj.writeObject(game);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-        Gson object = new Gson();
-        System.out.println(object.toJson(game));
+    public Game loadGame(String fileName) {
+        Game loadedGame = null;
+        try {
+            ObjectInput objInput = new ObjectInputStream(new FileInputStream("/Users/karthik/Mule/src/teamJankkk/model/gameState.data"));
+            loadedGame = (Game) objInput.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException i) {
+            i.getMessage();
+        }
+        return loadedGame;
     }
 }

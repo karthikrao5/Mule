@@ -14,9 +14,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import teamJankkk.Main;
 import teamJankkk.model.Game;
+import teamJankkk.model.GameState;
 import teamJankkk.model.PlayerDB;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -127,7 +130,8 @@ public class StoreController extends Main implements Initializable {
 
     @FXML
     public void saveGame(MouseEvent event) {
-        game.saveGameState();
+        GameState state = new GameState();
+        state.saveGame(game);
     }
 
 }

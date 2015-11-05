@@ -1,21 +1,20 @@
 package teamJankkk.model;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
+
 import teamJankkk.controller.BuyMuleController;
 import teamJankkk.controller.ConfigController;
 import teamJankkk.controller.Map1Controller;
 
-import java.io.Serializable;
+import java.io.*;
 import java.lang.reflect.Array;
 import java.util.*;
-import com.google.gson.Gson;
+import java.io.Serializable;
 
 
 /**
  * Created by karthik on 9/23/15.
  */
-public class Game implements Serializable{
+public class Game implements Serializable {
 
 //    PlayerDB database;
     Mule boughtMule;
@@ -242,13 +241,17 @@ public class Game implements Serializable{
         return numberOfPlayers;
     }
 
-    public void saveGameState() {
-//        GsonBuilder builder = new GsonBuilder();
-//        Gson jsonObj = builder.create();
-//        String s = jsonObj.toJson(getCurrentPlayer(), new TypeToken<Player>(){}.getType());
-//        File file = new File("")
-//        System.out.println(s);
-    }
+//    public void saveGameState() {
+//        try {
+//            FileOutputStream fos = new FileOutputStream(new File("/Users/karthik/Mule/src/teamJankkk/model/"));
+//            ObjectOutputStream obj = new ObjectOutputStream(fos);
+//            obj.write(game);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void loadGameState() {
 //        for (int i = 0; i < tempTileList.size(); i++) {
