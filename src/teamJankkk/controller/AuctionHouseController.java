@@ -110,7 +110,7 @@ public class AuctionHouseController extends Main implements Initializable {
         amountToBuy = 0;
         updateMarketAndLabels();
         if (buySmithore.getText().length() > 0) {
-            
+
             currentResourceAmount = game.getSmithore();
             currentMoney = game.getMoney();
             amountToBuy = Integer.parseInt(buySmithore.getText());
@@ -120,6 +120,12 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setTitle("Action Not Possible");
                 alert.setHeaderText("Negative Money not allowed!");
                 alert.setContentText("You cannot buy more than you can afford");
+                alert.showAndWait();
+            } else if (amountToBuy < 0) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Action Not Possible");
+                alert.setHeaderText("Negative number not allowed!!");
+                alert.setContentText("There's this thing called selling...");
                 alert.showAndWait();
             } else {
                 game.addSmithore(amountToBuy);
@@ -139,6 +145,12 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setHeaderText("Negative Money not allowed!");
                 alert.setContentText("You cannot buy more than you can afford");
                 alert.showAndWait();
+            } else if (amountToBuy < 0) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Action Not Possible");
+                alert.setHeaderText("Negative number not allowed!!");
+                alert.setContentText("There's this thing called selling...");
+                alert.showAndWait();
             } else {
                 game.addFood(amountToBuy);
                 marketFood -= amountToBuy;
@@ -157,6 +169,12 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setHeaderText("Negative Money not allowed!");
                 alert.setContentText("You cannot buy more than you can afford");
                 alert.showAndWait();
+            } else if (amountToBuy < 0) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Action Not Possible");
+                alert.setHeaderText("Negative number not allowed!!");
+                alert.setContentText("There's this thing called selling...");
+                alert.showAndWait();
             } else {
                 game.addEnergy(amountToBuy);
                 marketEnergy -= amountToBuy;
@@ -173,6 +191,12 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setTitle("Action Not Possible");
                 alert.setHeaderText("No Negative Resources allowed!");
                 alert.setContentText("You cannot sell more of this resouce than you have!");
+                alert.showAndWait();
+            } else if (theyWannaSell < 0) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Action Not Possible");
+                alert.setHeaderText("Negative number not allowed!!");
+                alert.setContentText("There's this thing called buying...");
                 alert.showAndWait();
             } else {
                 game.subtractSmithore(theyWannaSell);
@@ -191,6 +215,12 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setHeaderText("No Negative Resources allowed!");
                 alert.setContentText("You cannot sell more of this resouce than you have!");
                 alert.showAndWait();
+            } else if (theyWannaSell < 0) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Action Not Possible");
+                alert.setHeaderText("Negative number not allowed!!");
+                alert.setContentText("There's this thing called buying...");
+                alert.showAndWait();
             } else {
                 game.subtractFood(theyWannaSell);
                 marketFood += theyWannaSell;
@@ -207,6 +237,12 @@ public class AuctionHouseController extends Main implements Initializable {
                 alert.setTitle("Action Not Possible");
                 alert.setHeaderText("No Negative Resources allowed!");
                 alert.setContentText("You cannot sell more of this resouce than you have!");
+                alert.showAndWait();
+            } else if (theyWannaSell < 0) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Action Not Possible");
+                alert.setHeaderText("Negative number not allowed!!");
+                alert.setContentText("There's this thing called buying...");
                 alert.showAndWait();
             } else {
                 game.subtractEnergy(theyWannaSell);
