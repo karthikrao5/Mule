@@ -31,6 +31,10 @@ public class Mule {
         return this.outfit;
     }
 
+    public Boolean getIsInstalled() { return this.isInstalled;}
+
+    public Boolean getHasOutfit() { return true;}
+
     public void setOutfit(String input) {
         this.outfit = input;
         this.hasOutfit = true;
