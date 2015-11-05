@@ -420,7 +420,7 @@ public class Game implements Serializable {
         } else if (number == 2) {
             theRandomEvent[0] = "YOUR TURN IS OVER";
             theRandomEvent[1] = "LOSERRRRR";
-            int BITXCH = nextTurn();
+            nextTurn();
         } else if (number == 3) {
             theRandomEvent[0] = "Just incase you were tired...";
             theRandomEvent[1] = "HAVE FUNERGY!!!!";
