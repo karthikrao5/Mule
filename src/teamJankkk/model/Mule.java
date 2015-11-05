@@ -1,9 +1,11 @@
 package teamJankkk.model;
 
+import java.io.Serializable;
+
 /**
  * Created by karthik on 9/21/15.
  */
-public class Mule {
+public class Mule implements Serializable{
     private String outfit;
     private Boolean hasOutfit;
     private Boolean isInstalled;

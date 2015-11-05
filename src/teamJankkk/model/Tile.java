@@ -2,6 +2,7 @@ package teamJankkk.model;
 
 import teamJankkk.controller.BuyMuleController;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.Random;
 /**
  * Created by karthik on 9/24/15.
  */
-public class Tile {
+public class Tile implements Serializable{
 
     private String resource;
     private Boolean isClaimed;
