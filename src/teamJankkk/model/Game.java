@@ -85,6 +85,8 @@ public class Game implements Serializable {
                 if (boughtMule.getOutfit().equals(currTile.getResource())) {
                     boughtMule.setTileThatOwnsMule(currTile);
                     boughtMule.setTileThatOwnsMule(currTile);
+                    currTile.setResidentMule(boughtMule);
+                    currTile.setIsInstalled(true);
                     System.out.print("Player Name");
                     System.out.println(getCurrentPlayer().getName());
                     System.out.print("Tile Name");
