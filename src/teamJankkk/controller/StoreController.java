@@ -40,7 +40,6 @@ public class StoreController extends Main implements Initializable {
         //smithoreTile.setOnMouseClicked((this::smithOreClicked));
         //energyTile.setOnMouseClicked((this::energyTileClicked));
         //foodTile.setOnMouseClicked(this::foodTileClicked);
-//        moneyLabel.setText(String.valueOf(PlayerDB.getPlayer(Game.getCurrentPlayer()).getMoney()));
     }
 
     public void setGame(Game game) {

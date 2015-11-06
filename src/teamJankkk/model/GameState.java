@@ -19,7 +19,6 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 public class GameState implements Serializable{
 
     public static void saveGame(Game game) {
-
         try {
 //            XStream stream = new XStream(new JsonHierarchicalStreamDriver() {
 //                public HierarchicalStreamWriter createWriter(Writer writer) {
@@ -27,10 +26,10 @@ public class GameState implements Serializable{
 //                }
 //            });
             XStream stream = new XStream();
-            String jsonString = stream.toXML(game);
-            System.out.println(jsonString);
-            FileOutputStream fos = new FileOutputStream(new File("savegame.xml"));
-            fos.write(jsonString.getBytes(Charset.forName("UTF-8")));
+            String xmlString = stream.toXML(game);
+            System.out.println(xmlString);
+            FileOutputStream fos = new FileOutputStream(new File("/Users/karthik/Mule/src/teamJankkk/model/savegame.xml"));
+            fos.write(xmlString.getBytes(Charset.forName("UTF-8")));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,19 +37,18 @@ public class GameState implements Serializable{
     }
 
     public static Game loadGame() {
-//        Game loadedgame = null;
-//        XStream stream = new XStream(new JettisonMappedXmlDriver());
-////        stream.setMode(XStream.NO_REFERENCES);
-//        FileReader fr = null;
-//        String xml = null;
-//        try {
-//            fr = new FileReader("savegame.xml");
-//            xml = fr.toString();
-//            System.out.println(xml);
-//            loadedgame = (Game) stream.fromXML(fr);
-//        } catch (FileNotFoundException e) {
-//            e.getMessage();
-//        }
-        return null;
+        Game loadedgame = null;
+        XStream stream = new XStream(new DomDriver());
+        stream.processAnnotations(Game.class);
+
+        try {
+            FileReader reader = new FileReader("/Users/karthik/Mule/src/teamJankkk/model/savegame.xml");
+
+//            InputStream in = new FileInputStream("/Users/karthik/Mule/src/teamJankkk/model/savegame.xml");
+            loadedgame = (Game) stream.fromXML(reader);
+        } catch (FileNotFoundException e) {
+            e.getMessage();
+        }
+        return loadedgame;
     }
 }

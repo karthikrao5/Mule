@@ -20,7 +20,6 @@ import java.util.ResourceBundle;
  */
 public class PlayerSelect4 extends Main implements Initializable {
 
-
     Game game;
 
     @FXML private Button goToSummaryButton;
@@ -40,9 +39,6 @@ public class PlayerSelect4 extends Main implements Initializable {
     @FXML private TextField nameTextField1;
     @FXML private Button nextButton;
 
-    //public static teamJankkk.model.Player p4;
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        p4 = new Player(null, null, null);
@@ -53,25 +49,6 @@ public class PlayerSelect4 extends Main implements Initializable {
     public void passGame(Game game) {
         this.game = game;
     }
-
-    /*
-    @FXML
-    void saveName(ActionEvent event) {
-        String name = nameTextField4.getText();
-        String race = raceChoiceBox4.getSelectionModel().getSelectedItem();
-        String color = colorChoiceBox4.getSelectionModel().getSelectedItem();
-        configLabel4.setText("What up boss, your name is "
-                + name
-                + " , your race is: " + race
-                + " and you'll be playing for the " + color);
-
-        game.createPlayer(name, 3);
-        game.setRace(race, 3);
-        game.setColor(color, 3);
-        configLabel4.setText(game.toString(3));
-
-    }
-    */
 
     @FXML
     public void goToMap1(ActionEvent event) {
@@ -107,24 +84,13 @@ public class PlayerSelect4 extends Main implements Initializable {
                 alert.showAndWait();
             } else {
                 game.createPlayer(name, race, color, 1);
-                game.setNumberOfPlayers(4);
-
-//                game.setRace(race, 1);
-//                game.setColor(color, 1);
                 game.createPlayer(name2, race2, color2, 2);
-//                game.setRace(race2, 2);
-//                game.setColor(color2, 2);
                 game.createPlayer(name3, race3, color3, 3);
-//                game.setRace(race3, 3);
-//                game.setColor(color3, 3);
                 game.createPlayer(name4, race4, color4, 4);
-//                game.setRace(race4, 4);
-//                game.setColor(color4, 4);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
                 Pane screen1 = (Pane) loader.load();
                 Map1Controller controller1 = loader.<Map1Controller>getController();
                 controller1.passGame(game);
-//                Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml"));
                 stage.setScene(new Scene(screen1));
                 stage.show();
             }

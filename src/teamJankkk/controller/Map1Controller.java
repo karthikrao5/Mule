@@ -825,37 +825,8 @@ public class Map1Controller extends Main implements Initializable {
                         color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
                     }
                     setColor(t.getTileName(), color);
-                        /*image00, image01,
-                        image02, image03, image04, image10,
-                        image11, image12, image13, image14,
-                        image20, image21, image22, image23,
-                        image24, image30, image31, image32,
-                        image33, image34, image40, image41,
-                        image42, image43, image44, image50,
-                        image51, image52, image53, image54;
-                image44.setImage(new Image(color));*/
                 }
             }
-        /*List<Tile> tileList = Game.getTileList();
-        for(Tile t : tileList) {
-            if (t.getIsClaimed()) {
-                int playerNumber = t.getOwnerNumber();
-                String color = PlayerDB.getPlayer(playerNumber).getColor();
-                if (color.equals("Blue")) {
-                    color = "/teamJankkk/views/_Images/Forest/forest_floor_BLUE.png";
-                } else if (color.equals("Yellow")) {
-                    color = "/teamJankkk/views/_Images/Forest/forest_floor_YELLOW.png";
-                } else if (color.equals("Purple")) {
-                    color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
-                } else if (color.equals("Green")) {
-                    color = "/teamJankkk/views/_Images/Forest/forest_floor_PURPLE.png";
-                } else if (color.equals("Red")) {
-                    color = "/teamJankkk/views/_Images/Forest/forest_floor_RED.png";
-                }
-
-            }
-        }
-        */
         }
     }
     public void setColor(String tileName, String color) {

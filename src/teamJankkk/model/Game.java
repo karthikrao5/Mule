@@ -1,5 +1,8 @@
 package teamJankkk.model;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
 import java.util.*;
 import java.io.Serializable;
 
@@ -8,15 +11,16 @@ import java.io.Serializable;
 /**
  * Created by karthik on 9/23/15.
  */
+
+@XStreamAlias("GAME")
 public class Game {
 
-//    PlayerDB database;
     Mule boughtMule;
-    int currentTurn = 0;
-    int numberOfPlayers = 0;
-    int currentPlayer = 1;
+    @XStreamAlias("CURRENTTURN") int currentTurn = 0;
+    @XStreamAlias("NUMBEROFPLAYERS") int numberOfPlayers = 0;
+    @XStreamAlias("CURRENTPLAYER") int currentPlayer = 1;
     boolean endGame = false;
-    List<Tile> tileList = new ArrayList<>();
+    @XStreamAlias("TILELIST") List<Tile> tileList = new ArrayList<>();
     boolean playerPurchasedLand;
     List<String> resourceList = new ArrayList<>(Arrays.asList("SmithOre", "Energy",
             "Food"));
@@ -25,10 +29,9 @@ public class Game {
     int tempNumberOfPlayers = 0;
     int tempCurrentPlayer = 1;
     List<Tile> tempTileList = new ArrayList<>();
-    private HashMap<Player, Integer> database;
+    @XStreamAlias("DATABASE")  private HashMap<Player, Integer> database;
 
     public Game() {
-//        database = new PlayerDB();
         database = new HashMap<>();
         rand = new Random();
         //x axis is i
@@ -247,15 +250,6 @@ public class Game {
 //        }
 //    }
 
-    public void loadGameState() {
-//        for (int i = 0; i < tempTileList.size(); i++) {
-//            tileList.add(tempTileList.get(i));
-//        }
-//        currentPlayer = tempCurrentPlayer;
-//        currentTurn = tempCurrentTurn;
-//        numberOfPlayers = tempNumberOfPlayers;
-    }
-
 //    private Set<Map.Entry<Player, Integer>> getEntrySet() {
 //        return database.entrySet();
 //    }
@@ -263,6 +257,7 @@ public class Game {
     public void createPlayer(String name, String race, String color, int index) {
 //        database.add(index, new Player(name, null, null));
         database.put(new Player(name, race, color), index);
+        numberOfPlayers++;
 //        for(Player p : database.keySet()) {
 //            System.out.println(p.getColor());
 //        }
@@ -374,22 +369,27 @@ public class Game {
     //================MARKET LOGIC================================
 
     public ArrayList<Integer> calculateMarket() {
-        ArrayList<Integer> marketTotal = new ArrayList<>();
-        int totalSmithore = 0;
-        int totalEnergy = 0;
-        int totalFood = 0;
-        int totalMoney = 0;
+        ArrayList<Integer> marketTotal = null;
+        if(database != null) {
+            marketTotal = new ArrayList<>();
+            int totalSmithore = 0;
+            int totalEnergy = 0;
+            int totalFood = 0;
+            int totalMoney = 0;
+            System.out.println(database.keySet().toString());
+            for(Player p : database.keySet()) {
+                System.out.println("hello");
 
-        for(Player p : database.keySet()) {
-            totalSmithore += p.getSmithore();
-            totalEnergy += p.getEnergy();
-            totalFood += p.getFood();
-            totalMoney += p.getMoney();
+                totalSmithore += p.getSmithore();
+                totalEnergy += p.getEnergy();
+                totalFood += p.getFood();
+                totalMoney += p.getMoney();
+            }
+            marketTotal.add(totalSmithore);
+            marketTotal.add(totalEnergy);
+            marketTotal.add(totalFood);
+            marketTotal.add(totalMoney);
         }
-        marketTotal.add(totalSmithore);
-        marketTotal.add(totalEnergy);
-        marketTotal.add(totalEnergy);
-        marketTotal.add(totalMoney);
         return marketTotal;
         //returns an arraylist so AuctionHouseController
         //can display the market totals in labels

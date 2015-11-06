@@ -52,14 +52,12 @@ public class ConfigController extends Main implements Initializable {
     @FXML
     void setPlayers1(ActionEvent event) {
         playerLabel.setText("1 players");
-        game.setNumberOfPlayers(1);
         players = 1;
 
     }
     @FXML
     void setPlayers2(ActionEvent event) {
         playerLabel.setText("2 players");
-        game.setNumberOfPlayers(2);
         System.out.println("config screen: " + game.getNumberOfPlayers());
         players = 2;
 
@@ -67,14 +65,12 @@ public class ConfigController extends Main implements Initializable {
     @FXML
     void setPlayers3(ActionEvent event) {
         playerLabel.setText("3 players");
-        game.setNumberOfPlayers(3);
         players = 3;
 
     }
     @FXML
     void setPlayers4(ActionEvent event) {
         playerLabel.setText("4 players");
-        game.setNumberOfPlayers(4);
         players = 4;
 
 
@@ -167,7 +163,6 @@ public class ConfigController extends Main implements Initializable {
             String name2 = "player2";
             String color2 = "Red";
             String race2 = "Packer";
-            game.setNumberOfPlayers(2);
             game.createPlayer(name, race, color, 1);
 //                game.setRace(race, 1);
 //                game.setColor(color, 1);

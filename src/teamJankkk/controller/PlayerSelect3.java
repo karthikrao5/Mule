@@ -33,12 +33,6 @@ public class PlayerSelect3 extends Main implements Initializable {
     @FXML private TextField nameTextField1;
     @FXML private Button nextButton;
 
-//    @FXML private ObservableList<String> raceCBData =
-//            FXCollections.observableArrayList();
-
-//    public static teamJankkk.model.Player p3;
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //save3Button.setOnAction(this::saveName);
@@ -48,24 +42,6 @@ public class PlayerSelect3 extends Main implements Initializable {
     public void passGame(Game game) {
         this.game = game;
     }
-
-    /*
-    @FXML
-    void saveName(ActionEvent event) {
-        String name = nameTextField3.getText();
-        String race = raceChoiceBox3.getSelectionModel().getSelectedItem();
-        String color = colorChoiceBox3.getSelectionModel().getSelectedItem();
-        configLabel3.setText("What up boss, your name is "
-                + name
-                + " , your race is: " + race
-                + " and you'll be playing for the " + color);
-
-        game.createPlayer(name, 2);
-        game.setRace(race, 2);
-        game.setColor(color, 2);
-        configLabel3.setText(game.toString(2));
-    }
-    */
 
     @FXML
     public void nextScreen(ActionEvent event) {
@@ -125,27 +101,14 @@ public class PlayerSelect3 extends Main implements Initializable {
                 alert.setContentText("Please select different names for each player.");
                 alert.showAndWait();
             } else {
-                game.setNumberOfPlayers(3);
-
-//                game.createPlayer(name, 1);
                 game.createPlayer(name, race, color, 1);
-//                game.setRace(race, 1);
-//                game.setColor(color, 1);
-
                 game.createPlayer(name2, race2, color2, 2);
-//                game.setRace(race2, 2);
-//                game.setColor(color2, 2);
-
                 game.createPlayer(name3, race3, color3, 3);
-//                game.setRace(race3, 3);
-//                game.setColor(color3, 3);
-
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
                 Pane screen1 = (Pane) loader.load();
                 Map1Controller controller1 = loader.<Map1Controller>getController();
                 controller1.passGame(game);
-//                Pane screen1 = (Pane) FXMLLoader.load(getClass().getResource("../views/Player1Screen.fxml"));
                 stage.setScene(new Scene(screen1));
                 stage.show();
             }
