@@ -145,9 +145,8 @@ public class Game implements Serializable {
                     currTile.setIsClaimed(true);
                     currTile.setTileOwner(getCurrentPlayer());
                     getCurrentPlayer().addTilestoPlayerList(currTile);
-                    getCurrentPlayer().subtractMoney(100);
-                    System.out.println("Mule's tile location: "
-                            + currTile.getResidentMule().getTileThatOwnsMule().getTileName());
+                    subtractMoney(100);
+                    System.out.println("PLAYER MONEY IS " + getCurrentPlayer().getMoney());
                     playerPurchasedLand = true;
                 } else {
                     System.out.println("Land already purchased in your turn.");
