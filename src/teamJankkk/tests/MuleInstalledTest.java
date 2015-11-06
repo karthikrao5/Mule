@@ -36,17 +36,15 @@ public class MuleInstalledTest {
         temp.buyTile("tile20");
         temp.buyMule("Energy");
         temp.dropMule("tile20");
+        int currentEnergy = temp.getEnergy();
         //Player 2 buys a Tile, an appropriately outfitted Mule, and then
         //installs the outfited Mule on a Tile that's resource matches
         // the Mule outfit type
-        int currentEnergy = temp.getEnergy();
         temp.nextTurn();
-
         Tile tile01 = temp.getTileFromList("tile01");
         Mule residentMule = tile01.getResidentMule();
         assertNotNull(residentMule);
         assertTrue(tile01.getIsInstalled());
-
         int harvestOre = temp.getSmithore();
         temp.nextTurn();
         Tile tile20 = temp.getTileFromList("tile20");
@@ -55,8 +53,12 @@ public class MuleInstalledTest {
         assertTrue(tile20.getIsInstalled());
         int harvestEnergy = temp.getEnergy();
         //production is calculated for both players
+        //it goes through 2 turns so both should be increased by 200
+        //100 per turn
         assertEquals(currentSmithore+200, harvestOre);
         assertEquals(currentEnergy+200, harvestEnergy);
+
+
     }
 }
 /*
