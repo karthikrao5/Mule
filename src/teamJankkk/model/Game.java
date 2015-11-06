@@ -3,6 +3,7 @@ package teamJankkk.model;
 import java.util.*;
 import java.io.Serializable;
 
+//test/
 
 /**
  * Created by karthik on 9/23/15.
@@ -84,6 +85,8 @@ public class Game implements Serializable {
                 if (boughtMule.getOutfit().equals(currTile.getResource())) {
                     boughtMule.setTileThatOwnsMule(currTile);
                     boughtMule.setTileThatOwnsMule(currTile);
+                    currTile.setResidentMule(boughtMule);
+                    currTile.setIsInstalled(true);
                     System.out.print("Player Name");
                     System.out.println(getCurrentPlayer().getName());
                     System.out.print("Tile Name");
@@ -145,9 +148,8 @@ public class Game implements Serializable {
                     currTile.setIsClaimed(true);
                     currTile.setTileOwner(getCurrentPlayer());
                     getCurrentPlayer().addTilestoPlayerList(currTile);
-                    getCurrentPlayer().subtractMoney(100);
-                    System.out.println("Mule's tile location: "
-                            + currTile.getResidentMule().getTileThatOwnsMule().getTileName());
+                    subtractMoney(100);
+                    System.out.println("PLAYER MONEY IS " + getCurrentPlayer().getMoney());
                     playerPurchasedLand = true;
                 } else {
                     System.out.println("Land already purchased in your turn.");
@@ -406,6 +408,8 @@ public class Game implements Serializable {
         
         return returnRank;
     }
+
+
 
     public String[] getRandomEvent(int number) {
         String[] theRandomEvent = new String[2];

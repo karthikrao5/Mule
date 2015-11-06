@@ -1,7 +1,5 @@
 package teamJankkk.model;
 
-import com.google.gson.annotations.Expose;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.ArrayList;
@@ -11,16 +9,16 @@ import java.util.ArrayList;
  */
 public class Player implements Serializable{
 
-    @Expose private String name;
-    @Expose private String race;
-    @Expose private String color;
-    @Expose private int money;
-    @Expose private int score;
-    @Expose private int food;
-    @Expose private int energy;
-    @Expose private int smithore;
-    @Expose private int crystite;
-    @Expose private List<Tile> tilesOwned = new ArrayList<Tile>();
+    private String name;
+    private String race;
+    private String color;
+    private int money;
+    private int score;
+    private int food;
+    private int energy;
+    private int smithore;
+    private int crystite;
+    private List<Tile> tilesOwned = new ArrayList<Tile>();
 
     public Player(String name, String race, String color) {
         this.name = name;
