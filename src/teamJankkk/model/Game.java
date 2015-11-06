@@ -409,6 +409,8 @@ public class Game implements Serializable {
         return returnRank;
     }
 
+
+
     public String[] getRandomEvent(int number) {
         String[] theRandomEvent = new String[2];
         if (number == 0) {
