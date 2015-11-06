@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by karthik on 9/21/15.
  */
-public class Mule implements Serializable{
+public class Mule {
     private String outfit;
     private Boolean hasOutfit;
     private Boolean isInstalled;
@@ -13,6 +13,10 @@ public class Mule implements Serializable{
 
     public Mule(String tileName, String resource) {
         this.outfit = resource;
+        this.isInstalled = false;
+        this.hasOutfit = false;
+    }
+    public Mule() {
         this.isInstalled = false;
         this.hasOutfit = false;
     }

@@ -123,8 +123,7 @@ public class StoreController extends Main implements Initializable {
 
     @FXML
     public void saveGame(MouseEvent event) {
-        GameState state = new GameState();
-        state.saveGame(game);
+        GameState.saveGame(game);
     }
 
 }

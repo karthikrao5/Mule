@@ -189,8 +189,7 @@ public class ConfigController extends Main implements Initializable {
 
     @FXML
     public void loadGame(ActionEvent event) {
-        GameState state = new GameState();
-        Game savedGame = state.loadGame("/Users/karthik/Mule/src/teamJankkk/model/gameState.data");
+        Game savedGame = GameState.loadGame();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Map1_Forest.fxml"));
             Pane screen1 = (Pane) loader.load();
@@ -200,7 +199,7 @@ public class ConfigController extends Main implements Initializable {
             stage.setScene(new Scene(screen1));
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
 
 

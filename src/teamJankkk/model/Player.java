@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Created by karthik on 9/21/15.
  */
-public class Player implements Serializable{
+public class Player {
 
     private String name;
     private String race;
@@ -24,6 +24,14 @@ public class Player implements Serializable{
         this.name = name;
         this.race = race;
         this.color = color;
+        this.money = 1500;
+        score = 0;
+        food = 0;
+        energy = 0;
+        smithore = 0;
+        crystite = 0;
+    }
+    public Player() {
         this.money = 1500;
         score = 0;
         food = 0;

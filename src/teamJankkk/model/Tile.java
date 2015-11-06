@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by karthik on 9/24/15.
  */
-public class Tile implements Serializable{
+public class Tile{
 
     private String resource;
     private Boolean isClaimed;
@@ -23,6 +23,13 @@ public class Tile implements Serializable{
         residentMule = null;
 
     }
+    public Tile() {
+        isClaimed = false;
+        isInstalled = false;
+        owner = null;
+        residentMule = null;
+    }
+
 
     public void setImageURL(String input) {
         imageURL = input;

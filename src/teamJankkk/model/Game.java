@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * Created by karthik on 9/23/15.
  */
-public class Game implements Serializable {
+public class Game {
 
 //    PlayerDB database;
     Mule boughtMule;
@@ -25,8 +25,7 @@ public class Game implements Serializable {
     int tempNumberOfPlayers = 0;
     int tempCurrentPlayer = 1;
     List<Tile> tempTileList = new ArrayList<>();
-    private HashMap<Integer, Player> database;
-
+    private HashMap<Player, Integer> database;
 
     public Game() {
 //        database = new PlayerDB();
@@ -224,9 +223,9 @@ public class Game implements Serializable {
     }
 
     public Player getCurrentPlayer() {
-        for(Map.Entry<Integer, Player> p : database.entrySet()) {
-            if(p.getKey().compareTo(currentPlayer) == 0) {
-                return p.getValue();
+        for(Map.Entry<Player, Integer> p : database.entrySet()) {
+            if(p.getValue().compareTo(currentPlayer) == 0) {
+                return p.getKey();
             }
         }
         return null;
@@ -263,7 +262,7 @@ public class Game implements Serializable {
 
     public void createPlayer(String name, String race, String color, int index) {
 //        database.add(index, new Player(name, null, null));
-        database.put(index, new Player(name, race, color));
+        database.put(new Player(name, race, color), index);
 //        for(Player p : database.keySet()) {
 //            System.out.println(p.getColor());
 //        }
@@ -381,7 +380,7 @@ public class Game implements Serializable {
         int totalFood = 0;
         int totalMoney = 0;
 
-        for(Player p : database.values()) {
+        for(Player p : database.keySet()) {
             totalSmithore += p.getSmithore();
             totalEnergy += p.getEnergy();
             totalFood += p.getFood();
@@ -400,7 +399,7 @@ public class Game implements Serializable {
         int thisPlayazScore = getCurrentPlayer().getScore();
         int returnRank = 0;
 
-        for(Player p : database.values()) {
+        for(Player p : database.keySet()) {
             if(p.getScore() <= getCurrentPlayer().getScore()) {
                 returnRank++;
             }
@@ -446,7 +445,7 @@ public class Game implements Serializable {
     }
 
     public void calculateProduction() {
-        for(Player p : database.values()) {
+        for(Player p : database.keySet()) {
             for(Tile t : p.getTileList()) {
                 if (!t.getIsInstalled()) {
                     System.out.println("Land piece isn't Installed");
@@ -462,5 +461,9 @@ public class Game implements Serializable {
                 }
             }
         }
+    }
+
+    public HashMap<Player, Integer> getPlayerSet() {
+        return database;
     }
 }
