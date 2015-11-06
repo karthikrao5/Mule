@@ -28,7 +28,7 @@ public class GameState implements Serializable{
             XStream stream = new XStream();
             String xmlString = stream.toXML(game);
             System.out.println(xmlString);
-            FileOutputStream fos = new FileOutputStream(new File("/Users/karthik/Mule/src/teamJankkk/model/savegame.xml"));
+            FileOutputStream fos = new FileOutputStream(new File("savegame.xml"));
             fos.write(xmlString.getBytes(Charset.forName("UTF-8")));
 
         } catch (IOException e) {
@@ -42,7 +42,7 @@ public class GameState implements Serializable{
         stream.processAnnotations(Game.class);
 
         try {
-            FileReader reader = new FileReader("/Users/karthik/Mule/src/teamJankkk/model/savegame.xml");
+            FileReader reader = new FileReader("savegame.xml");
 
 //            InputStream in = new FileInputStream("/Users/karthik/Mule/src/teamJankkk/model/savegame.xml");
             loadedgame = (Game) stream.fromXML(reader);
